@@ -26,7 +26,6 @@
   
 " Most of the last line instead of lines of @s (for long lines)
   set display+=lastline
-  
 " }}}
   
 " Netrw: tree mode, removing banner, toggle {{{
