@@ -27,6 +27,7 @@
 " Most of the last line instead of lines of @s (for long lines)
   set display+=lastline
 " }}}
+
   
 " Netrw: tree mode, removing banner, toggle {{{
 " https://shapeshed.com/vim-netrw/
@@ -60,19 +61,24 @@
 " }}}
 " }}}
   
+
 " Ctags {{{
 " https://stackoverflow.com/a/33652614
+
 " set tags+=.tags;$HOME
   command! Ctags !ctags -R .
+
 " Add - to keywords (when pressing Ctrl-]) for HTML, CSS, Sass
   set iskeyword+=-
 "}}}
   
-  " Settings by file types {{{
-  augroup FileTypeSettings
+
+" Settings by file types {{{
+  augroup silent FileTypeSettings
   
-  	autocmd!
+  	autocmd! 
   
+		" Vim
   	autocmd FileType vim setlocal
   				\ tabstop=2
   				\ softtabstop=2
@@ -116,9 +122,17 @@
   				\ autoindent
   				\ wrap
   
+		" Java 
+		autocmd FileType java setlocal 
+					\ tabstop=4 
+					\ softtabstop=4 
+					\ shiftwidth=4 
+					\ autoindent 
+  		
   augroup END
 " }}}
   
+
 " Personal mappings {{{
   
 " Leader
@@ -138,11 +152,16 @@
   nnoremap <C-k> <C-y>
   nnoremap <C-j> <C-e>
   
-" Window resizing
+" Window resizing: horizontal alt+<, alt+>
+" (also in Terminal mode)
   nnoremap > <C-W>> 
   nnoremap < <C-W><
-  nnoremap - <C-W>-
-  nnoremap + <C-W>+
+	tnoremap > <C-W><
+	tnoremap < <C-W>>
+
+" Window resizing: vertical alt+=, alt+-
+  nnoremap = <C-W>-
+  nnoremap - <C-W>+
   
 " Press Alt+[Line nav cmds] to scroll by visual (not logical) lines (useful for prose)
   nnoremap <M-j> gj
@@ -166,11 +185,22 @@
 " Press Space to turn off highlighting and clear any message already displayed.
   nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
   
-" Enter, exit terminal
+" Terminal: open
   nnoremap <leader>tt :vertical terminal<CR>
-  tnoremap <C-W>,, <C-W>:exit()<CR>
+
+" Terminal: close from within with <C-W>,,
+"					  from any other window with <leader>tc
+  nnoremap <leader>tc :bdelete! !/usr/bin/zsh<CR>
+  tnoremap <C-W>,, <C-W>:bdelete! !/usr/bin/zsh<CR>
   
+	" Compile current file using <leader>rr
+	"Java
+	augroup Java_shortcuts
+		autocmd FileType java silent 
+				nnoremap <leader>rr :!javac -classpath . %<cr>
+	augroup END
 " }}}
+
   
 " Make Alt keys work in terminal mode  {{{
   if !has('gui_running')
@@ -183,6 +213,7 @@
   	set timeout ttimeoutlen=5
   endif
 " }}}
+
   
 " Code folding, <leader>zz to toggle all folds, autosave {{{
   set foldenable
@@ -204,6 +235,7 @@
   	endif
   endfun
 " }}}
+
   
 " Autosave manual folds {{{ 
   augroup AutoSaveFolds
@@ -213,6 +245,7 @@
   augroup END
 " }}}
 " }}}
+
   
 " Text object: indent, using 'i', ai/ii {{{
 " http://vim.wikia.com/wiki/Indent_text_object
@@ -249,6 +282,7 @@
   endfunction
 "}}}
 "}}}
+
   
 " Plugins (Vim-plug) {{{
   
@@ -260,6 +294,7 @@
   	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
   endif 
 " }}}
+
   
   call plug#begin('~/.vim/plugged')
 " Declare the list of plugins.
@@ -273,6 +308,7 @@
   Plug 'altercation/vim-colors-solarized'
   call plug#end()
 " }}}
+
   
 " Solarized & colouring {{{ 
   
@@ -288,6 +324,7 @@
   	set background=dark
   endif
 " }}}
+
   
 " Toggle background colour with <leader>bb {{{
   nnoremap <leader>bb :call ToggleBckgrnd()<cr>
@@ -299,6 +336,7 @@
   	endif
   endfunction
 "}}}
+
   
 " Utils: beautifiers, minifiers {{{
   
@@ -315,6 +353,7 @@
   endfunction
   command! Pjs call PrettyJS()
 " }}}
+
   
 " Yet another Json beautifier (Python) {{{
 " https://blog.realnitro.be/2010/12/20/format-json-in-vim-using-pythons-jsontool-module/
@@ -323,6 +362,7 @@
   endfunction
   command! Pjson call PrettyJson()
 " }}}
+
   
 " XML beautifier using <leader>bxm {{{
   nnoremap <leader>bxm :call DoPrettyXML()<cr>
@@ -358,6 +398,7 @@
 " }}}
 " }}}
 " }}}
+
   
 " Vim LaTeX {{{
   
@@ -402,6 +443,7 @@
   	endif
   endfunction
 " }}}
+
   
 " Function LargerFont {{{
   function! LargerFont()
@@ -409,6 +451,7 @@
   endfunction
   command! LargerFont call LargerFont()
 " }}}
+
   
 " Function SmallerFont {{{
   function! SmallerFont()
