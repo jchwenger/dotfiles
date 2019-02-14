@@ -44,19 +44,19 @@
   noremap <silent> <C-a> :call ToggleNetrw()<CR>
   
   function! ToggleNetrw() 
-  	if g:NetrwIsOpen
-  		let i = bufnr("$")
-  		while (i >= 1)
-  			if (getbufvar(i, "&filetype") == "netrw")
-  				silent exe "bwipeout " . i 
-  			endif
-  			let i-=1
-  		endwhile
-  		let g:NetrwIsOpen=0
-  	else
-  		let g:NetrwIsOpen=1
-  		silent Lexplore
-  	endif
+    if g:NetrwIsOpen
+      let i = bufnr("$")
+      while (i >= 1)
+        if (getbufvar(i, "&filetype") == "netrw")
+          silent exe "bwipeout " . i 
+        endif
+        let i-=1
+      endwhile
+      let g:NetrwIsOpen=0
+    else
+      let g:NetrwIsOpen=1
+      silent Lexplore
+    endif
   endfunction 
 " }}}
 " }}}
@@ -76,59 +76,61 @@
 " Settings by file types {{{
   augroup silent FileTypeSettings
   
-  	autocmd! 
+    autocmd! 
   
-		" Vim
-  	autocmd FileType vim setlocal
-  				\ tabstop=2
-  				\ softtabstop=2
-  				\ shiftwidth=2
-  				\ autoindent
-  				\ nowrap
+    " Vim
+    autocmd FileType vim setlocal
+          \ tabstop=2
+          \ softtabstop=2
+          \ shiftwidth=2
+          \ autoindent
+          \ nowrap
+          \ expandtab |
+          \ retab
   
-  	" Python
-  	autocmd FileType python setlocal 
-  				\ tabstop=4 
-  				\ softtabstop=4 
-  				\ shiftwidth=4 
-  				\ expandtab 
-  				\ autoindent
-  				\ nowrap
-  				\ textwidth=79 
-  				\ fileformat=unix |
-  				\ retab
+    " Python
+    autocmd FileType python setlocal 
+          \ tabstop=4 
+          \ softtabstop=4 
+          \ shiftwidth=4 
+          \ expandtab 
+          \ autoindent
+          \ nowrap
+          \ textwidth=79 
+          \ fileformat=unix |
+          \ retab
   
-  	" Web &c
-  	autocmd FileType ruby,javascript,html,css,xml setlocal 
-  				\ tabstop=2 
-  				\ shiftwidth=2 
-  				\ softtabstop=2 
-  				\ autoindent
-  				\ nowrap
+    " Web &c
+    autocmd FileType ruby,javascript,html,css,xml setlocal 
+          \ tabstop=2 
+          \ shiftwidth=2 
+          \ softtabstop=2 
+          \ autoindent
+          \ nowrap
   
-  	" Markdown
-  	autocmd FileType markdown setlocal 
-  				\ tabstop=2
-  				\ softtabstop=2
-  				\ shiftwidth=2
-  				\ autoindent
-  				\ wrap
+    " Markdown
+    autocmd FileType markdown setlocal 
+          \ tabstop=2
+          \ softtabstop=2
+          \ shiftwidth=2
+          \ autoindent
+          \ wrap
   
-  	" LaTex
-  	autocmd FileType tex setlocal
-  				\ tabstop=2
-  				\ softtabstop=2
-  				\ shiftwidth=2 
-  				\ autoindent
-  				\ wrap
+    " LaTex
+    autocmd FileType tex setlocal
+          \ tabstop=2
+          \ softtabstop=2
+          \ shiftwidth=2 
+          \ autoindent
+          \ wrap
   
-		" Java 
-		autocmd FileType java setlocal 
-					\ tabstop=4 
-					\ softtabstop=4 
-					\ shiftwidth=4 
-					\ autoindent 
-  		
+    " Java 
+    autocmd FileType java setlocal 
+          \ tabstop=4 
+          \ softtabstop=4 
+          \ shiftwidth=4 
+          \ autoindent 
+      
   augroup END
 " }}}
   
@@ -156,8 +158,8 @@
 " (also in Terminal mode)
   nnoremap > <C-W>> 
   nnoremap < <C-W><
-	tnoremap > <C-W><
-	tnoremap < <C-W>>
+  tnoremap > <C-W><
+  tnoremap < <C-W>>
 
 " Window resizing: vertical alt+=, alt+-
   nnoremap = <C-W>-
@@ -189,28 +191,28 @@
   nnoremap <leader>tt :vertical terminal<CR>
 
 " Terminal: close from within with <C-W>,,
-"					  from any other window with <leader>tc
+"           from any other window with <leader>tc
   nnoremap <leader>tc :bdelete! !/usr/bin/zsh<CR>
   tnoremap <C-W>,, <C-W>:bdelete! !/usr/bin/zsh<CR>
   
-	" Compile current file using <leader>rr
-	"Java
-	augroup Java_shortcuts
-		autocmd FileType java silent 
-				nnoremap <leader>rr :!javac -classpath . %<cr>
-	augroup END
+  " Compile current file using <leader>rr
+  "Java
+  augroup Java_shortcuts
+    autocmd FileType java silent 
+        nnoremap <leader>rr :!javac -classpath . %<cr>
+  augroup END
 " }}}
 
   
 " Make Alt keys work in terminal mode  {{{
   if !has('gui_running')
-  	let c='a'
-  	while c <= 'z'
-  		exec "set <A-".c.">=\e".c
-  		exec "imap \e".c." <A-".c.">"
-  		let c = nr2char(1+char2nr(c))
-  	endw
-  	set timeout ttimeoutlen=5
+    let c='a'
+    while c <= 'z'
+      exec "set <A-".c.">=\e".c
+      exec "imap \e".c." <A-".c.">"
+      let c = nr2char(1+char2nr(c))
+    endw
+    set timeout ttimeoutlen=5
   endif
 " }}}
 
@@ -226,22 +228,22 @@
 " Function FoldMethod {{{
   let g:FoldMethod = 0
   fun! ToggleFold()
-  	if g:FoldMethod == 0
-  		exe "normal! zM"
-  		let g:FoldMethod = 1
-  	else
-  		exe "normal! zR"
-  		let g:FoldMethod = 0
-  	endif
+    if g:FoldMethod == 0
+      exe "normal! zM"
+      let g:FoldMethod = 1
+    else
+      exe "normal! zR"
+      let g:FoldMethod = 0
+    endif
   endfun
 " }}}
 
   
 " Autosave manual folds {{{ 
   augroup AutoSaveFolds
-  	autocmd!
-  	autocmd BufWinLeave *.* mkview
-  	autocmd BufWinEnter *.* silent loadview
+    autocmd!
+    autocmd BufWinLeave *.* mkview
+    autocmd BufWinEnter *.* silent loadview
   augroup END
 " }}}
 " }}}
@@ -256,29 +258,29 @@
   
 " Function s:IndTxtObj {{{
   function! s:IndTxtObj(inner)
-  	let curline = line(".")
-  	let lastline = line("$")
-  	let i = indent(line(".")) - &shiftwidth * (v:count1 - 1)
-  	let i = i < 0 ? 0 : i
-  	if getline(".") !~ "^\\s*$"
-  		let p = line(".") - 1
-  		let nextblank = getline(p) =~ "^\\s*$"
-  		while p > 0 && ((i == 0 && !nextblank) || (i > 0 && ((indent(p) >= i && !(nextblank && a:inner)) || (nextblank && !a:inner))))
-  			-
-  			let p = line(".") - 1
-  			let nextblank = getline(p) =~ "^\\s*$"
-  		endwhile
-  		normal! 0V
-  		call cursor(curline, 0)
-  		let p = line(".") + 1
-  		let nextblank = getline(p) =~ "^\\s*$"
-  		while p <= lastline && ((i == 0 && !nextblank) || (i > 0 && ((indent(p) >= i && !(nextblank && a:inner)) || (nextblank && !a:inner))))
-  			+
-  			let p = line(".") + 1
-  			let nextblank = getline(p) =~ "^\\s*$"
-  		endwhile
-  		normal! $
-  	endif
+    let curline = line(".")
+    let lastline = line("$")
+    let i = indent(line(".")) - &shiftwidth * (v:count1 - 1)
+    let i = i < 0 ? 0 : i
+    if getline(".") !~ "^\\s*$"
+      let p = line(".") - 1
+      let nextblank = getline(p) =~ "^\\s*$"
+      while p > 0 && ((i == 0 && !nextblank) || (i > 0 && ((indent(p) >= i && !(nextblank && a:inner)) || (nextblank && !a:inner))))
+        -
+        let p = line(".") - 1
+        let nextblank = getline(p) =~ "^\\s*$"
+      endwhile
+      normal! 0V
+      call cursor(curline, 0)
+      let p = line(".") + 1
+      let nextblank = getline(p) =~ "^\\s*$"
+      while p <= lastline && ((i == 0 && !nextblank) || (i > 0 && ((indent(p) >= i && !(nextblank && a:inner)) || (nextblank && !a:inner))))
+        +
+        let p = line(".") + 1
+        let nextblank = getline(p) =~ "^\\s*$"
+      endwhile
+      normal! $
+    endif
   endfunction
 "}}}
 "}}}
@@ -289,9 +291,9 @@
 " Autoinstallation {{{
 " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
   if empty(glob('~/.vim/autoload/plug.vim'))
-  	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-  				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+          \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
   endif 
 " }}}
 
@@ -318,10 +320,10 @@
   colorscheme solarized
   
   if has('gui_running')
-  	set background=light
-  	set linespace=2 " Underscore shown in gvim mode
+    set background=light
+    set linespace=2 " Underscore shown in gvim mode
   else
-  	set background=dark
+    set background=dark
   endif
 " }}}
 
@@ -329,11 +331,11 @@
 " Toggle background colour with <leader>bb {{{
   nnoremap <leader>bb :call ToggleBckgrnd()<cr>
   function! ToggleBckgrnd() 
-  	if &background ==# "dark"
-  		set background=light
-  	else
-  		set background=dark
-  	endif
+    if &background ==# "dark"
+      set background=light
+    else
+      set background=dark
+    endif
   endfunction
 "}}}
 
@@ -349,7 +351,7 @@
 " Other JS beautifier (npm js-beautify) {{{
 " https://coderwall.com/p/m2kp5q/invoke-js-beautify-in-vim
   function! PrettyJS()
-  	%!js-beautify -s=2 -j -q -B
+    %!js-beautify -s=2 -j -q -B
   endfunction
   command! Pjs call PrettyJS()
 " }}}
@@ -358,7 +360,7 @@
 " Yet another Json beautifier (Python) {{{
 " https://blog.realnitro.be/2010/12/20/format-json-in-vim-using-pythons-jsontool-module/
   function! PrettyJson()
-  	%!python -m json.tool 
+    %!python -m json.tool 
   endfunction
   command! Pjson call PrettyJson()
 " }}}
@@ -369,31 +371,31 @@
   
 " function DoPrettyXML {{{
   function! DoPrettyXML()
-  	" save the filetype so we can restore it later
-  	let l:origft = &ft
-  	set ft=
-  	" delete the xml header if it exists. This will
-  	" permit us to surround the document with fake tags
-  	" without creating invalid xml.
-  	1s/<?xml .*?>//e
-  	" insert fake tags around the entire document.
-  	" This will permit us to pretty-format excerpts of
-  	" XML that may contain multiple top-level elements.
-  	0put ='<PrettyXML>'
-  	$put ='</PrettyXML>'
-  	silent %!xmllint --format -
-  	" xmllint will insert an <?xml?> header. it's easy enough to delete
-  	" if you don't want it.
-  	" delete the fake tags
-  	2d
-  	$d
-  	" restore the 'normal' indentation, which is one extra level
-  	" too deep due to the extra tags we wrapped around the document.
-  	silent %<
-  	" back to home
-  	1
-  	" restore the filetype
-  	exe "set ft=" . l:origft
+    " save the filetype so we can restore it later
+    let l:origft = &ft
+    set ft=
+    " delete the xml header if it exists. This will
+    " permit us to surround the document with fake tags
+    " without creating invalid xml.
+    1s/<?xml .*?>//e
+    " insert fake tags around the entire document.
+    " This will permit us to pretty-format excerpts of
+    " XML that may contain multiple top-level elements.
+    0put ='<PrettyXML>'
+    $put ='</PrettyXML>'
+    silent %!xmllint --format -
+    " xmllint will insert an <?xml?> header. it's easy enough to delete
+    " if you don't want it.
+    " delete the fake tags
+    2d
+    $d
+    " restore the 'normal' indentation, which is one extra level
+    " too deep due to the extra tags we wrapped around the document.
+    silent %<
+    " back to home
+    1
+    " restore the filetype
+    exe "set ft=" . l:origft
   endfunction
 " }}}
 " }}}
@@ -430,24 +432,24 @@
   
 " Function AdjustFontSize {{{
   function! AdjustFontSize(amount)
-  	if has("gui_gtk2") && has("gui_running")
-  		let fontname = substitute(&guifont, s:pattern, '\1', '')
-  		let cursize = substitute(&guifont, s:pattern, '\2', '')
-  		let newsize = cursize + a:amount
-  		if (newsize >= s:minfontsize) && (newsize <= s:maxfontsize)
-  			let newfont = fontname . newsize
-  			let &guifont = newfont
-  		endif
-  	else
-  		echoerr "You need to run the GTK2 version of Vim to use this function."
-  	endif
+    if has("gui_gtk2") && has("gui_running")
+      let fontname = substitute(&guifont, s:pattern, '\1', '')
+      let cursize = substitute(&guifont, s:pattern, '\2', '')
+      let newsize = cursize + a:amount
+      if (newsize >= s:minfontsize) && (newsize <= s:maxfontsize)
+        let newfont = fontname . newsize
+        let &guifont = newfont
+      endif
+    else
+      echoerr "You need to run the GTK2 version of Vim to use this function."
+    endif
   endfunction
 " }}}
 
   
 " Function LargerFont {{{
   function! LargerFont()
-  	call AdjustFontSize(1)
+    call AdjustFontSize(1)
   endfunction
   command! LargerFont call LargerFont()
 " }}}
@@ -455,7 +457,7 @@
   
 " Function SmallerFont {{{
   function! SmallerFont()
-  	call AdjustFontSize(-1)
+    call AdjustFontSize(-1)
   endfunction
   command! SmallerFont call SmallerFont()
 " }}}
