@@ -31,9 +31,9 @@
 " Netrw: same-window mode with <c-a>, back to file with <c-^> {{{
 " See: http://vimcasts.org/blog/2013/01/oil-and-vinegar-split-windows-and-project-drawer/
 " Also Tim Pope's Vim Vinegar: https://github.com/tpope/vim-vinegar
-  let g:netrw_banner = 0
-  let g:netrw_liststyle= 1
-  let g:netrw_browse_split = 0
+  let g:netrw_banner=0
+  let g:netrw_liststyle=1
+  let g:netrw_browse_split=0
 " Hide dot files, toggle with 'gh'
   let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
   
@@ -45,11 +45,7 @@
 " https://shapeshed.com/vim-netrw/
 " For now left aside because of this bug:
 " https://github.com/vim/vim/issues/3276
-  let g:netrw_banner = 0
-  let g:netrw_liststyle= 3
-  let g:netrw_browse_split = 4
-  let g:netrw_winsize = 25
-  
+  " let g:netrw_banner = 0
 " Toggle Netrw with C-a {{{
 " (https://vi.stackexchange.com/questions/10988/toggle-explorer-window/17684#17684)
   let g:NetrwIsOpen=0
@@ -67,8 +63,15 @@
         let i-=1
       endwhile
       let g:NetrwIsOpen=0
+      " Reset netrw to defaults
+      let g:netrw_liststyle=1
+      let g:netrw_browse_split=0
     else
       let g:NetrwIsOpen=1
+      " Set netrw to drawer style
+      let g:netrw_liststyle=3
+      let g:netrw_browse_split=5
+      let g:netrw_winsize=25
       silent Lexplore
     endif
   endfunction 
