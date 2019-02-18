@@ -114,8 +114,15 @@
           \ fileformat=unix |
           \ retab
   
+    " Text
+    autocmd FileType text setlocal 
+          \ tabstop=2 
+          \ shiftwidth=2 
+          \ softtabstop=2 
+          \ wrap
+  
     " Web &c
-    autocmd FileType ruby,javascript,html, htmldjango,css,xml setlocal 
+    autocmd FileType ruby,javascript,html,htmldjango,css,xml setlocal 
           \ tabstop=2 
           \ shiftwidth=2 
           \ softtabstop=2 
