@@ -38,7 +38,7 @@
   let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
   
 " Call netrw
-nnoremap <c-a> :e.<cr>
+  nnoremap <c-a> :e.<cr>
 " }}}
 
 " Netrw: tree mode, removing banner, toggle {{{
@@ -180,11 +180,11 @@ nnoremap <c-a> :e.<cr>
   nnoremap - <C-W>+
   
 " Press Alt+[Line nav cmds] to scroll by visual (not logical) lines (useful for prose)
-  nnoremap <M-j> gj
-  nnoremap <M-k> gk
-  nnoremap <M-h> g^
-  nnoremap <M-l> g$
-  nnoremap <M-0> g0
+  noremap <M-j> gj
+  noremap <M-k> gk
+  noremap <M-h> g^
+  noremap <M-l> g$
+  noremap <M-0> g0
   
 " Auto indent whole file
   nnoremap <leader>== gg=G
