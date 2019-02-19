@@ -26,6 +26,12 @@
   
 " Most of the last line instead of lines of @s (for long lines)
   set display+=lastline
+
+" Use the + register when yanking, see
+" https://stackoverflow.com/a/14188309
+" and the comment by Fritzophrenic here: 
+" http://vim.wikia.com/wiki/Accessing_the_system_clipboard
+	set clipboard^=unnamedplus
 " }}}
 
 " Netrw: same-window mode with <c-a>, back to file with <c-^> {{{
