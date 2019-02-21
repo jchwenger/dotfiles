@@ -31,7 +31,7 @@
 " https://stackoverflow.com/a/14188309
 " and the comment by Fritzophrenic here: 
 " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
-	set clipboard^=unnamedplus
+  set clipboard^=unnamedplus
 " }}}
 
 " Netrw: same-window mode with <c-a>, back to file with <c-^> {{{
@@ -90,9 +90,6 @@
 
 " set tags+=.tags;$HOME
   nnoremap <leader>ct :!ctags -R .<cr>
-
-" Add - to keywords (when pressing Ctrl-]) for HTML, CSS, Sass
-  set iskeyword+=-
 "}}}
   
 
@@ -137,6 +134,7 @@
           \ softtabstop=2 
           \ autoindent
           \ nowrap
+					\ iskeyword+=-
   
     " Markdown
     autocmd FileType markdown setlocal 
@@ -153,6 +151,11 @@
           \ shiftwidth=2 
           \ autoindent
           \ wrap
+					\ iskeyword+=:  " TIP: if you write your \label's as \label{fig:something}, 
+													" then if you type in \ref{fig: and press <C-n> 
+													" you will automatically cycle through all 
+													" the figure labels. Very useful!
+
   
     " Java 
     autocmd FileType java setlocal 
@@ -339,6 +342,7 @@
   Plug 'tpope/vim-unimpaired'
   Plug 'tpope/vim-vinegar'
   Plug 'altercation/vim-colors-solarized'
+  Plug 'vim-scripts/visualrepeat'
   call plug#end()
 " }}}
 
@@ -441,11 +445,6 @@
   let g:tex_flavor='xelatex'
   let g:Tex_DefaultTargetFormat = 'pdf'
   let g:Tex_CompileRule_pdf='xelatex --interaction=nonstopmode $*'
-  
-" TIP: if you write your \label's as \label{fig:something}, then if you
-" type in \ref{fig: and press <C-n> you will automatically cycle through
-" all the figure labels. Very useful!
-  set iskeyword+=:
   
   let g:Tex_DefaultTargetFormat = 'pdf'
   let g:Tex_MultipleCompileFormats='pdf, aux'
