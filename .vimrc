@@ -134,7 +134,7 @@
           \ softtabstop=2 
           \ autoindent
           \ nowrap
-					\ iskeyword+=-
+          \ iskeyword+=-
   
     " Markdown
     autocmd FileType markdown setlocal 
@@ -151,10 +151,10 @@
           \ shiftwidth=2 
           \ autoindent
           \ wrap
-					\ iskeyword+=:  " TIP: if you write your \label's as \label{fig:something}, 
-													" then if you type in \ref{fig: and press <C-n> 
-													" you will automatically cycle through all 
-													" the figure labels. Very useful!
+          \ iskeyword+=:  " TIP: if you write your \label's as \label{fig:something}, 
+                          " then if you type in \ref{fig: and press <C-n> 
+                          " you will automatically cycle through all 
+                          " the figure labels. Very useful! (See Vim LaTeX below)
 
   
     " Java 
@@ -401,8 +401,8 @@
 " }}}
 
   
-" XML beautifier using <leader>bxm {{{
-  nnoremap <leader>bxm :call DoPrettyXML()<cr>
+" XML beautifier using <leader>xmb {{{
+  nnoremap <leader>xmb :call DoPrettyXML()<cr>
   
 " function DoPrettyXML {{{
   function! DoPrettyXML()
