@@ -9,13 +9,13 @@
   set hlsearch
   set incsearch
   set autoread
-" set spell
+  " set spell
   
   filetype on
   filetype plugin on
   filetype indent on
   
-  set paste
+  " set paste
   set pastetoggle=<F2>
   
   set path+=**
@@ -34,6 +34,7 @@
   set clipboard^=unnamedplus
 " }}}
 
+
 " Netrw: same-window mode with <c-a>, back to file with <c-^> {{{
 " See: http://vimcasts.org/blog/2013/01/oil-and-vinegar-split-windows-and-project-drawer/
 " Also Tim Pope's Vim Vinegar: https://github.com/tpope/vim-vinegar
@@ -46,6 +47,7 @@
 " Call netrw
   nnoremap <c-a> :e.<cr>
 " }}}
+
 
 " Netrw: tree mode, removing banner, toggle with <alt-a> {{{
 " https://shapeshed.com/vim-netrw/
@@ -449,6 +451,7 @@
   let g:Tex_DefaultTargetFormat = 'pdf'
   let g:Tex_MultipleCompileFormats='pdf, aux'
 " }}} 
+
   
 " Fonts adjustments in the gui using C-UP/C-DOWN {{{
   
