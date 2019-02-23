@@ -127,7 +127,9 @@
           \ tabstop=2 
           \ shiftwidth=2 
           \ softtabstop=2 
-          \ wrap
+          \ wrap |
+          iabbrev ' ’
+
   
     " Web &c
     autocmd FileType ruby,javascript,html,htmldjango,css,xml setlocal 
