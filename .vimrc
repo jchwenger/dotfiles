@@ -283,6 +283,25 @@
   let g:yoinkSyncNumberedRegisters=1
 " }}}
 
+" Subversive: two new operator motions to perform quick substitutions {{{
+  " <leader>s for substitute
+  nmap <localleader>s <plug>(SubversiveSubstitute)
+  nmap <localleader>ss <plug>(SubversiveSubstituteLine)
+  nmap <localleader>S <plug>(SubversiveSubstituteToEndOfLine)
+
+  " <localleader><localleader>s for specifying both the text to replace and the range
+  " over which to apply the substitutions
+  nmap <localleader><localleader>s <plug>(SubversiveSubstituteRange)
+  xmap <localleader><localleader>s <plug>(SubversiveSubstituteRange)
+  nmap <localleader><localleader>ss <plug>(SubversiveSubstituteWordRange)
+  
+  " To confirm each substitution
+  nmap <localleader>sc <plug>(SubversiveSubstituteRangeConfirm)
+  xmap <localleader>sc <plug>(SubversiveSubstituteRangeConfirm)
+  nmap <localleader>scr <plug>(SubversiveSubstituteWordRangeConfirm)
+" }}}
+" }}}
+
 " Compile current file using <leader>rr
   "Java
   augroup Java_shortcuts
@@ -400,6 +419,7 @@
   Plug 'vim-scripts/visualrepeat'
   Plug 'svermeulen/vim-cutlass'
   Plug 'svermeulen/vim-yoink'
+  Plug 'svermeulen/vim-subversive'
   call plug#end()
 " }}}
 
