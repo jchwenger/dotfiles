@@ -230,7 +230,34 @@
 "           from any other window with <leader>tc
   nnoremap <leader>tc :bdelete! !/usr/bin/zsh<CR>
   tnoremap <C-W><leader><leader> <C-W>:bdelete! !/usr/bin/zsh<CR>
+
+" Cutlass: overrides the delete operations to actually just delete {{{
+"          and not affect the current yank
+" <leader>keys now used to cut (and yank)
+  nnoremap <leader>d d
+  xnoremap <leader>d d
+
+  nnoremap <leader>dd dd
+
+  nnoremap <leader>D D
+  xnoremap <leader>D D
+
+  nnoremap <leader>S S
+  xnoremap <leader>s s
+
+  nnoremap <leader>C C
+  xnoremap <leader>C C
+
+  nnoremap <leader>c c
+
+  nnoremap <leader>cc cc
   
+  nnoremap <leader>x x
+  xnoremap <leader>x x
+
+  nnoremap <leader>X X
+  xnoremap <leader>X X
+
 " Compile current file using <leader>rr
   "Java
   augroup Java_shortcuts
@@ -346,6 +373,7 @@
   Plug 'tpope/vim-vinegar'
   Plug 'altercation/vim-colors-solarized'
   Plug 'vim-scripts/visualrepeat'
+  Plug 'svermeulen/vim-cutlass'
   call plug#end()
 " }}}
 
