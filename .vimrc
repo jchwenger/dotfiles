@@ -228,9 +228,9 @@
 " Terminal: close from within with <C-W>,,
 "           from any other window with <leader>tc
   nnoremap <leader>tc :bdelete! !/usr/bin/zsh<CR>
-  tnoremap <C-W>,, <C-W>:bdelete! !/usr/bin/zsh<CR>
+  tnoremap <C-W><leader><leader> <C-W>:bdelete! !/usr/bin/zsh<CR>
   
-  " Compile current file using <leader>rr
+" Compile current file using <leader>rr
   "Java
   augroup Java_shortcuts
     autocmd FileType java silent 
