@@ -174,6 +174,7 @@
   
 " Leader
   let mapleader=","
+  let localleader="\\"
   
 " Quit all buffers (without saving)
   nnoremap ZX :qa!<CR>
