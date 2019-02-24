@@ -258,6 +258,31 @@
   nnoremap <leader>X X
   xnoremap <leader>X X
 
+" Yoink: automatically maintain a history of yanks {{{
+  " <c-n> / <c-p> to scroll through yanks
+  nmap <c-n> <plug>(YoinkPostPasteSwapBack)
+  nmap <c-p> <plug>(YoinkPostPasteSwapForward)
+
+  " p / P remapped to Yoink
+  nmap p <plug>(YoinkPaste_p)
+  nmap P <plug>(YoinkPaste_P)
+
+  " Permanently cycle through yank history
+  nmap [y <plug>(YoinkRotateBack)
+  nmap ]y <plug>(YoinkRotateForward)
+
+  " Toggle whether current paste is formatted or not
+  nmap <c-=> <plug>(YoinkPostPasteToggleFormat)
+
+  " Cursor not moving after performing a yank
+  nmap y <plug>(YoinkYankPreserveCursorPosition)
+  xmap y <plug>(YoinkYankPreserveCursorPosition)
+
+  " Add cut operator (Cutlass) to yank history
+  let g:yoinkIncludeDeleteOperations=1
+  let g:yoinkSyncNumberedRegisters=1
+" }}}
+
 " Compile current file using <leader>rr
   "Java
   augroup Java_shortcuts
@@ -374,6 +399,7 @@
   Plug 'altercation/vim-colors-solarized'
   Plug 'vim-scripts/visualrepeat'
   Plug 'svermeulen/vim-cutlass'
+  Plug 'svermeulen/vim-yoink'
   call plug#end()
 " }}}
 
