@@ -356,13 +356,14 @@
 " }}}
 
   
-" Text object: indent, using 'i', ai/ii {{{
+" Text objects: {{{
+" Indent, using 'i', ai/ii
 " http://vim.wikia.com/wiki/Indent_text_object
   onoremap <silent>ai :<C-U>cal <SID>IndTxtObj(0)<CR>
   onoremap <silent>ii :<C-U>cal <SID>IndTxtObj(1)<CR>
   vnoremap <silent>ai :<C-U>cal <SID>IndTxtObj(0)<CR><Esc>gv
   vnoremap <silent>ii :<C-U>cal <SID>IndTxtObj(1)<CR><Esc>gv
-  
+
 " Function s:IndTxtObj {{{
   function! s:IndTxtObj(inner)
     let curline = line(".")
