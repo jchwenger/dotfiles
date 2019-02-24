@@ -127,10 +127,8 @@
           \ tabstop=2 
           \ shiftwidth=2 
           \ softtabstop=2 
-          \ wrap |
-          iabbrev ' ’
+          \ wrap 
 
-  
     " Web &c
     autocmd FileType ruby,javascript,html,htmldjango,css,xml setlocal 
           \ tabstop=2 
@@ -353,7 +351,7 @@
   
 " Solarized & colouring {{{ 
   
-" Syntax enable
+" syntax enable
   set t_Co=16
   let g:solarized_termcolors=256 
   colorscheme solarized
