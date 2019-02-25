@@ -172,6 +172,10 @@
 
 " Personal mappings {{{
   
+" Status line
+  set ruler
+  set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
 " Leader
   let mapleader=","
   let localleader="\\"
@@ -300,6 +304,18 @@
   xmap <localleader>sc <plug>(SubversiveSubstituteRangeConfirm)
   nmap <localleader>scr <plug>(SubversiveSubstituteWordRangeConfirm)
 " }}}
+" }}}
+
+" Fugitive: a git wrapper {{{
+  " Go up one level when browsing directories of a git repo
+  " Cf. http://vimcasts.org/episodes/fugitive-vim-browsing-the-git-object-database/
+  autocmd User fugitive 
+    \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+    \   nnoremap <buffer> .. :edit %:h<CR> |
+    \ endif
+
+  " Autoclean fugtive buffers
+  autocmd BufReadPost fugitive://* set bufhidden=delete
 " }}}
 
 " Compile current file using <leader>rr
