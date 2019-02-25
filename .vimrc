@@ -416,6 +416,7 @@
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-unimpaired'
   Plug 'tpope/vim-vinegar'
+  Plug 'tpope/vim-fugitive'
   Plug 'altercation/vim-colors-solarized'
   Plug 'vim-scripts/visualrepeat'
   Plug 'svermeulen/vim-cutlass'
