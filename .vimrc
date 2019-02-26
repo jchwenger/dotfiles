@@ -128,6 +128,15 @@
           \ shiftwidth=2 
           \ softtabstop=2 
           \ wrap 
+          \ nolist            
+          \ linebreak
+          \ showbreak= 
+                              " nolist required for
+                              " linebreak (don't break words)
+                              " first char of visual lines set
+                              " as an nonbreakable space (not 
+                              " displayed here but typed: 
+                              " <c-v> u 202f)
 
     " Web &c
     autocmd FileType ruby,javascript,html,htmldjango,css,xml setlocal 
