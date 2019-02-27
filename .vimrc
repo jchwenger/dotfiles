@@ -447,6 +447,7 @@
   Plug 'svermeulen/vim-cutlass'
   Plug 'svermeulen/vim-yoink'
   Plug 'svermeulen/vim-subversive'
+  Plug 'junegunn/goyo.vim'
   call plug#end()
 " }}}
 
