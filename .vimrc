@@ -318,13 +318,15 @@
 " Fugitive: a git wrapper {{{
   " Go up one level when browsing directories of a git repo
   " Cf. http://vimcasts.org/episodes/fugitive-vim-browsing-the-git-object-database/
-  autocmd User fugitive
-    \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
-    \   nnoremap <buffer> .. :edit %:h<CR> |
-    \ endif
+  augroup Fugitive
+    autocmd User fugitive
+      \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+      \   nnoremap <buffer> .. :edit %:h<CR> |
+      \ endif
 
-  " Autoclean fugtive buffers
-  autocmd BufReadPost fugitive://* set bufhidden=delete
+    " Autoclean fugtive buffers
+    autocmd BufReadPost fugitive://* set bufhidden=delete
+  augroup END
 " }}}
 
 " Compile current file using <leader>rr
