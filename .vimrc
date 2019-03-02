@@ -24,6 +24,9 @@
 " Adding split buffers to the right
   set splitright
 
+" Wrap words
+  set linebreak
+
 " Most of the last line instead of lines of @s (for long lines)
   set display+=lastline
 
@@ -129,8 +132,7 @@
           \ softtabstop=2
           \ wrap
           \ nolist
-          \ linebreak
-          \ showbreak= 
+          " \ showbreak= 
                               " nolist required for
                               " linebreak (don't break words)
                               " first char of visual lines set
@@ -202,6 +204,11 @@
 " Press Ctrl+j/k to scroll vertically (as Ctrl+e/y)
   nnoremap <C-k> <C-y>
   nnoremap <C-j> <C-e>
+
+" Press Alt+e/Alt+E for ge/gE (scroll backward to end of words)
+" (opposite of b/B, scroll backward to beginning of words)
+  nnoremap <M-e> ge
+  nnoremap E gE
 
 " Window resizing: horizontal alt+<, alt+>
 " (also in Terminal mode)
