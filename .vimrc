@@ -210,6 +210,34 @@
   nnoremap <M-e> ge
   nnoremap E gE
 
+" Window navigation
+" Open vertical/horizontal: Alt+v / Alt+s
+  nnoremap ö <C-W>v
+  vnoremap ö <C-W>v
+  tnoremap ö <C-W>v
+  nnoremap ó <C-W>s
+  vnoremap ó <C-W>s
+  tnoremap ó <C-W>s
+" Close window: Alt+c 
+" Terminal: from within, also Alt+c
+" from any other window, <leader>t
+" (See mappings below)
+  nnoremap ã <C-W>c
+  vnoremap ã <C-W>c
+" Navigate using Ctrl+Alt+h/j/k/l
+  nnoremap H <C-W><C-h>
+  vnoremap H <C-W><C-h>
+  tnoremap H <C-W><C-h>
+  nnoremap J <C-W><C-j> 
+  vnoremap J <C-W><C-j>
+  tnoremap J <C-W><C-j>
+  nnoremap K <C-W><C-k> 
+  vnoremap J <C-W><C-k>
+  tnoremap J <C-W><C-k>
+  nnoremap L <C-W><C-l> 
+  vnoremap L <C-W><C-l>
+  tnoremap L <C-W><C-l>
+
 " Window resizing: horizontal alt+<, alt+>
 " (also in Terminal mode)
   nnoremap > <C-W>>
@@ -243,13 +271,13 @@
 " Press Space to turn off highlighting and clear any message already displayed.
   nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-" Terminal: open
-  nnoremap <leader>tt :vertical terminal<CR>
+" Terminal: open with Alt+t
+  nnoremap ô :vertical terminal<CR>
 
-" Terminal: close from within with <C-W>,,
+" Terminal: close from within with Alt+c 
 "           from any other window with <leader>tc
-  nnoremap <leader>tc :bdelete! !/usr/bin/zsh<CR>
-  tnoremap <C-W><leader><leader> <C-W>:bdelete! !/usr/bin/zsh<CR>
+  nnoremap <leader>t :bdelete! !/usr/bin/zsh<CR>
+  tnoremap ã <C-W>:bdelete! !/usr/bin/zsh<CR>
 
 " Cutlass: overrides the delete operations to actually just delete {{{
 "          and not affect the current yank
