@@ -364,7 +364,11 @@
   augroup END
 " }}}
 
-" Compile current file using <leader>rr
+" Goyo: toggle with <leader>yy
+  nnoremap <leader>yy :Goyo<CR>
+  vnoremap <leader>yy :Goyo<CR>
+
+" Compile: current file using <leader>rr
   "Java
   augroup Java_shortcuts
     autocmd FileType java silent
