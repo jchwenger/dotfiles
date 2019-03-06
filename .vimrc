@@ -300,9 +300,9 @@
 
   " Add cut operator (Cutlass) to yank history
   let g:yoinkIncludeDeleteOperations=1
-  let g:yoinkSyncNumberedRegisters=1
+  let g:yoinkSyncNumberedRegisters=0
 " }}}
-
+"
 " Subversive: two new operator motions to perform quick substitutions {{{
   " <leader>s for substitute
   nmap <localleader>s <plug>(SubversiveSubstitute)
