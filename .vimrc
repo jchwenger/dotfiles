@@ -241,9 +241,11 @@
 " Window resizing: horizontal alt+<, alt+>
 " (also in Terminal mode)
   nnoremap > <C-W>>
-  nnoremap < <C-W><
-  tnoremap > <C-W><
+  vnoremap > <C-W>>
   tnoremap < <C-W>>
+  nnoremap < <C-W><
+  vnoremap < <C-W><
+  tnoremap > <C-W><
 
 " Window resizing: vertical alt+=, alt+-
   nnoremap = <C-W>-
