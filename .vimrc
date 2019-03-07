@@ -210,7 +210,12 @@
   nnoremap <M-e> ge
   nnoremap E gE
 
-" Window navigation
+" Navigation to next punctuation using
+" Alt+) / Alt+(
+  nnoremap ) /\v([,!?;:…(){}`’‘”“]\|' \| '\|\.+)<cr>:nohlsearch<cr>
+  nnoremap ( ?\v([,!?;:…(){}`’‘”“]\|' \| '\|\.+)<cr>:nohlsearch<cr>
+
+"  Window navigation
 " Open vertical/horizontal: Alt+v / Alt+s
   nnoremap ö <C-W>v
   vnoremap ö <C-W>v
