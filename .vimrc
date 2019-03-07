@@ -508,6 +508,7 @@
   if has('gui_running')
     set background=light
     set linespace=2 " Underscore shown in gvim mode
+    set winaltkeys=no " Disable Alt+[menukey]
   else
     set t_Co=16
     let g:solarized_termcolors=256
