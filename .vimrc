@@ -300,14 +300,20 @@
   tnoremap <M-c> <C-W>:bdelete! !zsh<CR>
 
   " Ex navigation (emulating bash/zsh)
-  " (hopefully soon in terminal as well)
+  " Ctrl-a: home, Ctrl+e: end
+  " Alt-b: one word left
+  " Alt-f: one word right
+  " Ctrl-k: delete from cursor to the end of line
   cnoremap <C-a> <Home>
-  " tnoremap <C-a> <Home>
   cnoremap <C-e> <End>
-  " tnoremap <C-e> <End>
   cnoremap <M-b> <S-Left>
-  " tnoremap â <S-Left>
   cnoremap <M-f> <S-Right>
+  cnoremap <C-k> <C-f>d$<C-c>
+
+  " (hopefully soon in terminal as well)
+  " tnoremap <C-a> <Home>
+  " tnoremap <C-e> <End>
+  " tnoremap â <S-Left>
   " tnoremap æ <S-Right>
 " }}}
 
