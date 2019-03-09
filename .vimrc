@@ -35,6 +35,7 @@
 " and the comment by Fritzophrenic here:
 " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
   set clipboard^=unnamedplus
+
 " }}}
 
 
@@ -215,21 +216,24 @@
   nnoremap ) /\v([,!?;:…(){}`’‘”“]\|' \| '\|\.+)<cr>:nohlsearch<cr>
   nnoremap ( ?\v([,!?;:…(){}`’‘”“]\|' \| '\|\.+)<cr>:nohlsearch<cr>
 
-"  Window navigation
-" Open vertical/horizontal: Alt+v / Alt+s
+" Windows: navigation {{{
+
+  " Open vertical/horizontal: Alt+v / Alt+s
   nnoremap ö <C-W>v
   vnoremap ö <C-W>v
   tnoremap ö <C-W>v
   nnoremap ó <C-W>s
   vnoremap ó <C-W>s
   tnoremap ó <C-W>s
-" Close window: Alt+c 
-" Terminal: from within, also Alt+c
-" from any other window, <leader>t
-" (See mappings below)
+
+  " Close window: Alt+c 
+  " Terminal: from within, also Alt+c
+  " from any other window, <leader>t
+  " (See mappings below)
   nnoremap ã <C-W>c
   vnoremap ã <C-W>c
-" Navigate using Ctrl+Alt+h/j/k/l
+  
+  " Navigate using Ctrl+Alt+h/j/k/l
   nnoremap H <C-W><C-h>
   vnoremap H <C-W><C-h>
   tnoremap H <C-W><C-h>
@@ -242,9 +246,11 @@
   nnoremap L <C-W><C-l> 
   vnoremap L <C-W><C-l>
   tnoremap L <C-W><C-l>
+" }}}
 
-" Window resizing: horizontal alt+<, alt+>
-" (also in Terminal mode)
+  " Window: resizing {{{
+  " Horizontal alt+<, alt+>
+  " (also in Terminal mode)
   nnoremap > <C-W>>
   vnoremap > <C-W>>
   tnoremap < <C-W>>
@@ -252,9 +258,10 @@
   vnoremap < <C-W><
   tnoremap > <C-W><
 
-" Window resizing: vertical alt+=, alt+-
+  " Vertical alt+=, alt+-
   nnoremap = <C-W>-
   nnoremap - <C-W>+
+" }}}
 
 " Press Alt+[Line nav cmds] to scroll by visual (not logical) lines (useful for prose)
   noremap <M-j> gj
