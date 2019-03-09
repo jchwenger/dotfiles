@@ -209,7 +209,7 @@
 " Press Alt+e/Alt+E for ge/gE (scroll backward to end of words)
 " (opposite of b/B, scroll backward to beginning of words)
   nnoremap <M-e> ge
-  nnoremap E gE
+  nnoremap <M-E> gE
 
 " Navigation to next punctuation using
 " Alt+) / Alt+(
@@ -219,19 +219,19 @@
 " Windows: navigation {{{
 
   " Open vertical/horizontal: Alt+v / Alt+s
-  nnoremap ö <C-W>v
-  vnoremap ö <C-W>v
-  tnoremap ö <C-W>v
-  nnoremap ó <C-W>s
-  vnoremap ó <C-W>s
-  tnoremap ó <C-W>s
+  nnoremap <M-v> <C-W>v
+  vnoremap <M-v> <C-W>v
+  tnoremap <M-v> <C-W>v
+  nnoremap <M-s> <C-W>s
+  vnoremap <M-s> <C-W>s
+  tnoremap <M-s> <C-W>s
 
   " Close window: Alt+c 
   " Terminal: from within, also Alt+c
   " from any other window, <leader>t
   " (See mappings below)
-  nnoremap ã <C-W>c
-  vnoremap ã <C-W>c
+  nnoremap <M-c> <C-W>c
+  vnoremap <M-c> <C-W>c
   
   " Navigate using Ctrl+Alt+h/j/k/l
   nnoremap H <C-W><C-h>
@@ -291,13 +291,13 @@
 
   " Open with Alt+t in vertical split
   " <leader>Alt+t in horizontal
-  nnoremap ô :vertical :terminal zsh<CR>
-  nnoremap <leader>ô :terminal zsh<CR>
+  nnoremap <M-t> :vertical :terminal zsh<CR>
+  nnoremap <leader><M-t> :terminal zsh<CR>
 
   " Close from within with Alt+c 
   " From any other window with <leader>tc
   nnoremap <leader>t :bdelete! !zsh<CR>
-  tnoremap ã <C-W>:bdelete! !zsh<CR>
+  tnoremap <M-c> <C-W>:bdelete! !zsh<CR>
 
   " Ex navigation (emulating bash/zsh)
   " (hopefully soon in terminal as well)
@@ -305,9 +305,9 @@
   " tnoremap <C-a> <Home>
   cnoremap <C-e> <End>
   " tnoremap <C-e> <End>
-  cnoremap â <S-Left>
+  cnoremap <M-b> <S-Left>
   " tnoremap â <S-Left>
-  cnoremap æ <S-Right>
+  cnoremap <M-f> <S-Right>
   " tnoremap æ <S-Right>
 " }}}
 
