@@ -285,13 +285,31 @@
 " Press Space to turn off highlighting and clear any message already displayed.
   nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-" Terminal: open with Alt+t
-  nnoremap ô :vertical terminal<CR>
+" Terminal: (& ex mode) {{{
+  " Do not forget <C-F> to edit cmds in normal mode!
+  " (& <C-E> to send it back to Ex mode)
 
-" Terminal: close from within with Alt+c 
-"           from any other window with <leader>tc
-  nnoremap <leader>t :bdelete! !/usr/bin/zsh<CR>
-  tnoremap ã <C-W>:bdelete! !/usr/bin/zsh<CR>
+  " Open with Alt+t in vertical split
+  " <leader>Alt+t in horizontal
+  nnoremap ô :vertical :terminal zsh<CR>
+  nnoremap <leader>ô :terminal zsh<CR>
+
+  " Close from within with Alt+c 
+  " From any other window with <leader>tc
+  nnoremap <leader>t :bdelete! !zsh<CR>
+  tnoremap ã <C-W>:bdelete! !zsh<CR>
+
+  " Ex navigation (emulating bash/zsh)
+  " (hopefully soon in terminal as well)
+  cnoremap <C-a> <Home>
+  " tnoremap <C-a> <Home>
+  cnoremap <C-e> <End>
+  " tnoremap <C-e> <End>
+  cnoremap â <S-Left>
+  " tnoremap â <S-Left>
+  cnoremap æ <S-Right>
+  " tnoremap æ <S-Right>
+" }}}
 
 " Cutlass: overrides the delete operations to actually just delete {{{
 "          and not affect the current yank
