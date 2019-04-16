@@ -315,26 +315,33 @@
 
   " Open with Alt+t in vertical split
   " <leader>Alt+t in horizontal
-  nnoremap <M-t> :vertical :terminal zsh<CR>
+  nnoremap <M-t> :vertical terminal zsh<CR>
   nnoremap <leader><M-t> :terminal zsh<CR>
 
-  " Close from within with Alt+c 
+  " Close from within with Alt+c
   " From any other window with <leader>tc
   nnoremap <leader>t :bdelete! !zsh<CR>
   tnoremap <M-c> <C-W>:bdelete! !zsh<CR>
 
-  " Ex navigation (emulating bash/zsh)
-  " Ctrl-a: home, Ctrl+e: end
+  " Browse the terminal in normal mode as you would in Ex mode
+  tnoremap <C-f> <C-W>N
+
+  " Ex navigation (emulating bash/zsh emacs binding)
+  " Ctrl-a: home (same as Ctrl-b)
+  " Ctrl+e: end (already implemented)
   " Alt-b: one word left
   " Alt-f: one word right
   " Ctrl-k: delete from cursor to the end of line
+  " Alt-d/D: dw/dW in normal mode
+  " Alt-e/E: de/dE in normal mode
   cnoremap <C-a> <Home>
-  cnoremap <C-e> <End>
   cnoremap <M-b> <S-Left>
   cnoremap <M-f> <S-Right>
   cnoremap <C-k> <C-f>d$<C-c>
+  cnoremap <M-d> <C-f>dw<C-c>
+  cnoremap <M-e> <C-f>de<C-c>
 
-  " (hopefully soon in terminal as well)
+  " (hopefully soon in terminal as well, to be researched)
   " tnoremap <C-a> <Home>
   " tnoremap <C-e> <End>
   " tnoremap â <S-Left>
