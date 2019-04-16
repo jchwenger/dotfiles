@@ -42,56 +42,54 @@
   " set shellcmdflag=-ic
 " }}}
 
-
-" Netrw: same-window mode with <c-a>, back to file with <c-^> {{{
-" See: http://vimcasts.org/blog/2013/01/oil-and-vinegar-split-windows-and-project-drawer/
-" Also Tim Pope's Vim Vinegar: https://github.com/tpope/vim-vinegar
+" Netrw: {{{
+  " same-window mode with - (vim-unimpaired) 
+  " back to file with <c-^> 
+  " See: http://vimcasts.org/blog/2013/01/oil-and-vinegar-split-windows-and-project-drawer/
+  " Also Tim Pope's Vim Vinegar: https://github.com/tpope/vim-vinegar
   let g:netrw_banner=0
   let g:netrw_liststyle=1
   let g:netrw_browse_split=0
-" Hide dot files, toggle with 'gh'
+
+  " Hide dot files, toggle with 'gh'
   let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
-" Call netrw
-  nnoremap <c-a> :e.<cr>
-" }}}
-
-
-" Netrw: tree mode, removing banner, toggle with <alt-a> {{{
-" https://shapeshed.com/vim-netrw/
-" For now left aside because of this bug:
-" https://github.com/vim/vim/issues/3276
+  " Tree mode, removing banner, toggle with <alt-a> {{{
+  " https://shapeshed.com/vim-netrw/
+  " For now left aside because of this bug:
+  " https://github.com/vim/vim/issues/3276
   " let g:netrw_banner = 0
-" Toggle Netrw with C-a {{{
-" (https://vi.stackexchange.com/questions/10988/toggle-explorer-window/17684#17684)
-  let g:NetrwIsOpen=0
+  " Toggle Netrw with C-a {{{
+  " (https://vi.stackexchange.com/questions/10988/toggle-explorer-window/17684#17684)
+  " let g:NetrwIsOpen=0
 
-" Netrw mapping
-  noremap <silent> <m-a> :call ToggleNetrw()<cr>
+  " " Netrw mapping
+  " noremap <silent> <m-a> :call ToggleNetrw()<cr>
 
-  function! ToggleNetrw()
-    if g:NetrwIsOpen
-      let i = bufnr("$")
-      while (i >= 1)
-        if (getbufvar(i, "&filetype") == "netrw")
-          silent exe "bwipeout " . i
-        endif
-        let i-=1
-      endwhile
-      let g:NetrwIsOpen=0
-      " Reset netrw to defaults
-      let g:netrw_liststyle=1
-      let g:netrw_browse_split=0
-    else
-      let g:NetrwIsOpen=1
-      " Set netrw to drawer style
-      let g:netrw_liststyle=3
-      let g:netrw_browse_split=5
-      let g:netrw_winsize=25
-      silent Lexplore
-    endif
-  endfunction
-" }}}
+  " function! ToggleNetrw()
+  "   if g:NetrwIsOpen
+  "     let i = bufnr("$")
+  "     while (i >= 1)
+  "       if (getbufvar(i, "&filetype") == "netrw")
+  "         silent exe "bwipeout " . i
+  "       endif
+  "       let i-=1
+  "     endwhile
+  "     let g:NetrwIsOpen=0
+  "     " Reset netrw to defaults
+  "     let g:netrw_liststyle=1
+  "     let g:netrw_browse_split=0
+  "   else
+  "     let g:NetrwIsOpen=1
+  "     " Set netrw to drawer style
+  "     let g:netrw_liststyle=3
+  "     let g:netrw_browse_split=5
+  "     let g:netrw_winsize=25
+  "     silent Lexplore
+  "   endif
+  " endfunction
+  " " }}}
+  " " }}}
 " }}}
 
 
