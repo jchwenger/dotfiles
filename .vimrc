@@ -376,21 +376,6 @@
   xnoremap <leader>X X
   " }}}
 
-  " Objects:
-  " ae/ie:        entire buffer
-  " al/il:        line
-  " a#/i#:        comments
-  "   a~:           (with trail. space) 
-  " afX/ifX:      between X (any char)
-  " av/iv:        continuous line (ending in \)
-  " af/if:        function (vim, c, java)
-  "   aF/iF:        (with lead./trail. space) 
-  " af/if;        function (python)
-  " ac/ic:        class (python)
-  " ac/ic;        css objects 
-  "                 (when selected a bloc, 'ac/ic' to select parent)
-  " a,/i,:        function parameter
-
   " Yoink: automatically maintain a history of yanks {{{
   " <c-n> / <c-p> to scroll through yanks
   nmap <c-n> <plug>(YoinkPostPasteSwapBack)
@@ -512,9 +497,24 @@
 " }}}
 
 
-" Text objects: {{{
-" Indent, using 'i', ai/ii
-" http://vim.wikia.com/wiki/Indent_text_object
+" TextObjects: {{{
+
+  " ae/ie:        entire buffer
+  " al/il:        line
+  " a#/i#:        comments
+  "   a~:           (with trail. space) 
+  " afX/ifX:      between X (any char)
+  " av/iv:        continuous line (ending in \)
+  " af/if:        function (vim, c, java)
+  "   aF/iF:        (with lead./trail. space) 
+  " af/if;        function (python)
+  " ac/ic:        class (python)
+  " ac/ic;        css objects 
+  "  +'ac/ic'       (when selected a bloc, to select parent)
+  " a,/i,:        function parameter
+  " ai/ii:        same indent level
+
+  " http://vim.wikia.com/wiki/Indent_text_object
   onoremap <silent>ai :<C-U>cal <SID>IndTxtObj(0)<CR>
   onoremap <silent>ii :<C-U>cal <SID>IndTxtObj(1)<CR>
   vnoremap <silent>ai :<C-U>cal <SID>IndTxtObj(0)<CR><Esc>gv
