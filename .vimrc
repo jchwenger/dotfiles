@@ -188,9 +188,9 @@
 
 " Personal mappings {{{
 
-" Status line
-  set ruler
-  set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+  " Status line: out until energy fully to customize airline
+  " set ruler
+  " set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Leader
   let mapleader=","
@@ -531,11 +531,13 @@
   Plug 'svermeulen/vim-yoink'
   Plug 'svermeulen/vim-subversive'
   Plug 'junegunn/goyo.vim'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
   call plug#end()
 " }}}
 
 
-" Solarized & colouring {{{
+" Solarized, airline & colouring {{{
 
 " syntax enable
   colorscheme solarized
@@ -545,20 +547,29 @@
     set linespace=2 " Underscore shown in gvim mode
     set winaltkeys=no " Disable Alt+[menukey]
   else
-    set t_Co=16
+    " Unclear if needed now, to be researched
+    " set t_Co=16
     let g:solarized_termcolors=256
     set background=dark
   endif
 " }}}
 
+" Airline: theme
+  let g:airline_theme='solarized'
+  let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#branch#enabled = 1
 
 " Toggle background colour with <leader>bb {{{
   nnoremap <leader>bb :call ToggleBckgrnd()<cr>
   function! ToggleBckgrnd()
     if &background ==# "dark"
       set background=light
+      let g:airline_solarized_bg="dark"
     else
       set background=dark
+      let g:airline_solarized_bg="light"
     endif
   endfunction
 "}}}
