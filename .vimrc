@@ -520,7 +520,7 @@
   vnoremap <silent>ai :<C-U>cal <SID>IndTxtObj(0)<CR><Esc>gv
   vnoremap <silent>ii :<C-U>cal <SID>IndTxtObj(1)<CR><Esc>gv
 
-" Function s:IndTxtObj {{{
+  " Function s:IndTxtObj {{{
   function! s:IndTxtObj(inner)
     let curline = line(".")
     let lastline = line("$")
@@ -546,20 +546,20 @@
       normal! $
     endif
   endfunction
-"}}}
+  "}}}
 "}}}
 
 
 " Plugins (Vim-plug) {{{
 
-" Autoinstallation {{{
-" https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+  " Autoinstallation {{{
+  " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
   if empty(glob('~/.vim/autoload/plug.vim'))
     !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
           \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
   endif
-" }}}
+  " }}}
 
 
 " Declare the list of plugins.
@@ -596,30 +596,32 @@
 
 " Solarized, airline & colouring {{{
 
-" syntax enable
+  " syntax enable
   colorscheme solarized
 
   if has('gui_running')
     set background=light
     set linespace=2 " Underscore shown in gvim mode
     set winaltkeys=no " Disable Alt+[menukey]
+    set guioptions-=m
+    set guioptions-=T
   else
     " Unclear if needed now, to be researched
     " set t_Co=16
     let g:solarized_termcolors=256
     set background=dark
   endif
-" }}}
 
-" Airline: theme
+  " Airline: theme
   let g:airline_theme='solarized'
   let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#branch#enabled = 1
 
-" Toggle background colour with <leader>bb {{{
+  " Toggle background colour with <leader>bb {{{
   nnoremap <leader>bb :call ToggleBckgrnd()<cr>
+
   function! ToggleBckgrnd()
     if &background ==# "dark"
       set background=light
@@ -629,39 +631,37 @@
       let g:airline_solarized_bg="light"
     endif
   endfunction
-"}}}
-
+  "}}}
+" }}}
 
 " Utils: beautifiers, minifiers {{{
 
-" Json beautifier/minifier (Linux/Bash):
-" https://blog.realnitro.be/2010/12/20/format-json-in-vim-using-pythons-jsontool-module/
-" https://stedolan.github.io/jq/
+  " JSON: beautifier/minifier (Linux/Bash):
+  " https://blog.realnitro.be/2010/12/20/format-json-in-vim-using-pythons-jsontool-module/
+  " https://stedolan.github.io/jq/
   nnoremap <leader>jsb  :%!jq .<cr> " jsb: 'json beautifier'
   nnoremap <leader>jsm  :%!jq -c .<cr> "jsm: 'json minifier'
 
-" Other JS beautifier (npm js-beautify) {{{
-" https://coderwall.com/p/m2kp5q/invoke-js-beautify-in-vim
+  " Other JS beautifier (npm js-beautify) {{{
+  " https://coderwall.com/p/m2kp5q/invoke-js-beautify-in-vim
   function! PrettyJS()
     %!js-beautify -s=2 -j -q -B
   endfunction
   command! Pjs call PrettyJS()
-" }}}
+  " }}}
 
-
-" Yet another Json beautifier (Python) {{{
-" https://blog.realnitro.be/2010/12/20/format-json-in-vim-using-pythons-jsontool-module/
+  " Yet another Json beautifier (Python) {{{
+  " https://blog.realnitro.be/2010/12/20/format-json-in-vim-using-pythons-jsontool-module/
   function! PrettyJson()
     %!python -m json.tool
   endfunction
   command! Pjson call PrettyJson()
-" }}}
+  " }}}
 
-
-" XML beautifier using <leader>xmb {{{
+  " XML: beautifier using <leader>xmb {{{
   nnoremap <leader>xmb :call DoPrettyXML()<cr>
 
-" function DoPrettyXML {{{
+  " function DoPrettyXML {{{
   function! DoPrettyXML()
     " save the filetype so we can restore it later
     let l:origft = &ft
@@ -689,20 +689,19 @@
     " restore the filetype
     exe "set ft=" . l:origft
   endfunction
-" }}}
-" }}}
+  " }}}
+  " }}}
 " }}}
 
 
 " Vim LaTeX {{{
 
-" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
-" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
-" The following changes the default filetype back to 'tex':
+  " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+  " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+  " The following changes the default filetype back to 'tex':
   let g:tex_flavor='xelatex'
   let g:Tex_DefaultTargetFormat = 'pdf'
   let g:Tex_CompileRule_pdf='xelatex --interaction=nonstopmode $*'
-
   let g:Tex_DefaultTargetFormat = 'pdf'
   let g:Tex_MultipleCompileFormats='pdf, aux'
 " }}}
@@ -713,12 +712,12 @@
   nmap <C-UP> :call LargerFont()<CR>
   nmap <C-DOWN> :call SmallerFont()<CR>
 
-  set guifont=Monospace\ 14
+  set guifont=Monospace\ 10
   let s:pattern = '^\(.* \)\([1-9][0-9]*\)$'
   let s:minfontsize = 6
   let s:maxfontsize = 24
 
-" Function AdjustFontSize {{{
+  " Function AdjustFontSize {{{
   function! AdjustFontSize(amount)
     if has("gui_gtk2") && has("gui_running")
       let fontname = substitute(&guifont, s:pattern, '\1', '')
@@ -732,21 +731,21 @@
       echoerr "You need to run the GTK2 version of Vim to use this function."
     endif
   endfunction
-" }}}
+  " }}}
 
 
-" Function LargerFont {{{
+  " Function LargerFont {{{
   function! LargerFont()
     call AdjustFontSize(1)
   endfunction
   command! LargerFont call LargerFont()
-" }}}
+  " }}}
 
 
-" Function SmallerFont {{{
+  " Function SmallerFont {{{
   function! SmallerFont()
     call AdjustFontSize(-1)
   endfunction
   command! SmallerFont call SmallerFont()
-" }}}
+  " }}}
 " }}}
