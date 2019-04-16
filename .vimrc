@@ -36,6 +36,10 @@
 " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
   set clipboard^=unnamedplus
 
+" Make Ex mode ! commands to zsh interactive
+" (However opening zsh straight in Ex line, hence not adopted)
+" (aliases are recognized)
+  " set shellcmdflag=-ic
 " }}}
 
 
