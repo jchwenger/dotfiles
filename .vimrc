@@ -376,7 +376,21 @@
   xnoremap <leader>X X
   " }}}
 
-" Yoink: automatically maintain a history of yanks {{{
+  " Objects:
+  " ae/ie:        entire buffer
+  " al/il:        line
+  " a#/i#:        comments
+  "   a~:           (with trail. space) 
+  " afX/ifX:      between X (any char)
+  " av/iv:        continuous line (ending in \)
+  " af/if:        function (vim, c, java)
+  "   aF/iF:        (with lead./trail. space) 
+  " af/if;        function (python)
+  " ac/ic:        class (python)
+  " ac/ic;        css objects 
+  "                 (when selected a bloc, 'ac/ic' to select parent)
+  " a,/i,:        function parameter
+
   " Yoink: automatically maintain a history of yanks {{{
   " <c-n> / <c-p> to scroll through yanks
   nmap <c-n> <plug>(YoinkPostPasteSwapBack)
@@ -543,25 +557,33 @@
 " }}}
 
 
-  call plug#begin('~/.vim/plugged')
 " Declare the list of plugins.
-  Plug '~/.vim/vim-latex-1.10.0', {'for': 'tex'}
-  Plug 'kana/vim-textobj-user'
-  Plug 'kana/vim-textobj-entire'
-  Plug 'tpope/vim-surround'
-  Plug 'tpope/vim-repeat'
-  Plug 'tpope/vim-commentary'
-  Plug 'tpope/vim-unimpaired'
-  Plug 'tpope/vim-vinegar'
-  Plug 'tpope/vim-fugitive'
-  Plug 'altercation/vim-colors-solarized'
-  Plug 'vim-scripts/visualrepeat'
-  Plug 'svermeulen/vim-cutlass'
-  Plug 'svermeulen/vim-yoink'
-  Plug 'svermeulen/vim-subversive'
-  Plug 'junegunn/goyo.vim'
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
+  call plug#begin('~/.vim/plugged')
+    Plug '~/.vim/vim-latex-1.10.0', {'for': 'tex'}
+    Plug 'kana/vim-textobj-user'
+    Plug 'kana/vim-textobj-entire'
+    Plug 'kana/vim-textobj-function', {'for': ['vim', 'c', 'java']}
+    Plug 'bps/vim-textobj-python', {'for': 'python'}
+    Plug 'jasonlong/vim-textobj-css', {'for': ['css', 'sass', 'scss']}
+    Plug 'kana/vim-textobj-line'
+    Plug 'glts/vim-textobj-comment'
+    Plug 'sgur/vim-textobj-parameter'
+    Plug 'thinca/vim-textobj-between'
+    Plug 'rhysd/vim-textobj-continuous-line'
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-repeat'
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-unimpaired'
+    Plug 'tpope/vim-vinegar'
+    Plug 'tpope/vim-fugitive'
+    Plug 'altercation/vim-colors-solarized'
+    Plug 'vim-scripts/visualrepeat'
+    Plug 'svermeulen/vim-cutlass'
+    Plug 'svermeulen/vim-yoink'
+    Plug 'svermeulen/vim-subversive'
+    Plug 'junegunn/goyo.vim'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
   call plug#end()
 " }}}
 
