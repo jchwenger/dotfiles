@@ -21,24 +21,24 @@
   set path+=**
   set wildmenu
 
-" Adding split buffers to the right
+  " Adding split buffers to the right
   set splitright
 
-" Wrap words
+  " Wrap words
   set linebreak
 
-" Most of the last line instead of lines of @s (for long lines)
+  " Most of the last line instead of lines of @s (for long lines)
   set display+=lastline
 
-" Use the + register when yanking, see
-" https://stackoverflow.com/a/14188309
-" and the comment by Fritzophrenic here:
-" http://vim.wikia.com/wiki/Accessing_the_system_clipboard
+  " Use the + register when yanking, see
+  " https://stackoverflow.com/a/14188309
+  " and the comment by Fritzophrenic here:
+  " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
   set clipboard^=unnamedplus
 
-" Make Ex mode ! commands to zsh interactive
-" (However opening zsh straight in Ex line, hence not adopted)
-" (aliases are recognized)
+  " Make Ex mode ! commands to zsh interactive
+  " (However opening zsh straight in Ex line, hence not adopted)
+  " (aliases are recognized)
   " set shellcmdflag=-ic
 " }}}
 
@@ -192,35 +192,35 @@
   " set ruler
   " set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
-" Leader
+  " Leader
   let mapleader=","
   let localleader="\\"
 
-" Quit all buffers (without saving)
+  " Quit all buffers (without saving)
   nnoremap ZX :qa!<CR>
 
-" Quit all buffers (saving)
+  " Quit all buffers (saving)
   nnoremap ZS :wqa!<cr>
 
-" Press Ctrl+h/l to scroll horizontally (as zh/yl)
+  " Press Ctrl+h/l to scroll horizontally (as zh/yl)
   nnoremap <C-h> zh
   nnoremap <C-l> zl
 
-" Press Ctrl+j/k to scroll vertically (as Ctrl+e/y)
+  " Press Ctrl+j/k to scroll vertically (as Ctrl+e/y)
   nnoremap <C-k> <C-y>
   nnoremap <C-j> <C-e>
 
-" Press Alt+e/Alt+E for ge/gE (scroll backward to end of words)
-" (opposite of b/B, scroll backward to beginning of words)
+  " Press Alt+e/Alt+E for ge/gE (scroll backward to end of words)
+  " (opposite of b/B, scroll backward to beginning of words)
   nnoremap <M-e> ge
   nnoremap <M-E> gE
 
-" Navigation to next punctuation using
-" Alt+) / Alt+(
+  " Navigation to next punctuation using
+  " Alt+) / Alt+(
   nnoremap ) /\v([,!?;:…(){}`’‘”“]\|' \| '\|\.+)<cr>:nohlsearch<cr>
   nnoremap ( ?\v([,!?;:…(){}`’‘”“]\|' \| '\|\.+)<cr>:nohlsearch<cr>
 
-" Windows: navigation {{{
+  " Windows: navigation {{{
 
   " Open vertical/horizontal: Alt+v / Alt+s
   nnoremap <M-v> <C-W>v
@@ -230,27 +230,27 @@
   vnoremap <M-s> <C-W>s
   tnoremap <M-s> <C-W>s
 
-  " Close window: Alt+c 
-  " Terminal: from within, also Alt+c
+  " Close window: Alt+c
+  " Terminal, from within, also Alt+c
   " from any other window, <leader>t
   " (See mappings below)
   nnoremap <M-c> <C-W>c
   vnoremap <M-c> <C-W>c
-  
-  " Navigate using Ctrl+Alt+h/j/k/l
+
+  " Navigation using Ctrl+Alt+h/j/k/l
   nnoremap H <C-W><C-h>
   vnoremap H <C-W><C-h>
   tnoremap H <C-W><C-h>
-  nnoremap J <C-W><C-j> 
+  nnoremap J <C-W><C-j>
   vnoremap J <C-W><C-j>
   tnoremap J <C-W><C-j>
-  nnoremap K <C-W><C-k> 
+  nnoremap K <C-W><C-k>
   vnoremap J <C-W><C-k>
   tnoremap J <C-W><C-k>
-  nnoremap L <C-W><C-l> 
+  nnoremap L <C-W><C-l>
   vnoremap L <C-W><C-l>
   tnoremap L <C-W><C-l>
-" }}}
+  " }}}
 
   " Window: resizing {{{
   " Horizontal alt+<, alt+>
@@ -265,31 +265,33 @@
   " Vertical alt+=, alt+-
   nnoremap = <C-W>-
   nnoremap - <C-W>+
-" }}}
+  " }}}
 
-" Press Alt+[Line nav cmds] to scroll by visual (not logical) lines (useful for prose)
+  " Press Alt+[Line nav cmds] to scroll by visual (not logical) lines (useful for prose)
   noremap <M-j> gj
   noremap <M-k> gk
   noremap <M-h> g^
   noremap <M-l> g$
   noremap <M-0> g0
 
-" Auto indent whole file
+  " Cleaning: {{{
+  " Auto indent whole file
   nnoremap <leader>== gg=G
 
 " Vimrc edit, source & close
+  " Vimrc edit, source & close
   nnoremap <leader>vv :e $MYVIMRC<CR>
   nnoremap <leader>ve :vsplit $MYVIMRC<CR>
   nnoremap <leader>vs :source $MYVIMRC<CR>
   nnoremap <leader>vc :bdelete ~/.vimrc<CR>
 
-" Press Esc twice to save buffer
+  " Press Esc twice to save buffer
   nnoremap <Esc><Esc> :w<CR>
 
-" Press Space to turn off highlighting and clear any message already displayed.
+  " Press Space to turn off highlighting and clear any message already displayed.
   nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-" Terminal: (& ex mode) {{{
+  " Terminal: (& ex mode) {{{
   " Do not forget <C-F> to edit cmds in normal mode!
   " (& <C-E> to send it back to Ex mode)
 
@@ -319,11 +321,11 @@
   " tnoremap <C-e> <End>
   " tnoremap â <S-Left>
   " tnoremap æ <S-Right>
-" }}}
+  " }}}
 
-" Cutlass: overrides the delete operations to actually just delete {{{
-"          and not affect the current yank
-" <leader>keys now used to cut (and yank)
+  " Cutlass: overrides the delete operations to actually just delete {{{
+  "          and not affect the current yank
+  " <leader>keys now used to cut (and yank)
   nnoremap <leader>d d
   xnoremap <leader>d d
 
@@ -347,8 +349,10 @@
 
   nnoremap <leader>X X
   xnoremap <leader>X X
+  " }}}
 
 " Yoink: automatically maintain a history of yanks {{{
+  " Yoink: automatically maintain a history of yanks {{{
   " <c-n> / <c-p> to scroll through yanks
   nmap <c-n> <plug>(YoinkPostPasteSwapBack)
   nmap <c-p> <plug>(YoinkPostPasteSwapForward)
@@ -358,8 +362,8 @@
   nmap P <plug>(YoinkPaste_P)
 
   " Permanently cycle through yank history
-  nmap [y <plug>(YoinkRotateBack)
-  nmap ]y <plug>(YoinkRotateForward)
+  nmap <localleader>y <plug>(YoinkRotateBack)
+  nmap <localleader>y <plug>(YoinkRotateForward)
 
   " Toggle whether current paste is formatted or not
   nmap <c-=> <plug>(YoinkPostPasteToggleFormat)
@@ -368,12 +372,12 @@
   nmap y <plug>(YoinkYankPreserveCursorPosition)
   xmap y <plug>(YoinkYankPreserveCursorPosition)
 
-  " Add cut operator (Cutlass) to yank history
+  " Cutlass: Add cut operator to yank history 
   let g:yoinkIncludeDeleteOperations=1
   let g:yoinkSyncNumberedRegisters=0
-" }}}
-"
-" Subversive: two new operator motions to perform quick substitutions {{{
+  " }}}
+
+  " Subversive: two new operator motions to perform quick substitutions {{{
   " <leader>s for substitute
   nmap <localleader>s <plug>(SubversiveSubstitute)
   nmap <localleader>ss <plug>(SubversiveSubstituteLine)
@@ -389,10 +393,9 @@
   nmap <localleader>sc <plug>(SubversiveSubstituteRangeConfirm)
   xmap <localleader>sc <plug>(SubversiveSubstituteRangeConfirm)
   nmap <localleader>scr <plug>(SubversiveSubstituteWordRangeConfirm)
-" }}}
-" }}}
+  " }}}
 
-" Fugitive: a git wrapper {{{
+  " Fugitive: a git wrapper {{{
   " Go up one level when browsing directories of a git repo
   " Cf. http://vimcasts.org/episodes/fugitive-vim-browsing-the-git-object-database/
   augroup Fugitive
@@ -404,18 +407,19 @@
     " Autoclean fugtive buffers
     autocmd BufReadPost fugitive://* set bufhidden=delete
   augroup END
-" }}}
+  " }}}
 
-" Goyo: toggle with <leader>yy
+  " Goyo: toggle with <leader>yy
   nnoremap <leader>yy :Goyo<CR>
   vnoremap <leader>yy :Goyo<CR>
 
-" Compile: current file using <leader>rr
+  " Compile: current file using <leader>rr {{{
   "Java
   augroup Java_shortcuts
     autocmd FileType java silent
         nnoremap <leader>rr :!javac -classpath . %<cr>
   augroup END
+  " }}}
 " }}}
 
 
@@ -437,10 +441,10 @@
   set foldmethod=marker " manual,indent,expr,syntax,diff,marker
   set foldlevel=99
 
-" Toggle all folds
+  " Toggle all folds
   nnoremap <leader>zz :call ToggleFold()<CR>
 
-" Function FoldMethod {{{
+  " Function FoldMethod {{{
   let g:FoldMethod = 0
   fun! ToggleFold()
     if g:FoldMethod == 0
