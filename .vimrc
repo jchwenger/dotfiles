@@ -461,7 +461,7 @@
   "Java
   augroup Java_shortcuts
     autocmd FileType java silent
-        nnoremap <leader>rr :!javac -classpath . %<cr>
+        nnoremap <leader>rr :below terminal javac -classpath . %<cr>
   augroup END
   " }}}
 " }}}
