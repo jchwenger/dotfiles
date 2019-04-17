@@ -271,6 +271,14 @@
   nnoremap - <C-W>+
   " }}}
 
+  " Make current buffer full-screen (in new tab)
+  nnoremap <localleader>on :tabedit %<cr>
+  vnoremap <localleader>on :tabedit %<cr>
+
+  " Close tab ('only close')
+  nnoremap <localleader>oc :tabclose<cr>
+  vnoremap <localleader>oc :tabclose<cr>
+
   " Press Alt+[Line nav cmds] to scroll by visual (not logical) lines (useful for prose)
   noremap <M-j> gj
   noremap <M-k> gk
