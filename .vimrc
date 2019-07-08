@@ -273,6 +273,10 @@
   nnoremap - <C-W>+
   " }}}
 
+  " Open new tab
+  nnoremap <localleader>tt :tabedit<cr>
+  vnoremap <localleader>tt :tabedit<cr>
+
   " Make current buffer full-screen (in new tab)
   nnoremap <localleader>on :tabedit %<cr>
   vnoremap <localleader>on :tabedit %<cr>
@@ -280,6 +284,12 @@
   " Close tab ('only close')
   nnoremap <localleader>oc :tabclose<cr>
   vnoremap <localleader>oc :tabclose<cr>
+  
+  " Useful command: switch window dir to dir of current file
+  " :lcd %:p:h
+
+  " Don't forget you can open : or / history thus (or Ctrl-F when in Ex mode):
+  " q:, q/
 
   " Press Alt+[Line nav cmds] to scroll by visual (not logical) lines (useful for prose)
   noremap <M-j> gj
