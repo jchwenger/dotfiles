@@ -303,18 +303,18 @@
   nnoremap <leader>== gg=G
 
   " Removing empty lines (or lines with only space)
-  nnoremap <leader>rel :g/^\s*$/d_<cr>:nohlsearch<cr>
+  nnoremap <leader>rel :g/^[  \t]*$/d_<cr>:nohlsearch<cr>
   nnoremap <leader>reel :g/^$/d_<cr>:nohlsearch<cr>
-  vnoremap <leader>rel :g/^\s*$/d_<cr>:nohlsearch<cr>
+  vnoremap <leader>rel :g/^[  \t]*$/d_<cr>:nohlsearch<cr>
   vnoremap <leader>reel :g/^$/d_<cr>:nohlsearch<cr>
 
   " Merging consecutive empty lines
   nnoremap <leader>mel :v/./,/./-j<cr>:nohlsearch<cr>
   vnoremap <leader>mel :'<,'>g!/./,/./-j<cr>:nohlsearch<cr>
 
-  " Remove trailing whitespace
-  nnoremap <leader>rts :%s/\s\+$//e<cr>:nohlsearch<cr>
-  vnoremap <leader>rts :%s/\s\+$//e<cr>:nohlsearch<cr>
+  " Remove trailing whitespace (space, unbreakable space, tab)
+  nnoremap <leader>rts :%s/[  \t]\+$//e<cr>:nohlsearch<cr>
+  vnoremap <leader>rts :%s/[  \t]\+$//e<cr>:nohlsearch<cr>
   " }}}
 
   " Vimrc edit, source & close
