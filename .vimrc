@@ -523,7 +523,7 @@
   " al/il:        line
   " a#/i#:        comments
   "   a~:           (with trail. space) 
-  " afX/ifX:      between X (any char)
+  " axX/ixX:      between X (any char)
   " av/iv:        continuous line (ending in \)
   " af/if:        function (vim, c, java)
   "   aF/iF:        (with lead./trail. space) 
