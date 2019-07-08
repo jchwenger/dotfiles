@@ -418,7 +418,7 @@
 
   " Cutlass: Add cut operator to yank history 
   let g:yoinkIncludeDeleteOperations=1
-  let g:yoinkSyncNumberedRegisters=0
+  let g:yoinkSyncNumberedRegisters=1
   " }}}
 
   " Subversive: two new operator motions to perform quick substitutions {{{
