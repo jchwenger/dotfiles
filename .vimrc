@@ -602,6 +602,7 @@
     Plug 'tpope/vim-unimpaired'
     Plug 'tpope/vim-vinegar'
     Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rhubarb'
     Plug 'tpope/vim-abolish'
     Plug 'altercation/vim-colors-solarized'
     Plug 'vim-scripts/visualrepeat'
