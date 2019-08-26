@@ -43,8 +43,8 @@
 " }}}
 
 " Netrw: {{{
-  " same-window mode with - (vim-unimpaired) 
-  " back to file with <c-^> 
+  " same-window mode with - (vim-unimpaired)
+  " back to file with <c-^>
   " See: http://vimcasts.org/blog/2013/01/oil-and-vinegar-split-windows-and-project-drawer/
   " Also Tim Pope's Vim Vinegar: https://github.com/tpope/vim-vinegar
   let g:netrw_banner=0
@@ -97,7 +97,7 @@
 " https://stackoverflow.com/a/33652614
 
 " set tags+=.tags;$HOME
-  nnoremap <leader>ct :!ctags -R .<cr>
+  nnoremap <leader>ccc :!ctags -R .<cr>
 "}}}
 
 
@@ -215,7 +215,7 @@
   nnoremap <M-e> ge
   nnoremap <M-E> gE
 
-  " Add empty line above, below using 
+  " Add empty line above, below using
   " <localleader>ou "o up"
   " <localleader>od "o down"
   nnoremap <localleader>ou O<esc>j
@@ -284,7 +284,7 @@
   " Close tab ('only close')
   nnoremap <localleader>oc :tabclose<cr>
   vnoremap <localleader>oc :tabclose<cr>
-  
+
   " Useful command: switch window dir to dir of current file
   " :lcd %:p:h
 
@@ -416,7 +416,7 @@
   nmap y <plug>(YoinkYankPreserveCursorPosition)
   xmap y <plug>(YoinkYankPreserveCursorPosition)
 
-  " Cutlass: Add cut operator to yank history 
+  " Cutlass: Add cut operator to yank history
   let g:yoinkIncludeDeleteOperations=1
   let g:yoinkSyncNumberedRegisters=1
   " }}}
@@ -522,14 +522,14 @@
   " ae/ie:        entire buffer
   " al/il:        line
   " a#/i#:        comments
-  "   a~:           (with trail. space) 
+  "   a~:           (with trail. space)
   " axX/ixX:      between X (any char)
   " av/iv:        continuous line (ending in \)
   " af/if:        function (vim, c, java)
-  "   aF/iF:        (with lead./trail. space) 
+  "   aF/iF:        (with lead./trail. space)
   " af/if;        function (python)
   " ac/ic:        class (python)
-  " ac/ic;        css objects 
+  " ac/ic;        css objects
   "  +'ac/ic'       (when selected a bloc, to select parent)
   " a,/i,:        function parameter
   " ai/ii:        same indent level
