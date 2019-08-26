@@ -281,8 +281,8 @@
   vnoremap <localleader>tt :tabedit<cr>
 
   " Make current buffer full-screen (in new tab)
-  nnoremap <localleader>on :tabedit %<cr>
-  vnoremap <localleader>on :tabedit %<cr>
+  nnoremap <localleader>on :tabedit %<cr>
+  vnoremap <localleader>on :tabedit %<cr>
 
   " Close tab ('only close')
   nnoremap <localleader>oc :tabclose<cr>
@@ -303,21 +303,21 @@
 
   " Cleaning: {{{
   " Auto indent whole file
-  nnoremap <leader>== gg=G
+  nnoremap <localleader>== gg=G
 
   " Removing empty lines (or lines with only space)
-  nnoremap <leader>rel :g/^[  \t]*$/d_<cr>:nohlsearch<cr>
-  nnoremap <leader>reel :g/^$/d_<cr>:nohlsearch<cr>
-  vnoremap <leader>rel :g/^[  \t]*$/d_<cr>:nohlsearch<cr>
-  vnoremap <leader>reel :g/^$/d_<cr>:nohlsearch<cr>
+  nnoremap <leader>rel :g/^[  \t]*$/d_<cr>:nohlsearch<cr>
+  nnoremap <leader>reel :g/^$/d_<cr>:nohlsearch<cr>
+  vnoremap <leader>rel :g/^[  \t]*$/d_<cr>:nohlsearch<cr>
+  vnoremap <leader>reel :g/^$/d_<cr>:nohlsearch<cr>
 
   " Merging consecutive empty lines
-  nnoremap <leader>mel :v/./,/./-j<cr>:nohlsearch<cr>
-  vnoremap <leader>mel :'<,'>g!/./,/./-j<cr>:nohlsearch<cr>
+  nnoremap <leader>mel :v/./,/./-j<cr>:nohlsearch<cr>
+  vnoremap <leader>mel :'<,'>g!/./,/./-j<cr>:nohlsearch<cr>
 
   " Remove trailing whitespace (space, unbreakable space, tab)
-  nnoremap <leader>rts :%s/[  \t]\+$//e<cr>:nohlsearch<cr>
-  vnoremap <leader>rts :%s/[  \t]\+$//e<cr>:nohlsearch<cr>
+  nnoremap <leader>rts :%s/[  \t]\+$//e<cr>:nohlsearch<cr>
+  vnoremap <leader>rts :%s/[  \t]\+$//e<cr>:nohlsearch<cr>
   " }}}
 
   " Vimrc edit, source & close
