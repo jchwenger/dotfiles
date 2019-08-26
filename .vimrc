@@ -620,6 +620,7 @@
     Plug 'junegunn/goyo.vim'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'machakann/vim-highlightedyank'
   call plug#end()
 " }}}
 
