@@ -472,6 +472,11 @@
         nnoremap <leader>rr :below terminal javac -classpath . %<cr>
   augroup END
   " }}}
+
+  " Abbreviations: {{{
+  " open a multiline code block
+  abbreviate `` ``````O
+  " }}}
 " }}}
 
 
