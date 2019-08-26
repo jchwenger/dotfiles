@@ -107,7 +107,7 @@
     autocmd!
 
     " Vim
-    autocmd FileType vim setlocal
+    autocmd FileType vim,zsh setlocal
           \ tabstop=2
           \ softtabstop=2
           \ shiftwidth=2
@@ -135,6 +135,7 @@
           \ softtabstop=2
           \ wrap
           \ nolist
+          \ linebreak
           " \ showbreak= 
                               " nolist required for
                               " linebreak (don't break words)
@@ -151,7 +152,7 @@
           \ expandtab
           \ autoindent
           \ nowrap
-          \ iskeyword+=- |
+          " \ iskeyword+=- |
           \ retab
 
     " Markdown
@@ -169,18 +170,20 @@
           \ shiftwidth=2
           \ autoindent
           \ wrap
-          \ iskeyword+=:  " TIP: if you write your \label's as \label{fig:something},
+          " \ iskeyword+=:  " TIP: if you write your \label's as \label{fig:something},
                           " then if you type in \ref{fig: and press <C-n>
                           " you will automatically cycle through all
                           " the figure labels. Very useful! (See Vim LaTeX below)
 
 
     " Java
-    autocmd FileType java setlocal
-          \ tabstop=4
-          \ softtabstop=4
-          \ shiftwidth=4
+    autocmd FileType java,arduino setlocal
+          \ tabstop=2
+          \ softtabstop=2
+          \ shiftwidth=2
           \ autoindent
+          \ nowrap
+          \ commentstring=//%s
 
   augroup END
 " }}}
