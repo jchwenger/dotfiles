@@ -409,8 +409,8 @@
   nmap P <plug>(YoinkPaste_P)
 
   " Permanently cycle through yank history
-  nmap <localleader>y <plug>(YoinkRotateBack)
-  nmap <localleader>y <plug>(YoinkRotateForward)
+  nmap [y <plug>(YoinkRotateBack)
+  nmap ]y <plug>(YoinkRotateForward)
 
   " Toggle whether current paste is formatted or not
   nmap <c-=> <plug>(YoinkPostPasteToggleFormat)
