@@ -516,11 +516,11 @@
 
 
 " Autosave manual folds {{{
-  augroup AutoSaveFolds
-    autocmd!
-    autocmd BufWinLeave *.* mkview
-    autocmd BufWinEnter *.* silent loadview
-  augroup END
+  " augroup AutoSaveFolds
+  "   autocmd!
+  "   autocmd BufWinLeave *.* mkview
+  "   autocmd BufWinEnter *.* silent loadview
+  " augroup END
 " }}}
 " }}}
 
