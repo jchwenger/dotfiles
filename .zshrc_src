@@ -1,0 +1,14 @@
+# https://stackoverflow.com/q/4774054
+# Absolute path to this script. /home/user/bin/foo.sh
+SCRIPT=$(readlink -f $0)
+# Absolute path this script is in. /home/user/bin
+SCRIPTPATH=`dirname $SCRIPT`
+# echo "$SCRIPTPATH"
+
+if [ -f $SCRIPTPATH/.zshrc_aliases ]; then
+    source $SCRIPTPATH/.zshrc_aliases;
+fi
+
+if [ -f $SCRIPTPATH/.zshrc_paths ]; then
+    source $SCRIPTPATH/.zshrc_paths;
+fi

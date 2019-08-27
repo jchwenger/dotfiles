@@ -1,0 +1,147 @@
+# use 256 colors
+export TERM='xterm-256color'
+
+# Processing command added in .profile # my own aliases
+alias wekinator='java -jar /media/default/linux-data/programs/wekinator/WekiMini.jar'
+alias tor='cd /home/default/tor-browser_en-US; ./start-tor-browser.desktop'
+alias zotero='cd ~/Zotero/Zotero; ./zotero'
+alias qtcreator4.1='~/qtcreator-4.1.0/bin/qtcreator'
+alias qtcreator4.6='~/qtcreator-4.6.0/bin/qtcreator'
+
+alias prc=processing
+alias prj=processing-java
+prw() {
+  processing-java --sketch="$(pwd)" --run;
+}
+prd() {
+  processing-java --sketch="$1" --run;
+}
+
+alias jek='bundle exec jekyll serve'
+alias bfg='java -jar ~/bfg-repo-cleaner/bfg-1.13.0.jar'
+alias jn='jupyter notebook'
+alias jl='jupyter lab'
+
+alias gnt='gnome-terminal'
+alias nem='nemo . &'
+
+alias lo='libreoffice --writer &'
+
+low() {
+  libreoffice --writer -o "$@" &;
+}
+
+alias stats='stat -c %y'
+
+# Space occupied by files, human readable, descending
+alias dus='du -sh * | sort -hr'
+
+# Free space, without header, human readable, (4th column descending)
+alias dfs='df -h | tail -n +2 | sort -hrk 4'
+
+alias p='python'
+
+alias v='vim .'
+alias g='gvim .'
+alias gim='gvim'
+alias vc='vim ~/.vimrc'
+alias vz='vim ~/.zshrc'
+alias vt='vim ~/.tmux.conf'
+alias vp='vim ~/.pathsrc'
+
+alias rg='/usr/local/bin/ranger'
+alias tm='/usr/local/bin/tmux'
+
+alias so='source ~/.zshrc'
+
+alias l1='ls -1'
+
+# some more ls aliases
+# alias ll='ls -alF'
+# alias la='ls -A'
+# alias l='ls -CF'
+
+# remove directories
+alias rmd='rm -r'
+alias rmdf='rm -rf'
+
+# wrapping git with hub
+# eval "$(hub alias -s)"
+
+# find in current directory
+fin() {
+  find . -iname "*$**" -printf '%Ac %p \n';
+}
+
+# find in root directory
+finr() {
+  sudo find / -path /media/default/windows -prune -o -iname "*$**" -printf '%Ac %p \n';
+}
+
+# find in Lit
+flit() {
+
+  cd /media/default/linux-data/Dropbox/Lit/;
+
+  # "$*" expands to "$1c$2c...", c = first char in IFS
+  # "$@" on the contrary expands to "$1" "$2" ...
+  find . -iname "*$**" -printf '%Ac %f %h \n';
+
+  cd ~-;
+}
+
+# find in Vocabulary
+fvoc() {
+  find /media/default/windows/Users/user/OneDrive/vocabulary -iname "*$**" -printf '%Ac %f \n';
+}
+
+# Now using the .oh-my-zsh aliases & plugins
+# To see the options, grep through aliases using this alias
+alias ali='alias | grep'
+# To open the online wiki
+alias zref='firefox https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git'
+
+# lp print portrait, landscape
+alias lpp='lp -o fit-to-page -o sides=two-sided-long-edge'
+alias lpl='lp -o fit-to-page -o sides=two-sided-short-edge'
+
+# xrandr rotate external screen
+alias xrl='xrandr --output DP2 --rotate left'
+alias xrn='xrandr --output DP2 --rotate normal'
+
+# merging several pdfs into one, thanks to this reference
+# https://stackoverflow.com/a/19358402
+# used like so: $ pdfmerge outputname input1 input2 ...
+pdfmerge() {
+  gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=$1 ${@:2}
+}
+
+# Useful command to repeat the last command while adding something in front of it
+# $ !!
+# Ex:
+# $ sudo !!
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+# export PATH="$PATH:$HOME/.rvm/bin"
+
+
+# The next line updates PATH for the Google Cloud SDK.
+# if [ -f '/home/default/bin/google-cloud-sdk/path.bash.inc' ]; then source '/home/default/bin/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+# if [ -f '/home/default/bin/google-cloud-sdk/completion.bash.inc' ]; then source '/home/default/bin/google-cloud-sdk/completion.bash.inc'; fi
+
+# added by Miniconda3 installer
+# export PATH="/home/default/miniconda3/bin:$PATH"
+. ~/miniconda3/etc/profile.d/conda.sh
+conda activate p36
+
+# Restart Cinnamon when the screensaver freezes
+alias restartcinnamon='export DISPLAY=:0; cinnamon-screensaver-command -e; killall -9 cinnamon'
+alias restartscreensaver='pkill cinnamon-screen && cinnamon-screensaver'
+
+# alias musb='sudo mount /dev/sdc1 /media/default/JESSH_USB && sudo mount /dev/sdb1 /media/default/JESSH_USB'
+# alias umusb='sudo umount /dev/sdc1 && sudo rmd -f /media/default/JESSH_USB'
+
+# PROMPT_COMMAND='echo -ne "\033]0;(basename ${PWD})\007"'
+# PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
