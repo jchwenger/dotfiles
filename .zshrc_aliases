@@ -43,7 +43,10 @@ alias p='python'
 
 alias v='vim .'
 alias g='gvim .'
+alias n='nvim .'
 alias gim='gvim'
+alias nim='nvim'
+
 alias vc='vim ~/.vimrc'
 alias vz='vim ~/.zshrc'
 alias va="vim $dot/.zshrc_aliases"
