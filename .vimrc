@@ -450,6 +450,10 @@
   " Fugitive: a git wrapper {{{
   " Go up one level when browsing directories of a git repo
   " Cf. http://vimcasts.org/episodes/fugitive-vim-browsing-the-git-object-database/
+
+  " open buffer with <localleader>gg
+  nmap <localleader>gg :Gstatus<CR>
+
   augroup Fugitive
     autocmd User fugitive
       \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
