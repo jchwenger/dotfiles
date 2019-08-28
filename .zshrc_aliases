@@ -46,8 +46,9 @@ alias g='gvim .'
 alias gim='gvim'
 alias vc='vim ~/.vimrc'
 alias vz='vim ~/.zshrc'
+alias va="vim $dot/.zshrc_aliases"
 alias vt='vim ~/.tmux.conf'
-alias vp='vim ~/.pathsrc'
+alias vp="vim $dot/.zshrc_paths"
 
 alias rg='/usr/local/bin/ranger'
 alias tm='/usr/local/bin/tmux'
@@ -78,10 +79,10 @@ finr() {
   sudo find / -path /media/default/windows -prune -o -iname "*$**" -printf '%Ac %p \n';
 }
 
-# find in Lit
+# find in lit
 flit() {
 
-  cd /media/default/linux-data/Dropbox/Lit/;
+  cd /media/default/linux-data/Dropbox/lit/;
 
   # "$*" expands to "$1c$2c...", c = first char in IFS
   # "$@" on the contrary expands to "$1" "$2" ...
