@@ -5,10 +5,10 @@ SCRIPT=$(readlink -f $0)
 SCRIPTPATH=`dirname $SCRIPT`
 # echo "$SCRIPTPATH"
 
-if [ -f $SCRIPTPATH/.zshrc_aliases ]; then
-    source $SCRIPTPATH/.zshrc_aliases;
-fi
-
 if [ -f $SCRIPTPATH/.zshrc_paths ]; then
     source $SCRIPTPATH/.zshrc_paths;
+fi
+
+if [ -f $SCRIPTPATH/.zshrc_aliases ]; then
+    source $SCRIPTPATH/.zshrc_aliases;
 fi
