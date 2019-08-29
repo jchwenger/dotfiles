@@ -451,8 +451,9 @@
   " Go up one level when browsing directories of a git repo
   " Cf. http://vimcasts.org/episodes/fugitive-vim-browsing-the-git-object-database/
 
-  " open buffer with <localleader>gg
+  " open/close Fugitive buffer with <localleader>gg / gc
   nmap <localleader>gg :Gstatus<CR>
+  nmap <localleader>gc <C-w>kgq
 
   augroup Fugitive
     autocmd User fugitive
