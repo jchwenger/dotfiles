@@ -45,7 +45,7 @@ alias p='python'
 alias v='vim .'
 alias g='gvim .'
 alias n='nvim .'
-alias gim='gvim'
+alias gim='gvim -v'
 alias nim='nvim'
 
 alias vc='vim ~/.vimrc'
