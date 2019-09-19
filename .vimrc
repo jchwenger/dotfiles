@@ -288,6 +288,13 @@
   nnoremap <localleader>oc :tabclose<cr>
   vnoremap <localleader>oc :tabclose<cr>
 
+  " Cycle through tabs using tab, like standard editors
+  nnoremap <tab> gt
+  vnoremap <tab> gt
+  nnoremap <s-tab> gT
+  vnoremap <s-tab> gT
+
+
   " Useful command: switch window dir to dir of current file
   " :lcd %:p:h
 
