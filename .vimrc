@@ -633,6 +633,10 @@
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'machakann/vim-highlightedyank'
+    Plug 'prettier/vim-prettier', {
+          \ 'do': 'npm install',
+          \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
   call plug#end()
 " }}}
 
