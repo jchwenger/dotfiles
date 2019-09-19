@@ -25,6 +25,9 @@ alias jl='jupyter lab'
 alias gnt='gnome-terminal'
 alias nem='nemo . &'
 
+alias xr='xreader'
+alias xv='xviewer'
+
 lo() {
   libreoffice --writer -o "$@" &;
 }
