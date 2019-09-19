@@ -90,14 +90,16 @@ flit() {
 
   # "$*" expands to "$1c$2c...", c = first char in IFS
   # "$@" on the contrary expands to "$1" "$2" ...
-  find . -iname "*$**" -printf '%Ac %f %h \n';
+  find . -iname "*$**" -exec stat -c "%y %n" {} \;
+  # find . -iname "*$**" -printf '%Cc %f %h \n';
 
   cd ~-;
 }
 
 # find in Vocabulary
 fvoc() {
-  find /media/default/windows/Users/user/OneDrive/vocabulary -iname "*$**" -printf '%Ac %f \n';
+  find /media/default/windows/Users/user/OneDrive/vocabulary -iname "*$**" -exec stat -c "%y %n" {} \;
+  # find /media/default/windows/Users/user/OneDrive/vocabulary -iname "*$**" -printf '%Ac %f \n';
 }
 
 # Now using the .oh-my-zsh aliases & plugins
