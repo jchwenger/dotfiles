@@ -189,3 +189,6 @@ alias jumr='make -C Builds/LinuxMakefile/; ./Builds/LinuxMakefile/build/$(basena
 
 # add .local/bin to the path
 export PATH="$PATH:/home/default/.local/bin"
+
+# add openFrameworks path as a global variable
+export PG_OF_PATH="/media/default/linux-data/openFrameworks/"
