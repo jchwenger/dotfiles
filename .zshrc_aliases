@@ -142,6 +142,9 @@ pdfmerge() {
   gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=$1 ${@:2}
 }
 
+# to convert images to pdf
+# convert *.jpg -quality 100 outfile.pdf
+
 # Useful command to repeat the last command while adding something in front of it
 # $ !!
 # Ex:
