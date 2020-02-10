@@ -547,6 +547,12 @@
           \ if_ if __name__ == '__main__':<CR>main()
   augroup END
   " }}}
+
+  " Utils: varia
+  " insert current date in file (useful for markdown posts)
+  nnoremap <leader>date :r! stat -c \%y %<CR>
+  vnoremap <leader>date :r! stat -c \%y %<CR>
+
 " }}}
 
 
