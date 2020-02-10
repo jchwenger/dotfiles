@@ -348,6 +348,7 @@
 
   " Vimrc edit, source & close
   nnoremap <leader>vv :e $MYVIMRC<CR>
+  nnoremap <leader>vt :tabe $MYVIMRC<CR>
   nnoremap <leader>ve :vsplit $MYVIMRC<CR>
   nnoremap <leader>vs :source $MYVIMRC<CR>
   nnoremap <leader>vc :bdelete ~/.vimrc<CR>
