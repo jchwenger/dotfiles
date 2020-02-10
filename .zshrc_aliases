@@ -114,8 +114,13 @@ fvoc() {
 }
 
 # Now using the .oh-my-zsh aliases & plugins
+
 # To see the options, grep through aliases using this alias
-alias ali='alias | grep'
+# alias ali='alias | grep'
+ali() {
+  alias | grep "$*"
+}
+
 # To open the online wiki
 alias zref='firefox https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git'
 
