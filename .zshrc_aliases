@@ -1,6 +1,8 @@
 # use 256 colors
 export TERM='xterm-256color'
 
+# vi mode for the shell
+# bindkey -v
 # Processing command added in .profile # my own aliases
 alias wekinator='java -jar /media/default/linux-data/programs/wekinator/WekiMini.jar'
 alias tor='cd /home/default/tor-browser_en-US; ./start-tor-browser.desktop'
@@ -203,3 +205,13 @@ export PATH="$PATH:/home/default/zim-tools_linux-x86_64-1.0.5-2"
 
 # remove qt warning in IPython
 export QT_STYLE_OVERRIDE="fusion"
+
+# vim mode for zsh: reduce delay to 0.1 second
+# https://dougblack.io/words/zsh-vi-mode.html
+export KEYTIMEOUT=1
+
+# bat export PATH="$PATH:/home/default/bat-v0.12.1-x86_64-unknown-linux-gnu/bat"
+export PATH="$PATH:/home/default/bat-v0.12.1-x86_64-unknown-linux-gnu"
+
+# fd https://github.com/sharkdp/fd
+export PATH="$PATH:/home/default/fd-v7.4.0-x86_64-unknown-linux-gnu"
