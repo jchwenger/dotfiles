@@ -501,11 +501,31 @@
   let g:ycm_autoclose_preview_window_after_insertion = 1
 
   " Compile: current file using <leader>rr {{{
-  "Java
+  " The first command compiles (or, for Python, blackens), the second runs the
+  " program right after using the % register, containing the name of the file,
+  " and removing the extension ":r" (for root), see :help expand
+
+  " Java
   augroup Java_shortcuts
-    autocmd FileType java silent
-        nnoremap <leader>rr :below terminal javac -classpath . %<cr>
+    autocmd!
+    autocmd FileType java silent nnoremap <buffer> <localleader>rr :w<CR>:!javac -classpath . %<CR>
+    autocmd FileType java silent nnoremap <buffer> <leader>rr :w<CR>:execute "!javac -classpath . %; java " . expand('%:r')<CR>
   augroup END
+
+  " C++
+  augroup cpp_shortcuts
+    autocmd!
+    autocmd FileType cpp silent nnoremap <buffer> <localleader>rr :w<CR>:execute "!g++ -std=c++11 -o " . expand('%:r') . ".out " . expand('%')<CR>
+    autocmd FileType cpp silent nnoremap <buffer> <leader>rr :w<CR>:execute "!g++ -std=c++11 -o " . expand('%:r') . ".out " . expand('%') . "; ./" . expand('%:r') . ".out"<CR>
+  augroup END
+
+  " Python ~> use Black for cleaning things up
+  augroup py_shortcuts
+    autocmd!
+    autocmd FileType python silent nnoremap <buffer> <localleader>rr :w<CR>:!black %:p<CR>
+    autocmd FileType python silent nnoremap <buffer> <leader>rr :w<CR>:!python %:p<CR>
+  augroup END
+
   " }}}
 
   " Abbreviations: {{{
