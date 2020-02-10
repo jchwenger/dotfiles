@@ -170,6 +170,8 @@ conda activate base
 alias restartcinnamon='export DISPLAY=:0; cinnamon-screensaver-command -e; killall -9 cinnamon'
 alias restartscreensaver='pkill cinnamon-screen && cinnamon-screensaver'
 
+alias pavu='pavucontrol'
+
 # alias musb='sudo mount /dev/sdc1 /media/default/JESSH_USB && sudo mount /dev/sdb1 /media/default/JESSH_USB'
 # alias umusb='sudo umount /dev/sdc1 && sudo rmd -f /media/default/JESSH_USB'
 
