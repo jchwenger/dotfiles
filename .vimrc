@@ -538,6 +538,14 @@
     " i to I
     autocmd FileType text,markdown iabbrev <buffer> `` ``````O
   augroup END
+
+  " Python
+  augroup py_abbrev
+    autocmd!
+    " the __main__ thingy
+    autocmd FileType python iabbrev <buffer> 
+          \ if_ if __name__ == '__main__':<CR>main()
+  augroup END
   " }}}
 " }}}
 
