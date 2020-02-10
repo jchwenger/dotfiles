@@ -744,8 +744,8 @@
     Plug 'prettier/vim-prettier', {
           \ 'do': 'npm install',
           \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-
-  call plug#end()
+    Plug 'vim-scripts/indentpython.vim', {'for': 'python'}
+    Plug 'octol/vim-cpp-enhanced-highlight', {'for': ['cpp', 'c']}
     Plug 'ycm-core/YouCompleteMe', {'for':
           \ ['python', 'c', 'cpp', 'javascript', 'java']}
 " }}}
