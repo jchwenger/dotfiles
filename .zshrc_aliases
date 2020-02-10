@@ -186,3 +186,6 @@ alias jumr='make -C Builds/LinuxMakefile/; ./Builds/LinuxMakefile/build/$(basena
 
 # PROMPT_COMMAND='echo -ne "\033]0;(basename ${PWD})\007"'
 # PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+
+# add .local/bin to the path
+export PATH="$PATH:/home/default/.local/bin"
