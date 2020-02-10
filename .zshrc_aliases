@@ -172,6 +172,11 @@ alias restartscreensaver='pkill cinnamon-screen && cinnamon-screensaver'
 
 alias pavu='pavucontrol'
 
+alias juce='/media/default/linux-data/programs/juce-5.4.3-linux/JUCE/Projucer'
+alias jucerun='./Builds/LinuxMakefile/build/$(basename $(pwd))'
+# alias jucerun='./Builds/LinuxMakefile/build/NewProject'
+alias jucemake='make -C Builds/LinuxMakefile/'
+alias jumr='make -C Builds/LinuxMakefile/; ./Builds/LinuxMakefile/build/$(basename $(pwd))'
 # alias musb='sudo mount /dev/sdc1 /media/default/JESSH_USB && sudo mount /dev/sdb1 /media/default/JESSH_USB'
 # alias umusb='sudo umount /dev/sdc1 && sudo rmd -f /media/default/JESSH_USB'
 
