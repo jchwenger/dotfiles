@@ -3,6 +3,11 @@ export TERM='xterm-256color'
 
 # vi mode for the shell
 # bindkey -v
+
+# enable powerline
+# powerline-daemon -q
+# . /home/default/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+
 # Processing command added in .profile # my own aliases
 alias wekinator='java -jar /media/default/linux-data/programs/wekinator/WekiMini.jar'
 alias tor='cd /home/default/tor-browser_en-US; ./start-tor-browser.desktop'
