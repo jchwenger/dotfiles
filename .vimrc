@@ -560,6 +560,20 @@
 
   nnoremap <leader>gq :call ReformatParagraph()<CR>
   vnoremap <leader>gq :call ReformatParagraph()<CR>
+
+  " sort lines by length
+  " https://stackoverflow.com/a/11531678
+  function SortByLength() range
+    silent execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
+    silent execute a:firstline . "," . a:lastline . 'sort n'
+    silent execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
+  endfunction
+
+  vnoremap <localleader>len :'<,'>call SortByLength()<CR>
+
+  " and to sort lines alphabetically
+  " https://vim.fandom.com/wiki/Sort_lines
+  vnoremap <leader>srt :'<,'>sort u<CR>
 " }}}
 
 
