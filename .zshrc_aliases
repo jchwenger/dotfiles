@@ -12,8 +12,8 @@ export TERM='xterm-256color'
 alias wekinator='java -jar /media/default/linux-data/programs/wekinator/WekiMini.jar'
 alias tor='cd /home/default/tor-browser_en-US; ./start-tor-browser.desktop'
 alias zotero='cd ~/Zotero/Zotero; ./zotero'
-alias qtcreator4.1='~/qtcreator-4.1.0/bin/qtcreator'
-alias qtcreator4.6='~/qtcreator-4.6.0/bin/qtcreator'
+# alias qtcreator4.1='~/qtcreator-4.1.0/bin/qtcreator'
+# alias qt='~/qtcreator-4.6.0/bin/qtcreator'
 
 alias prc=processing
 alias prj=processing-java
