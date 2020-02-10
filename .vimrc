@@ -271,7 +271,7 @@
   " }}}
 
   " Window: resizing {{{
-  " Horizontal alt+<, alt+>
+  " Horizontal alt+<, alt+> for incremental increase
   " (also in Terminal mode)
   nnoremap > <C-W>>
   vnoremap > <C-W>>
@@ -280,9 +280,12 @@
   vnoremap < <C-W><
   tnoremap > <C-W><
 
-  " Vertical alt+=, alt+-
+  " Vertical alt+=, alt+- for incremental increase
   nnoremap = <C-W>-
   nnoremap - <C-W>+
+
+  " Maximizing the current window (opposite of ctrl+=)
+  nnoremap <C-W># <C-W>\|<C-W>_
   " }}}
 
   " Open new tab
