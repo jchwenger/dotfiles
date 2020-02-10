@@ -748,6 +748,7 @@
     Plug 'octol/vim-cpp-enhanced-highlight', {'for': ['cpp', 'c']}
     Plug 'ycm-core/YouCompleteMe', {'for':
           \ ['python', 'c', 'cpp', 'javascript', 'java']}
+    " Plug 'psf/black', {'for':'python'} " does not work as current Vim is compiled with Python < 3.6
 " }}}
 
 
