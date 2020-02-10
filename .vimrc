@@ -469,9 +469,9 @@
   nmap <localleader>scr <plug>(SubversiveSubstituteWordRangeConfirm)
 
   " To use Tim Pope's Abolish plugin
-  nmap <localleader>sa <plug>(SubversiveSubvertRange)
-  xmap <localleader>sa <plug>(SubversiveSubvertRange)
-  nmap <localleader>ssa <plug>(SubversiveSubvertWordRange)
+  nmap <localleader>sb <plug>(SubversiveSubvertRange)
+  xmap <localleader>sb <plug>(SubversiveSubvertRange)
+  nmap <localleader>ssb <plug>(SubversiveSubvertWordRange)
   " }}}
 
   " Fugitive: a git wrapper {{{
