@@ -200,3 +200,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # zim tools
 export PATH="$PATH:/home/default/zim-tools_linux-x86_64-1.0.5-2" 
+
+# remove qt warning in IPython
+export QT_STYLE_OVERRIDE="fusion"
