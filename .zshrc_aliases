@@ -28,7 +28,7 @@ alias nem='nemo . &'
 alias xr='xreader'
 alias xv='xviewer'
 
-lo() {
+wr() {
   libreoffice --writer -o "$@" &;
 }
 
