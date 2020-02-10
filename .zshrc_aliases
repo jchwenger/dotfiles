@@ -163,7 +163,8 @@ pdfmerge() {
 # added by Miniconda3 installer
 # export PATH="/home/default/miniconda3/bin:$PATH"
 . ~/miniconda3/etc/profile.d/conda.sh
-conda activate p36
+conda activate base
+# conda activate p36
 
 # Restart Cinnamon when the screensaver freezes
 alias restartcinnamon='export DISPLAY=:0; cinnamon-screensaver-command -e; killall -9 cinnamon'
