@@ -177,6 +177,10 @@ alias jucerun='./Builds/LinuxMakefile/build/$(basename $(pwd))'
 # alias jucerun='./Builds/LinuxMakefile/build/NewProject'
 alias jucemake='make -C Builds/LinuxMakefile/'
 alias jumr='make -C Builds/LinuxMakefile/; ./Builds/LinuxMakefile/build/$(basename $(pwd))'
+
+# Disable CTRL-S and CTRL-Q
+[[ $- =~ i ]] && stty -ixoff -ixon
+
 # alias musb='sudo mount /dev/sdc1 /media/default/JESSH_USB && sudo mount /dev/sdb1 /media/default/JESSH_USB'
 # alias umusb='sudo umount /dev/sdc1 && sudo rmd -f /media/default/JESSH_USB'
 
