@@ -122,7 +122,8 @@ ali() {
 }
 
 # To open the online wiki
-alias zref='firefox https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git'
+alias zref='firefox https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins'
+
 
 # lp print portrait, landscape
 alias lpp='lp -o fit-to-page -o sides=two-sided-long-edge'
