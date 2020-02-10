@@ -497,6 +497,9 @@
   nnoremap <leader>yy :Goyo<CR>
   vnoremap <leader>yy :Goyo<CR>
 
+  " YouCompleteMe: disable preview window after completion
+  let g:ycm_autoclose_preview_window_after_insertion = 1
+
   " Compile: current file using <leader>rr {{{
   "Java
   augroup Java_shortcuts
@@ -658,6 +661,8 @@
           \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
   call plug#end()
+    Plug 'ycm-core/YouCompleteMe', {'for':
+          \ ['python', 'c', 'cpp', 'javascript', 'java']}
 " }}}
 
 
