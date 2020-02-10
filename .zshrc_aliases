@@ -71,6 +71,12 @@ alias l1='ls -1'
 alias rmd='rm -r'
 alias rmdf='rm -rf'
 
+# copy directories
+alias cpr='cp -r'
+
+# zip directories
+alias zipr='zip -r'
+
 # wrapping git with hub
 # eval "$(hub alias -s)"
 
