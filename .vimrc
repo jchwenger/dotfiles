@@ -288,9 +288,12 @@
   nnoremap <C-W># <C-W>\|<C-W>_
   " }}}
 
+  " Tabs: {{{
   " Open new tab
-  nnoremap <localleader>tt :tabedit<cr>
-  vnoremap <localleader>tt :tabedit<cr>
+  nnoremap <localleader>tt :tabedit<CR>
+  vnoremap <localleader>tt :tabedit<CR>
+  nnoremap <localleader>t. :tabedit .<CR>
+  vnoremap <localleader>t. :tabedit .<CR>
 
   " Make current buffer full-screen (in new tab)
   nnoremap <localleader>on :tabedit %<cr>
@@ -305,6 +308,7 @@
   vnoremap <tab> gt
   nnoremap <s-tab> gT
   vnoremap <s-tab> gT
+  " }}}
 
 
   " Useful command: switch window dir to dir of current file
