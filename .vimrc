@@ -67,7 +67,7 @@
   " let g:NetrwIsOpen=0
 
   " " Netrw mapping
-  " noremap <silent> <m-a> :call ToggleNetrw()<cr>
+  " noremap <silent> <m-a> :call ToggleNetrw()<CR>
 
   " function! ToggleNetrw()
   "   if g:NetrwIsOpen
@@ -100,7 +100,7 @@
 " https://stackoverflow.com/a/33652614
 
 " set tags+=.tags;$HOME
-  nnoremap <leader>ccc :!ctags -R .<cr>
+  nnoremap <leader>ccc :!ctags -R .<CR>
 "}}}
 
 
@@ -206,7 +206,7 @@
   nnoremap ZX :qa!<CR>
 
   " Quit all buffers (saving)
-  nnoremap ZS :wqa!<cr>
+  nnoremap ZS :wqa!<CR>
 
   " Press Ctrl+h/l to scroll horizontally (as zh/yl)
   nnoremap <C-h> zh
@@ -229,8 +229,8 @@
 
   " Navigation to next punctuation using
   " Alt+) / Alt+(
-  nnoremap ) /\v([,!?;:…(){}`’‘”“]\|' \| '\|\.+)<cr>:nohlsearch<cr>
-  nnoremap ( ?\v([,!?;:…(){}`’‘”“]\|' \| '\|\.+)<cr>:nohlsearch<cr>
+  nnoremap ) /\v([,!?;:…(){}`’‘”“]\|' \| '\|\.+)<CR>:nohlsearch<CR>
+  nnoremap ( ?\v([,!?;:…(){}`’‘”“]\|' \| '\|\.+)<CR>:nohlsearch<CR>
 
   " Buffers: {{{
   " close with Alt+b
@@ -296,12 +296,12 @@
   vnoremap <localleader>t. :tabedit .<CR>
 
   " Make current buffer full-screen (in new tab)
-  nnoremap <localleader>on :tabedit %<cr>
-  vnoremap <localleader>on :tabedit %<cr>
+  nnoremap <localleader>on :tabedit %<CR>
+  vnoremap <localleader>on :tabedit %<CR>
 
   " Close tab ('only close')
-  nnoremap <localleader>oc :tabclose<cr>
-  vnoremap <localleader>oc :tabclose<cr>
+  nnoremap <localleader>oc :tabclose<CR>
+  vnoremap <localleader>oc :tabclose<CR>
 
   " Cycle through tabs using tab, like standard editors
   nnoremap <tab> gt
@@ -342,8 +342,8 @@
   vnoremap ;ms :'<,'>:g/^[ <Tab>]*$/.,/[^ <Tab>]/-j<CR>:nohlsearch<CR>
 
   " Remove trailing whitespace (space, unbreakable space, tab)
-  nnoremap <leader>rts :%s/[  \t]\+$//e<cr>:nohlsearch<cr>
-  vnoremap <leader>rts :%s/[  \t]\+$//e<cr>:nohlsearch<cr>
+  nnoremap <leader>rts :%s/[  \t]\+$//e<CR>:nohlsearch<CR>
+  vnoremap <leader>rts :%s/[  \t]\+$//e<CR>:nohlsearch<CR>
   " }}}
 
   " Vimrc edit, source & close
@@ -780,7 +780,7 @@
   let g:airline#extensions#branch#enabled = 1
 
   " Toggle background colour with <leader>bb {{{
-  nnoremap <leader>bb :call ToggleBckgrnd()<cr>
+  nnoremap <leader>bb :call ToggleBckgrnd()<CR>
 
   function! ToggleBckgrnd()
     if &background ==# "dark"
@@ -799,8 +799,8 @@
   " JSON: beautifier/minifier (Linux/Bash):
   " https://blog.realnitro.be/2010/12/20/format-json-in-vim-using-pythons-jsontool-module/
   " https://stedolan.github.io/jq/
-  nnoremap <leader>jsb  :%!jq .<cr> " jsb: 'json beautifier'
-  nnoremap <leader>jsm  :%!jq -c .<cr> "jsm: 'json minifier'
+  nnoremap <leader>jsb  :%!jq .<CR> " jsb: 'json beautifier'
+  nnoremap <leader>jsm  :%!jq -c .<CR> "jsm: 'json minifier'
 
   " Other JS beautifier (npm js-beautify) {{{
   " https://coderwall.com/p/m2kp5q/invoke-js-beautify-in-vim
@@ -819,7 +819,7 @@
   " }}}
 
   " XML: beautifier using <leader>xmb {{{
-  nnoremap <leader>xmb :call DoPrettyXML()<cr>
+  nnoremap <leader>xmb :call DoPrettyXML()<CR>
 
   " function DoPrettyXML {{{
   function! DoPrettyXML()
