@@ -601,7 +601,7 @@
 
 
 " Make Alt keys work in terminal mode  {{{
-  if !has('gui_running')
+  if !has('gui_running') && !has('nvim')
     let c='a'
     while c <= 'z'
       exec "set <A-".c.">=\e".c
