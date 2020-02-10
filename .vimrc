@@ -329,14 +329,17 @@
   nnoremap <localleader>== gg=G
 
   " Removing empty lines (or lines with only space)
-  nnoremap <leader>rel :g/^[  \t]*$/d_<cr>:nohlsearch<cr>
-  nnoremap <leader>reel :g/^$/d_<cr>:nohlsearch<cr>
-  vnoremap <leader>rel :g/^[  \t]*$/d_<cr>:nohlsearch<cr>
-  vnoremap <leader>reel :g/^$/d_<cr>:nohlsearch<cr>
+  nnoremap ;de :g/^$/d_<CR>:nohlsearch<CR>
+  vnoremap ;de :g/^$/d_<CR>:nohlsearch<CR>
+  nnoremap ;ds :g/^[  \t]*$/d_<CR>:nohlsearch<CR>
+  vnoremap ;ds :g/^[  \t]*$/d_<CR>:nohlsearch<CR>
 
-  " Merging consecutive empty lines
-  nnoremap <leader>mel :v/./,/./-j<cr>:nohlsearch<cr>
-  vnoremap <leader>mel :'<,'>g!/./,/./-j<cr>:nohlsearch<cr>
+  " Merging consecutive empty/space-only lines
+  " (taken from :help collapse)
+  nnoremap ;me   GoZ<Esc>:g/^$/.,/./-j<CR>Gdd:nohlsearch<CR>
+  vnoremap ;me :'<,'>:g/^$/.,/./-j<CR>:nohlsearch<CR>:nohlsearch<CR>
+  nnoremap ;ms   GoZ<Esc>:g/^[ <Tab>]*$/.,/[^ <Tab>]/-j<CR>Gdd:nohlsearch<CR>
+  vnoremap ;ms :'<,'>:g/^[ <Tab>]*$/.,/[^ <Tab>]/-j<CR>:nohlsearch<CR>
 
   " Remove trailing whitespace (space, unbreakable space, tab)
   nnoremap <leader>rts :%s/[  \t]\+$//e<cr>:nohlsearch<cr>
