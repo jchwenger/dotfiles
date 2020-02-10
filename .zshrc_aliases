@@ -74,6 +74,8 @@ alias rmdf='rm -rf'
 # wrapping git with hub
 # eval "$(hub alias -s)"
 
+alias j='jobs'
+
 # find in current directory
 fin() {
   find . -iname "*$**" -printf '%Ac %p \n';
