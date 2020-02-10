@@ -553,6 +553,13 @@
   nnoremap <leader>date :r! stat -c \%y %<CR>
   vnoremap <leader>date :r! stat -c \%y %<CR>
 
+  " reformat paragraph
+  function ReformatParagraph()
+    norm mlgqip`l:echo<CR>
+  endfunction
+
+  nnoremap <leader>gq :call ReformatParagraph()<CR>
+  vnoremap <leader>gq :call ReformatParagraph()<CR>
 " }}}
 
 
