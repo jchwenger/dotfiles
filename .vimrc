@@ -15,6 +15,9 @@
   filetype plugin on
   filetype indent on
 
+  " completion
+  set omnifunc=syntaxcomplete#Complete
+
   " set paste
   set pastetoggle=<F2>
 
