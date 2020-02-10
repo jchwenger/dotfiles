@@ -749,6 +749,8 @@
     Plug 'ycm-core/YouCompleteMe', {'for':
           \ ['python', 'c', 'cpp', 'javascript', 'java']}
     " Plug 'psf/black', {'for':'python'} " does not work as current Vim is compiled with Python < 3.6
+    Plug 'junegunn/fzf', {'dir':'~/.fzf', 'do':'./install --all'}
+    call plug#end()
 " }}}
 
 
