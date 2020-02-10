@@ -179,11 +179,11 @@
                           " the figure labels. Very useful! (See Vim LaTeX below)
 
 
-    " Java
-    autocmd FileType java,arduino setlocal
-          \ tabstop=2
-          \ softtabstop=2
-          \ shiftwidth=2
+    " Java, C++, Arduino
+    autocmd FileType cpp,java,arduino setlocal
+          \ tabstop=4
+          \ softtabstop=4
+          \ shiftwidth=4
           \ autoindent
           \ nowrap
           \ commentstring=//%s
