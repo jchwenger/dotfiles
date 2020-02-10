@@ -232,6 +232,12 @@
   nnoremap ) /\v([,!?;:…(){}`’‘”“]\|' \| '\|\.+)<cr>:nohlsearch<cr>
   nnoremap ( ?\v([,!?;:…(){}`’‘”“]\|' \| '\|\.+)<cr>:nohlsearch<cr>
 
+  " Buffers: {{{
+  " close with Alt+b
+  nnoremap <M-b> :bdelete!<CR>
+  vnoremap <M-b> :bdelete!<CR>
+  " }}}
+
   " Windows: navigation {{{
 
   " Open vertical/horizontal: Alt+v / Alt+s
