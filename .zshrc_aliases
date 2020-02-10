@@ -43,6 +43,7 @@ alias dfs='df -h | tail -n +2 | sort -hrk 4'
 alias p='ipython'
 
 alias v='vim .'
+alias vo='vim -O'
 alias g='gvim .'
 alias n='nvim .'
 alias gim='gvim -v'
