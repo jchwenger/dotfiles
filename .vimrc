@@ -544,6 +544,10 @@
   " YouCompleteMe: disable preview window after completion
   let g:ycm_autoclose_preview_window_after_insertion = 1
 
+  " EasyAlign: just because I love Junegunn
+  xmap ga <Plug>(EasyAlign)
+  nmap ga <Plug>(EasyAlign)
+
   " Compile: current file using <leader>rr {{{
   " The first command compiles (or, for Python, blackens), the second runs the
   " program right after using the % register, containing the name of the file,
@@ -794,6 +798,7 @@
           \ ['python', 'c', 'cpp', 'javascript', 'java']}
     " Plug 'psf/black', {'for':'python'} " does not work as current Vim is compiled with Python < 3.6
     Plug 'junegunn/fzf', {'dir':'~/.fzf', 'do':'./install --all'}
+    Plug 'junegunn/vim-easy-align'
     call plug#end()
 " }}}
 
