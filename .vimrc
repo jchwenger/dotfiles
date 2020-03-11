@@ -775,7 +775,8 @@
     Plug 'kana/vim-textobj-entire'
     Plug 'kana/vim-textobj-function', {'for': ['vim', 'c', 'java']}
     Plug 'bps/vim-textobj-python', {'for': 'python'}
-    Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+    " Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+    Plug 'yuezk/vim-js', {'for': 'javascript'}
     Plug 'jasonlong/vim-textobj-css', {'for': ['css', 'sass', 'scss']}
     Plug 'kana/vim-textobj-line'
     Plug 'glts/vim-textobj-comment'
