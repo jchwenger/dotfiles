@@ -16,6 +16,7 @@
   filetype on
   filetype plugin on
   filetype indent on
+  set smarttab
 
   " completion
   set omnifunc=syntaxcomplete#Complete
