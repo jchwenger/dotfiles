@@ -6,11 +6,11 @@ export TERM='xterm-256color'
 
 # enable powerline
 # powerline-daemon -q
-# . /home/default/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+# . /home/$(whoami)/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # Processing command added in .profile # my own aliases
-alias wekinator='java -jar /media/default/linux-data/programs/wekinator/WekiMini.jar'
-alias tor='cd /home/default/tor-browser_en-US; ./start-tor-browser.desktop'
+alias wekinator='java -jar /media/$(whoami)/linux-data/programs/wekinator/WekiMini.jar'
+alias tor='cd /home/$(whoami)/tor-browser_en-US; ./start-tor-browser.desktop'
 alias zotero='cd ~/Zotero/Zotero; ./zotero'
 # alias qtcreator4.1='~/qtcreator-4.1.0/bin/qtcreator'
 # alias qt='~/qtcreator-4.6.0/bin/qtcreator'
@@ -97,13 +97,13 @@ fin() {
 
 # find in root directory
 finr() {
-  sudo find / -path /media/default/windows -prune -o -iname "*$**" -printf '%Ac %p \n';
+  sudo find / -path /media/$(whoami)/windows -prune -o -iname "*$**" -printf '%Ac %p \n';
 }
 
 # find in lit
 flit() {
 
-  cd "/media/default/linux-data/Dropbox/lit/"
+  cd "/media/$(whoami)/linux-data/Dropbox/lit/"
 
   # "$*" expands to "$1c$2c...", c = first char in IFS
   # "$@" on the contrary expands to "$1" "$2" ...
@@ -115,10 +115,10 @@ flit() {
 
 # find in Vocabulary
 fvoc() {
-  cd "/media/default/windows/Users/user/OneDrive/vocabulary"
+  cd "/media/$(whoami)/windows/Users/user/OneDrive/vocabulary"
   find  -iname "*$**" -exec stat -c "%.19y %n" {} \;
   cd ~-
-  # find /media/default/windows/Users/user/OneDrive/vocabulary -iname "*$**" -printf '%Ac %f \n';
+  # find /media/$(whoami)/windows/Users/user/OneDrive/vocabulary -iname "*$**" -printf '%Ac %f \n';
 }
 
 # Now using the .oh-my-zsh aliases & plugins
@@ -163,13 +163,13 @@ pdfmerge() {
 
 
 # The next line updates PATH for the Google Cloud SDK.
-# if [ -f '/home/default/bin/google-cloud-sdk/path.bash.inc' ]; then source '/home/default/bin/google-cloud-sdk/path.bash.inc'; fi
+# if [ -f '/home/$(whoami)/bin/google-cloud-sdk/path.bash.inc' ]; then source '/home/$(whoami)/bin/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-# if [ -f '/home/default/bin/google-cloud-sdk/completion.bash.inc' ]; then source '/home/default/bin/google-cloud-sdk/completion.bash.inc'; fi
+# if [ -f '/home/$(whoami)/bin/google-cloud-sdk/completion.bash.inc' ]; then source '/home/$(whoami)/bin/google-cloud-sdk/completion.bash.inc'; fi
 
 # added by Miniconda3 installer
-# export PATH="/home/default/miniconda3/bin:$PATH"
+# export PATH="/home/$(whoami)/miniconda3/bin:$PATH"
 . ~/miniconda3/etc/profile.d/conda.sh
 conda activate base
 # conda activate p36
@@ -180,7 +180,7 @@ alias restartscreensaver='pkill cinnamon-screen && cinnamon-screensaver'
 
 alias pavu='pavucontrol'
 
-alias juce='/media/default/linux-data/programs/juce-5.4.3-linux/JUCE/Projucer'
+alias juce='/media/$(whoami)/linux-data/programs/juce-5.4.3-linux/JUCE/Projucer'
 alias jucerun='./Builds/LinuxMakefile/build/$(basename $(pwd))'
 # alias jucerun='./Builds/LinuxMakefile/build/NewProject'
 alias jucemake='make -C Builds/LinuxMakefile/'
@@ -189,17 +189,17 @@ alias jumr='make -C Builds/LinuxMakefile/; ./Builds/LinuxMakefile/build/$(basena
 # Disable CTRL-S and CTRL-Q
 [[ $- =~ i ]] && stty -ixoff -ixon
 
-# alias musb='sudo mount /dev/sdc1 /media/default/JESSH_USB && sudo mount /dev/sdb1 /media/default/JESSH_USB'
-# alias umusb='sudo umount /dev/sdc1 && sudo rmd -f /media/default/JESSH_USB'
+# alias musb='sudo mount /dev/sdc1 /media/$(whoami)/JESSH_USB && sudo mount /dev/sdb1 /media/$(whoami)/JESSH_USB'
+# alias umusb='sudo umount /dev/sdc1 && sudo rmd -f /media/$(whoami)/JESSH_USB'
 
 # PROMPT_COMMAND='echo -ne "\033]0;(basename ${PWD})\007"'
 # PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 
 # add .local/bin to the path
-export PATH="$PATH:/home/default/.local/bin"
+export PATH="$PATH:/home/$(whoami)/.local/bin"
 
 # add openFrameworks path as a global variable
-export PG_OF_PATH="/media/default/linux-data/openFrameworks/"
+export PG_OF_PATH="/media/$(whoami)/linux-data/openFrameworks/"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -207,7 +207,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # zim tools
-export PATH="$PATH:/home/default/zim-tools_linux-x86_64-1.0.5-2" 
+export PATH="$PATH:/home/$(whoami)/zim-tools_linux-x86_64-1.0.5-2" 
 
 # remove qt warning in IPython
 export QT_STYLE_OVERRIDE="fusion"
@@ -216,8 +216,7 @@ export QT_STYLE_OVERRIDE="fusion"
 # https://dougblack.io/words/zsh-vi-mode.html
 export KEYTIMEOUT=1
 
-# bat export PATH="$PATH:/home/default/bat-v0.12.1-x86_64-unknown-linux-gnu/bat"
-export PATH="$PATH:/home/default/bat-v0.12.1-x86_64-unknown-linux-gnu"
+export PATH="$PATH:/home/$(whoami)/bat-v0.12.1-x86_64-unknown-linux-gnu"
 
 # fd https://github.com/sharkdp/fd
-export PATH="$PATH:/home/default/fd-v7.4.0-x86_64-unknown-linux-gnu"
+export PATH="$PATH:/home/$(whoami)/fd-v7.4.0-x86_64-unknown-linux-gnu"
