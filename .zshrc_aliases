@@ -62,7 +62,8 @@ alias va="vim $dot/.zshrc_aliases"
 alias vt='vim ~/.tmux.conf'
 alias vp="vim $dot/.zshrc_paths"
 
-alias rg='/usr/local/bin/ranger'
+alias rg='/home/$(whoami)/ranger/ranger.py'
+# alias rg='/usr/local/bin/ranger'
 alias tm='/usr/local/bin/tmux'
 
 alias so='source ~/.zshrc'
