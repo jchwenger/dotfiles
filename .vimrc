@@ -219,6 +219,26 @@
   nnoremap <C-k> <C-y>
   nnoremap <C-j> <C-e>
 
+  " " Scroll screen lines
+  " function ScreenScrollDown()
+  "   norm! ml
+  "   let to_bottom = winheight(0) - winline() + 1
+  "   execute "norm! ". to_bottom . "gj"
+  "   redraw!
+  "   norm! `l
+  " endfunction
+
+  " function ScreenScrollUp()
+  "   norm! ml
+  "   execute "norm! ". winline() . "gk"
+  "   redraw!
+  "   norm! `l
+  " endfunction
+  " nnoremap <C-j> :call ScreenScrollDown()<CR>
+  " vnoremap <C-j> :call ScreenScrollDown()<CR>
+  " nnoremap <C-k> :call ScreenScrollUp()<CR>
+  " vnoremap <C-k> :call ScreenScrollUp()<CR>
+
   " Press Alt+e/Alt+E for ge/gE (scroll backward to end of words)
   " (opposite of b/B, scroll backward to beginning of words)
   nnoremap <M-e> ge
