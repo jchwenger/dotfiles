@@ -411,9 +411,29 @@
   cnoremap <C-a> <Home>
   cnoremap <M-b> <S-Left>
   cnoremap <M-f> <S-Right>
-  cnoremap <C-k> <C-f>d$<C-c>
+  " cnoremap <C-k> <C-f>d$<C-c>
   cnoremap <M-d> <C-f>dw<C-c>
   cnoremap <M-e> <C-f>de<C-c>
+  
+  " " check :help emacs-keys
+  " " start of line
+  " :cnoremap <C-A>   <Home>
+  " " back one character
+  " :cnoremap <C-B>   <Left>
+  " " delete character under cursor
+  " :cnoremap <C-D>   <Del>
+  " " end of line
+  " :cnoremap <C-E>   <End>
+  " " forward one character
+  " :cnoremap <C-F>   <Right>
+  " " recall newer command-line
+  " :cnoremap <C-N>   <Down>
+  " " recall previous (older) command-line
+  " :cnoremap <C-P>   <Up>
+  " " back one word
+  " :cnoremap <Esc><C-B>  <S-Left>
+  " " forward one word
+  " :cnoremap <Esc><C-F>  <S-Right>
 
   " (hopefully soon in terminal as well, to be researched)
   " tnoremap <C-a> <Home>
