@@ -611,13 +611,23 @@
 
   " sort lines by length
   " https://stackoverflow.com/a/11531678
-  function SortByLength() range
+  function SortByLength(direction) range
+    " extract the length of the line and writing the number at the beginning
+    " of the line
     silent execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
-    silent execute a:firstline . "," . a:lastline . 'sort n'
+    " sorting up or down using sort! or sort
+    if a:direction==1
+      let l:excl='!'
+    elseif a:direction==-1
+      let l:excl=''
+    endif
+    " sorting & removing the initial number & space
+    silent execute a:firstline . "," . a:lastline . 'sort' . l:excl .' n'
     silent execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
   endfunction
 
-  vnoremap <localleader>len :'<,'>call SortByLength()<CR>
+  vnoremap <localleader>lenu :'<,'>call SortByLength(1)<CR>
+  vnoremap <localleader>lend :'<,'>call SortByLength(-1)<CR>
 
   " and to sort lines alphabetically
   " https://vim.fandom.com/wiki/Sort_lines
