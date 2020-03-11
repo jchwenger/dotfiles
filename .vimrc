@@ -7,6 +7,8 @@
   set nocompatible
   syntax on
   set hlsearch
+  " Set hlsearch but deactivate it when I source
+  nohlsearch
   set incsearch
   set autoread
   " set spell
