@@ -1,19 +1,9 @@
 # use 256 colors
 export TERM='xterm-256color'
 
-# vi mode for the shell
-# bindkey -v
-
-# enable powerline
-# powerline-daemon -q
-# . /home/$(whoami)/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
-
 # Processing command added in .profile # my own aliases
-alias wekinator='java -jar /media/$(whoami)/linux-data/programs/wekinator/WekiMini.jar'
 alias tor='cd /home/$(whoami)/tor-browser_en-US; ./start-tor-browser.desktop'
 alias zotero='cd ~/Zotero/Zotero; ./zotero'
-# alias qtcreator4.1='~/qtcreator-4.1.0/bin/qtcreator'
-# alias qt='~/qtcreator-4.6.0/bin/qtcreator'
 
 alias prc=processing
 alias prj=processing-java
@@ -29,8 +19,7 @@ alias bfg='java -jar ~/bfg-repo-cleaner/bfg-1.13.0.jar'
 alias jn='jupyter notebook'
 alias jl='jupyter lab'
 
-alias gnt='gnome-terminal'
-alias nem='nemo . &'
+alias nau='nautiuls . &'
 
 alias xr='xreader'
 alias xv='xviewer'
@@ -171,23 +160,7 @@ pdfmerge() {
 # The next line enables shell command completion for gcloud.
 # if [ -f '/home/$(whoami)/bin/google-cloud-sdk/completion.bash.inc' ]; then source '/home/$(whoami)/bin/google-cloud-sdk/completion.bash.inc'; fi
 
-# added by Miniconda3 installer
-# export PATH="/home/$(whoami)/miniconda3/bin:$PATH"
-. ~/miniconda3/etc/profile.d/conda.sh
-conda activate base
-# conda activate p36
-
-# Restart Cinnamon when the screensaver freezes
-alias restartcinnamon='export DISPLAY=:0; cinnamon-screensaver-command -e; killall -9 cinnamon'
-alias restartscreensaver='pkill cinnamon-screen && cinnamon-screensaver'
-
 alias pavu='pavucontrol'
-
-alias juce='/media/$(whoami)/linux-data/programs/juce-5.4.3-linux/JUCE/Projucer'
-alias jucerun='./Builds/LinuxMakefile/build/$(basename $(pwd))'
-# alias jucerun='./Builds/LinuxMakefile/build/NewProject'
-alias jucemake='make -C Builds/LinuxMakefile/'
-alias jumr='make -C Builds/LinuxMakefile/; ./Builds/LinuxMakefile/build/$(basename $(pwd))'
 
 # Disable CTRL-S and CTRL-Q
 [[ $- =~ i ]] && stty -ixoff -ixon
