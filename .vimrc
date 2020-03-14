@@ -604,7 +604,7 @@
   vnoremap <leader>date :r! stat -c \%y %<CR>
 
   " reformat paragraph
-  function ReformatParagraph()
+  function! ReformatParagraph()
     norm mlgqip`l:echo<CR>
   endfunction
 
@@ -613,7 +613,7 @@
 
   " sort lines by length
   " https://stackoverflow.com/a/11531678
-  function SortByLength(direction) range
+  function! SortByLength(direction) range
     " extract the length of the line and writing the number at the beginning
     " of the line
     silent execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
