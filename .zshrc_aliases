@@ -171,11 +171,6 @@ fi
 if [ -f $HOME/bin/google-cloud-sdk/completion.zsh.inc ]; then 
   source $HOME/bin/google-cloud-sdk/completion.zsh.inc; 
 fi
-# added by Miniconda3 installer
-# export PATH="$HOME/miniconda3/bin:$PATH"
-. ~/miniconda3/etc/profile.d/conda.sh
-conda activate base
-# conda activate p36
 
 # Restart Cinnamon when the screensaver freezes
 alias restartcinnamon='export DISPLAY=:0; cinnamon-screensaver-command -e; killall -9 cinnamon'
