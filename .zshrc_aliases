@@ -65,7 +65,9 @@ alias vst="vim $HOME/dotfiles/install/install.sh"
 
 alias rg='/home/$(whoami)/ranger/ranger.py'
 # alias rg='/usr/local/bin/ranger'
-alias tm='/usr/local/bin/tmux'
+alias tm='$HOME/tmux/tmux'
+# alias tm='/usr/local/bin/tmux'
+export PATH="$HOME/tmux:$PATH"
 
 alias so='source ~/.zshrc'
 
