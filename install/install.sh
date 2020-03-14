@@ -33,7 +33,13 @@ sudo snap install hub --classic
 
 # vim, etc
 ----------
-sudo apt install vim-gnome neovim curl rename -y
+sudo apt install \
+  vim-gnome \
+  neovim \
+  curl \
+  rename \
+  pavucontrol \
+  xclip -y
 
 # desktop etc
 #------------
@@ -92,6 +98,7 @@ chmod +x Anaconda3-2019.03-Linux-x86_64.sh
 cd ~
 source ~/.bashrc
 
+# for tensorflow see separate files
 conda install pytorch
 
 # other python things
@@ -136,8 +143,12 @@ git clone https://github.com/ranger/ranger
 #-----
 # https://github.com/tmux/tmux
 sudo apt-get install autotools-dev automake \
-	libevent-dev libncurses5-dev libncursesw5-dev \
-	byacc -y
+  autotools-dev \
+  automake \
+  libevent-dev \
+  libncurses5-dev \
+  libncursesw5-dev \
+  byacc -y
 
 # sudo apt install tmux -y
 git clone https://github.com/tmux/tmux.git
@@ -152,7 +163,7 @@ cd ~
 pip install powerline-status
 sudo apt-get install fonts-powerline
 
-# # this fix used, but will be integrated into a future version: 
+# # this fix used, but will be integrated into a future version:
 # # https://github.com/powerline/powerline/pull/2033#issuecomment-596020388
 # git clone https://github.com/powerline/powerline && \
 # cd powerline && \
