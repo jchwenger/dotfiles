@@ -102,6 +102,10 @@ source ~/.bashrc
 conda install pytorch
 
 # other python things
+mkdir ~/dl
+git clone https://github.com/huggingface/transformers.git ~/dl/transformers
+cd ~/dl/transformers
+pip install .
 
 # xclip
 #------
@@ -199,5 +203,6 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyr
 # Update the package list and install the Cloud SDK
 sudo apt-get update && sudo apt-get install google-cloud-sdk
 # dotfiles
+#---------
 git clone https://github.com/jchwenger/dotfiles
 # ./dotfiles/install/install.sh
