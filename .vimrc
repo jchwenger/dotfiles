@@ -42,15 +42,32 @@
   " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
   set clipboard^=unnamedplus
 
-  " Preserve clipboard when quitting Vim
+  " Preserve clipboard when quitting Vim {{{
+
   " https://stackoverflow.com/a/45553311
-  autocmd VimLeave * call system('echo ' . shellescape(getreg('+')) . 
-        \ ' | xclip -selection clipboard')
+  " autocmd VimLeave * call system('echo ' . shellescape(getreg('+')) . 
+  "       \ ' | xclip -selection clipboard')
+
+  " https://stackoverflow.com/a/48959734
+  if executable("xsel")
+    function! PreserveClipboard()
+      call system("xsel -ib", getreg('+'))
+    endfunction
+    function! PreserveClipboadAndSuspend()
+      call PreserveClipboard()
+      suspend
+    endfunction
+    autocmd VimLeave * call PreserveClipboard()
+    nnoremap <silent> <c-z> :call PreserveClipboadAndSuspend()<cr>
+    vnoremap <silent> <c-z> :<c-u>call PreserveClipboadAndSuspend()<cr>
+  endif
+  " }}}
 
   " Make Ex mode ! commands to zsh interactive
   " (However opening zsh straight in Ex line, hence not adopted)
   " (aliases are recognized)
   " set shellcmdflag=-ic
+
 " }}}
 
 " Netrw: {{{
