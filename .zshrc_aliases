@@ -6,11 +6,11 @@ export TERM='xterm-256color'
 
 # enable powerline
 # powerline-daemon -q
-# . /home/$(whoami)/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+# . $HOME/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # Processing command added in .profile # my own aliases
 alias wekinator='java -jar /media/$(whoami)/linux-data/programs/wekinator/WekiMini.jar'
-alias tor='cd /home/$(whoami)/tor-browser_en-US; ./start-tor-browser.desktop'
+alias tor='cd $HOME/tor-browser_en-US; ./start-tor-browser.desktop'
 alias zotero='cd ~/Zotero/Zotero; ./zotero'
 # alias qtcreator4.1='~/qtcreator-4.1.0/bin/qtcreator'
 # alias qt='~/qtcreator-4.6.0/bin/qtcreator'
@@ -62,7 +62,7 @@ alias va="vim $dot/.zshrc_aliases"
 alias vt='vim ~/.tmux.conf'
 alias vp="vim $dot/.zshrc_paths"
 
-alias rg='/home/$(whoami)/ranger/ranger.py'
+alias rg='$HOME/ranger/ranger.py'
 # alias rg='/usr/local/bin/ranger'
 alias tm='/usr/local/bin/tmux'
 
@@ -163,13 +163,12 @@ pdfmerge() {
 
 
 # The next line updates PATH for the Google Cloud SDK.
-# if [ -f '/home/$(whoami)/bin/google-cloud-sdk/path.bash.inc' ]; then source '/home/$(whoami)/bin/google-cloud-sdk/path.bash.inc'; fi
+# if [ -f '$HOME/bin/google-cloud-sdk/path.bash.inc' ]; then source '$HOME/bin/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-# if [ -f '/home/$(whoami)/bin/google-cloud-sdk/completion.bash.inc' ]; then source '/home/$(whoami)/bin/google-cloud-sdk/completion.bash.inc'; fi
-
+# if [ -f '$HOME/bin/google-cloud-sdk/completion.bash.inc' ]; then source '$HOME/bin/google-cloud-sdk/completion.bash.inc'; fi
 # added by Miniconda3 installer
-# export PATH="/home/$(whoami)/miniconda3/bin:$PATH"
+# export PATH="$HOME/miniconda3/bin:$PATH"
 . ~/miniconda3/etc/profile.d/conda.sh
 conda activate base
 # conda activate p36
@@ -196,7 +195,7 @@ alias jumr='make -C Builds/LinuxMakefile/; ./Builds/LinuxMakefile/build/$(basena
 # PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 
 # add .local/bin to the path
-export PATH="$PATH:/home/$(whoami)/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # add openFrameworks path as a global variable
 export PG_OF_PATH="/media/$(whoami)/linux-data/openFrameworks/"
@@ -207,7 +206,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # zim tools
-export PATH="$PATH:/home/$(whoami)/zim-tools_linux-x86_64-1.0.5-2" 
+export PATH="$PATH:$HOME/zim-tools_linux-x86_64-1.0.5-2" 
 
 # remove qt warning in IPython
 export QT_STYLE_OVERRIDE="fusion"
@@ -216,7 +215,7 @@ export QT_STYLE_OVERRIDE="fusion"
 # https://dougblack.io/words/zsh-vi-mode.html
 export KEYTIMEOUT=1
 
-export PATH="$PATH:/home/$(whoami)/bat-v0.12.1-x86_64-unknown-linux-gnu"
+export PATH="$PATH:$HOME/bat-v0.12.1-x86_64-unknown-linux-gnu"
 
 # fd https://github.com/sharkdp/fd
-export PATH="$PATH:/home/$(whoami)/fd-v7.4.0-x86_64-unknown-linux-gnu"
+export PATH="$PATH:$HOME/fd-v7.4.0-x86_64-unknown-linux-gnu"
