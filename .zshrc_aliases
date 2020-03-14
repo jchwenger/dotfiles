@@ -58,9 +58,9 @@ alias nim='nvim'
 
 alias vc='vim ~/.vimrc'
 alias vz='vim ~/.zshrc'
-alias va="vim $dot/.zshrc_aliases"
+alias va="vim $HOME/dotfiles/.zshrc_aliases"
 alias vt='vim ~/.tmux.conf'
-alias vp="vim $dot/.zshrc_paths"
+alias vp="vim $HOME/dotfiles/.zshrc_paths"
 
 alias rg='/home/$(whoami)/ranger/ranger.py'
 # alias rg='/usr/local/bin/ranger'
