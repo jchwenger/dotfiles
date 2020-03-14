@@ -12,7 +12,7 @@ SCRIPTPATH=$(dirname $SCRIPT)
 # hold F2 when booting > find option in BIOS (advanced settings) & turn sound off
 
 # resolution issues
--------------------
+#------------------
 # source: https://medium.com/better-programming/how-i-fixed-my-display-resolution-by-installing-nvidia-drivers-on-ubuntu-18-04-bionic-beaver-linux-489563052f6c
 sudo apt update && sudo apt upgrade
 sudo apt dist-upgrade
@@ -20,19 +20,19 @@ sudo apt install bc module-assistant build-essential dkms linux-headers-$(uname 
 sudo m-a prepare
 
 # check devices
----------------
+#--------------
 # ubuntu-drivers devices
 sudo ubuntu-drivers autoinstall
 
 # git
------
+#----
 sudo apt install git -y
 git config --global user.name "jchwenger"
 git config --global user.email "34098722+jchwenger@users.noreply.github.com"
 sudo snap install hub --classic
 
 # vim, etc
-----------
+#---------
 sudo apt install \
   vim-gnome \
   neovim \
@@ -146,7 +146,7 @@ git clone https://github.com/ranger/ranger
 # tmux
 #-----
 # https://github.com/tmux/tmux
-sudo apt-get install autotools-dev automake \
+sudo apt-get install \
   autotools-dev \
   automake \
   libevent-dev \
