@@ -42,6 +42,11 @@
   " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
   set clipboard^=unnamedplus
 
+  " Preserve clipboard when quitting Vim
+  " https://stackoverflow.com/a/45553311
+  autocmd VimLeave * call system('echo ' . shellescape(getreg('+')) . 
+        \ ' | xclip -selection clipboard')
+
   " Make Ex mode ! commands to zsh interactive
   " (However opening zsh straight in Ex line, hence not adopted)
   " (aliases are recognized)
