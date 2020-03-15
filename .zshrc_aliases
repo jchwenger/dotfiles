@@ -28,33 +28,33 @@ wr() {
   libreoffice --writer -o "$@" &;
 }
 
-alias stats='stat -c %y'
+alias stats="stat -c %y"
 
 # Space occupied by files, human readable, descending
-alias dus='du -sh * | sort -hr'
+alias dus="du -sh * | sort -hr"
 
 # Free space, without header, human readable, (4th column descending)
-alias dfs='df -h | tail -n +2 | sort -hrk 4'
+alias dfs="df -h | tail -n +2 | sort -hrk 4"
 
-alias p='ipython'
+alias p="ipython"
 
-alias v='vim .'
-alias vo='vim -O'
-alias g='gvim .'
-alias n='nvim .'
-alias gim='gvim -v'
-alias nim='nvim'
+alias v="vim ."
+alias vo="vim -O"
+alias g="gvim ."
+alias n="nvim ."
+alias gim="gvim -v"
+alias nim="nvim"
 
-alias vc='vim ~/.vimrc'
-alias vz='vim ~/.zshrc'
+alias vc="vim ~/.vimrc"
+alias vz="vim ~/.zshrc"
 alias va="vim $HOME/dotfiles/.zshrc_aliases"
-alias vt='vim ~/.tmux.conf'
+alias vt="vim ~/.tmux.conf"
 alias vp="vim $HOME/dotfiles/.zshrc_paths"
 alias vst="vim $HOME/dotfiles/install/install.sh"
 
-alias rg='/home/$(whoami)/ranger/ranger.py'
+alias rg="$HOME/ranger/ranger.py"
 # alias rg='/usr/local/bin/ranger'
-alias tm='$HOME/tmux/tmux'
+alias tm="$HOME/tmux/tmux"
 # alias tm='/usr/local/bin/tmux'
 export PATH="$HOME/tmux:$PATH"
 
@@ -168,7 +168,7 @@ alias pavu='pavucontrol'
 # PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 
 # add .local/bin to the path
-export PATH="$PATH:/home/$(whoami)/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # add openFrameworks path as a global variable
 export PG_OF_PATH="/media/$(whoami)/linux-data/openFrameworks/"
@@ -186,7 +186,7 @@ export QT_STYLE_OVERRIDE="fusion"
 export KEYTIMEOUT=1
 
 # bat https://github.com/sharkdp/bat
-export PATH="$PATH:/home/$(whoami)/bat-v0.12.1-x86_64-unknown-linux-gnu"
+export PATH="$PATH:$HOME/bat-v0.12.1-x86_64-unknown-linux-gnu"
 
 # fd https://github.com/sharkdp/fd
-export PATH="$PATH:/home/$(whoami)/fd-v7.4.0-x86_64-unknown-linux-gnu"
+export PATH="$PATH:$HOME/fd-v7.4.0-x86_64-unknown-linux-gnu"
