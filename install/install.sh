@@ -280,6 +280,13 @@ wget https://www.torproject.org/dist/torbrowser/9.0.6/tor-browser-linux64-9.0.6_
 tor -xf tor-browser-linux64-9.0.6_en-US.tar.xz
 rm tor-browser-linux64-9.0.6_en-US.tar.xz
 
+# node / nvm
+#-----------
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | zsh
+source ~/.zshrc
+nvm install node
+nvm install-latest-npm
+
 # dotfiles
 #---------
 git clone https://github.com/jchwenger/dotfiles

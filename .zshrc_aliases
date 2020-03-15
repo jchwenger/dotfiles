@@ -170,11 +170,6 @@ export PATH="$PATH:$HOME/.local/bin"
 # add openFrameworks path as a global variable
 export PG_OF_PATH="/media/$(whoami)/linux-data/openFrameworks/"
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # remove qt warning in IPython
 export QT_STYLE_OVERRIDE="fusion"
 
