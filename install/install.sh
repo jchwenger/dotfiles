@@ -260,9 +260,12 @@ sudo apt-get install \
 
 # latex, lyx (latex live editor)
 #------
-sudo apt-get update
+# https://dzone.com/articles/installing-latex-ubuntu
+# https://wiki.lyx.org/LyX/LyXOnUbuntu
+
+sudo apt update
 sudo add-apt-repository ppa:lyx-devel/release
-sudo apt-get install \
+sudo apt install \
 	texlive-full \
 	lyx
 
