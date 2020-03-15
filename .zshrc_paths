@@ -1,1 +1,10 @@
 # using variables as path shortcuts
+
+d="$HOME/Desktop"
+
+dr="$HOME/Dropbox"
+cv="$HOME/Dropbox/CV/ltx"
+
+dot="$HOME/dotfiles"
+
+dl="$HOME/dl"
