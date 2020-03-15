@@ -266,6 +266,17 @@ sudo apt-get install \
 	texlive-full \
 	lyx
 
+# tor
+#----
+# https://www.torproject.org/download/
+# check for latest version 
+echo "---------------------------------------------------------------"
+echo "installing tor, please check that the version is the latest one"
+echo "by visiting the website: https://www.torproject.org/download/"
+wget https://www.torproject.org/dist/torbrowser/9.0.6/tor-browser-linux64-9.0.6_en-US.tar.xz
+tor -xf tor-browser-linux64-9.0.6_en-US.tar.xz
+rm tor-browser-linux64-9.0.6_en-US.tar.xz
+
 # dotfiles
 #---------
 git clone https://github.com/jchwenger/dotfiles
