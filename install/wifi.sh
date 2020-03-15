@@ -21,6 +21,8 @@ fi
 
 # https://askubuntu.com/a/1071334
 # make sure SECURE BOOT is disabled
+echo "---------------------------"
+echo "installing rtl8821ce driver"
 sudo apt install --reinstall git dkms build-essential linux-headers-$(uname -r)
 git clone https://github.com/tomaspinho/rtl8821ce
 cd rtl8821ce
@@ -28,6 +30,12 @@ chmod +x dkms-install.sh
 chmod +x dkms-remove.sh
 sudo ./dkms-install.sh
 cd ~ 
+
+# https://askubuntu.com/a/1148065
+echo "-----------------------------------"
+echo "picking antenna 2 for driver 8821ce"
+# sudo modprobe 8821ce rtw_ant_num=2
+sudo -i && echo "options 8821ce rtw_ant_num=2"  >  /etc/modprobe.d/8821ce.conf
 
 # see also these pages:
 # https://askubuntu.com/a/990571
