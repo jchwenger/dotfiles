@@ -255,6 +255,14 @@ echo "----------------------"
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 
+# latex, lyx (latex live editor)
+#------
+sudo apt-get update
+sudo add-apt-repository ppa:lyx-devel/release
+sudo apt-get install \
+	texlive-full \
+	lyx
+
 # dotfiles
 #---------
 git clone https://github.com/jchwenger/dotfiles
