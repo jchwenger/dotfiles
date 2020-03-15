@@ -98,18 +98,46 @@ chmod +x Anaconda3-2019.03-Linux-x86_64.sh
 cd ~
 source ~/.bashrc
 
-# for tensorflow see separate files
-conda install pytorch
+# pytorch
+#--------
+# https://github.com/pytorch/pytorch
+# https://github.com/pytorch/text
+conda install \
+	pytorch \
+	torchtext \
 
-# other python things
+# tensorflow
+#-----------
+# for tensorflow see separate files
+
+# jax
+#----
+# https://github.com/google/jax
+PYTHON_VERSION=cp37  # alternatives: cp35, cp36, cp37, cp38
+CUDA_VERSION=cuda102  # alternatives: cuda92, cuda100, cuda101, cuda102
+PLATFORM=linux_x86_64  # alternatives: linux_x86_64
+BASE_URL='https://storage.googleapis.com/jax-releases'
+pip install --upgrade $BASE_URL/$CUDA_VERSION/jaxlib-0.1.40-$PYTHON_VERSION-none-$PLATFORM.whl
+pip install --upgrade jax  # install jax
+
+git clone https://github.com/google/jax ~/dl/jax
+git clone https://github.com/google/trax ~/dl/trax
+
+# other dl things
 mkdir ~/dl
 git clone https://github.com/huggingface/transformers.git ~/dl/transformers
 cd ~/dl/transformers
 pip install .
 
-# xclip
-#------
-sudo apt install xclip -y
+# NLP
+#-----
+# https://www.nltk.org/
+# https://spacy.io/
+# https://radimrehurek.com/gensim/
+pip install --upgrade \
+	nltk \
+	spacy \
+	gensim
 
 # fix slow boot
 #--------------
