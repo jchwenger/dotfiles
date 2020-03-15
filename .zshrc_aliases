@@ -185,6 +185,7 @@ export QT_STYLE_OVERRIDE="fusion"
 # https://dougblack.io/words/zsh-vi-mode.html
 export KEYTIMEOUT=1
 
+# bat https://github.com/sharkdp/bat
 export PATH="$PATH:/home/$(whoami)/bat-v0.12.1-x86_64-unknown-linux-gnu"
 
 # fd https://github.com/sharkdp/fd
