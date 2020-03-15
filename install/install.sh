@@ -202,6 +202,31 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 # Update the package list and install the Cloud SDK
 sudo apt-get update && sudo apt-get install google-cloud-sdk
+
+# docker
+#-------
+# https://docs.docker.com/install/linux/docker-ce/ubuntu/
+
+sudo apt-get update
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+echo "----------------------"
+echo "Verify that you now have the key with the fingerprint"
+echo "9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88"
+sudo apt-key fingerprint 0EBFCD88
+echo "----------------------"
+ sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
 # dotfiles
 #---------
 git clone https://github.com/jchwenger/dotfiles
