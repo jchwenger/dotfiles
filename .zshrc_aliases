@@ -153,9 +153,6 @@ pdfmerge() {
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
 
-# The next line enables shell command completion for gcloud.
-source /usr/share/google-cloud-sdk/completion.zsh.inc 
-
 alias pavu='pavucontrol'
 
 # Disable CTRL-S and CTRL-Q
