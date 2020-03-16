@@ -291,3 +291,16 @@ nvm install-latest-npm
 #---------
 git clone https://github.com/jchwenger/dotfiles
 # ./dotfiles/install/install.sh
+
+# video codecs, fonts...
+#-----------------------
+# https://tor.stackexchange.com/a/19274
+sudo apt update
+sudo apt install \
+	libdvdnav4 \
+	libdvdread4 \
+	gstreamer1.0-plugins-bad \
+	gstreamer1.0-plugins-ugly \
+	libdvd-pkg
+sudo dpkg-reconfigure libdvd-pkg
+sudo apt install ubuntu-restricted-extras
