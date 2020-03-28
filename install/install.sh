@@ -151,9 +151,12 @@ pip install \
 
 # fix slow boot
 #--------------
-# https://askubuntu.com/questions/1030867/how-to-diagnose-fix-very-slow-boot-on-ubuntu-18-04
-# modify /etc/default/grub and add
-# GRUB_CMDLINE_LINUX_DEFAULT="quiet splash noresume", then
+# # https://askubuntu.com/questions/1030867/how-to-diagnose-fix-very-slow-boot-on-ubuntu-18-04
+# # modify /etc/default/grub and add
+# GRUB_CMDLINE_LINUX_DEFAULT="quiet splash noresume"
+# # alternatively: https://ubuntuforums.org/showthread.php?t=2420199
+# GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nouveau.modeset=0 tpm_tis.interrupts=0 acpi_osi=Linux i915.preliminary_hw_support=1 idle=nomwait"
+# # then:
 # sudo update-grub
 
 # fzf
