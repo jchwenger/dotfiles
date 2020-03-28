@@ -103,7 +103,7 @@ source ~/.bashrc
 # https://github.com/pytorch/pytorch
 # https://github.com/pytorch/text
 conda install \
-	pytorch \
+	pytorch-gpu \
 	torchtext \
 
 # tensorflow
