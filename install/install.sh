@@ -92,8 +92,8 @@ cd /tmp
 curl -O https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
 # compare integrity of sha with those found here:
 # https://docs.anaconda.com/anaconda/install/hashes/lin-3-64/
-sha256sum Anaconda3-2019.03-Linux-x86_64.sh
-chmod +x Anaconda3-2019.03-Linux-x86_64.sh
+sha256sum Anaconda3-2019.10-Linux-x86_64.sh
+chmod +x Anaconda3-2019.10-Linux-x86_64.sh
 ./Anaconda3-2019.03-Linux-x86_64.sh
 cd ~
 source ~/.bashrc
