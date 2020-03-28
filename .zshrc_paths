@@ -8,3 +8,5 @@ cv="$HOME/Dropbox/CV/ltx"
 dot="$HOME/dotfiles"
 
 dl="$HOME/dl"
+
+co="$HOME/corpora"
