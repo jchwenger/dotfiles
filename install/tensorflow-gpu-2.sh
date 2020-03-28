@@ -1,3 +1,5 @@
+pip install tensorflow 
+
 # Install development and runtime libraries (~4GB)
 sudo apt-get install --no-install-recommends \
     cuda-10-1 \
@@ -11,6 +13,7 @@ sudo apt-get install -y --no-install-recommends libnvinfer6=6.0.1-1+cuda10.1 \
 
 sudo apt autoremove
 
+# Install TensorRT. Requires that libcudnn7 is installed above.
 # # other attempts before finding the tf commands
 # # installing CUDA and cuDNN
 # # https://developer.nvidia.com/cuda-downloads/
