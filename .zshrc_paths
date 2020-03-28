@@ -7,6 +7,8 @@ cv="$HOME/Dropbox/CV/ltx"
 
 dot="$HOME/dotfiles"
 
+usb="/media/jcw/JESH_S_USB/"
+
 dl="$HOME/dl"
 
 co="$HOME/corpora"
