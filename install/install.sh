@@ -285,7 +285,7 @@ sudo apt install \
 # tor
 #----
 # https://www.torproject.org/download/
-# check for latest version 
+# check for latest version
 echo "---------------------------------------------------------------"
 echo "installing tor, please check that the version is the latest one"
 echo "by visiting the website: https://www.torproject.org/download/"
