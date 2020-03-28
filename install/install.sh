@@ -317,3 +317,7 @@ sudo apt install \
 	libdvd-pkg
 sudo dpkg-reconfigure libdvd-pkg
 sudo apt install ubuntu-restricted-extras
+
+# ctags
+#------
+sudo snap install universal-ctags
