@@ -50,7 +50,7 @@ sudo apt install gnome-tweaks gnome-tweak-tool -y
 source $SCRIPTPATH/wifi.sh
 
 # fix patchy wifi by editing the file
-# https://askubuntu.com/questions/1030653/wifi-randomly-disconnected-on-ubuntu-18-04-lts
+# https://askubuntu.com/a/1077559
 # /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
 # from wifi.powersave = 3 to 2
 
