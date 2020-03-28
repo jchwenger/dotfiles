@@ -830,7 +830,8 @@
     Plug 'vim-scripts/indentpython.vim', {'for': 'python'}
     Plug 'octol/vim-cpp-enhanced-highlight', {'for': ['cpp', 'c']}
     Plug 'ycm-core/YouCompleteMe', {'for':
-          \ ['python', 'c', 'cpp', 'javascript', 'java']}
+          \ ['python', 'c', 'cpp', 'javascript', 'java'],
+          \ 'do': './install.py --clangd-completer'}
     Plug 'MaxMEllon/vim-jsx-pretty', {'for': 'javascript'}
     " Plug 'psf/black', {'for':'python'} " does not work as current Vim is compiled with Python < 3.6
     Plug 'junegunn/fzf', {'dir':'~/.fzf', 'do':'./install --all'}
