@@ -139,6 +139,16 @@ pip install --upgrade \
 	spacy \
 	gensim
 
+
+# python web &c
+#--------------
+pip install \
+	starlette \
+	uvicorn \
+	aiofiles \
+	Jinja2 \
+	ujson
+
 # fix slow boot
 #--------------
 # https://askubuntu.com/questions/1030867/how-to-diagnose-fix-very-slow-boot-on-ubuntu-18-04
