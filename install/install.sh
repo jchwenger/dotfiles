@@ -140,6 +140,40 @@ pip install --upgrade \
 	gensim
 
 
+# MOA NLP
+#--------
+mkdir $HOME/dl/encoding
+cd $HOME/dl/encoding
+
+# https://github.com/rsennrich/subword-nmt
+git clone https://github.com/rsennrich/subword-nmt
+
+# https://github.com/glample/fastBPE
+git clone https://github.com/glample/fastBPE
+cd fastBPE
+g++ -std=c++11 -pthread -O3 fastBPE/main.cc -IfastBPE -o fast
+cd ..
+
+# https://github.com/google/sentencepiece
+pip install sentencepiece
+git clone https://github.com/google/sentencepiece
+cd sentencepiece
+
+# install from source
+sudo apt-get install \
+	cmake \
+	build-essential \
+	pkg-config \
+	libgoogle-perftools-dev
+
+mkdir build
+cd build
+cmake ..
+make -j $(nproc)
+sudo make install
+sudo ldconfig -v
+cd $HOME
+
 # python web &c
 #--------------
 pip install \
