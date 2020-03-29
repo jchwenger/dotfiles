@@ -183,6 +183,14 @@ pip install \
 	Jinja2 \
 	ujson
 
+conda install -c anaconda \
+	requests -y
+
+conda install -c conda-forge \
+	tqdm \
+	toposort \
+	-y
+
 # fix slow boot
 #--------------
 # # https://askubuntu.com/questions/1030867/how-to-diagnose-fix-very-slow-boot-on-ubuntu-18-04
