@@ -10,5 +10,6 @@ dot="$HOME/dotfiles"
 usb="/media/jcw/JESH_S_USB/"
 
 dl="$HOME/dl"
+gpt="$HOME/dl/gpt/gpt-2"
 
 co="$HOME/corpora"
