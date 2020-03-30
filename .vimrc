@@ -327,10 +327,6 @@
   nnoremap <localleader>on :tabedit %<CR>
   vnoremap <localleader>on :tabedit %<CR>
 
-  " Close tab ('only close')
-  nnoremap <localleader>oc :tabclose<CR>
-  vnoremap <localleader>oc :tabclose<CR>
-
   " Cycle through tabs using tab, like standard editors
   nnoremap <tab> gt
   vnoremap <tab> gt
