@@ -287,8 +287,8 @@
 
   " Open vertical/horizontal: Alt+v / Alt+s
   nnoremap <C-w>v :vnew<CR>
-  vnoremap <C-w>v :vnew<CR>
-  tnoremap <C-w>v :vnew<CR>
+  vnoremap <C-w>v :<C-u>vnew<CR>
+  tnoremap <C-w>v <C-w>:vnew<CR>
 
   " Close window: Alt+c
   " Terminal, from within, also Alt+c
