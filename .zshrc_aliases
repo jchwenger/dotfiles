@@ -3,7 +3,6 @@ export TERM='xterm-256color'
 
 # Processing command added in .profile # my own aliases
 alias tor='cd $HOME/tor-browser_en-US; ./start-tor-browser.desktop'
-alias zotero='cd ~/Zotero/Zotero; ./zotero'
 
 alias prc=processing
 alias prj=processing-java
