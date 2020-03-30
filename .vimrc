@@ -286,12 +286,9 @@
   " Windows: navigation {{{
 
   " Open vertical/horizontal: Alt+v / Alt+s
-  nnoremap <M-v> <C-W>v
-  vnoremap <M-v> <C-W>v
-  tnoremap <M-v> <C-W>v
-  nnoremap <M-s> <C-W>s
-  vnoremap <M-s> <C-W>s
-  tnoremap <M-s> <C-W>s
+  nnoremap <C-w>v :vnew<CR>
+  vnoremap <C-w>v :vnew<CR>
+  tnoremap <C-w>v :vnew<CR>
 
   " Close window: Alt+c
   " Terminal, from within, also Alt+c
