@@ -299,20 +299,6 @@
   " (See mappings below)
   nnoremap <M-c> <C-W>c
   vnoremap <M-c> <C-W>c
-
-  " Navigation using Ctrl+Alt+h/j/k/l
-  nnoremap H <C-W><C-h>
-  vnoremap H <C-W><C-h>
-  tnoremap H <C-W><C-h>
-  nnoremap J <C-W><C-j>
-  vnoremap J <C-W><C-j>
-  tnoremap J <C-W><C-j>
-  nnoremap K <C-W><C-k>
-  vnoremap J <C-W><C-k>
-  tnoremap J <C-W><C-k>
-  nnoremap L <C-W><C-l>
-  vnoremap L <C-W><C-l>
-  tnoremap L <C-W><C-l>
   " }}}
 
   " Window: resizing {{{
