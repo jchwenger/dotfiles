@@ -363,3 +363,11 @@ sudo apt install ubuntu-restricted-extras
 # ctags
 #------
 sudo snap install universal-ctags
+
+# Zotero
+#-------
+# https://askubuntu.com/a/1160369
+wget -qO- https://github.com/retorquere/zotero-deb/releases/download/apt-get/install.sh | sudo bash
+sudo apt update
+sudo apt install zotero
+# also add Zotero Connector for Firefox from the above download page
