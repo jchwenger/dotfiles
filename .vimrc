@@ -266,12 +266,6 @@
   nnoremap <M-e> ge
   nnoremap <M-E> gE
 
-  " Add empty line above, below using
-  " <localleader>ou "o up"
-  " <localleader>od "o down"
-  nnoremap <localleader>ou O<esc>j
-  nnoremap <localleader>od o<esc>k
-
   " Navigation to next punctuation using
   " Alt+) / Alt+(
   nnoremap ) /\v([,!?;:…(){}`’‘”“]\|' \| '\|\.+)<CR>:nohlsearch<CR>
