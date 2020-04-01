@@ -400,10 +400,11 @@
   nnoremap <C-w>; :vertical terminal zsh<CR>
   nnoremap <C-w>: :terminal zsh<CR>
 
-  " Close from within with Ctrl+w+c
+  " Close from within with Ctrl+w+c/!
   " From any other window with <leader>tc
   nnoremap <leader>tc :bdelete! !zsh<CR>
   tnoremap <C-w>c <C-W>:bdelete! !zsh<CR>
+  tnoremap <C-w>! <C-W>:bdelete! !zsh<CR>
 
   " Browse the terminal in normal mode as you would in Ex mode
   tnoremap <C-f> <C-W>N
