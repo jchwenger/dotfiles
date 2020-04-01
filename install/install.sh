@@ -47,7 +47,7 @@ sudo apt install gnome-tweaks gnome-tweak-tool -y
 
 # wifi issues
 #------------
-source $SCRIPTPATH/wifi.sh
+sudo ./$SCRIPTPATH/wifi.sh
 
 # fix patchy wifi by editing the file
 # https://askubuntu.com/a/1077559
