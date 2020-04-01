@@ -329,8 +329,8 @@
   vnoremap <localleader>t. :tabedit .<CR>
 
   " Make current buffer full-screen (in new tab)
-  nnoremap <localleader>on :tabedit %<CR>
-  vnoremap <localleader>on :tabedit %<CR>
+  nnoremap <C-w>T :tabedit %<CR>
+  vnoremap <C-w>T :tabedit %<CR>
 
   " Cycle through tabs using tab, like standard editors
   nnoremap <tab> gt
