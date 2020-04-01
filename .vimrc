@@ -397,8 +397,8 @@
   " Close from within with Ctrl+w+c/!
   " From any other window with <leader>tc
   nnoremap <leader>tc :bdelete! !zsh<CR>:echo<CR>
-  tnoremap <C-w>c <C-w>:execute "bdelete! " . expand('%')<CR>:echo<CR>
-  tnoremap <C-w>! <C-w>:execute "bdelete! " . expand('%')<CR>:echo<CR>
+  tnoremap <C-w>c <C-w>:bdelete!<CR>:echo<CR>
+  tnoremap <C-w>! <C-w>:bdelete!<CR>:echo<CR>
 
   " Browse the terminal in normal mode as you would in Ex mode
   tnoremap <C-f> <C-W>N
