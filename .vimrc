@@ -278,9 +278,9 @@
   nnoremap ( ?\v([,!?;:…(){}`’‘”“]\|' \| '\|\.+)<CR>:nohlsearch<CR>
 
   " Buffers: {{{
-  " close with Alt+b
-  nnoremap <M-b> :bdelete!<CR>
-  vnoremap <M-b> :bdelete!<CR>
+  " delete buffer with ctrl+w+!
+  nnoremap <C-w>! :bdelete!<CR>
+  vnoremap <C-w>! :bdelete!<CR>
   " }}}
 
   " Windows: navigation {{{
