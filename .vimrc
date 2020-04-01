@@ -301,13 +301,6 @@
   nnoremap <C-w>, :split .<CR>
   vnoremap <C-w>, :<C-u>split .<CR>
   tnoremap <C-w>, <C-w>:split .<CR>
-
-  " Close window: Alt+c
-  " Terminal, from within, also Alt+c
-  " from any other window, <leader>t
-  " (See mappings below)
-  nnoremap <M-c> <C-W>c
-  vnoremap <M-c> <C-W>c
   " }}}
 
   " Window: resizing {{{
@@ -407,10 +400,10 @@
   nnoremap <C-w>t :vertical terminal zsh<CR>
   nnoremap <C-w>y :terminal zsh<CR>
 
-  " Close from within with Alt+c
+  " Close from within with Ctrl+w+c
   " From any other window with <leader>tc
   nnoremap <leader>tc :bdelete! !zsh<CR>
-  tnoremap <M-c> <C-W>:bdelete! !zsh<CR>
+  tnoremap <C-w>c <C-W>:bdelete! !zsh<CR>
 
   " Browse the terminal in normal mode as you would in Ex mode
   tnoremap <C-f> <C-W>N
