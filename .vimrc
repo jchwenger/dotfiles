@@ -285,10 +285,22 @@
 
   " Windows: navigation {{{
 
-  " Open vertical/horizontal: Alt+v / Alt+s
+  " Open vertical/horizontal: 
+  " Ctrl+v for a new v split 
+  " (Ctrl+Ctrl+v for a new same file v split)
+  " (Ctrl+n for a new empty h split)
+  " (Ctrl+s for a new same file h split)
+  " Ctrl+. for the current dir (v)
+  " Ctrl+, for the current dir (h)
   nnoremap <C-w>v :vnew<CR>
   vnoremap <C-w>v :<C-u>vnew<CR>
   tnoremap <C-w>v <C-w>:vnew<CR>
+  nnoremap <C-w>. :vsplit .<CR>
+  vnoremap <C-w>. :<C-u>vsplit .<CR>
+  tnoremap <C-w>. <C-w>:vsplit .<CR>
+  nnoremap <C-w>, :split .<CR>
+  vnoremap <C-w>, :<C-u>split .<CR>
+  tnoremap <C-w>, <C-w>:split .<CR>
 
   " Close window: Alt+c
   " Terminal, from within, also Alt+c
@@ -392,8 +404,8 @@
 
   " Open with Alt+t in vertical split
   " <leader>Alt+t in horizontal
-  nnoremap <M-t> :vertical terminal zsh<CR>
-  nnoremap <leader><M-t> :terminal zsh<CR>
+  nnoremap <C-w>t :vertical terminal zsh<CR>
+  nnoremap <C-w>y :terminal zsh<CR>
 
   " Close from within with Alt+c
   " From any other window with <leader>tc
