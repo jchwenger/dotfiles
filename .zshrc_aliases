@@ -106,7 +106,7 @@ flit() {
 
 # find in Vocabulary
 fvoc() {
-  cd "/media/$(whoami)/windows/Users/user/OneDrive/vocabulary"
+  cd $voc
   find  -iname "*$**" -exec stat -c "%.19y %n" {} \;
   cd ~-
   # find /media/$(whoami)/windows/Users/user/OneDrive/vocabulary -iname "*$**" -printf '%Ac %f \n';
