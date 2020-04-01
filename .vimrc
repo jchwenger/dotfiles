@@ -581,6 +581,9 @@
 
   " Abbreviations: {{{
 
+  " Open help in new tab
+  cabbrev help tab help
+
   " Text editing in .txt and .md
   augroup text_edition
     autocmd!
