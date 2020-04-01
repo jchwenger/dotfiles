@@ -395,10 +395,10 @@
   " Do not forget <C-F> to edit cmds in normal mode!
   " (& <C-E> to send it back to Ex mode)
 
-  " Open with Alt+t in vertical split
-  " <leader>Alt+t in horizontal
-  nnoremap <C-w>t :vertical terminal zsh<CR>
-  nnoremap <C-w>y :terminal zsh<CR>
+  " Open with Alt+; in vertical split
+  " <leader>Alt+: in horizontal
+  nnoremap <C-w>; :vertical terminal zsh<CR>
+  nnoremap <C-w>: :terminal zsh<CR>
 
   " Close from within with Ctrl+w+c
   " From any other window with <leader>tc
