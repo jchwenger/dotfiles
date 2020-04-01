@@ -287,6 +287,8 @@ sudo apt-get install \
 	docker-ce \
 	docker-ce-cli \
 	containerd.io
+# grant permissions
+sudo usermod -a -G docker $USER
 
 # latex, lyx (latex live editor)
 #------
