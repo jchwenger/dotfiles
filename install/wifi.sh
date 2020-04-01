@@ -8,6 +8,15 @@ echo "---------------------------"
 echo "fixing wifi on Ubuntu 18.04"
 cd ~
 
+# fix patchy wifi by editing the file
+# https://askubuntu.com/a/1077559
+# /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+# from wifi.powersave = 3 to 2
+
+# other potential fix: restart NetworkManager
+# https://askubuntu.com/questions/253257/ubuntu-doesnt-reconnect-to-wifi-unless-i-reboot
+# sudo service network-manager restart
+
 # wifi diagnosis
 # https://github.com/UbuntuForums/wireless-info
 echo "running some diagnoses & saving in ~/wireless-info.txt"

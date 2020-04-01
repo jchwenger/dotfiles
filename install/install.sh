@@ -49,26 +49,6 @@ sudo apt install gnome-tweaks gnome-tweak-tool -y
 #------------
 sudo ./$SCRIPTPATH/wifi.sh
 
-# fix patchy wifi by editing the file
-# https://askubuntu.com/a/1077559
-# /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
-# from wifi.powersave = 3 to 2
-
-# other potential fix: restart NetworkManager
-# https://askubuntu.com/questions/253257/ubuntu-doesnt-reconnect-to-wifi-unless-i-reboot
-# sudo service network-manager restart
-
-# # tried to install the older driver
-# # https://packages.ubuntu.com/bionic-updates/rtl8821ce-dkms
-# sudo apt install rtl8821ce-dkms -y
-
-# which did not work, using instead a repository, as described here:
-# https://askubuntu.com/a/1071336
-git clone https://github.com/tomaspinho/rtl8821ce
-cd rtl8821ce
-sudo ./dkms-install.sh
-cd ~
-
 # tlp battery
 #------------
 sudo add-apt-repository ppa:linuxuprising/apps
