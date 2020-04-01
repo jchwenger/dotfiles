@@ -785,7 +785,7 @@
 
 " Declare the list of plugins.
   call plug#begin('~/.vim/plugged')
-    Plug '~/.vim/vim-latex-1.10.0', {'for': 'tex'}
+    Plug 'vim-latex/vim-latex', {'for': 'tex', 'do': ':!ln -s \"$HOME/.vim/plugged/vim-latex\" \"$HOME/.vim/vim-latex\"'}
     Plug 'kana/vim-textobj-user'
     Plug 'kana/vim-textobj-entire'
     Plug 'kana/vim-textobj-function', {'for': ['vim', 'c', 'java']}
