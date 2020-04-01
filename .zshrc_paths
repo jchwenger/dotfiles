@@ -5,6 +5,8 @@ d="$HOME/Desktop"
 dr="$HOME/Dropbox"
 cv="$HOME/Dropbox/CV/ltx"
 
+lit="$HOME/Dropbox/lit"
+
 dot="$HOME/dotfiles"
 
 usb="/media/jcw/JESH_S_USB/"
@@ -14,3 +16,5 @@ gpt="$HOME/dl/gpt/gpt-2"
 
 co="$HOME/corpora"
 voc="$HOME/vocabulary"
+
+cv="$HOME/Documents/cv"
