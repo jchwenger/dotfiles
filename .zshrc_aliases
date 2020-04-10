@@ -81,6 +81,9 @@ alias zipr='zip -r'
 
 alias j='jobs'
 
+# easy xclip wtih |X
+alias -g XCL='| xclip -sel clip'
+
 # find in current directory
 fin() {
   find . -iname "*$**" -printf '%Ac %p \n';
