@@ -9,9 +9,11 @@ lit="$HOME/Dropbox/lit"
 
 dot="$HOME/dotfiles"
 
-usb="/media/jcw/JESH_S_USB/"
+other="/media/jcw"
+usb="$other/JESH_S_USB/"
 
 dl="$HOME/dl"
+data="$dl/data"
 gpt="$HOME/dl/gpt/gpt-2"
 
 co="$HOME/corpora"
