@@ -34,12 +34,12 @@ sudo snap install hub --classic
 # vim, etc
 #---------
 sudo apt install \
-  vim-gnome \
-  neovim \
-  curl \
-  rename \
-  pavucontrol \
-  xclip -y
+	vim-gnome \
+	neovim \
+	curl \
+	rename \
+	pavucontrol \
+	xclip -y
 
 # desktop etc
 #------------
@@ -151,19 +151,30 @@ cd $HOME
 
 # python web &c
 #--------------
+# starlette https://www.starlette.io/
+# uvicorn https://www.uvicorn.org/
+# aiofiles https://pypi.org/project/aiofiles/
+# Jinja2 https://jinja.palletsprojects.com/en/2.11.x/
+# ujson https://pypi.org/project/ujson/
+# requests https://pypi.org/project/requests/
+# tqdm  https://github.com/tqdm/tqdm
+# fire (cli) https://github.com/google/python-fire
+# toposort https://pypi.org/project/toposort/
+# black (formatting): https://pypi.org/project/black/
+
 pip install \
 	starlette \
 	uvicorn \
 	aiofiles \
 	Jinja2 \
-	ujson
-
-conda install -c anaconda \
-	requests -y
+	ujson \
+	requests
 
 conda install -c conda-forge \
 	tqdm \
+	fire \
 	toposort \
+	black \
 	-y
 
 # fix slow boot
