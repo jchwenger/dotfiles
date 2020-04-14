@@ -184,3 +184,4 @@ export PATH="$PATH:$HOME/bat-v0.12.1-x86_64-unknown-linux-gnu"
 
 # fd https://github.com/sharkdp/fd
 export PATH="$PATH:$HOME/fd-v7.4.0-x86_64-unknown-linux-gnu"
+
