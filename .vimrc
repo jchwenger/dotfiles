@@ -528,6 +528,7 @@
   " open/close Fugitive buffer with <localleader>gg / gc
   nmap <localleader>gg :Gstatus<CR>
   nmap <localleader>gc <C-w>kgq
+  nmap <localleader>gv <C-w>kgq<C-w>c
 
   augroup Fugitive
     autocmd User fugitive
