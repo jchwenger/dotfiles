@@ -359,3 +359,11 @@ wget -qO- https://github.com/retorquere/zotero-deb/releases/download/apt-get/ins
 sudo apt update
 sudo apt install zotero
 # also add Zotero Connector for Firefox from the above download page
+
+# rclone
+#-------
+# https://rclone.org/
+curl https://rclone.org/install.sh | sudo zsh
+
+# if still a bug with access rights for ~/.config/rclone
+# sudo chown -R $USER $HOME/.config/rclone
