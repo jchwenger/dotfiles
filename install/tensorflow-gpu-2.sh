@@ -1,4 +1,4 @@
-pip install tensorflow 
+pip install tensorflow
 
 # Install development and runtime libraries (~4GB)
 sudo apt-get install --no-install-recommends \
@@ -27,7 +27,7 @@ sudo apt autoremove
 # # https://developer.nvidia.com/rdp/cudnn-download
 # # and install it:
 # sudo dpkg -i /home/$(whoami)/Downloads/libcudnn7-dev_7.6.5.32-1+cuda10.2_amd64.deb
-# 
+
 # # a simple procedure with this
 # # https://askubuntu.com/a/1036265
 # sudo add-apt-repository ppa:graphics-drivers/ppa
