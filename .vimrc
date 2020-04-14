@@ -45,7 +45,7 @@
   " Preserve clipboard when quitting Vim {{{
 
   " https://stackoverflow.com/a/45553311
-  " autocmd VimLeave * call system('echo ' . shellescape(getreg('+')) . 
+  " autocmd VimLeave * call system('echo ' . shellescape(getreg('+')) .
   "       \ ' | xclip -selection clipboard')
 
   " https://stackoverflow.com/a/48959734
@@ -279,8 +279,8 @@
 
   " Windows: navigation {{{
 
-  " Open vertical/horizontal: 
-  " Ctrl+v for a new v split 
+  " Open vertical/horizontal:
+  " Ctrl+v for a new v split
   " (Ctrl+Ctrl+v for a new same file v split)
   " (Ctrl+n for a new empty h split)
   " (Ctrl+s for a new same file h split)
@@ -417,7 +417,7 @@
   " cnoremap <C-k> <C-f>d$<C-c>
   cnoremap <M-d> <C-f>dw<C-c>
   cnoremap <M-e> <C-f>de<C-c>
-  
+
   " " check :help emacs-keys
   " " start of line
   " :cnoremap <C-A>   <Home>
@@ -598,7 +598,7 @@
   augroup py_abbrev
     autocmd!
     " the __main__ thingy
-    autocmd FileType python iabbrev <buffer> 
+    autocmd FileType python iabbrev <buffer>
           \ if_ if __name__ == '__main__':<CR>main()
   augroup END
   " }}}
