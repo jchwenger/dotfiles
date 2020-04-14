@@ -1,22 +1,25 @@
 # using variables as path shortcuts
 
 d="$HOME/Desktop"
+docs="$HOME/Documents"
 
 dr="$HOME/Dropbox"
 cv="$HOME/Dropbox/CV/ltx"
 
 lit="$HOME/Dropbox/lit"
+more="$lit/its/it VI/more"
+words="$lit/its/it VI/words"
 
 dot="$HOME/dotfiles"
 
 other="/media/jcw"
-usb="$other/JESH_S_USB/"
+usb="$other/JESH_S_USB"
 
 dl="$HOME/dl"
 data="$dl/data"
-gpt="$HOME/dl/gpt/gpt-2"
+gpt="$dl/gpt/gpt-2"
+scraping="$dl/scraping"
 
-co="$HOME/corpora"
-voc="$HOME/vocabulary"
-
-cv="$HOME/Documents/cv"
+cv="$docs/cv"
+co="$docs/corpora"
+voc="$docs/vocabulary"
