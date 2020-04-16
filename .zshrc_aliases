@@ -51,8 +51,8 @@ alias vt="vim ~/.tmux.conf"
 alias vp="vim $HOME/dotfiles/.zshrc_paths"
 alias vst="vim $HOME/dotfiles/install/install.sh"
 
-alias rg="$HOME/ranger/ranger.py"
-# alias rg='/usr/local/bin/ranger'
+alias rng="$HOME/ranger/ranger.py"
+# alias rng='/usr/local/bin/ranger'
 alias tm="$HOME/tmux/tmux"
 # alias tm='/usr/local/bin/tmux'
 export PATH="$HOME/tmux:$PATH"
