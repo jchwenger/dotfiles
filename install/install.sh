@@ -367,3 +367,9 @@ curl https://rclone.org/install.sh | sudo zsh
 
 # if still a bug with access rights for ~/.config/rclone
 # sudo chown -R $USER $HOME/.config/rclone
+
+# ripgrep
+#--------
+# https://github.com/BurntSushi/ripgrep
+wget https://github.com/BurntSushi/ripgrep/releases/download/12.0.1/ripgrep_12.0.1_amd64.deb
+sudo dpkg -i ripgrep_12.0.1_amd64.deb
