@@ -55,7 +55,7 @@ alias rng="$HOME/ranger/ranger.py"
 # alias rng='/usr/local/bin/ranger'
 alias tm="$HOME/tmux/tmux"
 # alias tm='/usr/local/bin/tmux'
-export PATH="$HOME/tmux:$PATH"
+export PATH="$PATH:$HOME/tmux"
 
 alias so='source ~/.zshrc'
 
