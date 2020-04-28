@@ -185,3 +185,6 @@ export PATH="$PATH:$HOME/bat-v0.12.1-x86_64-unknown-linux-gnu"
 # fd https://github.com/sharkdp/fd
 export PATH="$PATH:$HOME/fd-v7.4.0-x86_64-unknown-linux-gnu"
 
+# add CUDA: https://askubuntu.com/a/1175482
+export PATH="/usr/local/cuda/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
