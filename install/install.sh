@@ -85,15 +85,21 @@ conda install \
 #-----------
 # for tensorflow see separate files
 
-# jax
+# jax & trax
 #----
 # https://github.com/google/jax
 PYTHON_VERSION=cp37  # alternatives: cp35, cp36, cp37, cp38
-CUDA_VERSION=cuda102  # alternatives: cuda92, cuda100, cuda101, cuda102
+CUDA_VERSION=cuda101  # alternatives: cuda92, cuda100, cuda101, cuda102
 PLATFORM=linux_x86_64  # alternatives: linux_x86_64
 BASE_URL='https://storage.googleapis.com/jax-releases'
-pip install --upgrade $BASE_URL/$CUDA_VERSION/jaxlib-0.1.40-$PYTHON_VERSION-none-$PLATFORM.whl
+pip install --upgrade $BASE_URL/$CUDA_VERSION/jaxlib-0.1.45-$PYTHON_VERSION-none-$PLATFORM.whl
 pip install --upgrade jax  # install jax
+
+# TODO: test the automated version
+# pip install --upgrade https://storage.googleapis.com/jax-releases/`nvidia-smi | sed -En "s/.* CUDA Version: ([0-9]*)\.([0-9]*).*/cuda\1\2/p"`/jaxlib-0.1.45-`python3 -V | sed -En "s/Python ([0-9]*)\.([0-9]*).*/cp\1\2/p"`-none-linux_x86_64.whl jax
+
+# TODO: build from source
+# https://jax.readthedocs.io/en/latest/developer.html#building-from-source
 
 git clone https://github.com/google/jax ~/dl/jax
 git clone https://github.com/google/trax ~/dl/trax
