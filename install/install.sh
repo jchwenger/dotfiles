@@ -34,12 +34,12 @@ sudo snap install hub --classic
 # vim, etc
 #---------
 sudo apt install \
-	vim-gnome \
-	neovim \
-	curl \
-	rename \
-	pavucontrol \
-	xclip -y
+  vim-gnome \
+  neovim \
+  curl \
+  rename \
+  pavucontrol \
+  xclip -y
 
 # desktop etc
 #------------
@@ -78,8 +78,8 @@ source ~/.bashrc
 # https://github.com/pytorch/pytorch
 # https://github.com/pytorch/text
 conda install \
-	pytorch-gpu \
-	torchtext \
+  pytorch-gpu \
+  torchtext \
 
 # tensorflow
 #-----------
@@ -116,9 +116,9 @@ pip install .
 # https://spacy.io/
 # https://radimrehurek.com/gensim/
 pip install --upgrade \
-	nltk \
-	spacy \
-	gensim
+  nltk \
+  spacy \
+  gensim
 
 
 # MOA NLP
@@ -142,10 +142,10 @@ cd sentencepiece
 
 # install from source
 sudo apt-get install \
-	cmake \
-	build-essential \
-	pkg-config \
-	libgoogle-perftools-dev
+  cmake \
+  build-essential \
+  pkg-config \
+  libgoogle-perftools-dev
 
 mkdir build
 cd build
@@ -169,19 +169,19 @@ cd $HOME
 # black (formatting): https://pypi.org/project/black/
 
 pip install \
-	starlette \
-	uvicorn \
-	aiofiles \
-	Jinja2 \
-	ujson \
-	requests
+  starlette \
+  uvicorn \
+  aiofiles \
+  Jinja2 \
+  ujson \
+  requests
 
 conda install -c conda-forge \
-	tqdm \
-	fire \
-	toposort \
-	black \
-	-y
+  tqdm \
+  fire \
+  toposort \
+  black \
+  -y
 
 # fix slow boot
 #--------------
@@ -301,9 +301,9 @@ echo "----------------------"
    stable"
 sudo apt-get update
 sudo apt-get install \
-	docker-ce \
-	docker-ce-cli \
-	containerd.io
+  docker-ce \
+  docker-ce-cli \
+  containerd.io
 # grant permissions
 sudo usermod -a -G docker $USER
 
@@ -315,8 +315,8 @@ sudo usermod -a -G docker $USER
 sudo apt update
 sudo add-apt-repository ppa:lyx-devel/release
 sudo apt install \
-	texlive-full \
-	lyx
+  texlive-full \
+  lyx
 
 # tor
 #----
@@ -346,11 +346,11 @@ git clone https://github.com/jchwenger/dotfiles
 # https://tor.stackexchange.com/a/19274
 sudo apt update
 sudo apt install \
-	libdvdnav4 \
-	libdvdread4 \
-	gstreamer1.0-plugins-bad \
-	gstreamer1.0-plugins-ugly \
-	libdvd-pkg
+  libdvdnav4 \
+  libdvdread4 \
+  gstreamer1.0-plugins-bad \
+  gstreamer1.0-plugins-ugly \
+  libdvd-pkg
 sudo dpkg-reconfigure libdvd-pkg
 sudo apt install ubuntu-restricted-extras
 
@@ -364,6 +364,8 @@ sudo snap install universal-ctags
 wget -qO- https://github.com/retorquere/zotero-deb/releases/download/apt-get/install.sh | sudo bash
 sudo apt update
 sudo apt install zotero
+# add symlink so it appears in the Ubuntu GUI
+ln -s /usr/share/applications/zotero.desktop zotero.desktop
 # also add Zotero Connector for Firefox from the above download page
 
 # rclone
