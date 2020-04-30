@@ -135,7 +135,7 @@
     autocmd!
 
     " Vim
-    autocmd FileType vim,zsh setlocal
+    autocmd FileType vim,zsh,sh setlocal
           \ tabstop=2
           \ softtabstop=2
           \ shiftwidth=2
