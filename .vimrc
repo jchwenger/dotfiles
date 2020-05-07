@@ -733,6 +733,15 @@
   " a,/i,:        function parameter
   " ai/ii:        same indent level
 
+  " mappings for comments
+  let g:textobj_comment_no_default_key_mappings = 1
+  xmap a# <Plug>(textobj-comment-a)
+  omap a# <Plug>(textobj-comment-a)
+  xmap i# <Plug>(textobj-comment-i)
+  omap i# <Plug>(textobj-comment-i)
+  xmap a~ <Plug>(textobj-comment-big-a)
+  omap a~ <Plug>(textobj-comment-big-a)
+
   " http://vim.wikia.com/wiki/Indent_text_object
   onoremap <silent>ai :<C-U>cal <SID>IndTxtObj(0)<CR>
   onoremap <silent>ii :<C-U>cal <SID>IndTxtObj(1)<CR>
