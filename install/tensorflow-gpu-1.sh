@@ -8,6 +8,7 @@ sudo dpkg -i cuda-repo-ubuntu1804_10.1.243-1_amd64.deb
 sudo apt-get update
 wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/nvidia-machine-learning-repo-ubuntu1804_1.0.0-1_amd64.deb
 sudo apt install ./nvidia-machine-learning-repo-ubuntu1804_1.0.0-1_amd64.deb
+sudo apt autoremove -y
 sudo apt-get update
 
 # Install NVIDIA driver
