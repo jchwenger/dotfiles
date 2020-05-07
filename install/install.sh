@@ -41,6 +41,15 @@ sudo apt install \
   pavucontrol \
   xclip -y
 
+# neovim setup
+# (links to .vimrc)
+#-------------
+mkdir $HOME/.config/nvim
+echo "set runtimepath^=~/.vim runtimepath+=~/.vim/after" >> $HOME/.config/nvim/init.vim
+echo "let &packpath = &runtimepath" >> $HOME/.config/nvim/init.vim
+echo "source $HOME/.vimrc" >> $HOME/.config/nvim/init.vim
+
+
 # desktop etc
 #------------
 sudo apt install gnome-tweaks gnome-tweak-tool -y
