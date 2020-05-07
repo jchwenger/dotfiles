@@ -408,3 +408,8 @@ sudo dpkg -i ripgrep_12.0.1_amd64.deb
 #------------------------
 # https://stedolan.github.io/jq/
 sudo apt-get install jq
+
+# Rust
+#-----
+# https://www.rust-lang.org/tools/install
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
