@@ -18,6 +18,7 @@ usb="$other/JESH_S_USB"
 dl="$HOME/dl"
 data="$dl/data"
 gpt="$dl/gpt/gpt-2"
+br="$dl/gpt/bridges"
 scraping="$dl/scraping"
 
 cv="$docs/cv"
