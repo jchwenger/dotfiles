@@ -742,6 +742,13 @@
   xmap a~ <Plug>(textobj-comment-big-a)
   omap a~ <Plug>(textobj-comment-big-a)
 
+  " mappings for between
+  let g:textobj_between_no_default_key_mappings = 1
+  xmap ax <Plug>(textobj-between-a)
+  omap ax <Plug>(textobj-between-a)
+  xmap ix <Plug>(textobj-between-i)
+  omap ix <Plug>(textobj-between-i)
+
   " http://vim.wikia.com/wiki/Indent_text_object
   onoremap <silent>ai :<C-U>cal <SID>IndTxtObj(0)<CR>
   onoremap <silent>ii :<C-U>cal <SID>IndTxtObj(1)<CR>
