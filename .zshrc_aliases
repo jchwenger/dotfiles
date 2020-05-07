@@ -81,6 +81,9 @@ alias zipr='zip -r'
 
 alias j='jobs'
 
+# gpu status
+alias wa='watch -n 1 nvidia-smi'
+
 # easy xclip wtih |X
 alias -g XCL='| xclip -sel clip'
 
