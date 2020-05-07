@@ -63,6 +63,9 @@ sudo ./$SCRIPTPATH/wifi.sh
 sudo add-apt-repository ppa:linuxuprising/apps
 sudo apt install tlp tlpui -y
 sudo add-apt-repository --remove ppa:linuxuprising/apps
+# # add this line to /etc/default/tlp
+# DEVICES_TO_DISABLE_ON_STARTUP="bluetooth"
+
 
 # zsh and oh-my-zsh
 #------------------
