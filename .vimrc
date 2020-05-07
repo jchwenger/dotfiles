@@ -582,6 +582,9 @@
 
   " Abbreviations: {{{
 
+  " Specify <buffer> when unabbreviating!
+  " e.g.: :una <buffer> i
+
   " Open help in new tab
   cabbrev help tab help
 
