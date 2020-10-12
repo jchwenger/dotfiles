@@ -154,10 +154,12 @@ pip install .
 # https://www.nltk.org/
 # https://spacy.io/
 # https://radimrehurek.com/gensim/
+# https://github.com/Helsinki-NLP/OpusTools
 pip install --upgrade \
   nltk \
   spacy \
-  gensim
+  gensim \
+  opustools \
 
 
 # MOA NLP
