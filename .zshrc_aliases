@@ -205,3 +205,6 @@ export LD_LIBRARY_PATH="/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRA
 # https://unix.stackexchange.com/a/374868
 # setopt menucomplete
 
+# android sdk
+export PATH="$PATH:$HOME/commandlinetools-linux-6200805_latest/bin"
+

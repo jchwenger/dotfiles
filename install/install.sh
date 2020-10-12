@@ -413,3 +413,63 @@ sudo apt-get install jq
 #-----
 # https://www.rust-lang.org/tools/install
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# android sdk
+# -----------
+# https://stackoverflow.com/a/34627928
+sudo apt update && sudo apt install android-sdk
+
+# to backup the current state of a device:
+# https://stackoverflow.com/a/42638750/9638108
+# adb backup -apk -shared -all -f "$(date +'%Y-%m-%d')-backup.adb"
+
+# sdkmanager
+# ----------
+# download, extract & add to the path manually
+# https://developer.android.com/studio#command-tools
+
+# just in case: change java version (here e.g. add java 8)
+# --------------------------------------------------------
+sudo apt-get install openjdk-8-jre
+sudo update-alternatives --config java
+
+# kvm
+# ---
+# check & enable virtualisation
+# https://developer.android.com/studio/run/emulator-acceleration#vm-linux
+sudo apt-get update
+sudo apt-get install \
+  cpu-checker \
+  qemu \
+  qemu-kvm \
+  libvirt-bin  \
+  bridge-utils  \
+  virt-manager
+
+# to use:
+# sudo service libvirtd start
+# sudo update-rc.d libvirtd enable
+# service libvirtd status
+# virsh net-list
+
+# to restart
+# virsh net-start default
+
+# to stop & remove
+# https://docs.openstack.org/ocata/networking-guide/misc-libvirt.html
+# virsh net-destroy default
+# virsh net-autostart --network default --disable
+# virsh net-undefine default
+# https://www.thegeekdiary.com/centos-rhel-67-how-to-disable-or-delete-virbr0-interface/
+# update-rc.d libvirtd remove
+# sudo systemctl disable libvirt-guests
+# sudo systemctl stop libvirtd
+# sudo systemctl disable libvirtd
+
+# to remove, same as install, except with `remove --purge`
+# other bridge links:
+# https://unix.stackexchange.com/questions/62751/cannot-delete-bridge-bridge-br0-is-still-up-cant-delete-it
+# https://askubuntu.com/questions/246343/what-is-the-virbr0-interface-used-for
+# also:
+# https://askubuntu.com/a/978498/1092704
+
