@@ -379,8 +379,15 @@
   " Add underlining to a line with <localleader>--
   " And for one starting with a comment <localleader>-#
   " In visual mode only underlines selection
-  nnoremap <localleader>-- yypvg_r-:nohlsearch<CR>
-  nnoremap <localleader>-# yypvg_r-r#:nohlsearch<CR>
+  nnoremap <Plug>HacksUnderline yypvg_r-:nohlsearch<CR>
+        \ :call repeat#set("\<Plug>HacksUnderline", v:count)<CR>
+  nmap <localleader>-- <Plug>HacksUnderline
+  nnoremap <Plug>HacksUndercomment yypvg_r-r#lr :nohlsearch<CR>
+        \ :call repeat#set("\<Plug>HacksUndercomment")<CR>
+  nmap <localleader>-# <Plug>HacksUndercomment
+  vnoremap <Plug>HacksUnderline yo"<ESC>^vg_r-:nohlsearch<CR>
+        \ :call repeat#set("\<Plug>HacksUnderline", v:count)<CR>
+  vmap <localleader>-- <Plug>HacksUnderline
   vnoremap <localleader>-- yo"<ESC>^vg_r-:nohlsearch<CR>
   " }}}
 
