@@ -234,6 +234,12 @@ conda install -c conda-forge \
   black \
   -y
 
+# get db of compiling flags in c/c++ (openFrameworks)
+# usage: compiledb make
+# -> generates a json file that YouCompleteMe (Vim) can read
+# in future, test this: https://github.com/rdnetto/YCM-Generator
+pip install compiledb
+
 # fix slow boot
 #--------------
 # # https://askubuntu.com/questions/1030867/how-to-diagnose-fix-very-slow-boot-on-ubuntu-18-04
