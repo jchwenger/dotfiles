@@ -250,6 +250,20 @@ pip install compiledb
 # # then:
 # sudo update-grub
 
+# set-up Fn keys
+# --------------
+# (DO NOT SET OPTION "aspi_osi=" to the grub, computer won't boot after that.)
+# https://askubuntu.com/a/1075383
+# # open and change file
+# sudo vim /etc/default/grub
+# GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_backlight=vendor"
+# sudo update-grub && reboot
+# # after that:
+# ls -1 /sys/class/backlight/
+# # should give you amdgpu_bl0
+# # set with
+# sudo modprobe amdgpu_bl0
+
 # fzf
 #----
 # https://github.com/junegunn/fzf
