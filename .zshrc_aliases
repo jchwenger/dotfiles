@@ -194,6 +194,13 @@ alias echopath="echo $PATH | tr ':' '\n'"
 # Disable CTRL-S and CTRL-Q
 [[ $- =~ i ]] && stty -ixoff -ixon
 
+# https://askubuntu.com/a/1110354
+function reload_gtk_theme() {
+  theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
+  gsettings set org.gnome.desktop.interface gtk-theme ''
+  sleep 1
+  gsettings set org.gnome.desktop.interface gtk-theme $theme
+}
 
 # add openFrameworks path as a global variable
 export PG_OF_PATH="$docs/openFrameworks/"
