@@ -485,12 +485,28 @@ curl https://www.teleconsole.com/get.sh | sh
 sudo apt-get install openssh-server -y
 sudo systemctl start ssh
 
+# markdown-viewer
+# --------------------------
+# read markdown with Firefox (install from the browser
+# https://github.com/KeithLRobertson/markdown-viewer
+# install for Linux:
+# https://github.com/KeithLRobertson/markdown-viewer#installing-on-linux
+mkdir -p $HOME/.local/share/mime/packages
+f="$HOME/.local/share/mime/packages/text-markdown.xml"
+touch $f
+echo '<?xml version="1.0"?>' >> $f
+echo '<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">' >> $f
+echo '  <mime-type type="text/plain">' >> $f
+echo '    <glob pattern="*.md"/>' >> $f
+echo '    <glob pattern="*.mkd"/>' >> $f
+echo '    <glob pattern="*.mkdn"/>' >> $f
+echo '    <glob pattern="*.mdwn"/>' >> $f
+echo '    <glob pattern="*.mdown"/>' >> $f
+echo '    <glob pattern="*.markdown"/>' >> $f
+echo '  </mime-type>' >> $f
+echo '</mime-info>' >> $f
+update-mime-database ~/.local/share/mime
 
-# to backup the current state of a device:
-# https://stackoverflow.com/a/42638750/9638108
-# adb backup -apk -shared -all -f "$(date +'%Y-%m-%d')-backup.adb"
-
-# sdkmanager
 # ----------
 # download, extract & add to the path manually
 # https://developer.android.com/studio#command-tools
