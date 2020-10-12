@@ -436,7 +436,7 @@
   " Ctrl-k: delete from cursor to the end of line
   " Alt-d/D: dw/dW in normal mode
   " Alt-e/E: de/dE in normal mode
-  cnoremap <C-a> <Home>
+  " cnoremap <C-a> <Home>
   cnoremap <M-b> <S-Left>
   cnoremap <M-f> <S-Right>
   " cnoremap <C-k> <C-f>d$<C-c>
