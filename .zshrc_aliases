@@ -200,3 +200,8 @@ export LD_LIBRARY_PATH="/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRA
 
 # dircolors as per https://github.com/aruhier/gnome-terminal-colors-solarized
 # eval $(dircolors $HOME/.dir_colors/dircolors)
+
+# do not stop at first option, but autocomplete it all
+# https://unix.stackexchange.com/a/374868
+# setopt menucomplete
+
