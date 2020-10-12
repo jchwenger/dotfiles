@@ -194,6 +194,12 @@ alias echopath="echo $PATH | tr ':' '\n'"
 # Disable CTRL-S and CTRL-Q
 [[ $- =~ i ]] && stty -ixoff -ixon
 
+
+# add openFrameworks path as a global variable
+export PG_OF_PATH="$docs/openFrameworks/"
+export OF_PATH="$docs/openFrameworks/"
+export OF_APPS="$OF_PATH/apps/myApps"
+
 # alias musb='sudo mount /dev/sdc1 /media/$(whoami)/JESSH_USB && sudo mount /dev/sdb1 /media/$(whoami)/JESSH_USB'
 # alias umusb='sudo umount /dev/sdc1 && sudo rmd -f /media/$(whoami)/JESSH_USB'
 
@@ -202,9 +208,6 @@ alias echopath="echo $PATH | tr ':' '\n'"
 
 # add .local/bin to the path
 export PATH="$PATH:$HOME/.local/bin"
-
-# add openFrameworks path as a global variable
-export PG_OF_PATH="/media/$(whoami)/linux-data/openFrameworks/"
 
 # remove qt warning in IPython
 export QT_STYLE_OVERRIDE="fusion"
