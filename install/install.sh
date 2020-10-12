@@ -618,3 +618,7 @@ sudo systemctl enable mongod
 # https://devcenter.heroku.com/articles/heroku-cli
 sudo snap install --classic heroku
 
+# forticlient vpn
+# ---------------
+# https://www.forticlient.com/downloads
+
