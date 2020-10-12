@@ -99,6 +99,19 @@ chmod +x Anaconda3-2019.10-Linux-x86_64.sh
 cd ~
 source ~/.bashrc
 
+# ipython automatic reload in profile
+# -----------------------------------
+ipython profile create
+# > uncomment the line:
+# c.InteractiveShellApp.exec_files = []
+# > uncomment the line:
+# c.InteractiveShellApp.exec_lines = []
+# and add the three items in the list:
+# '%load_ext autoreload',
+# '%autoreload 2',
+# 'print("Warning: disable autoreload in ipython_config.py to improve performance.")'
+
+
 # pytorch
 #--------
 # https://github.com/pytorch/pytorch
