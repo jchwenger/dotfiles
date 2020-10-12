@@ -184,7 +184,7 @@
           \ retab
 
     " Markdown
-    autocmd FileType markdown setlocal
+    autocmd FileType text,markdown setlocal
           \ tabstop=2
           \ softtabstop=2
           \ shiftwidth=2
@@ -204,8 +204,8 @@
                           " the figure labels. Very useful! (See Vim LaTeX below)
 
 
-    " Java, C++, Arduino
-    autocmd FileType cpp,java,arduino setlocal
+    " Java, C, C++, Arduino
+    autocmd FileType c,cpp,java,arduino setlocal
           \ tabstop=4
           \ softtabstop=4
           \ shiftwidth=4
