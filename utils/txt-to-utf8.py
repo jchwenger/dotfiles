@@ -8,10 +8,9 @@ parser = argparse.ArgumentParser(
 )
 
 parser.add_argument(
-    "--dir",
+    "dir",
     metavar="DIR",
     type=str,
-    required=True,
     help="Dir containing files. Files must end in '.txt' to be taken into account.",
 )
 
@@ -36,6 +35,12 @@ def main(args):
                 txt = ff.read()
                 with open(filepath, 'w') as o:
                     o.write(txt)
+
+ # for ff in glob.glob('dataset/**/*.txt', recursive=True):
+ #     with open(ff, encoding="utf8", errors="ignore") as fin:
+ #         txt = fin.read()
+ #         with open(ff, 'w') as o:
+ #             o.write(txt)
 
 if __name__ == '__main__':
     args = parser.parse_args()
