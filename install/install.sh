@@ -219,6 +219,14 @@ pip install \
   ujson \
   requests
 
+conda install -c anaconda \
+  flask
+
+conda install -c conda-forge \
+  flask-socketio
+
+pip install "python-socketio[client]"
+
 conda install -c conda-forge \
   tqdm \
   fire \
