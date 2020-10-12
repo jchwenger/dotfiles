@@ -550,10 +550,20 @@
   " Go up one level when browsing directories of a git repo
   " Cf. http://vimcasts.org/episodes/fugitive-vim-browsing-the-git-object-database/
 
+  " delete buffers
+  " https://stackoverflow.com/a/3156541
+  function! DeleteBuffersByPattern(pat)
+    execute 'silent! bdelete .git/index'
+    let buffers = filter(range(1, bufnr('$')), 'buflisted(v:val) && bufname(v:val) =~ "' . a:pat . '"')
+    if empty(buffers) | return | endif
+    " if empty(buffers) | throw "no fugitive buffers (" . a:pat . ")" | endif
+    execute 'silent! bdelete ' . join(buffers, ' ')
+  endfunction
+
   " open/close Fugitive buffer with <localleader>gg / gc
   nmap <localleader>gg :Gstatus<CR>
-  nmap <localleader>gc <C-w>kgq
-  nmap <localleader>gv <C-w>kgq<C-w>c
+  nmap <localleader>gc :call DeleteBuffersByPattern('.git/index')<CR>
+  nmap <localleader>gd :call DeleteBuffersByPattern('^fugitive*')<CR>
 
   augroup Fugitive
     autocmd User fugitive
