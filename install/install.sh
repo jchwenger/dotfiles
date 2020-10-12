@@ -473,3 +473,36 @@ sudo apt-get install \
 # also:
 # https://askubuntu.com/a/978498/1092704
 
+# Ruby
+# ----
+# rvm manager: http://rvm.io/
+# gpg not gpg2 for ubuntu 18, cf. http://manpages.ubuntu.com/manpages/bionic/man1/gpg2.1.html
+gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+curl -sSL https://get.rvm.io | bash -s stable
+
+# Gems
+# ----
+# https://rubygems.org/pages/download
+sudo gem update --system
+
+# # if 'Nothing to update' appears, do this
+# gem install rubygems-update  # again, might need to be admin/root
+# update_rubygems              # ... here too
+
+# Jekyll
+# ------
+# https://jekyllrb.com
+sudo apt-get install ruby ruby-dev-full build-essential zlib1g-dev
+gem install jekyll bundler
+
+# Gatsby
+# ------
+# https://www.gatsbyjs.org/
+npm install -g gatsby-cli
+
+# Yarn
+# ----
+# https://classic.yarnpkg.com/en/docs/install/#debian-stable
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update && sudo apt install --no-install-recommends yarn
