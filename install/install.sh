@@ -25,11 +25,22 @@ sudo m-a prepare
 sudo ubuntu-drivers autoinstall
 
 # git
-#----
+# ---
+# https://unix.stackexchange.com/questions/33617/how-can-i-update-to-a-newer-version-of-git-using-apt-get
+sudo add-apt-repository ppa:git-core/ppa -y
+sudo apt-get update
 sudo apt install git -y
 git config --global user.name "jchwenger"
 git config --global user.email "34098722+jchwenger@users.noreply.github.com"
 sudo snap install hub --classic
+# filter-repo
+# https://github.com/newren/git-filter-repo/
+cd $HOME
+git clone https://github.com/newren/git-filter-repo
+
+git config --global diff.tool gvimdiff
+git config --global merge.tool gvimdiff
+git config --global --add difftool.prompt false
 
 # vim, etc
 #---------
