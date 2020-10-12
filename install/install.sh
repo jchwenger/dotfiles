@@ -589,3 +589,15 @@ npm install -g gatsby-cli
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt update && sudo apt install --no-install-recommends yarn
+
+# reboot issues
+# -------------
+# apport?
+# https://ubuntuforums.org/showthread.php?t=1745793&page=2&p=10984235#post10984235
+
+# debug shell on reboot
+# https://askubuntu.com/q/808435/1092704
+# sudo systemctl enable debug-shell
+# sudo halt, then do:
+# systemctl list-jobs
+
