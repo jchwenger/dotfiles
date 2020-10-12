@@ -628,3 +628,9 @@ sudo snap install --classic heroku
 
 npm -g install js-beautify
 
+# caps & other locks indicator
+# ----------------------------
+# https://www.howtogeek.com/274587/how-to-get-a-notification-when-caps-lock-or-num-lock-is-enabled-in-ubuntu/
+sudo add-apt-repository ppa:tsbarnes/indicator-keylock
+sudo apt-get update
+sudo apt install indicator-keylock
