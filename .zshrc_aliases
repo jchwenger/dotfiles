@@ -49,7 +49,11 @@ alias vz="vim ~/.zshrc"
 alias va="vim $HOME/dotfiles/.zshrc_aliases"
 alias vt="vim ~/.tmux.conf"
 alias vp="vim $HOME/dotfiles/.zshrc_paths"
+alias vdt="vim $HOME/dotfiles"
 alias vst="vim $HOME/dotfiles/install/install.sh"
+alias vw="nvim -c 'cd /home/jcw/Dropbox/lit/its/it\ VI/words | pwd'"
+alias vm="nvim -c 'cd /home/jcw/Dropbox/lit/its/it\ VI/more | pwd'"
+alias vv="nvim -c 'cd /home/jcw/Documents/vocabulary | pwd'"
 
 alias rng="$HOME/ranger/ranger.py"
 # alias rng='/usr/local/bin/ranger'
