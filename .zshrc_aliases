@@ -84,6 +84,10 @@ alias j='jobs'
 # gpu status
 alias wa='watch -n 1 nvidia-smi'
 
+# reload gpu
+# https://forums.fast.ai/t/reset-gpu-without-restarting-linux/14136/7
+alias gpureload="sudo rmmod nvidia_uvm ; sudo modprobe nvidia_uvm"
+
 # easy xclip wtih |X
 alias -g XCL='| xclip -sel clip'
 
