@@ -106,14 +106,27 @@ finr() {
   sudo find / -path /media/$(whoami)/windows -prune -o -iname "*$**" -printf '%Ac %p \n';
 }
 
+# https://stackoverflow.com/a/17841619
+join_by() {
+  local d=$1;
+  shift;
+  echo -n "$1";
+  shift;
+  printf "%s" "${@/#/$d}";
+}
+
 # find in lit
 flit() {
 
-  cd $lit
+  cd $lit;
+
+  # use regex to search for search\ string as well as search-string
+  search_string=$(join_by '[ -]' $*);
+  # echo $search_string;
 
   # "$*" expands to "$1c$2c...", c = first char in IFS
   # "$@" on the contrary expands to "$1" "$2" ...
-  find . -iname "*$**" -exec stat -c "%.19y %n" {} \;
+  find . -iname "*$search_string*" -exec stat -c "%.19y %n" {} \;
   # find . -iname "*$**" -printf '%Cc %f %h \n';
 
   cd ~-;
@@ -121,9 +134,16 @@ flit() {
 
 # find in Vocabulary
 fvoc() {
-  cd $voc
-  find  -iname "*$**" -exec stat -c "%.19y %n" {} \;
-  cd ~-
+
+  cd $voc;
+
+  # use regex to search for search\ string as well as search-string
+  search_string=$(join_by '[ -]' $*);
+  # echo $search_string;
+
+  find  -iname "*$search_string*" -exec stat -c "%.19y %n" {} \;
+
+  cd ~-;
   # find /media/$(whoami)/windows/Users/user/OneDrive/vocabulary -iname "*$**" -printf '%Ac %f \n';
 }
 
