@@ -392,9 +392,15 @@
   " }}}
 
   " Vimrc edit, source & close
-  nnoremap <leader>vv :e $MYVIMRC<CR>
-  nnoremap <leader>vt :tabe $MYVIMRC<CR>
-  nnoremap <leader>ve :vsplit $MYVIMRC<CR>
+  if has('nvim')
+    let $LEVIMRC = expand("~/.vimrc")
+  else
+    let $LEVIMRC = $MYVIMRC
+  endif
+  " echom "$LEVIMRC now " . $LEVIMRC . " but myvimrc " . $MYVIMRC
+  nnoremap <leader>vv :edit $LEVIMRC<CR>
+  nnoremap <leader>vt :tabe $LEVIMRC<CR>
+  nnoremap <leader>ve :vsplit $LEVIMRC<CR>
   nnoremap <leader>vs :source $MYVIMRC<CR>
   nnoremap <leader>vc :bdelete ~/.vimrc<CR>
 
