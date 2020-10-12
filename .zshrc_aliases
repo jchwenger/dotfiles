@@ -19,6 +19,7 @@ alias jn='jupyter notebook'
 alias jl='jupyter lab'
 
 alias nau="nautilus . &"
+alias ff="firefox"
 
 alias xr='xreader'
 alias xv='xviewer'
