@@ -8,11 +8,11 @@ SCRIPTPATH=$(dirname $SCRIPT)
 # echo "from src: $SCRIPTPATH"
 
 # remove intro sound
-#-------------------
+# ------------------
 # hold F2 when booting > find option in BIOS (advanced settings) & turn sound off
 
 # resolution issues
-#------------------
+# -----------------
 # source: https://medium.com/better-programming/how-i-fixed-my-display-resolution-by-installing-nvidia-drivers-on-ubuntu-18-04-bionic-beaver-linux-489563052f6c
 sudo apt update && sudo apt upgrade
 sudo apt dist-upgrade
@@ -20,7 +20,7 @@ sudo apt install bc module-assistant build-essential dkms linux-headers-$(uname 
 sudo m-a prepare
 
 # check devices
-#--------------
+# -------------
 # ubuntu-drivers devices
 sudo ubuntu-drivers autoinstall
 
@@ -57,7 +57,7 @@ sudo apt install \
 
 # neovim setup
 # (links to .vimrc)
-#-------------
+# ------------
 mkdir $HOME/.config/nvim
 echo "set runtimepath^=~/.vim runtimepath+=~/.vim/after" >> $HOME/.config/nvim/init.vim
 echo "let &packpath = &runtimepath" >> $HOME/.config/nvim/init.vim
@@ -65,15 +65,15 @@ echo "source $HOME/.vimrc" >> $HOME/.config/nvim/init.vim
 
 
 # desktop etc
-#------------
+# -----------
 sudo apt install gnome-tweaks gnome-tweak-tool -y
 
 # wifi issues
-#------------
+# -----------
 sudo ./$SCRIPTPATH/wifi.sh
 
 # tlp battery
-#------------
+# -----------
 sudo add-apt-repository ppa:linuxuprising/apps
 sudo apt install tlp tlpui -y
 sudo add-apt-repository --remove ppa:linuxuprising/apps
@@ -82,11 +82,11 @@ sudo add-apt-repository --remove ppa:linuxuprising/apps
 
 
 # zsh and oh-my-zsh
-#------------------
+# -----------------
 ./$SCRIPTPATH/zsh.sh
 
 # anaconda
-#---------
+# --------
 echo "---------------------------"
 echo "installing anaconda"
 cd /tmp
@@ -113,7 +113,7 @@ ipython profile create
 
 
 # pytorch
-#--------
+# -------
 # https://github.com/pytorch/pytorch
 # https://github.com/pytorch/text
 conda install \
@@ -121,11 +121,11 @@ conda install \
   torchtext \
 
 # tensorflow
-#-----------
+# ----------
 # for tensorflow see separate files
 
 # jax & trax
-#----
+# ---
 # https://github.com/google/jax
 PYTHON_VERSION=cp37  # alternatives: cp35, cp36, cp37, cp38
 CUDA_VERSION=cuda101  # alternatives: cuda92, cuda100, cuda101, cuda102
@@ -150,7 +150,7 @@ cd ~/dl/transformers
 pip install .
 
 # NLP
-#-----
+# ----
 # https://www.nltk.org/
 # https://spacy.io/
 # https://radimrehurek.com/gensim/
@@ -165,7 +165,7 @@ pip install --upgrade \
 
 
 # MOA NLP
-#--------
+# -------
 mkdir $HOME/dl/encoding
 cd $HOME/dl/encoding
 
@@ -199,17 +199,17 @@ sudo ldconfig -v
 cd $HOME
 
 # python web &c
-#--------------
-# starlette https://www.starlette.io/
-# uvicorn https://www.uvicorn.org/
-# aiofiles https://pypi.org/project/aiofiles/
-# Jinja2 https://jinja.palletsprojects.com/en/2.11.x/
-# ujson https://pypi.org/project/ujson/
-# requests https://pypi.org/project/requests/
-# tqdm  https://github.com/tqdm/tqdm
-# fire (cli) https://github.com/google/python-fire
-# toposort https://pypi.org/project/toposort/
-# black (formatting): https://pypi.org/project/black/
+# -------------
+# starlette          https://www.starlette.io/
+# uvicorn            https://www.uvicorn.org/
+# aiofiles           https://pypi.org/project/aiofiles/
+# Jinja2             https://jinja.palletsprojects.com/en/2.11.x/
+# ujson              https://pypi.org/project/ujson/
+# requests           https://pypi.org/project/requests/
+# tqdm               https://github.com/tqdm/tqdm
+# fire (cli)         https://github.com/google/python-fire
+# toposort           https://pypi.org/project/toposort/
+# black (formatting) https://pypi.org/project/black/
 
 pip install \
   starlette \
@@ -241,7 +241,7 @@ conda install -c conda-forge \
 pip install compiledb
 
 # fix slow boot
-#--------------
+# -------------
 # # https://askubuntu.com/questions/1030867/how-to-diagnose-fix-very-slow-boot-on-ubuntu-18-04
 # # modify /etc/default/grub and add
 # GRUB_CMDLINE_LINUX_DEFAULT="quiet splash noresume"
@@ -265,32 +265,32 @@ pip install compiledb
 # sudo modprobe amdgpu_bl0
 
 # fzf
-#----
+# ---
 # https://github.com/junegunn/fzf
 git clone --depth 1 https://github.com/junegunn/fzf ~/.fzf
 ~/.fzf/install
 
 # bat
-#----
+# ---
 # https://github.com/sharkdp/bat
 wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat-v0.12.1-x86_64-unknown-linux-gnu.tar.gz
 tar -xvzf bat-v0.12.1-x86_64-unknown-linux-gnu.tar.gz
 rm bat-v0.12.1-x86_64-unknown-linux-gnu.tar.gz
 
 # fd
-#---
+# --
 # https://github.com/sharkdp/fd
 wget https://github.com/sharkdp/fd/releases/download/v7.4.0/fd-v7.4.0-x86_64-unknown-linux-gnu.tar.gz
 tar -xvzf fd-v7.4.0-x86_64-unknown-linux-gnu.tar.gz
 rm fd-v7.4.0-x86_64-unknown-linux-gnu.tar.gz
 
 # ranger
-#-------
+# ------
 # https://github.com/ranger/ranger
 git clone https://github.com/ranger/ranger
 
 # tmux
-#-----
+# ----
 # https://github.com/tmux/tmux
 sudo apt-get install \
   autotools-dev \
@@ -308,7 +308,7 @@ sh autogen.sh
 cd ~
 
 # powerline
-#----------
+# ---------
 # https://askubuntu.com/a/283909
 pip install powerline-status
 sudo apt-get install fonts-powerline
@@ -326,7 +326,7 @@ sudo apt-get install fonts-powerline
 # mkdir -p ~/.config/fontconfig/conf.d/ && mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 
 # solarized
-#----------
+# ---------
 # sudo apt install dconf-cli -y
 # git clone https://github.com/aruhier/gnome-terminal-colors-solarized.git
 # cd gnome-terminal-colors-solarized
@@ -334,13 +334,13 @@ sudo apt-get install fonts-powerline
 # cd ~
 
 # fonts
-#------
+# -----
 sudo apt install ttf-mscorefonts-installer
 sudo apt install -y fonts-inconsolata
 sudo fc-cache -f -v
 
 # google cloud
-#-------------
+# ------------
 # https://cloud.google.com/sdk/docs/quickstart-debian-ubuntu
 
 # Add the Cloud SDK distribution URI as a package source
@@ -351,7 +351,7 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyr
 sudo apt-get update && sudo apt-get install google-cloud-sdk
 
 # docker
-#-------
+# ------
 # https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
 sudo apt-get update
@@ -380,7 +380,7 @@ sudo apt-get install \
 sudo usermod -a -G docker $USER
 
 # nvidia-docker
-#--------------
+# -------------
 # Add the package repositories
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
@@ -390,7 +390,7 @@ sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
 sudo systemctl restart docker
 
 # latex, lyx (latex live editor)
-#------
+# -----
 # https://dzone.com/articles/installing-latex-ubuntu
 # https://wiki.lyx.org/LyX/LyXOnUbuntu
 
@@ -401,7 +401,7 @@ sudo apt install \
   lyx
 
 # tor
-#----
+# ---
 # https://www.torproject.org/download/
 # check for latest version
 echo "---------------------------------------------------------------"
@@ -412,19 +412,19 @@ tor -xf tor-browser-linux64-9.0.6_en-US.tar.xz
 rm tor-browser-linux64-9.0.6_en-US.tar.xz
 
 # node / nvm
-#-----------
+# ----------
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | zsh
 source ~/.zshrc
 nvm install node
 nvm install-latest-npm
 
 # dotfiles
-#---------
+# --------
 git clone https://github.com/jchwenger/dotfiles
 # ./dotfiles/install/install.sh
 
 # video codecs, fonts...
-#-----------------------
+# ----------------------
 # https://tor.stackexchange.com/a/19274
 sudo apt update
 sudo apt install \
@@ -437,11 +437,11 @@ sudo dpkg-reconfigure libdvd-pkg
 sudo apt install ubuntu-restricted-extras
 
 # ctags
-#------
+# -----
 sudo snap install universal-ctags
 
 # Zotero
-#-------
+# ------
 # https://askubuntu.com/a/1160369
 wget -qO- https://github.com/retorquere/zotero-deb/releases/download/apt-get/install.sh | sudo bash
 sudo apt update
@@ -451,7 +451,7 @@ ln -s /usr/share/applications/zotero.desktop zotero.desktop
 # also add Zotero Connector for Firefox from the above download page
 
 # rclone
-#-------
+# ------
 # https://rclone.org/
 curl https://rclone.org/install.sh | sudo zsh
 
@@ -459,18 +459,18 @@ curl https://rclone.org/install.sh | sudo zsh
 # sudo chown -R $USER $HOME/.config/rclone
 
 # ripgrep
-#--------
+# -------
 # https://github.com/BurntSushi/ripgrep
 wget https://github.com/BurntSushi/ripgrep/releases/download/12.0.1/ripgrep_12.0.1_amd64.deb
 sudo dpkg -i ripgrep_12.0.1_amd64.deb
 
 # jq (JSON cli-processor)
-#------------------------
+# -----------------------
 # https://stedolan.github.io/jq/
 sudo apt-get install jq
 
 # Rust
-#-----
+# ----
 # https://www.rust-lang.org/tools/install
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
