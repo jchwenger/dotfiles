@@ -613,3 +613,8 @@ sudo apt-get install -y mongodb-org
 sudo systemctl start mongod
 sudo systemctl enable mongod
 
+# heroku
+# ------
+# https://devcenter.heroku.com/articles/heroku-cli
+sudo snap install --classic heroku
+
