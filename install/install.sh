@@ -42,12 +42,13 @@ git config --global diff.tool gvimdiff
 git config --global merge.tool gvimdiff
 git config --global --add difftool.prompt false
 
-# vim, etc
+# linux things, etc
 # --------
 # https://pandoc.org/org
+# https://neovim.io/
+# https://freedesktop.org/software/pulseaudio/pavucontrol/
+
 sudo apt install \
-  vim-gnome \
-  neovim \
   curl \
   rename \
   pavucontrol \
@@ -55,9 +56,70 @@ sudo apt install \
   tree \
   pandoc -y
 
+# vim
+# ---
+# (from source <3)
+# https://github.com/ycm-core/YouCompleteMe/wiki/Building-Vim-from-source
+# https://askubuntu.com/a/132736
+# software-properties: https://askubuntu.com/a/857433
+sudo apt remove \
+  vim \
+  vim-runtime \
+  vim-tiny \
+  vim-common \
+  vim-gui-common \
+  vim-gnome \
+  vim-gtk3 \
+  vim-nox
+
+sudo apt install \
+  libncurses5-dev \
+  libgnome2-dev \
+  libgnomeui-dev \
+  libgtk2.0-dev \
+  libatk1.0-dev \
+  libbonoboui2-dev \
+  libcairo2-dev \
+  libx11-dev \
+  libxpm-dev \
+  libxt-dev \
+  python3-dev \
+  libperl-dev -y
+
+cd $HOME
+git clone https://github.com/vim/vim
+sudo apt-get build-dep vim-gnome -y
+sudo apt-get install xorg-dev -y
+cd vim/
+
+# make sure anaconda is disabled !
+# https://github.com/vim/vim/issues/1961
+# https://github.com/gnudatalanguage/gdl/issues/752#issuecomment-628673886
+
+make distclean # for cleaning the build when changing features
+echo "----------------------------"
+./configure --with-features=huge \
+            --enable-multibyte \
+            --enable-python3interp=yes \
+            --enable-perlinterp=yes \
+            --enable-gui=auto \
+            --enable-cscope \
+            --with-x \
+            --prefix=/usr/local
+echo "----------------------------"
+make VIMRUNTIMEDIR=/usr/local/share/vim/vim82
+
+sudo make install
+
+sudo update-alternatives --install /usr/bin/editor editor /usr/local/bin/vim 1
+sudo update-alternatives --set editor /usr/local/bin/vim
+sudo update-alternatives --install /usr/bin/vi vi /usr/local/bin/vim 1
+sudo update-alternatives --set vi /usr/local/bin/vim
+
 # neovim setup
 # (links to .vimrc)
 # ------------
+sudo apt-get install neovim -y
 mkdir $HOME/.config/nvim
 echo "set runtimepath^=~/.vim runtimepath+=~/.vim/after" >> $HOME/.config/nvim/init.vim
 echo "let &packpath = &runtimepath" >> $HOME/.config/nvim/init.vim
