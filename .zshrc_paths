@@ -11,16 +11,24 @@ more="$lit/its/it VI/more"
 words="$lit/its/it VI/words"
 
 dot="$HOME/dotfiles"
+utils="$HOME/dotfiles/utils"
+ohmy="$HOME/.oh-my-zsh"
 
 other="/media/jcw"
 usb="$other/JESH_S_USB"
+t4="$other/Jesh4T"
+jjj="$other/JJJesh"
 
-dl="$HOME/dl"
-data="$dl/data"
+dl="$docs/dl"
+data="$docs/data"
+pr="$docs/projects"
+
 gpt="$dl/gpt/gpt-2"
 br="$dl/gpt/bridges"
-scraping="$dl/scraping"
+scr="$pr/scraping"
 
-cv="$docs/cv"
+web="$docs/web"
+jcw="$web/jchwenger.github.io"
+
 co="$docs/corpora"
 voc="$docs/vocabulary"
