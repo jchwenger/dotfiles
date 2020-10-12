@@ -507,6 +507,16 @@ echo '  </mime-type>' >> $f
 echo '</mime-info>' >> $f
 update-mime-database ~/.local/share/mime
 
+# android sdk
+# -----------
+# https://stackoverflow.com/a/34627928
+sudo apt update && sudo apt install android-sdk
+
+# to backup the current state of a device:
+# https://stackoverflow.com/a/42638750/9638108
+# adb backup -apk -shared -all -f "$(date +'%Y-%m-%d')-backup.adb"
+
+# sdkmanager
 # ----------
 # download, extract & add to the path manually
 # https://developer.android.com/studio#command-tools
