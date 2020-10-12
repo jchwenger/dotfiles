@@ -613,6 +613,16 @@
     autocmd FileType python silent nnoremap <buffer> <leader>rr :w<CR>:!python %:p<CR>
   augroup END
 
+  " Rust
+  augroup rs_shortcuts
+    autocmd!
+    autocmd FileType rust silent nnoremap <buffer> <localleader>rr :w<CR>:!rustc %:p<CR>
+    autocmd FileType rust silent nnoremap <buffer> <leader>rr :call CompileAndRunRust()<CR>
+    function! CompileAndRunRust()
+      :w | execute ":!rustc " . expand('%:p') . "; ./" . expand('%:r')
+    endfunction
+  augroup END
+
   " }}}
 
   " Abbreviations: {{{
