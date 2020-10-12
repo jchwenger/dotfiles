@@ -622,3 +622,9 @@ sudo snap install --classic heroku
 # ---------------
 # https://www.forticlient.com/downloads
 
+# js-beautify
+# -----------
+# https://www.npmjs.com/package/js-beautify
+
+npm -g install js-beautify
+
