@@ -189,6 +189,8 @@ alias restartwifi='sudo modprobe -r 8821ce && sleep 5 && sudo modprobe 8821ce'
 
 alias pavu='pavucontrol'
 
+alias echopath="echo $PATH | tr ':' '\n'"
+
 # Disable CTRL-S and CTRL-Q
 [[ $- =~ i ]] && stty -ixoff -ixon
 
