@@ -43,14 +43,17 @@ git config --global merge.tool gvimdiff
 git config --global --add difftool.prompt false
 
 # vim, etc
-#---------
+# --------
+# https://pandoc.org/org
 sudo apt install \
   vim-gnome \
   neovim \
   curl \
   rename \
   pavucontrol \
-  xclip -y
+  xclip \
+  tree \
+  pandoc -y
 
 # neovim setup
 # (links to .vimrc)
