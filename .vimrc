@@ -898,6 +898,7 @@
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
     Plug 'tpope/vim-abolish'
+    Plug 'tpope/vim-eunuch'
     Plug 'altercation/vim-colors-solarized'
     Plug 'vim-scripts/visualrepeat'
     Plug 'svermeulen/vim-cutlass'
