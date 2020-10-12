@@ -658,6 +658,36 @@
   " }}}
 
   " Utils: varia
+
+  " produce a txt file name from the current line
+  " (removing spaces and using '-' between words)
+  " and saves the file in the current dir
+  function! SaveWordLine(write)
+    let l:line = getline('.')
+    let l:line = substitute(line, ", ", ",", "g")
+    let l:line = substitute(line, "[  '\"?!;:]", "-", "g")
+    let l:line = line . ".txt"
+    if a:write==1
+      execute "w " . line
+    else
+      execute "normal! o\<ESC>"
+      call setline('.', line)
+    endif
+  endfunction
+
+  function! SaveFormattedLine()
+    execute "w " . getline('.')
+    normal dd
+    write
+  endfunction
+
+  nnoremap <leader>ww :call SaveWordLine(1)<CR>
+  vnoremap <leader>ww :call SaveWordLine(1)<CR>
+  nnoremap <localleader>ww :call SaveWordLine(0)<CR>
+  vnoremap <localleader>ww :call SaveWordLine(0)<CR>
+  nnoremap <leader>wr :call SaveFormattedLine()<CR>
+  vnoremap <leader>wr :call SaveFormattedLine()<CR>
+
   " insert current date in file (useful for markdown posts)
   nnoremap <leader>date :r! stat -c \%y %<CR>
   vnoremap <leader>date :r! stat -c \%y %<CR>
