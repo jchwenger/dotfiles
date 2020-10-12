@@ -280,12 +280,20 @@
   " Windows: navigation {{{
 
   " Open vertical/horizontal:
-  " Ctrl+v for a new v split
-  " (Ctrl+Ctrl+v for a new same file v split)
-  " (Ctrl+n for a new empty h split)
-  " (Ctrl+s for a new same file h split)
-  " Ctrl+. for the current dir (v)
-  " Ctrl+, for the current dir (h)
+  " <localleader>nn for new file (in current window)
+  " Ctrl_W+Ctrl_n for a new split (same file)
+  " Ctrl_W+n for a new split
+  " (Ctrl_W+Ctrl_v for a v split (same file)
+  " Ctrl_W+v for a new v split
+  " (Ctrl_W+n for a new empty h split)
+  " (Ctrl_W+s for a new same file h split)
+  " Ctrl_W+. for the current dir (v)
+  " Ctrl_W+, for the current dir (h)
+  nnoremap <localleader>nn :ene<CR>
+  vnoremap <localleader>nn :<C-u>ene<CR>
+  nnoremap <C-w>n :split<CR>
+  vnoremap <C-w>n :<C-U>split<CR>
+  vnoremap <C-w>v :<C-u>vnew<CR>
   nnoremap <C-w>v :vnew<CR>
   vnoremap <C-w>v :<C-u>vnew<CR>
   tnoremap <C-w>v <C-w>:vnew<CR>
