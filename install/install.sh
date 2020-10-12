@@ -474,6 +474,11 @@ sudo apt-get install jq
 # https://www.rust-lang.org/tools/install
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+# Teleconsole
+# -----------
+# https://github.com/gravitational/teleconsole
+curl https://www.teleconsole.com/get.sh | sh
+
 # android sdk
 # -----------
 # https://stackoverflow.com/a/34627928
