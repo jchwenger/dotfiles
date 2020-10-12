@@ -650,7 +650,7 @@
     autocmd!
     " the __main__ thingy
     autocmd FileType python iabbrev <buffer>
-          \ if_ if __name__ == '__main__':<CR>main()
+          \ if_ if __name__ == "__main__":<CR>main()
     " multiline comment strings
     autocmd FileType python iabbrev <buffer>
         \ """" """<CR>"""<ESC>O
