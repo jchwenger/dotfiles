@@ -479,10 +479,12 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # https://github.com/gravitational/teleconsole
 curl https://www.teleconsole.com/get.sh | sh
 
-# android sdk
-# -----------
-# https://stackoverflow.com/a/34627928
-sudo apt update && sudo apt install android-sdk
+# ssh server
+# ----------
+# https://unix.stackexchange.com/a/520346
+sudo apt-get install openssh-server -y
+sudo systemctl start ssh
+
 
 # to backup the current state of a device:
 # https://stackoverflow.com/a/42638750/9638108
