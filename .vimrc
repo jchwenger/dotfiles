@@ -631,7 +631,8 @@
   " e.g.: :una <buffer> i
 
   " Open help in new tab
-  cabbrev help tab help
+  cabbrev helt tab help
+  cabbrev help vert help
 
   " Text editing in .txt and .md
   augroup text_edition
