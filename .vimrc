@@ -321,6 +321,10 @@
 
   " Maximizing the current window (opposite of ctrl+=)
   nnoremap <C-W># <C-W>\|<C-W>_
+
+  " Diffing:
+  nnoremap <leader>dth :diffthis<CR><C-w><C-w>:diffthis<CR><C-w>
+  nnoremap <leader>dof :diffoff<CR><C-w><C-w>:diffoff<CR><C-w>
   " }}}
 
   " Tabs: {{{
