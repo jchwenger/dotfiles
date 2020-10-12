@@ -336,6 +336,7 @@ sudo apt-get install fonts-powerline
 # fonts
 #------
 sudo apt install ttf-mscorefonts-installer
+sudo apt install -y fonts-inconsolata
 sudo fc-cache -f -v
 
 # google cloud
