@@ -4,6 +4,8 @@
   set relativenumber
   set showcmd
 
+  set splitright
+
   set nocompatible
   syntax on
   set hlsearch
