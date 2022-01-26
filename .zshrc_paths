@@ -7,28 +7,52 @@ dr="$HOME/Dropbox"
 cv="$HOME/Dropbox/CV/ltx"
 
 lit="$HOME/Dropbox/lit"
-more="$lit/its/it VI/more"
-words="$lit/its/it VI/words"
+more="$lit/it/VI/more"
+words="$lit/it/VI/words"
+sub="$lit/submissions"
+
+al="$lit/deep/alors-seulement-le-rêve"
+art="$lit/deep/art-in-the-guise-of-an-adult"
+veg="$lit/deep/vegans"
+ap="$lit/art-projects"
 
 dot="$HOME/dotfiles"
 utils="$HOME/dotfiles/utils"
 ohmy="$HOME/.oh-my-zsh"
 
+tl="$HOME/.talon/user/knausj_talon"
+
 other="/media/jcw"
 usb="$other/JESH_S_USB"
-t4="$other/Jesh4T"
+j4="$other/Jesh4T"
+jj="$other/JJesh"
 jjj="$other/JJJesh"
 
 dl="$docs/dl"
+torch="$dl/torch"
+xla="$torch/pytorch/xla"
+
 data="$docs/data"
 pr="$docs/projects"
 
 gpt="$dl/gpt/gpt-2"
+mg="$dl/gpt/minGPT"
 br="$dl/gpt/bridges"
+
 scr="$pr/scraping"
+lac="$pr/lacanage"
+ina="$pr/inanimaux"
+bot="$pr/chatbot.interface"
+dep="$pr/departs"
+o2t="$pr/odt2txt"
+
+it="$pr/it"
+
+ho="$data/wordhoard"
+
+of=$OF_APPS
 
 web="$docs/web"
 jcw="$web/jchwenger.github.io"
 
-co="$docs/corpora"
 voc="$docs/vocabulary"
