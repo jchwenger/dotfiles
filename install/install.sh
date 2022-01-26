@@ -50,6 +50,15 @@ sudo apt-add-repository https://cli.github.com/packages
 sudo apt update
 sudo apt install gh
 
+# github large files
+# ------------------
+# https://git-lfs.github.com/
+cd /tmp && mkdir lfs && cd lfs
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+wget https://github.com/git-lfs/git-lfs/releases/download/v2.13.2/git-lfs-linux-amd64-v2.13.2.tar.gz
+tar xvzf https://github.com/git-lfs/git-lfs/releases/download/v2.13.2/git-lfs-linux-amd64-v2.13.2.tar.gz
+sudo ./install.sh
+
 # linux things, etc
 # --------
 # https://pandoc.org/org
