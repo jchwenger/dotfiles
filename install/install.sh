@@ -42,6 +42,14 @@ git config --global diff.tool gvimdiff
 git config --global merge.tool gvimdiff
 git config --global --add difftool.prompt false
 
+# git cli
+# -------
+# https://github.com/cli/cli
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+sudo apt-add-repository https://cli.github.com/packages
+sudo apt update
+sudo apt install gh
+
 # linux things, etc
 # --------
 # https://pandoc.org/org
