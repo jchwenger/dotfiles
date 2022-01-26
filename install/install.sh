@@ -226,9 +226,8 @@ git clone https://github.com/google/jax $HOME/dl/jax
 git clone https://github.com/google/trax $HOME/dl/trax
 
 # other dl things
-mkdir ~/dl
-git clone https://github.com/huggingface/transformers.git ~/dl/transformers
-cd ~/dl/transformers
+git clone https://github.com/huggingface/transformers.git $HOME/dl/transformers
+cd $HOME/dl/transformers
 pip install .
 
 # NLP
