@@ -62,8 +62,8 @@ sudo ./install.sh
 # linux things, etc
 # --------
 # https://pandoc.org/org
-# https://neovim.io/
 # https://freedesktop.org/software/pulseaudio/pavucontrol/
+# https://htop.dev/
 
 sudo apt install \
   curl \
@@ -71,7 +71,16 @@ sudo apt install \
   pavucontrol \
   xclip \
   tree \
-  pandoc -y
+  pandoc \
+  htop -y
+
+# pandoc lua filters (for docx pagebreaks)
+# ----------------------------------------
+# https://github.com/pandoc/lua-filters
+PANDOC_DIR=/home/jcw/.local/share/pandoc
+RELEASE_URL=https://github.com/pandoc/lua-filters/releases/latest
+curl -LSs $RELEASE_URL/download/lua-filters.tar.gz | \
+    tar --strip-components=1 --one-top-level=$PANDOC_DIR -zvxf -v
 
 # vim
 # ---
