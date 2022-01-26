@@ -213,12 +213,7 @@ conda install pytorch torchvision torchtext -c pytorch
 # jax & trax
 # ---
 # https://github.com/google/jax
-PYTHON_VERSION=cp37  # alternatives: cp35, cp36, cp37, cp38
-CUDA_VERSION=cuda101  # alternatives: cuda92, cuda100, cuda101, cuda102
-PLATFORM=linux_x86_64  # alternatives: linux_x86_64
-BASE_URL='https://storage.googleapis.com/jax-releases'
-pip install --upgrade $BASE_URL/$CUDA_VERSION/jaxlib-0.1.45-$PYTHON_VERSION-none-$PLATFORM.whl
-pip install --upgrade jax  # install jax
+pip install --upgrade jax jaxlib==0.1.55+cuda110 -f https://storage.googleapis.com/jax-releases/jax_releases.html
 
 # TODO: test the automated version
 # pip install --upgrade https://storage.googleapis.com/jax-releases/`nvidia-smi | sed -En "s/.* CUDA Version: ([0-9]*)\.([0-9]*).*/cuda\1\2/p"`/jaxlib-0.1.45-`python3 -V | sed -En "s/Python ([0-9]*)\.([0-9]*).*/cp\1\2/p"`-none-linux_x86_64.whl jax
@@ -226,8 +221,9 @@ pip install --upgrade jax  # install jax
 # TODO: build from source
 # https://jax.readthedocs.io/en/latest/developer.html#building-from-source
 
-git clone https://github.com/google/jax ~/dl/jax
-git clone https://github.com/google/trax ~/dl/trax
+mkdir $HOME/dl
+git clone https://github.com/google/jax $HOME/dl/jax
+git clone https://github.com/google/trax $HOME/dl/trax
 
 # other dl things
 mkdir ~/dl
