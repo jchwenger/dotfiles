@@ -178,9 +178,7 @@ ipython profile create
 # -------
 # https://github.com/pytorch/pytorch
 # https://github.com/pytorch/text
-conda install \
-  pytorch-gpu \
-  torchtext \
+conda install pytorch torchvision torchtext -c pytorch
 
 # tensorflow
 # ----------
