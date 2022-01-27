@@ -1,4 +1,2 @@
 # https://stackoverflow.com/a/17048486
-infile=$1
-outfile=$2
-iconv -f utf-8 -t utf-8 -c $infile > $outfile
+iconv -f $(file -b --mime-encoding $1) -t utf-8 -c $1 > $2
