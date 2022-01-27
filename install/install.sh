@@ -829,3 +829,10 @@ sudo apt install webp
 # openconnect
 # ----------
 sudo add-apt-repository ppa:phusen/openconnect
+
+# peek (gif from screen)
+# ----------------------
+# https://askubuntu.com/a/833995
+sudo add-apt-repository ppa:peek-developers/stable
+sudo apt update
+sudo apt install peek
