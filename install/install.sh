@@ -244,6 +244,22 @@ pip install --upgrade \
   opustools \
   ftfy
 
+# CMAKE (also needed for the below)
+# ---------------------------------
+# https://stackoverflow.com/a/56690743
+wget -qO - https://apt.kitware.com/keys/kitware-archive-latest.asc |
+    sudo apt-key add -
+sudo apt-add-repository 'deb https://apt.kitware.com/ubuntu/ bionic main'
+sudo apt-get update
+sudo apt-get install cmake
+
+# Updating GCC (8 & 7 together)
+# -----------------------------
+# https://stackoverflow.com/a/65284832
+# https://askubuntu.com/a/1028656
+sudo apt-get install g++-8
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 700 --slave /usr/bin/g++ g++ /usr/bin/g++-7
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
 
 # MOA NLP
 # -------
@@ -266,7 +282,6 @@ cd sentencepiece
 
 # install from source
 sudo apt-get install \
-  cmake \
   build-essential \
   pkg-config \
   libgoogle-perftools-dev
