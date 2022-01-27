@@ -848,7 +848,7 @@
   nnoremap <leader>zz :call ToggleFold()<CR>
 
   " Function FoldMethod {{{
-  let g:FoldMethod = 0
+  let g:FoldMethod = 1
   fun! ToggleFold()
     if g:FoldMethod == 0
       exe "normal! zM"
