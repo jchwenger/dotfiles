@@ -57,6 +57,7 @@ alias vst="vim $HOME/dotfiles/install/install.sh"
 alias vw="nvim -c 'cd /home/jcw/Dropbox/lit/it/VI/words | pwd'"
 alias vm="nvim -c 'cd /home/jcw/Dropbox/lit/it/VI/more | pwd'"
 alias vv="nvim -c 'cd /home/jcw/Documents/vocabulary | pwd'"
+alias vl="cd $HOME/.talon/user/knausj_talon; vim ."
 
 alias rng="$HOME/ranger/ranger.py"
 # alias rng='/usr/local/bin/ranger'
