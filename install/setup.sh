@@ -5,8 +5,8 @@ ln -fs  ~/dotfiles/.zshrc_src ~/.zshrc_src
 ln -fs  ~/dotfiles/.vimrc ~/.vimrc
 
 # fixes for oh-my-zsh
-vim ~/.zshrc '+:execute ":silent! %s/plugins=(git)/plugins=(git vi-mode fzf)/e | wq"' 
-vim ~/.zshrc '+:execute "norm /^sourceosource ~/.zshrc_src:wq"' 
+vim ~/.zshrc '+:execute ":silent! %s/plugins=(git)/plugins=(git vi-mode fzf gcloud docker docker-compose gh fd aws)/e | wq"'
+vim ~/.zshrc '+:execute "norm /^sourceosource ~/.zshrc_src:wq"'
 
 # fix for current repo
 cd ~/dotfiles
