@@ -841,3 +841,8 @@ sudo apt install peek
 # -------------------------
 # https://github.com/whitfin/runiq
 cargo install runiq
+
+# pigz (parallel gzip)
+# --------------------
+# https://zlib.net/pigz/
+# (download, untar & make manually)
