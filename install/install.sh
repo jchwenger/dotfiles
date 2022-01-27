@@ -537,6 +537,8 @@ source ~/.zshrc
 nvm install node
 nvm install-latest-npm
 
+npm install -g http-server
+
 # dotfiles
 # --------
 git clone https://github.com/jchwenger/dotfiles
