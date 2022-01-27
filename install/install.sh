@@ -344,6 +344,10 @@ conda install -c conda-forge pdfminer -y
 # -> generates a json file that YouCompleteMe (Vim) can read
 # in future, test this: https://github.com/rdnetto/YCM-Generator
 pip install compiledb
+# config for vim & YouCompleteMe there:
+# https://gist.github.com/daragao/70ed63ee8992c401a9dd#file-gistfile1-pytb
+# (copy to ~/.vim/.ycm_extra_conf_openframeworks.py", then update .vimrc to contain:
+# let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf_openframeworks.py"
 
 # fix slow boot
 # -------------
