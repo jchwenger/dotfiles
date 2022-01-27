@@ -197,6 +197,7 @@
           \ wrap
           \ nolist
           \ linebreak
+          " \ textwidth=79
           " \ showbreak= 
                               " nolist required for
                               " linebreak (don't break words)
@@ -204,6 +205,19 @@
                               " as an nonbreakable space (not
                               " displayed here but typed:
                               " <c-v> u 202f)
+
+    " LaTex
+    autocmd FileType tex setlocal
+          \ tabstop=2
+          \ softtabstop=2
+          \ shiftwidth=2
+          \ expandtab
+          \ textwidth=79
+          \ wrap
+          " \ iskeyword+=:  " TIP: if you write your \label's as \label{fig:something},
+                          " then if you type in \ref{fig: and press <C-n>
+                          " you will automatically cycle through all
+                          " the figure labels. Very useful! (See Vim LaTeX below)
 
     " Web &c
     autocmd FileType ruby,javascript,html,htmldjango,css,scss,xml,json setlocal
@@ -216,32 +230,13 @@
           " \ iskeyword+=- |
           \ retab
 
-    " Markdown
-    autocmd FileType text,markdown setlocal
-          \ tabstop=2
-          \ softtabstop=2
-          \ shiftwidth=2
-          \ autoindent
-          \ wrap
-
-    " LaTex
-    autocmd FileType tex setlocal
-          \ tabstop=2
-          \ softtabstop=2
-          \ shiftwidth=2
-          \ autoindent
-          \ wrap
-          " \ iskeyword+=:  " TIP: if you write your \label's as \label{fig:something},
-                          " then if you type in \ref{fig: and press <C-n>
-                          " you will automatically cycle through all
-                          " the figure labels. Very useful! (See Vim LaTeX below)
-
 
     " Java, C, C++, Arduino
     autocmd FileType c,cpp,java,arduino setlocal
           \ tabstop=4
           \ softtabstop=4
           \ shiftwidth=4
+          \ noexpandtab
           \ autoindent
           \ nowrap
           \ commentstring=//%s
