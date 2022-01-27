@@ -820,3 +820,8 @@ sudo mv /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xmlout
 # https://github.com/tesseract-ocr/tesseract
 sudo apt-get install tesseract-ocr
 sudo apt-get install tesseract-ocr-fra
+
+# webp tool
+# ---------
+# https://developers.google.com/speed/webp
+sudo apt install webp
