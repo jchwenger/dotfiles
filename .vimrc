@@ -77,6 +77,16 @@
   " (aliases are recognized)
   " set shellcmdflag=-ic
 
+  " trying to remove weird characters (see :help modifyOtherKeys)
+  " https://www.reddit.com/r/vim/comments/gv410k/strange_character_since_last_update_42m/
+  " https://github.com/vim/vim/issues/6111
+  " let &t_TI = "\<Esc>[>4;2m"
+  " let &t_TE = "\<Esc>[>4;m"
+  if !has('gui_running') && !has('nvim')
+    let &t_TI = ""
+    let &t_TE = ""
+  endif
+
 " }}}
 
 " Netrw: {{{
