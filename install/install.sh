@@ -836,3 +836,8 @@ sudo add-apt-repository ppa:phusen/openconnect
 sudo add-apt-repository ppa:peek-developers/stable
 sudo apt update
 sudo apt install peek
+
+# runiq (fast deduplication, in Rust)
+# -------------------------
+# https://github.com/whitfin/runiq
+cargo install runiq
