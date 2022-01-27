@@ -710,7 +710,7 @@
 
   " Open help in new tab
   cabbrev helt tab help
-  cabbrev help vert help
+  cabbrev helv vert help
 
   " Text editing in .txt and .md
   augroup text_edition
