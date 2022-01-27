@@ -872,3 +872,38 @@ sudo chmod a+rx /usr/local/bin/youtube-dl
 # thru ubuntu installer
 # app indicator:
 sudo apt-get install gir1.2-appindicator3-0.1
+
+# redis db
+# --------
+# https://redis.io/topics/quickstart
+cd ~
+wget http://download.redis.io/redis-stable.tar.gz
+tar xvzf redis-stable.tar.gz
+cd redis-stable
+make
+make test
+sudo make install
+# configure
+sudo mkdir /etc/redis
+sudo mkdir /var/redis
+sudo cp utils/redis_init_script /etc/init.d/redis_6379
+# sudo vi /etc/init.d/redis_6379 # optionally change port
+# ! POTENTIAL BUG !
+# add these two lines after # Provides: redis_6379
+# # Required-Start:    $network $remote_fs $local_fs
+# # Required-Stop:     $network $remote_fs $local_fs
+# cf: https://stackoverflow.com/a/40234057
+sudo cp redis.conf /etc/redis/6379.conf
+sudo mkdir /var/redis/6379
+# ---
+# edit the file:
+# sudo vim /etc/redis/6379.conf
+# daemonize yes
+# pidfile change fname if port is different
+# loglevel change if wished
+# logfile "/var/log/redis_6379.log"
+# ! IMPORTANT:
+# dir /var/redis/6379
+# ---
+sudo update-rc.d redis_6379 defaults
+sudo /etc/init.d/redis_6379 start
