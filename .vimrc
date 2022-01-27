@@ -794,8 +794,8 @@
     silent execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
   endfunction
 
-  vnoremap <localleader>lenu :'<,'>call SortByLength(1)<CR>
-  vnoremap <localleader>lend :'<,'>call SortByLength(-1)<CR>
+  vnoremap <localleader>lu :'<,'>call SortByLength(1)<CR>
+  vnoremap <localleader>ld :'<,'>call SortByLength(-1)<CR>
 
   " and to sort lines alphabetically
   " https://vim.fandom.com/wiki/Sort_lines
