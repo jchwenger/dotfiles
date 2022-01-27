@@ -774,8 +774,8 @@
   " join paragraph
   nnoremap <localleader>P mmvipJ`m
 
-  nnoremap <leader>gq :call ReformatParagraph()<CR>
-  vnoremap <leader>gq :call ReformatParagraph()<CR>
+  nnoremap <localleader>p gwip
+  vnoremap <localleader>p gw
 
   " sort lines by length
   " https://stackoverflow.com/a/11531678
