@@ -712,14 +712,14 @@
   cabbrev helt tab help
   cabbrev helv vert help
 
-  " Text editing in .txt and .md
-  augroup text_edition
-    autocmd!
-    " open a multiline code block with ``
-    autocmd FileType text,markdown,tex iabbrev <buffer> i I
-    " i to I
-    autocmd FileType text,markdown iabbrev <buffer> `` ``````O
-  augroup END
+  " " Text editing in .txt and .md
+  " augroup text_edition
+  "   autocmd!
+  "   " open a multiline code block with ``
+  "   autocmd FileType text,markdown,tex iabbrev <buffer> i I
+  "   " i to I
+  "   autocmd FileType text,markdown iabbrev <buffer> `` ``````O
+  " augroup END
 
   " Python
   augroup py_abbrev
