@@ -332,6 +332,11 @@ conda install -c conda-forge \
   black \
   -y
 
+# pdf to text utility
+# -------------------
+# https://github.com/euske/pdfminer
+conda install -c conda-forge pdfminer -y
+
 # get db of compiling flags in c/c++ (openFrameworks)
 # usage: compiledb make
 # -> generates a json file that YouCompleteMe (Vim) can read
