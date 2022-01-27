@@ -853,3 +853,9 @@ cargo install runiq
 # (update rust if needed: https://www.rust-lang.org/tools/install)
 export RUSTFLAGS='-C target-cpu=native'
 cargo install hck
+
+# jpegoptim
+# ---------
+# https://www.kokkonen.net/tjko/src/man/jpegoptim.txt
+# https://github.com/tjko/jpegoptim
+sudo apt-get install jpegoptim
