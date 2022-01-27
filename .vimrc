@@ -5,6 +5,10 @@
   set relativenumber
   set showcmd
 
+  " more powerful backspacing
+  " https://stackoverflow.com/a/11560415
+  set backspace=indent,eol,start
+
   set splitright
 
   syntax on
