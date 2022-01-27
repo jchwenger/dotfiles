@@ -459,6 +459,13 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyr
 # Update the package list and install the Cloud SDK
 sudo apt-get update && sudo apt-get install google-cloud-sdk
 
+# aws cli
+# -------
+# https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
 # docker
 # ------
 # https://docs.docker.com/install/linux/docker-ce/ubuntu/
