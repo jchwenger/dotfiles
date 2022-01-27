@@ -492,11 +492,11 @@
   " Alt-d/D: dw/dW in normal mode
   " Alt-e/E: de/dE in normal mode
   " cnoremap <C-a> <Home>
-  cnoremap <M-b> <S-Left>
-  cnoremap <M-f> <S-Right>
+  " cnoremap <M-b> <S-Left>
+  " cnoremap <M-f> <S-Right>
   " cnoremap <C-k> <C-f>d$<C-c>
-  cnoremap <M-d> <C-f>dw<C-c>
-  cnoremap <M-e> <C-f>de<C-c>
+  " cnoremap <M-d> <C-f>dw<C-c>
+  " cnoremap <M-e> <C-f>de<C-c>
 
   " " check :help emacs-keys
   " " start of line
