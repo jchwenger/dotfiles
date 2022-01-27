@@ -28,6 +28,8 @@ wr() {
   libreoffice --writer -o "$@" &;
 }
 
+alias tl="$HOME/talon/run.sh"
+
 alias stats="stat -c %y"
 
 # Space occupied by files, human readable, descending
