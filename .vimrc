@@ -48,6 +48,9 @@
   " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
   set clipboard^=unnamedplus
 
+  " no joining of sentences with two spaces
+  set nojoinspaces
+
   " Preserve clipboard when quitting Vim {{{
 
   " https://stackoverflow.com/a/45553311
