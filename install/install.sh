@@ -800,3 +800,7 @@ gsettings set org.blueman.plugins.powermanager auto-power-on false
 # purge:
 # sudo apt-get install ppa-purge
 # sudo ppa-purge ppa-url
+
+# aria2 download utility
+# https://aria2.github.io/
+sudo apt update && sudo apt install aria2
