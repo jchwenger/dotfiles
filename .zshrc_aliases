@@ -36,7 +36,7 @@ alias stats="stat -c %y"
 alias dus="du -sh * | sort -hr"
 
 # Free space, without header, human readable, (4th column descending)
-alias dfs="df -h | tail -n +2 | sort -hrk 4"
+alias dfs="df -h | tail -n +2 | sort -hk 4"
 
 alias p="ipython"
 
