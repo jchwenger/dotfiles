@@ -771,10 +771,8 @@
   " https://superuser.com/a/459391
   nnoremap <leader>date :exec 'normal i'.substitute(system("stat -c \%y " . expand('%')),"[\n]*$","","")<CR>
 
-  " reformat paragraph
-  function! ReformatParagraph()
-    norm mlgqip`l:echo<CR>
-  endfunction
+  " join paragraph
+  nnoremap <localleader>P mmvipJ`m
 
   nnoremap <leader>gq :call ReformatParagraph()<CR>
   vnoremap <leader>gq :call ReformatParagraph()<CR>
