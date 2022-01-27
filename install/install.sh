@@ -804,3 +804,7 @@ gsettings set org.blueman.plugins.powermanager auto-power-on false
 # aria2 download utility
 # https://aria2.github.io/
 sudo apt update && sudo apt install aria2
+
+# httrack website copier
+# http://www.httrack.com/
+sudo apt update && sudo apt install webhttrack
