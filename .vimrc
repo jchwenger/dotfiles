@@ -675,6 +675,7 @@
     autocmd!
     autocmd FileType cpp silent nnoremap <buffer> <localleader>rr :w<CR>:execute "!g++ -std=c++11 -o " . expand('%:r') . ".out " . expand('%')<CR>
     autocmd FileType cpp silent nnoremap <buffer> <leader>rr :w<CR>:execute "!g++ -std=c++11 -o " . expand('%:r') . ".out " . expand('%') . "; ./" . expand('%:r') . ".out"<CR>
+    autocmd FileType cpp silent nnoremap <buffer> <localleader>ff :!make && make RunRelease<CR>
   augroup END
 
   " Python ~> use Black for cleaning things up
@@ -682,6 +683,12 @@
     autocmd!
     autocmd FileType python silent nnoremap <buffer> <localleader>rr :w<CR>:!black %:p<CR>
     autocmd FileType python silent nnoremap <buffer> <leader>rr :w<CR>:!python %:p<CR>
+  augroup END
+
+  " Markdown ~> use Firefox to open the file
+  augroup md_shortcuts
+    autocmd!
+    autocmd FileType markdown silent nnoremap <buffer> <localleader>rr :w<CR>:!firefox %<CR>
   augroup END
 
   " Rust
