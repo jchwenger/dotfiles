@@ -1009,16 +1009,20 @@
 
 " Solarized, airline & colouring {{{
 
-  " syntax enable
-  colorscheme solarized
-
-  if has('gui_running')
+  if has('nvim')
+    set termguicolors
+    colorscheme NeoSolarized
+  elseif has('gui_running')
+    " syntax enable
+    colorscheme solarized
     set background=light
     set linespace=2 " Underscore shown in gvim mode
     set winaltkeys=no " Disable Alt+[menukey]
     set guioptions-=m
     set guioptions-=T
   else
+    " syntax enable
+    colorscheme solarized
     " Unclear if needed now, to be researched
     " set t_Co=16
     let g:solarized_termcolors=256
