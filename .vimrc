@@ -740,8 +740,11 @@
   " and saves the file in the current dir
   function! SaveWordLine(write)
     let l:line = getline('.')
+    let l:line = substitute(line, "*", "", "g")
     let l:line = substitute(line, ", ", ",", "g")
     let l:line = substitute(line, "[  '\"?!;:]", "-", "g")
+    let l:line = substitute(line, "-\\+", "-", "g")
+    echom line
     let l:line = line . ".txt"
     if a:write==1
       execute "w " . line
