@@ -770,3 +770,33 @@ sudo apt install indicator-keylock
 # ---------
 # https://askubuntu.com/questions/1051640/bluetooth-bluez-and-blueman-applet-xubuntu-18-04
 gsettings set org.blueman.plugins.powermanager auto-power-on false
+
+# safari (thru wine & playonlinux)
+# ------
+# after some hell, just used the software manager
+
+# remove apt-key, apt-ad-repository
+# ---------------------------------
+# https://askubuntu.com/questions/107177/how-can-i-remove-gpg-key-that-i-added-using-apt-key-add
+# sudo apt-key list
+# the last two groups of the public key together form the id, ex:
+
+# /etc/apt/trusted.gpg.d/wireshark-dev_ubuntu_stable.gpg
+# ------------------------------------------------------
+# pub   rsa4096 2014-12-12 [SC]
+#       A2E4 02B8 5A4B 70CD 78D8  A3D9 D875 5513 14EC A0F0
+# uid           [ unknown] Launchpad PPA for Wireshark Developers
+
+# -->
+# sudo apt-key del 14ECA0F0
+
+# https://itsfoss.com/how-to-remove-or-delete-ppas-quick-tip/
+
+# sudo add-apt-repository --remove ppa:PPA_Name/ppa
+
+# sudo ls /etc/apt/sources.list.d
+# sudo rm -i /etc/apt/sources.list.d/PPA_Name.list
+
+# purge:
+# sudo apt-get install ppa-purge
+# sudo ppa-purge ppa-url
