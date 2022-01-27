@@ -814,3 +814,9 @@ sudo apt update && sudo apt install webhttrack
 sudo mv /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xmlout
 # to reverse:
 # sudo mv /etc/ImageMagick-6/policy.xmlout /etc/ImageMagick-6/policy.xml
+
+# tesseract pdf
+# -------------
+# https://github.com/tesseract-ocr/tesseract
+sudo apt-get install tesseract-ocr
+sudo apt-get install tesseract-ocr-fra
