@@ -178,6 +178,17 @@
           \ fileformat=unix |
           \ retab
 
+    " Markdown
+    autocmd FileType markdown setlocal
+          \ tabstop=2
+          \ shiftwidth=2
+          \ softtabstop=2
+          \ wrap
+          \ nolist
+          \ linebreak
+          \ expandtab |
+          \ retab
+
     " Text
     autocmd FileType text setlocal
           \ tabstop=2
