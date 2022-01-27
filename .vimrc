@@ -976,7 +976,11 @@
     Plug 'tpope/vim-rhubarb'
     Plug 'tpope/vim-abolish'
     Plug 'tpope/vim-eunuch'
-    Plug 'altercation/vim-colors-solarized'
+    if has('nvim')
+      Plug 'overcache/NeoSolarized'
+    else
+      Plug 'altercation/vim-colors-solarized'
+    endif
     Plug 'vim-scripts/visualrepeat'
     Plug 'svermeulen/vim-cutlass'
     Plug 'svermeulen/vim-yoink'
