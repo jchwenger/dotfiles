@@ -337,7 +337,9 @@ conda install -c conda-forge \
 # https://github.com/euske/pdfminer
 conda install -c conda-forge pdfminer -y
 
-# get db of compiling flags in c/c++ (openFrameworks)
+# openFrameworks
+# --------------
+# get db of compiling flags in c/c++
 # usage: compiledb make
 # -> generates a json file that YouCompleteMe (Vim) can read
 # in future, test this: https://github.com/rdnetto/YCM-Generator
