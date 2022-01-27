@@ -768,8 +768,8 @@
   vnoremap <leader>wr :call SaveFormattedLine()<CR>
 
   " insert current date in file (useful for markdown posts)
-  nnoremap <leader>date :r! stat -c \%y %<CR>
-  vnoremap <leader>date :r! stat -c \%y %<CR>
+  " https://superuser.com/a/459391
+  nnoremap <leader>date :exec 'normal i'.substitute(system("stat -c \%y " . expand('%')),"[\n]*$","","")<CR>
 
   " reformat paragraph
   function! ReformatParagraph()
