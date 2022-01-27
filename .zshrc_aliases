@@ -247,8 +247,49 @@ alias xrn='xrandr --output DP2 --rotate normal'
 # merging several pdfs into one, thanks to this reference
 # https://stackoverflow.com/a/19358402
 # used like so: $ pdfmerge outputname input1 input2 ...
+# preserve links with -dPrinted, see:
+# https://tex.stackexchange.com/a/458631
 pdfmerge() {
-  gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=$1 ${@:2}
+  gs \
+    -sDEVICE=pdfwrite \
+    -dCompatibilityLevel=1.4 \
+    -dPDFSETTINGS=/default \
+    -dPrinted=false \
+    -dNOPAUSE \
+    -dQUIET \
+    -dBATCH \
+    -dDetectDuplicateImages \
+    -dCompressFonts=true \
+    -r150 \
+    -sOutputFile=$1 ${@:2}
+}
+
+# stretch routine
+stretch_routine() {
+  cvlc --play-and-exit /usr/share/sounds/freedesktop/stereo/bell.oga
+  for i in {0..5}
+  do
+    sleep 60
+    cvlc --play-and-exit /usr/share/sounds/freedesktop/stereo/complete.oga
+  done
+  sleep $((60*2))
+  cvlc --play-and-exit /usr/share/sounds/freedesktop/stereo/complete.oga
+  cvlc --play-and-exit /usr/share/sounds/freedesktop/stereo/bell.oga
+}
+
+work_routine() {
+
+  if [ $# -ne 1 ]
+  then
+    echo "specify minutes"
+    return
+  fi
+
+  while true
+  do
+    stretch_routine
+    sleep $((60*$1)) # specify number of minutes
+  done
 }
 
 # restart wifi
