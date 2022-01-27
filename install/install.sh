@@ -865,3 +865,10 @@ sudo apt-get install jpegoptim
 # https://github.com/ytdl-org/youtube-dl
 sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 sudo chmod a+rx /usr/local/bin/youtube-dl
+
+# screenkey
+# ---------
+# https://gitlab.com/screenkey/screenkey
+# thru ubuntu installer
+# app indicator:
+sudo apt-get install gir1.2-appindicator3-0.1
