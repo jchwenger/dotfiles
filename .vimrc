@@ -423,8 +423,8 @@
 
   " Merging consecutive empty/space-only lines
   " (taken from :help collapse)
-  nnoremap <localleader>'e :g/^[  \t]*$/.,/[^ <Tab>]/-j<CR>:nohlsearch<CR>
-  vnoremap <localleader>'e :g/^[  \t]*$/.,/[^ <Tab>]/-j<CR>:nohlsearch<CR>
+  nnoremap <localleader>'e :g/^[  \t]*$/.,/[^  <Tab>]/-j<CR>:nohlsearch<CR>
+  vnoremap <localleader>'e :g/^[  \t]*$/.,/[^  <Tab>]/-j<CR>:nohlsearch<CR>
 
   " Remove trailing whitespace (space, unbreakable space, tab)
   nnoremap <leader>rts :%s/[  \t]\+$//e<CR>:nohlsearch<CR>
