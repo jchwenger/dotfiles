@@ -825,3 +825,7 @@ sudo apt-get install tesseract-ocr-fra
 # ---------
 # https://developers.google.com/speed/webp
 sudo apt install webp
+
+# openconnect
+# ----------
+sudo add-apt-repository ppa:phusen/openconnect
