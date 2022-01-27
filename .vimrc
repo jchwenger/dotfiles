@@ -616,7 +616,7 @@
   endfunction
 
   " open/close Fugitive buffer with <localleader>gg / gc
-  nmap <localleader>gg :Gstatus<CR>
+  nmap <localleader>gg :Git<CR>
   nmap <localleader>gc :call DeleteBuffersByPattern('.git/index')<CR>
   nmap <localleader>gd :call DeleteBuffersByPattern('^fugitive*')<CR>
 
