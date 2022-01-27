@@ -990,7 +990,7 @@
     Plug 'vim-airline/vim-airline-themes'
     Plug 'machakann/vim-highlightedyank'
     Plug 'prettier/vim-prettier', {
-          \ 'do': 'npm install',
+          \ 'do': 'npm -g install',
           \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
     Plug 'vim-scripts/indentpython.vim', {'for': 'python'}
     Plug 'octol/vim-cpp-enhanced-highlight', {'for': ['cpp', 'c']}
