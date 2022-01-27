@@ -652,6 +652,12 @@
   xmap ga <Plug>(EasyAlign)
   nmap ga <Plug>(EasyAlign)
 
+  " Eunuch: some mappings
+  nmap <localleader><localleader>D :Delete<CR>
+  vmap <localleader><localleader>D :Delete<CR>
+  nmap <localleader><localleader>R :Remove<CR>
+  vmap <localleader><localleader>R :Remove<CR>
+
   " Compile: current file using <leader>rr {{{
   " The first command compiles (or, for Python, blackens), the second runs the
   " program right after using the % register, containing the name of the file,
