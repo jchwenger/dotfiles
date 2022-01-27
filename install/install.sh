@@ -765,3 +765,8 @@ npm -g install js-beautify
 sudo add-apt-repository ppa:tsbarnes/indicator-keylock
 sudo apt-get update
 sudo apt install indicator-keylock
+
+# bluetooth
+# ---------
+# https://askubuntu.com/questions/1051640/bluetooth-bluez-and-blueman-applet-xubuntu-18-04
+gsettings set org.blueman.plugins.powermanager auto-power-on false
