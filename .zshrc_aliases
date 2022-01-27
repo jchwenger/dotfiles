@@ -135,6 +135,12 @@ flit() {
   cd ~-;
 }
 
+# same as above, with full paths (pipeable)
+fl() {
+  search_string=$(join_by '[ -]' $*);
+  find $lit -iname "*$search_string*" -print0
+}
+
 # find in Vocabulary
 fvoc() {
 
