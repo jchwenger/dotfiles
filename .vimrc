@@ -1002,6 +1002,7 @@
     Plug 'tomlion/vim-solidity', {'for': 'solidity'}
     Plug 'junegunn/fzf', {'dir':'~/.fzf', 'do':'./install --all'}
     Plug 'junegunn/vim-easy-align'
+    Plug 'SirVer/ultisnips', {'for': 'markdown'}
     call plug#end()
 " }}}
 
