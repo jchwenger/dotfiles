@@ -171,8 +171,53 @@ alias zref='firefox https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins'
 alias ohmy='vim ~/.oh-my-zsh'
 
 # lp print portrait, landscape
-alias lpp='lp -o fit-to-page -o sides=two-sided-long-edge'
-alias lpl='lp -o fit-to-page -o sides=two-sided-short-edge'
+alias lpv='lp -o fit-to-page -o sides=two-sided-long-edge'
+alias lph='lp -o fit-to-page -o sides=two-sided-short-edge'
+
+lpvtxt() {
+  total=""
+  for f in $*
+  do
+    if [[ $f =~ ${@: -1} ]]
+    then
+      total="$total$(cat $f)"
+    else
+      total="$total$(cat $f)\f"
+    fi
+  done
+  echo $total \
+  | lp \
+      -o media=a4 \
+      -o cpi=12 \
+      -o lpi=7.2 \
+      -o page-left=48 \
+      -o page-right=48 \
+      -o page-top=48 \
+      -o page-bottom=48 \
+      -o sides=two-sided-long-edge
+}
+
+lphtxt() {
+  for f in $*
+  do
+    if [[ $f =~ ${@: -1} ]]
+    then
+      total="$total$(cat $f)"
+    else
+      total="$total$(cat $f)\f"
+    fi
+  done
+  echo $total \
+  | lp \
+      -o media=a4 \
+      -o cpi=12 \
+      -o lpi=7.2 \
+      -o page-left=48 \
+      -o page-right=48 \
+      -o page-top=48 \
+      -o page-bottom=48 \
+      -o sides=two-sided-short-edge
+}
 
 # xrandr rotate external screen
 alias xrl='xrandr --output DP2 --rotate left'
