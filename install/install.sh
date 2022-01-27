@@ -306,6 +306,9 @@ cd $HOME
 # fire (cli)         https://github.com/google/python-fire
 # toposort           https://pypi.org/project/toposort/
 # black (formatting) https://pypi.org/project/black/
+# flask              https://flask.palletsprojects.com/en/1.1.x/
+# websocket-client   https://github.com/websocket-client/websocket-client
+# python-socketio    https://python-socketio.readthedocs.io/en/latest/
 
 pip install \
   starlette \
@@ -316,14 +319,13 @@ pip install \
   requests
 
 conda install -c anaconda \
-  flask
+  flask \
+  -y
 
 conda install -c conda-forge \
-  flask-socketio
-
-pip install "python-socketio[client]"
-
-conda install -c conda-forge \
+  flask-socketio \
+  websocket-client \
+  python-socketio \
   tqdm \
   fire \
   toposort \
