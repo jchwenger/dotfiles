@@ -629,6 +629,15 @@
     " Autoclean fugtive buffers
     autocmd BufReadPost fugitive://* set bufhidden=delete
   augroup END
+
+  " open the same file in a vertical split right, select the oldest version in
+  " fugitive, and got back to the original pane
+  nnoremap <localleader>0gl <C-w><C-v>:0Gclog<CR><C-w>jG<CR><C-W>h
+  " when a futigive buffer & the quicklist are open on the right-hand-side
+  " vsplit, close them both
+  nnoremap <localleader>0gc <C-w>l<C-w>j<C-w>q<C-w>q
+  " open one line log
+  cabbrev glo Git log --oneline
   " }}}
 
   " Goyo: toggle with <leader>yy
