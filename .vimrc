@@ -308,23 +308,34 @@
   " Windows: navigation {{{
 
   " Open vertical/horizontal:
+  " (Vim default mapping: Ctrl_W+s for a new same file h split)
+
   " <localleader>nn for new file (in current window)
-  " Ctrl_W+Ctrl_n for a new split (same file)
-  " Ctrl_W+n for a new split
-  " (Ctrl_W+Ctrl_v for a v split (same file)
-  " Ctrl_W+v for a new v split
-  " (Ctrl_W+n for a new empty h split)
-  " (Ctrl_W+s for a new same file h split)
-  " Ctrl_W+. for the current dir (v)
-  " Ctrl_W+, for the current dir (h)
   nnoremap <localleader>nn :ene<CR>
   vnoremap <localleader>nn :<C-u>ene<CR>
-  nnoremap <C-w>n :split<CR>
-  vnoremap <C-w>n :<C-U>split<CR>
-  vnoremap <C-w>v :<C-u>vnew<CR>
+
+  " Ctrl_W+Ctrl_n for a new split (same file)
+  " Ctrl_W+n for a new split
+  nnoremap <C-w>n :new<CR>
+  vnoremap <C-w>n :<C-U>new<CR>
+  nnoremap <C-w><C-n> :split<CR>
+  vnoremap <C-w><C-n> :<C-U>split<CR>
+  tnoremap <C-w>n <C-w>:new<CR>
+
+  " same with Ctrl_W+s
+  " (Ctrl_W+Ctrl_v already opens a split (same file)
+  nnoremap <C-w>s :new<CR>
+  vnoremap <C-w>s :<C-U>new<CR>
+  tnoremap <C-w>s <C-w>:new<CR>
+
+  " (Vim default mapping: Ctrl_W+Ctrl_v for a v split (same file)
+  " Ctrl_W+v for a new v split
   nnoremap <C-w>v :vnew<CR>
   vnoremap <C-w>v :<C-u>vnew<CR>
   tnoremap <C-w>v <C-w>:vnew<CR>
+
+  " Ctrl_W+. for the current dir (v)
+  " Ctrl_W+, for the current dir (h)
   nnoremap <C-w>. :vsplit .<CR>
   vnoremap <C-w>. :<C-u>vsplit .<CR>
   tnoremap <C-w>. <C-w>:vsplit .<CR>
@@ -336,16 +347,31 @@
   " Window: resizing {{{
   " Horizontal alt+<, alt+> for incremental increase
   " (also in Terminal mode)
-  nnoremap > <C-W>>
-  vnoremap > <C-W>>
-  tnoremap < <C-W>>
-  nnoremap < <C-W><
-  vnoremap < <C-W><
-  tnoremap > <C-W><
+  if has('gui_running') " same key combinations as below
+    nnoremap ® <C-W>>
+    vnoremap ® <C-W>>
+    tnoremap ® <C-W>>
+    nnoremap ¬ <C-W><
+    vnoremap ¬ <C-W><
+    tnoremap ¬ <C-W><
+  else
+    nnoremap > <C-W>>
+    vnoremap > <C-W>>
+    tnoremap > <C-W>>
+    nnoremap < <C-W><
+    vnoremap < <C-W><
+    tnoremap < <C-W><
+  endif
 
   " Vertical alt+=, alt+- for incremental increase
-  nnoremap = <C-W>-
-  nnoremap - <C-W>+
+  " (Not in Terminal mode)
+  if has('gui_running') " same key combinations as below
+    nnoremap ½ <C-W>-
+    nnoremap ­ <C-W>+
+  else
+    nnoremap = <C-W>-
+    nnoremap - <C-W>+
+  endif
 
   " Maximizing the current window (opposite of ctrl+=)
   nnoremap <C-W># <C-W>\|<C-W>_
