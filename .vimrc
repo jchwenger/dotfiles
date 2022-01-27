@@ -1122,11 +1122,11 @@
   " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
   " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
   " The following changes the default filetype back to 'tex':
-  let g:tex_flavor='xelatex'
+  let g:tex_flavor='latex'
   let g:Tex_DefaultTargetFormat = 'pdf'
-  let g:Tex_CompileRule_pdf='xelatex --interaction=nonstopmode $*'
-  let g:Tex_DefaultTargetFormat = 'pdf'
-  let g:Tex_MultipleCompileFormats='pdf, aux'
+  let g:Tex_MultipleCompileFormats='pdf, au'
+  " let g:Tex_CompileRule_pdf='mkdir o; latex --interaction=nonstopmode --output-directory=o $*'
+  let g:Tex_CompileRule_pdf='mkdir o; xelatex --interaction=nonstopmode --output-directory=o $*; cp o/*.pdf .'
 " }}}
 
 

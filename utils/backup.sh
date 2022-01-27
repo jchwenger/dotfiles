@@ -8,7 +8,7 @@ else
   echo "attempting backup to $target, creating dir(s) if necessary"
 fi
 
-if [ -d $target ]; then
+if [ -d "$target" ]; then
   dir="$(pwd)"
   cd dir
   base="$(basename "$dir")"
@@ -22,7 +22,7 @@ if [ -d $target ]; then
   zip --symlinks -r "$base".zip "$base"
   echo "---------------------"
   echo "moving zip to $target"
-  mv "$dir".zip $target
+  mv "$dir".zip "$target"
   cd "$base"
 else
   echo "target dir '$target' not found"
