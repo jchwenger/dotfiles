@@ -846,3 +846,10 @@ cargo install runiq
 # --------------------
 # https://zlib.net/pigz/
 # (download, untar & make manually)
+
+# hck (rougher form of cut)
+# -------------------------
+# https://github.com/sstadick/hck
+# (update rust if needed: https://www.rust-lang.org/tools/install)
+export RUSTFLAGS='-C target-cpu=native'
+cargo install hck
