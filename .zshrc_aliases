@@ -18,7 +18,7 @@ alias bfg='java -jar ~/bfg-repo-cleaner/bfg-1.13.0.jar'
 alias jn='jupyter notebook'
 alias jl='jupyter lab'
 
-alias nau="nautilus . &"
+alias nau="nautilus . & disown"
 alias ff="firefox"
 
 alias xr='xreader'
