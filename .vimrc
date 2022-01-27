@@ -1,4 +1,5 @@
 " Basic settings {{{
+  set nocompatible
   scriptencoding utf-8
   set number
   set relativenumber
@@ -6,7 +7,6 @@
 
   set splitright
 
-  set nocompatible
   syntax on
   set hlsearch
   " Set hlsearch but deactivate it when I source
