@@ -808,3 +808,9 @@ sudo apt update && sudo apt install aria2
 # httrack website copier
 # http://www.httrack.com/
 sudo apt update && sudo apt install webhttrack
+
+# remove Imagemagick policy restrictions
+# https://askubuntu.com/a/1081907
+sudo mv /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xmlout
+# to reverse:
+# sudo mv /etc/ImageMagick-6/policy.xmlout /etc/ImageMagick-6/policy.xml
