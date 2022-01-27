@@ -646,6 +646,7 @@
 
   " YouCompleteMe: disable preview window after completion
   let g:ycm_autoclose_preview_window_after_insertion = 1
+  let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf_openframeworks.py"
 
   " EasyAlign: just because I love Junegunn
   xmap ga <Plug>(EasyAlign)
