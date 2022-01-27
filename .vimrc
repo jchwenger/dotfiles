@@ -455,6 +455,7 @@
   nnoremap <leader>vv :edit $LEVIMRC<CR>
   nnoremap <leader>vt :tabe $LEVIMRC<CR>
   nnoremap <leader>ve :vsplit $LEVIMRC<CR>
+  nnoremap <localleader>ve :split $LEVIMRC<CR>
   nnoremap <leader>vs :source $MYVIMRC<CR>
   nnoremap <leader>vc :bdelete ~/.vimrc<CR>
 
