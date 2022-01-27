@@ -999,6 +999,7 @@
           \ 'do': './install.py --clangd-completer'}
     Plug 'MaxMEllon/vim-jsx-pretty', {'for': 'javascript'}
     " Plug 'psf/black', {'for':'python'} " does not work as current Vim is compiled with Python < 3.6
+    Plug 'tomlion/vim-solidity', {'for': 'solidity'}
     Plug 'junegunn/fzf', {'dir':'~/.fzf', 'do':'./install --all'}
     Plug 'junegunn/vim-easy-align'
     call plug#end()
