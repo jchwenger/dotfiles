@@ -907,3 +907,14 @@ sudo mkdir /var/redis/6379
 # ---
 sudo update-rc.d redis_6379 defaults
 sudo /etc/init.d/redis_6379 start
+
+# Gnome Sushi
+-------------
+# MacOS-style preview for Nautilus
+# apt install thru the website:
+# https://help.ubuntu.com/stable/ubuntu-help/files-preview.html.en
+# https://gitlab.gnome.org/GNOME/sushi
+# then for LibreOffice compatibility
+# https://manpages.ubuntu.com/manpages/bionic/man1/doc2odt.1.html
+sudo apt update
+sudo apt install unoconv
