@@ -1,0 +1,53 @@
+\documentclass[a4paper]{article} % {{{
+\usepackage[french]{babel}
+\usepackage{nopageno}
+
+% Colours
+\usepackage{xcolor}
+\definecolor{medium-blue}{RGB}{10,10,180}
+\definecolor{light-grey}{gray}{0.8}
+
+% Hyperlinks
+\usepackage[colorlinks,pdfpagelabels,plainpages=false]{hyperref}
+\hypersetup{
+  colorlinks, urlcolor={medium-blue}
+}
+
+% Fonts
+\usepackage{fontspec}
+\setmainfont{Cormorant Garamond}
+
+% No paragraph indent
+\setlength{\parindent}{5pt}
+
+% Symbols
+\usepackage{pifont}
+
+% footnotes in tabular
+\usepackage{footnote}
+\makesavenoteenv{tabular}
+
+% noindent env
+% https://tex.stackexchange.com/a/295121
+\newenvironment{zeroindent}
+{\par\setlength{\parindent}{0pt}}
+{\par}
+
+% }}}
+
+\title{
+  \\
+  \large
+}
+
+\author{
+  \normalsize Jérémie C. Wenger \\
+  \href{https://jeremiewenger.com/}{\small jeremiewenger.com}\\
+}
+
+\date{ \small \today }
+
+\begin{document}
+
+
+\end{document}
