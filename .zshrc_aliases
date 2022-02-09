@@ -228,9 +228,9 @@ pandoc_txt2docx() {
     # echo "$f"
     if [[ $f =~ ${@: -1} ]]
     then
-      total="$total$(cat $f)"
+      total="$total$(cat $f | sed 's/^\*\*\*$/☙/')"
     else
-      total="$total$(cat $f)\n\n\\pagebreak\n\n"
+      total="$total$(cat $f | sed 's/^\*\*\*$/☙/')\n\n\\pagebreak\n\n"
     fi
   done
 
