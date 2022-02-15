@@ -1,7 +1,8 @@
 #!/bin/bash
 
 if [[ $#  -ne 1 ]]; then
-  echo "Please provide location folder, e.g. 'usb/coding/projects'"
+  echo "Please provide target folder, e.g. 'usb/coding/projects', where the"
+  echo "current dir will be saved as a zip"
   exit 2
 else
   target="$1"
@@ -10,18 +11,13 @@ fi
 
 if [ -d "$target" ]; then
   dir="$(pwd)"
-  cd dir
   base="$(basename "$dir")"
-  # up_dir="${dir%$base}"
-
-  # echo "dir: $dir"
-  # echo "base: $base"
-  # echo "up dir: $up_dir"
 
   cd ..
+  echo "---------------------"
   zip --symlinks -r "$base".zip "$base"
   echo "---------------------"
-  echo "moving zip to $target"
+  echo "moving $base.zip to $target"
   mv "$dir".zip "$target"
   cd "$base"
 else
