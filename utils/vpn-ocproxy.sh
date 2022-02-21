@@ -5,7 +5,7 @@ function vpn-ocproxy() {
   read -s -p "password: " password
   echo
   read -p "internal port to ssh into (leave empty for default: 2222): " port
-  if [ -z port ]
+  if [ -z "$port" ]
   then
     port=2222
     listener=11080
