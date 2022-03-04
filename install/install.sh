@@ -772,6 +772,16 @@ sudo snap install --classic heroku
 # ---------------
 # https://www.forticlient.com/downloads
 
+# nordvpn
+# -------
+# https://nordvpn.com/download/linux/
+cd ~
+wget https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
+sudo apt-get update
+sudo apt-get install nordvpn-release_1.0.0_all.deb
+sudo apt-get install nordvpn
+rm nordvpn-release_1.0.0_all.deb
+
 # js-beautify
 # -----------
 # https://www.npmjs.com/package/js-beautify
