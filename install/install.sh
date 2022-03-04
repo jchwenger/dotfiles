@@ -930,3 +930,8 @@ sudo add-apt-repository ppa:libreoffice/ppa -y \
 # -----
 sudo apt-get install conky
 # config: https://github.com/ernesto1/monochrome
+
+# ocproxy
+# -------
+# https://github.com/cernekee/ocproxy
+sudo apt install ocproxy
