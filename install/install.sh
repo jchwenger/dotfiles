@@ -926,3 +926,7 @@ sudo add-apt-repository ppa:libreoffice/ppa -y \
   && sudo apt update \
   && sudo apt install libreoffice -y
 
+# conky
+# -----
+sudo apt-get install conky
+# config: https://github.com/ernesto1/monochrome
