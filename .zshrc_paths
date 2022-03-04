@@ -14,7 +14,8 @@ sub="$lit/submissions"
 al="$lit/deep/alors-seulement-le-rêve"
 art="$lit/deep/art-in-the-guise-of-an-adult"
 veg="$lit/deep/vegans"
-ap="$lit/art-projects"
+ap="$lit/shallow/art-projects"
+sqw="$lit/squares-writing"
 
 dot="$HOME/dotfiles"
 utils="$HOME/dotfiles/utils"
@@ -45,6 +46,7 @@ ina="$pr/inanimaux"
 bot="$pr/chatbot.interface"
 dep="$pr/departs"
 o2t="$pr/odt2txt"
+sq="$pr/squares"
 
 it="$pr/it"
 
