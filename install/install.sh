@@ -918,3 +918,11 @@ sudo /etc/init.d/redis_6379 start
 # https://manpages.ubuntu.com/manpages/bionic/man1/doc2odt.1.html
 sudo apt update
 sudo apt install unoconv
+
+# libreoffice
+# -----------
+# https://blog.programster.org/ubuntu-18-04-install-libreoffice-from-ppa
+sudo add-apt-repository ppa:libreoffice/ppa -y \
+  && sudo apt update \
+  && sudo apt install libreoffice -y
+
