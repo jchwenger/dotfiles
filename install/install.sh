@@ -19,6 +19,21 @@ sudo apt dist-upgrade
 sudo apt install bc module-assistant build-essential dkms linux-headers-$(uname -r) -y
 sudo m-a prepare
 
+# apt keys update
+# ---------------
+# https://github.com/yarnpkg/yarn/issues/7866
+# curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
+wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /usr/share/keyrings/kitware-archive-keyring.gpg >/dev/null
+
+# https://askubuntu.com/a/15272
+# for the problem: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY <PUBKEY>
+# sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys <PUBKEY>
+
+# (also for google-sdk)
+# https://serverfault.com/a/906973
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+
 # check devices
 # -------------
 # ubuntu-drivers devices
@@ -570,6 +585,10 @@ sudo apt install zotero
 # add symlink so it appears in the Ubuntu GUI
 ln -s /usr/share/applications/zotero.desktop zotero.desktop
 # also add Zotero Connector for Firefox from the above download page
+
+# https://github.com/retorquere/zotero-deb/issues/52#issuecomment-1013824798
+# apt error solved by running this:
+wget -qO- https://apt.retorque.re/file/zotero-apt/install.sh | sudo bash
 
 # rclone
 # ------
