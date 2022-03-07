@@ -39,6 +39,11 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyr
 # ubuntu-drivers devices
 sudo ubuntu-drivers autoinstall
 
+# firewall
+# --------
+# https://linuxconfig.org/how-to-enable-disable-firewall-on-ubuntu-18-04-bionic-beaver-linux
+sudo ufw enable
+
 # git
 # ---
 # https://unix.stackexchange.com/questions/33617/how-can-i-update-to-a-newer-version-of-git-using-apt-get
