@@ -369,6 +369,16 @@ pip install compiledb
 # (copy to ~/.vim/.ycm_extra_conf_openframeworks.py", then update .vimrc to contain:
 # let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf_openframeworks.py"
 
+# Processing
+# ----------
+# https://processing.org
+cd ~
+wget https://github.com/processing/processing4/releases/download/processing-1282-4.0b7/processing-4.0b7-linux-x64.tgz
+tar xvzf processing-4.0b7-linux-x64.tgz
+rm processing-4.0b7-linux-x64.tgz
+cd processing-4.0b7
+./install.sh
+
 # fix slow boot
 # -------------
 # # https://askubuntu.com/questions/1030867/how-to-diagnose-fix-very-slow-boot-on-ubuntu-18-04
