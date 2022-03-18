@@ -979,3 +979,12 @@ sudo apt-get install conky
 # -------
 # https://github.com/cernekee/ocproxy
 sudo apt install ocproxy
+
+# ffmpeg
+# ------
+sudo apt remove --purge ffmpeg
+sudo snap install ffmpeg
+# update lib
+# https://askubuntu.com/a/1340076
+sudo apt update
+sudo apt install libdrm-common
