@@ -16,6 +16,7 @@ art="$lit/deep/art-in-the-guise-of-an-adult"
 veg="$lit/deep/vegans"
 ap="$lit/shallow/art-projects"
 sqw="$lit/squares-writing"
+que="$lit/quenine"
 
 dot="$HOME/dotfiles"
 utils="$HOME/dotfiles/utils"
