@@ -988,3 +988,25 @@ sudo snap install ffmpeg
 # https://askubuntu.com/a/1340076
 sudo apt update
 sudo apt install libdrm-common
+
+# # thermald
+# # --------
+# # https://github.com/intel/thermal_daemon
+# # dependencies
+# sudo apt-get install autoconf
+# sudo apt-get install autoconf-archive
+# sudo apt-get install g++
+# sudo apt-get install libglib2.0-dev
+# sudo apt-get install libdbus-1-dev
+# sudo apt-get install libdbus-glib-1-dev
+# sudo apt-get install libxml2-dev
+# sudo apt-get install gtk-doc-tools
+# sudo apt-get install libupower-glib-dev
+# sudo apt-get install liblzma-dev
+# sudo apt-get install libevdev-dev
+# cd ~
+# git clone https://github.com/intel/thermal_daemon
+# cd thermal_daemon
+# ./autogen.sh prefix=/
+# make
+# sudo make install
