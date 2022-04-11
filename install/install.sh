@@ -1010,3 +1010,14 @@ sudo apt install libdrm-common
 # ./autogen.sh prefix=/
 # make
 # sudo make install
+
+# cpufrequtils
+# ------------
+# https://askubuntu.com/a/936488
+sudo apt-get install cpufrequtils
+# https://askubuntu.com/a/1049313
+sudo systemctl disable ondemand
+# create file
+# sudo vim /etc/default/cpufrequtils
+# GOVERNOR="performance" or
+# GOVERNOR="powersave"
