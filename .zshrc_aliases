@@ -370,5 +370,8 @@ export PATH="$PATH:$HOME/git-filter-repo"
 
 export PATH="$PATH:$HOME/pigz-2.6/"
 
+# processing
+export PATH="$PATH:$HOME/processing-4.0b7/"
+
 # for zsh-vi-mode
 zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
