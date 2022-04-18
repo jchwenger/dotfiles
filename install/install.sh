@@ -1021,3 +1021,14 @@ sudo systemctl disable ondemand
 # sudo vim /etc/default/cpufrequtils
 # GOVERNOR="performance" or
 # GOVERNOR="powersave"
+
+# entr (any action if file changes)
+# ---------------------------------
+# https://github.com/eradman/entr
+# https://eradman.com/entrproject/
+cd
+git clone https://github.com/eradman/entr
+cd entr
+./configure
+make test
+sudo make install
