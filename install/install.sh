@@ -1042,3 +1042,11 @@ sudo apt install python-libtorrent
 # ---------------------------------
 sudo apt install libcairo2-dev pkg-config
 conda install pycairo
+
+# keyman IPA keyboard
+# -------------------
+# https://help.keyman.com/products/linux/current-version/common/
+sudo add-apt-repository ppa:keymanapp/keyman
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install keyman onboard-keyman
