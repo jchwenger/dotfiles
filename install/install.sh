@@ -27,7 +27,8 @@ sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /usr/share/keyrings/kitware-archive-keyring.gpg >/dev/null
 
 # https://askubuntu.com/a/15272
-# for the problem: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY <PUBKEY>
+# for the problem: The following signatures couldn't be verified because the
+# public key is not available: NO_PUBKEY <PUBKEY>
 # sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys <PUBKEY>
 
 # (also for google-sdk)
