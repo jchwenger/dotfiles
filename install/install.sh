@@ -1037,3 +1037,8 @@ sudo make install
 # -----------------------
 sudo apt update
 sudo apt install python-libtorrent
+
+# cairo & pycairo (vector graphics)
+# ---------------------------------
+sudo apt install libcairo2-dev pkg-config
+conda install pycairo
