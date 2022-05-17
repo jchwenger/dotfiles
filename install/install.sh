@@ -1032,3 +1032,8 @@ cd entr
 ./configure
 make test
 sudo make install
+
+# libtorrent (for deluge)
+# -----------------------
+sudo apt update
+sudo apt install python-libtorrent
