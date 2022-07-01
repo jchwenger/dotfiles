@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 
 # symlinking
-ln -fs  ~/dotfiles/.zshrc_src ~/.zshrc_src
+ln -fs  ~/dotfiles/.zshrc_src ~/.src_zshrc
 ln -fs  ~/dotfiles/.vimrc ~/.vimrc
 
 # fixes for oh-my-zsh
