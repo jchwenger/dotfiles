@@ -7,9 +7,9 @@ ln -fs  ~/dotfiles/.vimrc ~/.vimrc
 # fixes for oh-my-zsh
 
 # extended vim mode
-git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
+# git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
 
-vim ~/.zshrc '+:execute ":silent! %s/plugins=(git)/plugins=(git zsh-vi-mode fzf gcloud docker docker-compose gh fd aws)/e | wq"'
+vim ~/.zshrc '+:execute ":silent! %s/plugins=(git)/export NVM_LAZY=1\rplugins=(git vi-mode fzf gcloud docker docker-compose gh fd aws nvm)/e | wq"'
 vim ~/.zshrc '+:execute "norm /^sourceosource ~/.zshrc_src:wq"'
 
 # fix for current repo
