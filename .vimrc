@@ -393,10 +393,10 @@
   vnoremap <C-w>T :tabedit %<CR>
 
   " Cycle through tabs using tab, like standard editors
-  nnoremap <tab> gt
-  vnoremap <tab> gt
-  nnoremap <s-tab> gT
-  vnoremap <s-tab> gT
+  " nnoremap <tab> gt
+  " vnoremap <tab> gt
+  " nnoremap <s-tab> gT
+  " vnoremap <s-tab> gT
   " }}}
 
 
