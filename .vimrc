@@ -725,11 +725,34 @@
   augroup py_abbrev
     autocmd!
     " the __main__ thingy
-    autocmd FileType python iabbrev <buffer>
-          \ if_ if __name__ == "__main__":<CR>main()
+    autocmd FileType python iabbrev <buffer> if_
+          \ def main():<CR>
+          \pass<CR><CR><CR>
+          \if __name__ == "__main__":<CR>
+          \main()
+
+    " the __main__ thingy with args
+    autocmd FileType python iabbrev <buffer> ifa_
+          \ if __name__ == "__main__":<CR><CR>
+          \parser = argparse.ArgumentParser(description="""""")<CR><CR>
+          \parser.add_argument("", "",<CR>type=,<CR>default="",<CR>help="""""")<CR><CR>
+          \args = parser.parse_args()<CR><CR>main(args)
+
+    " the __main__ thingy with args, full package
+    autocmd FileType python iabbrev <buffer> ifa__
+          \ import argparse<CR><CR>
+          \def main(args):<CR>
+          \pass<CR><CR><CR>
+          \if __name__ == "__main__":<CR><CR>
+          \parser = argparse.ArgumentParser(description="""""")<CR><CR>
+          \parser.add_argument("", "",<CR>type=,<CR>default="",<CR>help="""""")<CR><CR>
+          \args = parser.parse_args()<CR><CR>
+          \main(args)
+
     " multiline comment strings
     autocmd FileType python iabbrev <buffer>
         \ """" """<CR>"""<ESC>O
+
   augroup END
   " }}}
 
