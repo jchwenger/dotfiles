@@ -996,7 +996,6 @@
     Plug 'sgur/vim-textobj-parameter'
     Plug 'thinca/vim-textobj-between'
     Plug 'rhysd/vim-textobj-continuous-line'
-    Plug 'tpope/vim-surround'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-unimpaired'
@@ -1005,6 +1004,7 @@
     Plug 'tpope/vim-rhubarb'
     Plug 'tpope/vim-abolish'
     Plug 'tpope/vim-eunuch'
+    Plug 'machakann/vim-sandwich'
     if has('nvim')
       Plug 'overcache/NeoSolarized'
     else
@@ -1033,6 +1033,11 @@
     Plug 'junegunn/vim-easy-align'
     Plug 'SirVer/ultisnips', {'for': 'markdown'}
     call plug#end()
+" }}}
+
+
+" Vim-sandwich (surround) {{{
+  runtime macros/sandwich/keymap/surround.vim
 " }}}
 
 
