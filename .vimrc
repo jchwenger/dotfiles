@@ -797,8 +797,18 @@
   " join paragraph
   nnoremap <localleader>P mmvipJ`m
 
+  " format paragraph
   nnoremap <localleader>p gwip
   vnoremap <localleader>p gw
+
+  " sort paragraph
+  nnoremap <localleader>;; mmvip:sort<CR>`m
+  nnoremap <localleader>:: mmvip:sort!<CR>`m
+
+  " and to sort visually selected lines
+  " https://vim.fandom.com/wiki/Sort_lines
+  vnoremap <localleader>;; :sort<CR>
+  vnoremap <localleader>:: :sort!<CR>
 
   " sort lines by length
   " https://stackoverflow.com/a/11531678
@@ -819,10 +829,6 @@
 
   vnoremap <localleader>lu :'<,'>call SortByLength(1)<CR>
   vnoremap <localleader>ld :'<,'>call SortByLength(-1)<CR>
-
-  " and to sort lines alphabetically
-  " https://vim.fandom.com/wiki/Sort_lines
-  vnoremap <leader>srt :'<,'>sort u<CR>
 
   " Highlight duplicate lines, taken from here:
   " https://stackoverflow.com/a/1270689
