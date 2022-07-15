@@ -266,8 +266,8 @@
   nnoremap <C-l> zl
 
   " Press Ctrl+j/k to scroll vertically (as Ctrl+e/y)
-  nnoremap <C-k> <C-y>
-  nnoremap <C-j> <C-e>
+  " nnoremap <C-k> <C-y>
+  " nnoremap <C-j> <C-e>
 
   " " Scroll screen lines
   " function ScreenScrollDown()
