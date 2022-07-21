@@ -10,6 +10,11 @@ prw() {
   processing-java --sketch="$(pwd)" --run;
 }
 prd() {
+  if [ -z "$1" ]
+  then
+    echo "specify dir"
+    exit
+  fi
   processing-java --sketch="$1" --run;
 }
 
