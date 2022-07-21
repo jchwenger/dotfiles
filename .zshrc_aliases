@@ -13,7 +13,7 @@ prd() {
   processing-java --sketch="$1" --run;
 }
 
-alias jek='bundle exec jekyll serve'
+alias jek='bundle exec jekyll serve --incremental'
 alias bfg='java -jar ~/bfg-repo-cleaner/bfg-1.13.0.jar'
 alias jn='jupyter notebook'
 alias jl='jupyter lab'
