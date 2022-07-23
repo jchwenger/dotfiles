@@ -166,7 +166,8 @@ sudo update-alternatives --set vi /usr/local/bin/vim
 # neovim setup
 # (links to .vimrc)
 # ------------
-sudo apt-get install neovim -y
+# https://github.com/neovim/neovim/wiki/Installing-Neovim
+sudo snap install --beta nvim --classic
 mkdir $HOME/.config/nvim
 echo "set runtimepath^=~/.vim runtimepath+=~/.vim/after" >> $HOME/.config/nvim/init.vim
 echo "let &packpath = &runtimepath" >> $HOME/.config/nvim/init.vim
