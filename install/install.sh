@@ -1052,3 +1052,9 @@ sudo add-apt-repository ppa:keymanapp/keyman
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install keyman onboard-keyman
+
+# cmus
+# ----
+# https://manpages.ubuntu.com/manpages/bionic/man7/cmus-tutorial.7.html
+sudo apt-get update
+sudo apt-get install cmus
