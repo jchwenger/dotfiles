@@ -18,7 +18,8 @@ prd() {
   processing-java --sketch="$1" --run;
 }
 
-alias jek='bundle exec jekyll serve --incremental'
+alias jek='bundle exec jekyll serve'
+alias jei='bundle exec jekyll serve --incremental' # does not reload the _config.yml file
 alias bfg='java -jar ~/bfg-repo-cleaner/bfg-1.13.0.jar'
 alias jn='jupyter notebook'
 alias jl='jupyter lab'
