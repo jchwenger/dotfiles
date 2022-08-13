@@ -1052,3 +1052,9 @@ sudo add-apt-repository ppa:keymanapp/keyman
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install keyman onboard-keyman
+
+# cue/flac splitting
+# ------------------
+# https://danilodellaquila.com/en/blog/how-to-split-an-audio-flac-file-using-ubuntu-linux
+sudo apt-get install cuetools shntool flac
+cuebreakpoints file.cue | shnsplit -o flac file.flac
