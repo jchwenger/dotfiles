@@ -15,8 +15,8 @@ al="$lit/deep/alors-seulement-le-rêve"
 art="$lit/deep/art-in-the-guise-of-an-adult"
 veg="$lit/deep/vegans"
 ap="$lit/shallow/art-projects"
-sqw="$lit/squares-writing"
-que="$lit/quenine"
+sqw="$lit/constrained/squares-writing"
+lun="$lit/constrained/pas-peu-lunaire"
 
 dot="$HOME/dotfiles"
 utils="$HOME/dotfiles/utils"
@@ -48,8 +48,11 @@ bot="$pr/chatbot.interface"
 dep="$pr/departs"
 o2t="$pr/odt2txt"
 sq="$pr/squares"
-
+sw="$pr/subwords"
+pho="$pr/phonology-tools"
 it="$pr/it"
+om="$pr/omnines"
+pho="$pr/phonology-tools"
 
 ho="$data/wordhoard"
 
@@ -59,3 +62,5 @@ web="$docs/web"
 jcw="$web/jchwenger.github.io"
 
 voc="$docs/vocabulary"
+
+gai="$d/Goldsmiths-AI"
