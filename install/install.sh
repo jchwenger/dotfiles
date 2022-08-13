@@ -861,6 +861,11 @@ sudo mv /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xmlout
 # to reverse:
 # sudo mv /etc/ImageMagick-6/policy.xmlout /etc/ImageMagick-6/policy.xml
 
+# awr photo format
+# ----------------
+# https://stackoverflow.com/a/31258885
+sudo apt-get install ufraw ufraw-batch
+
 # tesseract pdf
 # -------------
 # https://github.com/tesseract-ocr/tesseract
