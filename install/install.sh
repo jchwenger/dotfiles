@@ -30,6 +30,8 @@ wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | 
 # for the problem: The following signatures couldn't be verified because the
 # public key is not available: NO_PUBKEY <PUBKEY>
 # sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys <PUBKEY>
+# here a tool that does that automatically
+git clone https://github.com/sa1/launchpad-getkeys.git
 
 # (also for google-sdk)
 # https://serverfault.com/a/906973
