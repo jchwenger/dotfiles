@@ -790,6 +790,7 @@ sudo snap install --classic heroku
 # forticlient vpn
 # ---------------
 # https://www.forticlient.com/downloads
+# https://www.fortinet.com/support/product-downloads
 
 # nordvpn
 # -------
