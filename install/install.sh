@@ -867,7 +867,10 @@ sudo mv /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xmlout
 # awr photo format
 # ----------------
 # https://stackoverflow.com/a/31258885
-sudo apt-get install ufraw ufraw-batch
+# https://askubuntu.com/a/526773
+sudo add-apt-repository ppa:crass/ufraw
+sudo apt-get update
+sudo apt-get install ufraw ufraw-batch gimp-ufraw
 
 # tesseract pdf
 # -------------
