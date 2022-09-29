@@ -244,6 +244,10 @@
           \ nowrap
           \ commentstring=//%s
 
+    " Jupyter notebooks
+    " https://vi.stackexchange.com/a/23168
+    autocmd BufNewFile,BufRead *.ipynb set filetype=json
+
   augroup END
 " }}}
 
