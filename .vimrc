@@ -61,6 +61,7 @@
   if executable("xsel")
     function! PreserveClipboard()
       call system("xsel -ib", getreg('+'))
+      " call system('echo ' . shellescape(getreg('+')) . ' | xclip -selection clipboard')
     endfunction
     function! PreserveClipboadAndSuspend()
       call PreserveClipboard()
