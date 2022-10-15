@@ -665,6 +665,14 @@
   nmap <localleader><localleader>R :Remove<CR>
   vmap <localleader><localleader>R :Remove<CR>
 
+  " Grep Operator: search using movements
+  set grepprg=git\ grep\ -n\ $*
+  nmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
+  vmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
+  nmap <leader><leader>g <Plug>GrepOperatorWithFilenamePrompt
+  vmap <leader><leader>g <Plug>GrepOperatorWithFilenamePrompt
+  let g:grep_operator_set_search_register = 1
+
   " Compile: current file using <leader>rr {{{
   " The first command compiles (or, for Python, blackens), the second runs the
   " program right after using the % register, containing the name of the file,
@@ -1041,6 +1049,7 @@
     Plug 'junegunn/vim-easy-align'
     Plug 'SirVer/ultisnips', {'for': 'markdown'}
     Plug 'nelstrom/vim-visual-star-search'
+    Plug 'inside/vim-grep-operator'
     call plug#end()
 " }}}
 
