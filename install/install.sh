@@ -1070,3 +1070,12 @@ sudo apt-get install keyman onboard-keyman
 # https://danilodellaquila.com/en/blog/how-to-split-an-audio-flac-file-using-ubuntu-linux
 sudo apt-get install cuetools shntool flac
 cuebreakpoints file.cue | shnsplit -o flac file.flac
+
+# transmission-cli
+# ----------------
+# https://help.ubuntu.com/community/TransmissionHowTo
+# https://askubuntu.com/questions/602563/preventing-transmission-daemon-from-auto-start
+sudo add-apt-repository ppa:transmissionbt/ppa
+sudo apt update
+sudo apt-get install transmission-cli transmission-common transmission-daemon
+
