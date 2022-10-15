@@ -340,6 +340,8 @@ export PG_OF_PATH="$docs/of_v0.11.0_linux64gcc6_release"
 export OF_PATH="$docs/of_v0.11.0_linux64gcc6_release"
 export OF_APPS="$OF_PATH/apps/myApps"
 
+alias ofm="conda deactivate && make && make RunRelease"
+
 # alias musb='sudo mount /dev/sdc1 /media/$(whoami)/JESSH_USB && sudo mount /dev/sdb1 /media/$(whoami)/JESSH_USB'
 # alias umusb='sudo umount /dev/sdc1 && sudo rmd -f /media/$(whoami)/JESSH_USB'
 
