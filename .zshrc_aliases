@@ -107,6 +107,15 @@ alias -g XCL='| xclip -sel clip'
 
 # conda activate base
 alias cab='conda activate base'
+# aria helper
+# https://unix.stackexchange.com/a/134286
+magnet-info() {
+  hash=$(echo "$1" | grep -oP "(?<=btih:).*?(?=&)")
+  echo "Magnet hash: $hash"
+  aria2c --bt-metadata-only=true --bt-save-metadata=true -q "$1"
+  aria2c "$hash.torrent" -S
+}
+
 # find in current directory
 fin() {
   find . -iname "*$**" -printf '%Ac %p \n';
