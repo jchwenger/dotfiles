@@ -105,8 +105,9 @@ alias gpureload="sudo rmmod nvidia_uvm ; sudo modprobe nvidia_uvm"
 # easy xclip wtih |X
 alias -g XCL='| xclip -sel clip'
 
-# conda activate base
+# conda activate envs
 alias cab='conda activate base'
+alias cad='conda deactivate'
 # aria helper
 # https://unix.stackexchange.com/a/134286
 magnet-info() {
