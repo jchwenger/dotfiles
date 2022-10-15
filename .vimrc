@@ -773,6 +773,7 @@
     let l:line = substitute(line, "*", "", "g")
     let l:line = substitute(line, ", ", ",", "g")
     let l:line = substitute(line, "[  '\"?!;:]", "-", "g")
+    let l:line = substitute(line, "/", "-", "g")
     let l:line = substitute(line, "-\\+", "-", "g")
     echom line
     let l:line = line . ".txt"
