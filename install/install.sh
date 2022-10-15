@@ -1079,3 +1079,8 @@ sudo add-apt-repository ppa:transmissionbt/ppa
 sudo apt update
 sudo apt-get install transmission-cli transmission-common transmission-daemon
 
+# inkscape (vector graphics)
+# --------------------------
+# https://snapcraft.io/inkscape
+sudo snap install inkscape
+
