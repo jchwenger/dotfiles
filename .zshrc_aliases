@@ -393,3 +393,11 @@ export PATH="$PATH:$HOME/processing-4.0b7/"
 
 # for zsh-vi-mode
 # zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
+
+# tensorflow log levels
+# https://stackoverflow.com/a/42121886
+export TF_CPP_MIN_LOG_LEVEL=1
+
+# tensorflow XLA
+# https://stackoverflow.com/a/66028149
+export TF_XLA_FLAGS=--tf_xla_enable_xla_devices
