@@ -1084,3 +1084,18 @@ sudo apt-get install transmission-cli transmission-common transmission-daemon
 # https://snapcraft.io/inkscape
 sudo snap install inkscape
 
+# Fn keys for ROG
+# ---------------
+# https://github.com/flukejones/rog-core
+# https://github.com/flukejones/rog-core/issues/34
+# clone | make | sudo make install 
+# requirements
+sudo apt install \
+  libusb-1.0-0-dev \
+  libdbus-1-dev \
+  llvm \
+  libclang-dev \
+  clang-9 \
+  libclang-cpp9 \
+  libclang-common-9-dev \
+  libclang1-9
