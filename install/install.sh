@@ -93,6 +93,7 @@ sudo apt install \
   rename \
   pavucontrol \
   xclip \
+  xsel \
   tree \
   pandoc \
   htop -y
