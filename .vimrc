@@ -51,6 +51,9 @@
   " no joining of sentences with two spaces
   set nojoinspaces
 
+  " matchit
+  " packadd! matchit
+
   " Preserve clipboard when quitting Vim {{{
 
   " https://stackoverflow.com/a/45553311
