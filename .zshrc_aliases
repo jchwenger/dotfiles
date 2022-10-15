@@ -107,7 +107,9 @@ alias -g XCL='| xclip -sel clip'
 
 # conda activate envs
 alias cab='conda activate base'
+alias cag='conda activate gold'
 alias cad='conda deactivate'
+
 # aria helper
 # https://unix.stackexchange.com/a/134286
 magnet-info() {
