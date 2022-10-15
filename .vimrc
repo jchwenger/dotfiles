@@ -1040,6 +1040,7 @@
     Plug 'junegunn/fzf', {'dir':'~/.fzf', 'do':'./install --all'}
     Plug 'junegunn/vim-easy-align'
     Plug 'SirVer/ultisnips', {'for': 'markdown'}
+    Plug 'nelstrom/vim-visual-star-search'
     call plug#end()
 " }}}
 
