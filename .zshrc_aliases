@@ -1,5 +1,6 @@
 # use 256 colors
 export TERM='xterm-256color'
+export LC_ALL=en_GB.UTF-8
 
 # Processing command added in .profile # my own aliases
 alias tor='cd $HOME/tor-browser_en-US; ./start-tor-browser.desktop; cd -'
@@ -260,6 +261,7 @@ pandoc_txt2docx() {
   # echo $total
   echo "$total" | pandoc -f markdown -t docx --lua-filter=pagebreak.lua -s -o $fname
 }
+
 # xrandr rotate external screen
 alias xrl='xrandr --output DP2 --rotate left'
 alias xrn='xrandr --output DP2 --rotate normal'
@@ -328,7 +330,7 @@ alias pavu='pavucontrol'
 alias echopath="printf '%s\n' \"$PATH\" | tr ':' '\n'"
 
 # Disable CTRL-S and CTRL-Q
-[[ $- =~ i ]] && stty -ixoff -ixon
+# [[ $- =~ i ]] && stty -ixoff -ixon
 
 # https://askubuntu.com/a/1110354
 function reload_gtk_theme() {
