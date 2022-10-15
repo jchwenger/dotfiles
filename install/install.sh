@@ -11,6 +11,13 @@ SCRIPTPATH=$(dirname $SCRIPT)
 # ------------------
 # hold F2 when booting > find option in BIOS (advanced settings) & turn sound off
 
+# fix hdmi sound
+# --------------
+# https://askubuntu.com/a/1223922
+# edits to:
+# - /etc/modprobe.d/alsa-base.conf
+# - /etc/modprobe.d/blacklist.conf
+
 # resolution issues
 # -----------------
 # source: https://medium.com/better-programming/how-i-fixed-my-display-resolution-by-installing-nvidia-drivers-on-ubuntu-18-04-bionic-beaver-linux-489563052f6c
