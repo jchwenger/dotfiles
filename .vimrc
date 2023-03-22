@@ -1053,6 +1053,7 @@
     Plug 'SirVer/ultisnips', {'for': 'markdown'}
     Plug 'nelstrom/vim-visual-star-search'
     Plug 'inside/vim-grep-operator'
+    Plug 'vim-python/python-syntax', {'for': 'python'}
     call plug#end()
 " }}}
 
@@ -1061,6 +1062,9 @@
   runtime macros/sandwich/keymap/surround.vim
 " }}}
 
+" Python syntax {{{
+let g:python_highlight_all = 1
+" }}}
 
 " Solarized, airline & colouring {{{
 
