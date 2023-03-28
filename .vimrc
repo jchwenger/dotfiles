@@ -776,6 +776,7 @@
 
   " Utils: varia
 
+  " Save word/line {{{
   " produce a txt file name from the current line
   " (removing spaces and using '-' between words)
   " and saves the file in the current dir
@@ -808,6 +809,7 @@
   vnoremap <localleader>ww :call SaveWordLine(0)<CR>
   nnoremap <leader>wr :call SaveFormattedLine()<CR>
   vnoremap <leader>wr :call SaveFormattedLine()<CR>
+  " }}}
 
   " insert current date in file (useful for markdown posts)
   " https://superuser.com/a/459391
