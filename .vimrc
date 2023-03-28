@@ -811,6 +811,16 @@
   vnoremap <leader>wr :call SaveFormattedLine()<CR>
   " }}}
 
+  " Split chain line {{{
+  " Split line at char (current line will stop there, next one will have
+  " blanks up until the char and the rest of the line after that.
+  " Cursor must be on the character where the split will occur.
+  nnoremap <localleader>oo moyyp`ojhv0r `oD
+
+  " Copy line and replace all chars with spaces.
+  nnoremap <localleader>bb yypVr A
+  " }}}
+
   " insert current date in file (useful for markdown posts)
   " https://superuser.com/a/459391
   nnoremap <leader>date :exec 'normal i'.substitute(system("stat -c \%y " . expand('%')),"[\n]*$","","")<CR>
