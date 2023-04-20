@@ -776,6 +776,32 @@
         \ """" """<CR>"""<ESC>O
 
   augroup END
+
+  " " Automatic bracket matching {{{
+  " " https://stackoverflow.com/questions/4521818/automatically-insert-a-matching-brace-in-vim
+  " inoremap { {}<ESC>i
+  " inoremap ( ()<ESC>i
+  " inoremap [ []<ESC>i
+  " inoremap " ""<ESC>i
+  " inoremap ' ''<ESC>i
+  " inoremap ` ``<ESC>i
+  " " }}}
+
+  " " remove space after abbrev (from :help abbreviations)
+  " func Eatchar(pat)
+  "    let c = nr2char(getchar(0))
+  "    return (c =~ a:pat) ? '' : c
+  " endfunc
+  " iabbr <silent> if if ()<Left><C-R>=Eatchar('\s')<CR>
+
+  " Javascript {{{
+  augroup js_abbrev
+
+    autocmd!
+
+    autocmd FileType javascript iabbrev <buffer> $ ${}<ESC>i
+
+  augroup END
   " }}}
 
   " Utils: varia
