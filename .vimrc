@@ -817,12 +817,27 @@
 
   " Split chain line {{{
   " Split line at char (current line will stop there, next one will have
-  " blanks up until the char and the rest of the line after that.
+  " blanks up until the char and the rest of the line after that.)
   " Cursor must be on the character where the split will occur.
-  nnoremap <localleader>oo moyyp`ojhv0r `oD
+  nnoremap <silent> <Plug>ChainSplit moyyp`ojhv0r `oD/\w /e<CR>:nohlsearch<Bar>:echo<CR>:call repeat#set("\<Plug>ChainSplit")<CR>
+  nmap <localleader>oo <Plug>ChainSplit
 
-  " Copy line and replace all chars with spaces.
+  " writing
+  " Copy line and replace all chars with spaces (writing forth)
   nnoremap <localleader>bb yypVr A
+
+  " case for |, with additional writing: same as oi, writing mode on the line above
+  nnoremap <localleader>ou moyyp`ojhv0r `oDyyPVr A\|<ESC>i
+
+  " adding special characters
+  " case for ¬: same as oo, adding ¬ at the end of the top line
+  nnoremap <silent> <Plug>ChainOneLine moyyp`ojhv0r `oC¬<ESC>/\w /e<CR>:nohlsearch<Bar>:echo<CR>:call repeat#set("\<Plug>ChainOneLine")<CR>
+  nmap <localleader>op <Plug>ChainOneLine
+
+  " case for |: same as op, with |
+  nnoremap <silent> <Plug>ChainTwoLine moyyp`ojhv0r `oC\|<ESC>/\w /e<CR>:nohlsearch<Bar>:echo<CR>:call repeat#set("\<Plug>ChainTwoLine")<CR>
+  nmap <localleader>oi <Plug>ChainTwoLine
+
   " }}}
 
   " insert current date in file (useful for markdown posts)
