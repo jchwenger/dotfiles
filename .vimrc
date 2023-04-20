@@ -1066,7 +1066,7 @@
     Plug 'tomlion/vim-solidity', {'for': 'solidity'}
     Plug 'junegunn/fzf', {'dir':'~/.fzf', 'do':'./install --all'}
     Plug 'junegunn/vim-easy-align'
-    Plug 'SirVer/ultisnips', {'for': 'markdown'}
+    Plug 'SirVer/ultisnips', {'for': ['markdown', 'javascript']}
     Plug 'nelstrom/vim-visual-star-search'
     Plug 'inside/vim-grep-operator'
     Plug 'vim-python/python-syntax', {'for': 'python'}
