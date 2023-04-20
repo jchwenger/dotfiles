@@ -201,8 +201,8 @@
           \ wrap
           \ nolist
           \ linebreak
-          \ expandtab |
-          \ retab
+          " \ expandtab |
+          " \ retab
           " \ textwidth=79
           " \ showbreak= 
                               " nolist required for
