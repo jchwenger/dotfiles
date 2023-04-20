@@ -676,6 +676,10 @@
   vmap <leader><leader>g <Plug>GrepOperatorWithFilenamePrompt
   let g:grep_operator_set_search_register = 1
 
+  " UltiSnips: {{{
+  let g:UltiSnipsEditSplit="vertical"
+  " }}}
+
   " Compile: current file using <leader>rr {{{
   " The first command compiles (or, for Python, blackens), the second runs the
   " program right after using the % register, containing the name of the file,
