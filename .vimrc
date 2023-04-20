@@ -232,9 +232,9 @@
           \ softtabstop=2
           \ expandtab
           \ autoindent
-          \ nowrap
-          " \ iskeyword+=- |
+          \ nowrap |
           \ retab
+          " \ iskeyword+=- |
 
 
     " Java, C, C++, Arduino
