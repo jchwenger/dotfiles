@@ -18,7 +18,8 @@ if [ -d "$target" ]; then
   zip --symlinks -r "$base".zip "$base"
   echo "---------------------"
   echo "moving $base.zip to $target"
-  mv "$dir".zip "$target"
+  rsync -azvP "$dir".zip "$target"
+  rm "$dir".zip
   cd "$base"
 else
   echo "target dir '$target' not found"
