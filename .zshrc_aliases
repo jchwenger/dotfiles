@@ -406,4 +406,4 @@ export TF_CPP_MIN_LOG_LEVEL=1
 
 # tensorflow XLA
 # https://stackoverflow.com/a/66028149
-export TF_XLA_FLAGS=--tf_xla_enable_xla_devices
+export TF_XLA_FLAGS="--tf_xla_enable_xla_devices"
