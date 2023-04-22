@@ -925,11 +925,10 @@ cargo install hck
 # https://github.com/tjko/jpegoptim
 sudo apt-get install jpegoptim
 
-# youtube-dl
+# yt-dlp (formerly youtube-dl)
 # ----------
-# https://github.com/ytdl-org/youtube-dl
-sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
-sudo chmod a+rx /usr/local/bin/youtube-dl
+# https://github.com/yt-dlp/yt-dlp
+python3 -m pip install -U yt-dlp
 
 # screenkey
 # ---------
@@ -1095,7 +1094,7 @@ sudo snap install inkscape
 # ---------------
 # https://github.com/flukejones/rog-core
 # https://github.com/flukejones/rog-core/issues/34
-# clone | make | sudo make install 
+# clone | make | sudo make install
 # requirements
 sudo apt install \
   libusb-1.0-0-dev \
