@@ -26,8 +26,9 @@ ohmy="$HOME/.oh-my-zsh"
 tl="$HOME/.talon/user/knausj_talon"
 
 other="/media/jcw"
-usb="$other/JESH_S_USB"
-usb2="$other/JESSH_USB"
+usb="$other/JESH_T_USB"
+usb2="$other/JESH_S_USB"
+usb3="$other/JESSH_USB"
 j4="$other/Jesh4T"
 jj="$other/JJesh"
 jjj="$other/JJJesh"
@@ -55,7 +56,7 @@ pho="$pr/phonology-tools"
 it="$pr/it"
 om="$pr/omnines"
 pho="$pr/phonology-tools"
-
+pch="$pr/chains.p5"
 ho="$data/wordhoard"
 
 of=$OF_APPS
