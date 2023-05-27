@@ -1110,3 +1110,9 @@ sudo apt install \
   libclang-cpp9 \
   libclang-common-9-dev \
   libclang1-9
+
+# qbittorrent
+# -----------
+#  https://www.qbittorrent.org/download
+sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
+sudo apt-get update && sudo apt-get install qbittorrent
