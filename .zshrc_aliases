@@ -372,7 +372,7 @@ export PATH="$PATH:$HOME/bat-v0.12.1-x86_64-unknown-linux-gnu"
 export PATH="$PATH:$HOME/fd-v7.4.0-x86_64-unknown-linux-gnu"
 
 # add CUDA: https://askubuntu.com/a/1175482
-export LD_LIBRARY_PATH="/usr/local/cuda-11/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
+# export LD_LIBRARY_PATH="/usr/local/cuda-11/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
 # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/
 
 
