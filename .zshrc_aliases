@@ -41,6 +41,7 @@ alias stats="stat -c %y"
 
 # Space occupied by files, human readable, descending
 alias dus="du -sh * | sort -h"
+alias duss="du -sh * .* | sort -h"
 
 # Free space, without header, human readable, (4th column descending)
 alias dfs="df -h | tail -n +2 | sort -hk 4"
