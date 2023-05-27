@@ -473,7 +473,8 @@
   nnoremap <Esc><Esc> :w<CR>
 
   " Press Space to turn off highlighting and clear any message already displayed.
-  nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+  " (last command removes Netrw messages)
+  nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>:call popup_clear()<CR>
 
   " Terminal: (& ex mode) {{{
   " Do not forget <C-F> to edit cmds in normal mode!
