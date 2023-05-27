@@ -760,6 +760,11 @@ gem install jekyll bundler
 # https://www.gatsbyjs.org/
 npm install -g gatsby-cli
 
+# Hugo
+# ----
+# https://gohugo.io/installation/linux/
+sudo snap install hugo
+
 # Yarn
 # ----
 # https://classic.yarnpkg.com/en/docs/install/#debian-stable
