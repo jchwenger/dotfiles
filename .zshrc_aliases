@@ -50,6 +50,7 @@ alias p="ipython"
 
 alias v="vim ."
 alias vo="vim -O"
+alias voo="vim -o"
 alias g="gvim ."
 alias n="nvim ."
 alias gim="gvim -v"
