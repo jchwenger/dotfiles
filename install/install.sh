@@ -1116,3 +1116,7 @@ sudo apt install \
 #  https://www.qbittorrent.org/download
 sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
 sudo apt-get update && sudo apt-get install qbittorrent
+
+# ubuntu release upgrade
+# ----------------------
+sudo apt install ubuntu-release-upgrader-core
