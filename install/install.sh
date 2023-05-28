@@ -1119,4 +1119,5 @@ sudo apt-get update && sudo apt-get install qbittorrent
 
 # ubuntu release upgrade
 # ----------------------
+# see also: https://askubuntu.com/a/1100915
 sudo apt install ubuntu-release-upgrader-core
