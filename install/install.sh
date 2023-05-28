@@ -1121,3 +1121,8 @@ sudo apt-get update && sudo apt-get install qbittorrent
 # ----------------------
 # see also: https://askubuntu.com/a/1100915
 sudo apt install ubuntu-release-upgrader-core
+
+# xdotools
+# --------
+# https://askubuntu.com/a/931695
+sudo apt install xdotool
