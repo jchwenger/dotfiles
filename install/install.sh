@@ -1126,3 +1126,10 @@ sudo apt install ubuntu-release-upgrader-core
 # --------
 # https://askubuntu.com/a/931695
 sudo apt install xdotool
+
+# go
+# --
+# https://go.dev/doc/install
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz
+# and update the PATH
+# export PATH=$PATH:/usr/local/go/bin
