@@ -218,7 +218,8 @@
           \ softtabstop=2
           \ shiftwidth=2
           \ expandtab
-          \ wrap
+          \ wrap |
+          \ retab
           " \ textwidth=79
           " \ iskeyword+=:  " TIP: if you write your \label's as \label{fig:something},
                           " then if you type in \ref{fig: and press <C-n>
