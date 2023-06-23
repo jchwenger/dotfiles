@@ -367,6 +367,7 @@ export KEYTIMEOUT=1
 
 # bat https://github.com/sharkdp/bat
 export PATH="$PATH:$HOME/bat-v0.12.1-x86_64-unknown-linux-gnu"
+export BAT_THEME="GitHub"
 
 # fd https://github.com/sharkdp/fd
 export PATH="$PATH:$HOME/fd-v7.4.0-x86_64-unknown-linux-gnu"
