@@ -21,6 +21,7 @@ prd() {
 
 alias jek='bundle exec jekyll serve --livereload'
 alias jei='bundle exec jekyll serve --incremental --livereload' # does not reload the _config.yml file
+alias hug='hugo server --buildDrafts --disableFastRender'
 alias bfg='java -jar ~/bfg-repo-cleaner/bfg-1.13.0.jar'
 alias jn='jupyter notebook'
 alias jl='jupyter lab'
