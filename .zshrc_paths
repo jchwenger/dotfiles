@@ -62,6 +62,7 @@ pch="$pr/chains"
 frog="$pr/frogry"
 dech="$pr/déchet"
 gon="$pr/gonograph"
+cai="$pr/cairo.writer"
 
 ho="$data/wordhoard"
 
