@@ -201,34 +201,6 @@ alias lph='lp -o fit-to-page -o sides=two-sided-short-edge'
 alias xrl='xrandr --output DP2 --rotate left'
 alias xrn='xrandr --output DP2 --rotate normal'
 
-# stretch routine
-stretch_routine() {
-  cvlc --play-and-exit /usr/share/sounds/freedesktop/stereo/bell.oga
-  for i in {0..5}
-  do
-    sleep 60
-    cvlc --play-and-exit /usr/share/sounds/freedesktop/stereo/complete.oga
-  done
-  sleep $((60*2))
-  cvlc --play-and-exit /usr/share/sounds/freedesktop/stereo/complete.oga
-  cvlc --play-and-exit /usr/share/sounds/freedesktop/stereo/bell.oga
-}
-
-work_routine() {
-
-  if [ $# -ne 1 ]
-  then
-    echo "specify minutes"
-    return
-  fi
-
-  while true
-  do
-    stretch_routine
-    sleep $((60*$1)) # specify number of minutes
-  done
-}
-
 # restart wifi
 alias restartwifi='sudo modprobe -r 8821ce && sleep 5 && sudo modprobe 8821ce'
 
