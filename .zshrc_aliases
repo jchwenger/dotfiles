@@ -235,6 +235,9 @@ export OF_APPS="$OF_PATH/apps/myApps"
 
 alias ofm="conda deactivate && make && make RunRelease"
 
+# run vlc and prevent sleep
+alias lc="bash /home/jcw/dotfiles/utils/xdotool-prevent-suspend.sh && vlc"
+
 # alias musb='sudo mount /dev/sdc1 /media/$(whoami)/JESSH_USB && sudo mount /dev/sdb1 /media/$(whoami)/JESSH_USB'
 # alias umusb='sudo umount /dev/sdc1 && sudo rmd -f /media/$(whoami)/JESSH_USB'
 
