@@ -1093,7 +1093,11 @@ sudo apt-get install transmission-cli transmission-common transmission-daemon
 # inkscape (vector graphics)
 # --------------------------
 # https://snapcraft.io/inkscape
-sudo snap install inkscape
+# however, bc of a snap issue, back to apt: https://askubuntu.com/a/1426937
+# https://inkscape.org/release/inkscape-1.2.2/gnulinux/ubuntu/ppa/dl/
+sudo add-apt-repository ppa:inkscape.dev/stable
+sudo apt update
+sudo apt install inkscape
 
 # Fn keys for ROG
 # ---------------
