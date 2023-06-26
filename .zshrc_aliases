@@ -201,26 +201,6 @@ alias lph='lp -o fit-to-page -o sides=two-sided-short-edge'
 alias xrl='xrandr --output DP2 --rotate left'
 alias xrn='xrandr --output DP2 --rotate normal'
 
-# merging several pdfs into one, thanks to this reference
-# https://stackoverflow.com/a/19358402
-# used like so: $ pdfmerge outputname input1 input2 ...
-# preserve links with -dPrinted, see:
-# https://tex.stackexchange.com/a/458631
-pdfmerge() {
-  gs \
-    -sDEVICE=pdfwrite \
-    -dCompatibilityLevel=1.4 \
-    -dPDFSETTINGS=/default \
-    -dPrinted=false \
-    -dNOPAUSE \
-    -dQUIET \
-    -dBATCH \
-    -dDetectDuplicateImages \
-    -dCompressFonts=true \
-    -r150 \
-    -sOutputFile=$1 ${@:2}
-}
-
 # stretch routine
 stretch_routine() {
   cvlc --play-and-exit /usr/share/sounds/freedesktop/stereo/bell.oga
