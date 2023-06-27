@@ -1099,6 +1099,11 @@ sudo add-apt-repository ppa:inkscape.dev/stable
 sudo apt update
 sudo apt install inkscape
 
+# rsvg-convert
+# ------------
+# https://manpages.ubuntu.com/manpages/focal/man1/rsvg-convert.1.html
+sudo apt-get install librsvg2-bin
+
 # Fn keys for ROG
 # ---------------
 # https://github.com/flukejones/rog-core
