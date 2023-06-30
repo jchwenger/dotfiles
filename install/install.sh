@@ -1123,8 +1123,8 @@ sudo apt install \
 # qbittorrent
 # -----------
 #  https://www.qbittorrent.org/download
-sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
-sudo apt-get update && sudo apt-get install qbittorrent
+# chmod u+x ...AppImage
+# ./..AppImage
 
 # ubuntu release upgrade
 # ----------------------
