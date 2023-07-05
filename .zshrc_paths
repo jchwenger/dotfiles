@@ -18,6 +18,7 @@ ap="$lit/shallow/art-projects"
 sqw="$lit/constrained/squares-writing"
 lun="$lit/constrained/pas-peu-lunaire"
 cha="$lit/constrained/chains.writing"
+swr="$lit/constrained/subwords.writing"
 
 dot="$HOME/dotfiles"
 utils="$HOME/dotfiles/utils"
