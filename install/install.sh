@@ -1142,3 +1142,34 @@ sudo apt install xdotool
 rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz
 # and update the PATH
 # export PATH=$PATH:/usr/local/go/bin
+
+# selenium (webdriver): installing Firefox & Chrome drivers
+# ---------------------------------------------------------
+
+# chromedriver
+# https://skolo.online/documents/webscrapping/#step-2-install-chromedriver
+# https://sites.google.com/chromium.org/driver/downloads/version-selection?authuser=0
+cd ~
+chromeV=`google-chrome-stable --version | cut -d ' ' -f3 | cut -d '.' -f1-3`
+echo "chrome version is $chromeV"
+driverV=`curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$chromeV`
+echo "chrome driver version is $driverV"
+wget https://chromedriver.storage.googleapis.com/$driverV/chromedriver_linux64.zip
+unzip -d chromedriver chromedriver_linux64.zip
+rm chromedriver_linux64.zip
+chmod +x chromedriver/chromedriver
+sudo chown root:root chromedriver/chromedriver
+sudo mv chromedriver/chromedriver /usr/bin
+rm -rf chromedriver
+
+# geckodriver
+# (same procedure as chromedriver)
+# https://github.com/mozilla/geckodriver/releases
+# https://askubuntu.com/questions/870530/how-to-install-geckodriver-in-ubuntu
+cd ~
+wget https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux64.tar.gz
+tar -xvzf geckodriver-v0.33.0-linux64.tar.gz
+rm geckodriver-v0.33.0-linux64.tar.gz
+chmod +x geckodriver
+sudo chown root:root geckodriver
+sudo mv geckodriver /usr/bin
