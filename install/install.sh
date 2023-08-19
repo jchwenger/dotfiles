@@ -1173,3 +1173,9 @@ rm geckodriver-v0.33.0-linux64.tar.gz
 chmod +x geckodriver
 sudo chown root:root geckodriver
 sudo mv geckodriver /usr/bin
+
+# hp driver
+# ---------
+# https://www.cyberciti.biz/faq/how-to-install-networked-hp-printer-and-scanner-on-ubuntu-linux/
+sudo apt install hplip hplip-gui
+hp-setup $PRINTER_IP
