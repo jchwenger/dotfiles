@@ -242,6 +242,14 @@ conda install pytorch torchvision torchtext -c pytorch
 # ----------
 # for tensorflow see separate files
 
+# tensorflow js & jupyter
+# -----------------------
+# npm i @tensorflow/tfjs # https://www.npmjs.com/package/ijavascript#installation
+# the former produces a warning about acceleration, solved by this one:
+npm i @tensorflow/tfjs-node # https://github.com/tensorflow/tfjs/tree/master/tfjs-node
+npm i -g ijavascript # the jupyter node kernel
+ijsinstall
+
 # jax & trax
 # ---
 # https://github.com/google/jax
