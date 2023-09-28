@@ -110,8 +110,9 @@ alias gpureload="sudo rmmod nvidia_uvm ; sudo modprobe nvidia_uvm"
 alias -g XCL='| xclip -sel clip'
 
 # conda activate envs
-alias cab='conda activate base'
+alias cab='conda activate b'
 alias cag='conda activate gold'
+alias dmlap='conda activate dmlap'
 alias cad='conda deactivate'
 
 # aria helper
