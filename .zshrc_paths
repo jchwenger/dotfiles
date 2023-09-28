@@ -38,13 +38,15 @@ jjj="$other/JJJesh"
 dl="$docs/dl"
 torch="$dl/torch"
 xla="$torch/pytorch/xla"
+ml5="$dl/ml5/ml5.library"
+ml5n="$dl/ml5/ml5.next-gen"
 
 data="$docs/data"
 pr="$docs/projects"
 
 gpt="$dl/gpt/gpt-2"
-mg="$dl/gpt/minGPT"
-br="$dl/gpt/bridges"
+mg="$gpt/minGPT"
+br="$gpt/bridges"
 
 scr="$pr/scraping"
 lac="$pr/lacanage"
@@ -74,5 +76,8 @@ jcw="$web/jchwenger.github.io"
 
 voc="$docs/vocabulary"
 
-gai="$dr/2022-Goldsmiths-AI"
-gdm="$docs/teaching/goldsmiths/DataMLArtisticPractice/ug/DMLAP_2023"
+gai="$dr/AI"
+dmlap="$docs/teaching/goldsmiths/DataMLArtisticPractice"
+dmla="$docs/teaching/goldsmiths/DataMLArtisticPractice/DMLAP_2023"
+dml="$docs/teaching/goldsmiths/DataMLArtisticPractice/DMLAP_2023/DMLAP"
+gdm="$dr/DMLAP"
