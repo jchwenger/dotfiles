@@ -100,7 +100,7 @@ alias zipr='zip -r'
 alias j='jobs'
 
 # gpu status
-alias wa='watch -n 1 nvidia-smi'
+alias wa='LD_LIBRARY_PATH= watch -n 1 nvidia-smi'
 
 # reload gpu
 # https://forums.fast.ai/t/reset-gpu-without-restarting-linux/14136/7
