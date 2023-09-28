@@ -941,6 +941,7 @@ sudo apt-get install jpegoptim
 # yt-dlp (formerly youtube-dl)
 # ----------
 # https://github.com/yt-dlp/yt-dlp
+# https://github.com/yt-dlp/yt-dlp/wiki/Installation#with-pip
 python3 -m pip install -U yt-dlp
 
 # screenkey
