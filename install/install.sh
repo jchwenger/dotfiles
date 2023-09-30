@@ -1192,3 +1192,27 @@ hp-setup $PRINTER_IP
 # -----------------------------
 # https://stackoverflow.com/a/46460200
 # https://apple.stackexchange.com/a/283253
+
+# Homebrew
+# --------
+# https://brew.sh/
+
+# utilities
+# ---------
+brew \
+  install \
+  htop \
+  neovim \
+  tmux \
+  rsync \
+  gh \
+  fd \
+  ripgrep \
+  tree \
+  awk \
+  git
+
+# Python / miniforge
+# ------------------
+brew install python
+brew install miniforge
