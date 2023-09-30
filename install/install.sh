@@ -1187,3 +1187,8 @@ sudo mv geckodriver /usr/bin
 # https://www.cyberciti.biz/faq/how-to-install-networked-hp-printer-and-scanner-on-ubuntu-linux/
 sudo apt install hplip hplip-gui
 hp-setup $PRINTER_IP
+
+# MacOS caps lock / escape swap
+# -----------------------------
+# https://stackoverflow.com/a/46460200
+# https://apple.stackexchange.com/a/283253
