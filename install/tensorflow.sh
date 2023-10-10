@@ -2,7 +2,7 @@
 # https://www.tensorflow.org/install/pip
 conda install -c conda-forge cudatoolkit=11.8.0
 python3 -m pip install nvidia-cudnn-cu11==8.6.0.163 tensorflow==2.13
-pip install --upgrade nvidia-tensorrt
+python3 -m pip install --upgrade nvidia-tensorrt
 
 # set-up env vars
 mkdir -p $CONDA_PREFIX/etc/conda/activate.d
@@ -32,5 +32,5 @@ echo 'unset XLA_FLAGS' >> $CONDA_PREFIX/etc/conda/deactivate.d/env_vars.sh
 source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 source $CONDA_PREFIX/etc/conda/deactivate.d/env_vars.sh
 
-# other weird error (linked with jupyter or tf?) 
-pip install chardet
+# other weird error (linked with jupyter or tf?)
+python3 -m pip install chardet
