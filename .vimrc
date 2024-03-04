@@ -826,7 +826,7 @@
 
     autocmd!
 
-    autocmd FileType javascript iabbrev <buffer> $ ${}<ESC>i
+    autocmd FileType javascript iabbrev <buffer> $ ${}<LEFT><C-R>=Eatchar('\s')<CR>
 
   augroup END
   " }}}
