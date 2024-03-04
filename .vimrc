@@ -46,7 +46,8 @@
   " https://stackoverflow.com/a/14188309
   " and the comment by Fritzophrenic here:
   " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
-  set clipboard^=unnamedplus
+  set clipboard^=unnamed " on MacOs
+  " set clipboard^=unnamedplus " on Linux
 
   " no joining of sentences with two spaces
   set nojoinspaces
