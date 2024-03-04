@@ -31,7 +31,7 @@ alias ff="firefox"
 alias xr='xreader'
 alias xv='xviewer'
 
-alias wr="/Applications/LibreOffice.app/Contents/MacOS/soffice"
+alias libreoffice="/Applications/LibreOffice.app/Contents/MacOS/soffice"
 
 wr() {
   libreoffice --writer -o "$@" &;
