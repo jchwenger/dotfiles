@@ -754,6 +754,12 @@
   " Specify <buffer> when unabbreviating!
   " e.g.: :una <buffer> i
 
+  " remove space after abbrev (from :help abbreviations)
+  func Eatchar(pat)
+     let c = nr2char(getchar(0))
+     return (c =~ a:pat) ? '' : c
+  endfunc
+
   " Open help in new tab
   cabbrev helt tab help
   cabbrev helv vert help
@@ -811,11 +817,6 @@
   " inoremap ` ``<ESC>i
   " " }}}
 
-  " " remove space after abbrev (from :help abbreviations)
-  " func Eatchar(pat)
-  "    let c = nr2char(getchar(0))
-  "    return (c =~ a:pat) ? '' : c
-  " endfunc
   " iabbr <silent> if if ()<Left><C-R>=Eatchar('\s')<CR>
 
   " Javascript {{{
