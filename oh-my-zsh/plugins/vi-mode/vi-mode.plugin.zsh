@@ -27,7 +27,7 @@ bindkey -M vicmd '^M' vi-accept-line
 bindkey '^[[Z' reverse-menu-complete
 
 # retain last word insertion from emacs mode
-bindkey '^[.' insert-last-word
+bindkey '≥' insert-last-word
 
 # vim-style kill to the start of the line
 bindkey '^U' backward-kill-line
@@ -35,7 +35,7 @@ bindkey '^U' backward-kill-line
 # emacs-style kill end of line
 bindkey '^K' kill-line
 
-bindkey 'd' kill-word
+bindkey '∂' kill-word
 
 # allow v to edit the command line (standard behaviour)
 autoload -Uz edit-command-line
@@ -86,3 +86,6 @@ if [[ "${terminfo[kcud1]}" != "" ]]; then
   zle -N down-line-or-beginning-search
   bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
 fi
+
+
+bindkey -s '^[3' \#
