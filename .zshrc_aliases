@@ -64,16 +64,13 @@ alias vt="vim ~/.tmux.conf"
 alias vp="vim $HOME/dotfiles/.zshrc_paths"
 alias vdt="vim $HOME/dotfiles"
 alias vst="vim $HOME/dotfiles/install/install.sh"
-alias vw="vim -c 'cd /home/jcw/Dropbox/lit/it/VI/words | pwd'"
-alias vm="vim -c 'cd /home/jcw/Dropbox/lit/it/VI/more | pwd'"
+alias vw="vim -c 'cd $lit/it/VI/words | pwd'"
+alias vm="vim -c 'cd $lit/it/VI/more | pwd'"
 alias vv="vim -c 'cd /home/jcw/Documents/vocabulary | pwd'"
 alias vl="cd $HOME/.talon/user/knausj_talon; vim ."
 
 alias rng="$HOME/ranger/ranger.py"
-# alias rng='/usr/local/bin/ranger'
-alias tm="$HOME/tmux/tmux"
-# alias tm='/usr/local/bin/tmux'
-export PATH="$PATH:$HOME/tmux"
+alias tm=tmux
 
 alias so='source ~/.zshrc'
 
@@ -107,7 +104,7 @@ alias wa='watch -n 1 nvidia-smi'
 alias gpureload="sudo rmmod nvidia_uvm ; sudo modprobe nvidia_uvm"
 
 # easy xclip wtih |X
-alias -g XCL='| xclip -sel clip'
+alias -g XCL='| pbcopy'
 
 # conda activate envs
 alias cab='conda activate base'
@@ -153,7 +150,7 @@ flit() {
 
   # "$*" expands to "$1c$2c...", c = first char in IFS
   # "$@" on the contrary expands to "$1" "$2" ...
-  find . -iname "*$search_string*" -exec stat -c "%.19y %n" {} \;
+  find . -iname "*$search_string*" -exec stat -f "%Sm %N" {} \;
   # find . -iname "*$**" -printf '%Cc %f %h \n';
 
   cd ~-;
