@@ -22,8 +22,13 @@ cd ~
 
 # symlinking oh-my-zsh
 ln -s ~/dotfiles/oh-my-zsh/lib  ~/.oh-my-zsh/custom/lib
-rm -rf ~/.oh-my-zsh/custom/plugins
-ln -s ~/dotfiles/oh-my-zsh/plugins ~/.oh-my-zsh/custom/plugins
+cd ~/.oh-my-zsh/custom/plugins
+for d in  ~/dotfiles/oh-my-zsh/plugins/*
+do
+  ln -s $d
+done
+cd ~
+
 
 # symlinking tmux
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
