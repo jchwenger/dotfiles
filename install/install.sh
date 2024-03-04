@@ -879,6 +879,10 @@ sudo apt update && sudo apt install aria2
 # http://www.httrack.com/
 sudo apt update && sudo apt install webhttrack
 
+# Imagemagick (from source)
+# -------------------------
+# https://imagemagick.org/script/install-source.php
+git clone https://github.com/ImageMagick/ImageMagick.git ImageMagick-7.1.1
 # remove Imagemagick policy restrictions
 # https://askubuntu.com/a/1081907
 sudo mv /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xmlout
