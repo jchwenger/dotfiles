@@ -1139,6 +1139,7 @@
     Plug 'nelstrom/vim-visual-star-search'
     Plug 'inside/vim-grep-operator'
     Plug 'vim-python/python-syntax', {'for': 'python'}
+    Plug 'rust-lang/rust.vim', {'for': 'rust'}
     call plug#end()
 " }}}
 
