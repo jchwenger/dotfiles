@@ -100,7 +100,7 @@
   " See: http://vimcasts.org/blog/2013/01/oil-and-vinegar-split-windows-and-project-drawer/
   " Also Tim Pope's Vim Vinegar: https://github.com/tpope/vim-vinegar
   let g:netrw_banner=0
-  let g:netrw_liststyle=1
+  let g:netrw_liststyle=3
   let g:netrw_browse_split=0
   " see helpt netrw-p
   let g:netrw_preview=1
