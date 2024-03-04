@@ -113,6 +113,7 @@ alias -g XCL='| xclip -sel clip'
 alias cab='conda activate b'
 alias cag='conda activate gold'
 alias dmlap='conda activate dmlap'
+alias dmlab='conda activate dmlap.hub'
 alias cad='conda deactivate'
 
 # aria helper
