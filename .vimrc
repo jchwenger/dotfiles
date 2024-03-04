@@ -366,6 +366,13 @@
     nnoremap ¬ <C-W><
     vnoremap ¬ <C-W><
     tnoremap ¬ <C-W><
+  elseif has('nvim')
+    nnoremap ≥ <C-W>>
+    vnoremap ≥ <C-W>>
+    tnoremap ≥ <C-W>>
+    nnoremap ≤ <C-W><
+    vnoremap ≤ <C-W><
+    tnoremap ≤ <C-W><
   else
     nnoremap > <C-W>>
     vnoremap > <C-W>>
@@ -380,6 +387,9 @@
   if has('gui_running') " same key combinations as below
     nnoremap ½ <C-W>-
     nnoremap ­ <C-W>+
+  elseif has('nvim')
+    nnoremap – <C-W>-
+    nnoremap ≠ <C-W>+
   else
     nnoremap = <C-W>-
     nnoremap - <C-W>+
@@ -476,7 +486,11 @@
 
   " Press Space to turn off highlighting and clear any message already displayed.
   " (last command removes Netrw messages)
-  nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>:call popup_clear()<CR>
+  if has('nvim') " no popup_clear in neovim...
+    nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+  else
+    nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>:call popup_clear()<CR>
+  endif
 
   " Terminal: (& ex mode) {{{
   " Do not forget <C-F> to edit cmds in normal mode!
@@ -495,6 +509,13 @@
 
   " Browse the terminal in normal mode as you would in Ex mode
   tnoremap <C-f> <C-W>N
+
+  " Annoying issue with MacOS Terminal
+  if has('nvim')
+    noremap <M-3> #
+    " cnoremap <M-3> #
+    " lnoremap <M-3> #
+  endif
 
   " Ex navigation (emulating bash/zsh emacs binding)
   " Ctrl-a: home (same as Ctrl-b)
@@ -1085,7 +1106,8 @@
     Plug 'tpope/vim-eunuch'
     Plug 'machakann/vim-sandwich'
     if has('nvim')
-      Plug 'overcache/NeoSolarized'
+      " Plug 'overcache/NeoSolarized'
+      Plug 'junegunn/seoul256.vim'
     else
       Plug 'altercation/vim-colors-solarized'
     endif
@@ -1129,8 +1151,9 @@ let g:python_highlight_all = 1
 " Solarized, airline & colouring {{{
 
   if has('nvim')
-    set termguicolors
-    colorscheme NeoSolarized
+    " set termguicolors
+    " colorscheme NeoSolarized
+    colorscheme seoul256
   elseif has('gui_running')
     " syntax enable
     colorscheme solarized
@@ -1149,7 +1172,11 @@ let g:python_highlight_all = 1
   endif
 
   " Airline: theme
-  let g:airline_theme='solarized'
+  if has("nvim")
+    let g:airline_theme='seoul256'
+  else
+    let g:airline_theme='solarized'
+  endif
   let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
