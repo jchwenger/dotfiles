@@ -7,59 +7,9 @@ SCRIPT=$(readlink -f $0)
 SCRIPTPATH=$(dirname $SCRIPT)
 # echo "from src: $SCRIPTPATH"
 
-# remove intro sound
-# ------------------
-# hold F2 when booting > find option in BIOS (advanced settings) & turn sound off
-
-# fix hdmi sound
-# --------------
-# https://askubuntu.com/a/1223922
-# edits to:
-# - /etc/modprobe.d/alsa-base.conf
-# - /etc/modprobe.d/blacklist.conf
-
-# resolution issues
-# -----------------
-# source: https://medium.com/better-programming/how-i-fixed-my-display-resolution-by-installing-nvidia-drivers-on-ubuntu-18-04-bionic-beaver-linux-489563052f6c
-sudo apt update && sudo apt upgrade
-sudo apt dist-upgrade
-sudo apt install bc module-assistant build-essential dkms linux-headers-$(uname -r) -y
-sudo m-a prepare
-
-# apt keys update
-# ---------------
-# https://github.com/yarnpkg/yarn/issues/7866
-# curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
-wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /usr/share/keyrings/kitware-archive-keyring.gpg >/dev/null
-
-# https://askubuntu.com/a/15272
-# for the problem: The following signatures couldn't be verified because the
-# public key is not available: NO_PUBKEY <PUBKEY>
-# sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys <PUBKEY>
-# here a tool that does that automatically
-git clone https://github.com/sa1/launchpad-getkeys.git
-
-# (also for google-sdk)
-# https://serverfault.com/a/906973
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
-
-# check devices
-# -------------
-# ubuntu-drivers devices
-sudo ubuntu-drivers autoinstall
-
-# firewall
-# --------
-# https://linuxconfig.org/how-to-enable-disable-firewall-on-ubuntu-18-04-bionic-beaver-linux
-sudo ufw enable
-
 # git
 # ---
 # https://unix.stackexchange.com/questions/33617/how-can-i-update-to-a-newer-version-of-git-using-apt-get
-sudo add-apt-repository ppa:git-core/ppa -y
-sudo apt-get update
-sudo apt install git -y
 git config --global user.name "jchwenger"
 git config --global user.email "34098722+jchwenger@users.noreply.github.com"
 sudo snap install hub --classic
@@ -72,46 +22,13 @@ git config --global diff.tool gvimdiff
 git config --global merge.tool gvimdiff
 git config --global --add difftool.prompt false
 
-# git cli
-# -------
-# https://github.com/cli/cli
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-sudo apt-add-repository https://cli.github.com/packages
-sudo apt update
-sudo apt install gh
-
-# github large files
-# ------------------
-# https://git-lfs.github.com/
-cd /tmp && mkdir lfs && cd lfs
-curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-wget https://github.com/git-lfs/git-lfs/releases/download/v2.13.2/git-lfs-linux-amd64-v2.13.2.tar.gz
-tar xvzf https://github.com/git-lfs/git-lfs/releases/download/v2.13.2/git-lfs-linux-amd64-v2.13.2.tar.gz
-sudo ./install.sh
-
-# linux things, etc
-# --------
-# https://pandoc.org/org
-# https://freedesktop.org/software/pulseaudio/pavucontrol/
-# https://htop.dev/
-
-sudo apt install \
-  curl \
-  rename \
-  pavucontrol \
-  xclip \
-  xsel \
-  tree \
-  pandoc \
-  htop -y
-
 # pandoc lua filters (for docx pagebreaks)
 # ----------------------------------------
 # https://github.com/pandoc/lua-filters
 PANDOC_DIR=/home/jcw/.local/share/pandoc
 RELEASE_URL=https://github.com/pandoc/lua-filters/releases/latest
 curl -LSs $RELEASE_URL/download/lua-filters.tar.gz | \
-    tar --strip-components=1 --one-top-level=$PANDOC_DIR -zvxf -v
+  tar --strip-components=1 --one-top-level=$PANDOC_DIR -zvxf -v
 
 # vim
 # ---
@@ -129,20 +46,6 @@ sudo apt remove \
   vim-gtk3 \
   vim-nox
 
-sudo apt install \
-  libncurses5-dev \
-  libgnome2-dev \
-  libgnomeui-dev \
-  libgtk2.0-dev \
-  libatk1.0-dev \
-  libbonoboui2-dev \
-  libcairo2-dev \
-  libx11-dev \
-  libxpm-dev \
-  libxt-dev \
-  python3-dev \
-  libperl-dev -y
-
 cd $HOME
 git clone https://github.com/vim/vim
 sudo apt-get build-dep vim-gnome -y
@@ -156,22 +59,22 @@ cd vim/
 make distclean # for cleaning the build when changing features
 echo "----------------------------"
 ./configure --with-features=huge \
-            --enable-multibyte \
-            --enable-python3interp=yes \
-            --enable-perlinterp=yes \
-            --enable-gui=auto \
-            --enable-cscope \
-            --with-x \
-            --prefix=/usr/local
-echo "----------------------------"
-make VIMRUNTIMEDIR=/usr/local/share/vim/vim82
+  --enable-multibyte \
+  --enable-python3interp=yes \
+  --enable-perlinterp=yes \
+  --enable-gui=auto \
+  --enable-cscope \
+  --with-x \
+  --prefix=/usr/local
+  echo "----------------------------"
+  make VIMRUNTIMEDIR=/usr/local/share/vim/vim82
 
-sudo make install
+  sudo make install
 
-sudo update-alternatives --install /usr/bin/editor editor /usr/local/bin/vim 1
-sudo update-alternatives --set editor /usr/local/bin/vim
-sudo update-alternatives --install /usr/bin/vi vi /usr/local/bin/vim 1
-sudo update-alternatives --set vi /usr/local/bin/vim
+  sudo update-alternatives --install /usr/bin/editor editor /usr/local/bin/vim 1
+  sudo update-alternatives --set editor /usr/local/bin/vim
+  sudo update-alternatives --install /usr/bin/vi vi /usr/local/bin/vim 1
+  sudo update-alternatives --set vi /usr/local/bin/vim
 
 # neovim setup
 # (links to .vimrc)
@@ -183,41 +86,9 @@ echo "set runtimepath^=~/.vim runtimepath+=~/.vim/after" >> $HOME/.config/nvim/i
 echo "let &packpath = &runtimepath" >> $HOME/.config/nvim/init.vim
 echo "source $HOME/.vimrc" >> $HOME/.config/nvim/init.vim
 
-
-# desktop etc
-# -----------
-sudo apt install gnome-tweaks gnome-tweak-tool -y
-
-# wifi issues
-# -----------
-sudo ./$SCRIPTPATH/wifi.sh
-
-# tlp battery
-# -----------
-sudo add-apt-repository ppa:linuxuprising/apps
-sudo apt install tlp tlpui -y
-sudo add-apt-repository --remove ppa:linuxuprising/apps
-# # add this line to /etc/default/tlp
-# DEVICES_TO_DISABLE_ON_STARTUP="bluetooth"
-
-
 # zsh and oh-my-zsh
 # -----------------
 ./$SCRIPTPATH/zsh.sh
-
-# anaconda
-# --------
-echo "---------------------------"
-echo "installing anaconda"
-cd /tmp
-curl -O https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
-# compare integrity of sha with those found here:
-# https://docs.anaconda.com/anaconda/install/hashes/lin-3-64/
-sha256sum Anaconda3-2019.10-Linux-x86_64.sh
-chmod +x Anaconda3-2019.10-Linux-x86_64.sh
-./Anaconda3-2019.03-Linux-x86_64.sh
-cd ~
-source ~/.bashrc
 
 # ipython automatic reload in profile
 # -----------------------------------
@@ -283,15 +154,6 @@ pip install --upgrade \
   gensim \
   opustools \
   ftfy
-
-# CMAKE (also needed for the below)
-# ---------------------------------
-# https://stackoverflow.com/a/56690743
-wget -qO - https://apt.kitware.com/keys/kitware-archive-latest.asc |
-    sudo apt-key add -
-sudo apt-add-repository 'deb https://apt.kitware.com/ubuntu/ bionic main'
-sudo apt-get update
-sudo apt-get install cmake
 
 # Updating GCC (8 & 7 together)
 # -----------------------------
@@ -369,7 +231,6 @@ conda install -c conda-forge \
   tqdm \
   fire \
   toposort \
-  black \
   -y
 
 # pdf to text utility
@@ -436,53 +297,14 @@ wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat-v0.12.1-x86_64
 tar -xvzf bat-v0.12.1-x86_64-unknown-linux-gnu.tar.gz
 rm bat-v0.12.1-x86_64-unknown-linux-gnu.tar.gz
 
-# fd
-# --
-# https://github.com/sharkdp/fd
-wget https://github.com/sharkdp/fd/releases/download/v7.4.0/fd-v7.4.0-x86_64-unknown-linux-gnu.tar.gz
-tar -xvzf fd-v7.4.0-x86_64-unknown-linux-gnu.tar.gz
-rm fd-v7.4.0-x86_64-unknown-linux-gnu.tar.gz
-
 # ranger
 # ------
 # https://github.com/ranger/ranger
 git clone https://github.com/ranger/ranger
 
-# tmux
-# ----
-# https://github.com/tmux/tmux
-sudo apt-get install \
-  autotools-dev \
-  automake \
-  libevent-dev \
-  libncurses5-dev \
-  libncursesw5-dev \
-  byacc -y
-
-# sudo apt install tmux -y
-git clone https://github.com/tmux/tmux.git
-cd tmux
-sh autogen.sh
-./configure && make
-cd ~
-
 # powerline
 # ---------
-# https://askubuntu.com/a/283909
-pip install powerline-status
-sudo apt-get install fonts-powerline
-
-# # this fix used, but will be integrated into a future version:
-# # https://github.com/powerline/powerline/pull/2033#issuecomment-596020388
-# git clone https://github.com/powerline/powerline && \
-# cd powerline && \
-# git checkout develop && \
-# pip install ./  # use --user flag if desired
-
-# wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
-# mkdir -p ~/.fonts/ && mv PowerlineSymbols.otf ~/.fonts/
-# fc-cache -vf ~/.fonts
-# mkdir -p ~/.config/fontconfig/conf.d/ && mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+python3 -m pip install powerline-status
 
 # solarized
 # ---------
@@ -500,21 +322,13 @@ sudo fc-cache -f -v
 
 # google cloud
 # ------------
-# https://cloud.google.com/sdk/docs/quickstart-debian-ubuntu
-
-# Add the Cloud SDK distribution URI as a package source
-echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-# Import the Google Cloud Platform public key
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
-# Update the package list and install the Cloud SDK
-sudo apt-get update && sudo apt-get install google-cloud-sdk
+# https://formulae.brew.sh/cask/google-cloud-sdk
+brew install google-cloud-sdk
 
 # aws cli
 # -------
-# https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install
+# https://formulae.brew.sh/formula/awscli
+brew install awscli
 
 # docker
 # ------
@@ -522,28 +336,28 @@ sudo ./aws/install
 
 sudo apt-get update
 sudo apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg-agent \
-    software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-echo "----------------------"
-echo "Verify that you now have the key with the fingerprint"
-echo "9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88"
-sudo apt-key fingerprint 0EBFCD88
-echo "----------------------"
- sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
-sudo apt-get update
-sudo apt-get install \
-  docker-ce \
-  docker-ce-cli \
-  containerd.io
-# grant permissions
-sudo usermod -a -G docker $USER
+  apt-transport-https \
+  ca-certificates \
+  curl \
+  gnupg-agent \
+  software-properties-common
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  echo "----------------------"
+  echo "Verify that you now have the key with the fingerprint"
+  echo "9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88"
+  sudo apt-key fingerprint 0EBFCD88
+  echo "----------------------"
+  sudo add-apt-repository \
+    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) \
+    stable"
+      sudo apt-get update
+      sudo apt-get install \
+        docker-ce \
+        docker-ce-cli \
+        containerd.io
+              # grant permissions
+              sudo usermod -a -G docker $USER
 
 # nvidia-docker
 # -------------
@@ -582,10 +396,10 @@ rm tor-browser-linux64-9.0.6_en-US.tar.xz
 
 # node / nvm
 # ----------
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | zsh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | zsh
 source ~/.zshrc
-nvm install node
-nvm install-latest-npm
+nvm install --lts
+nvm use --lts
 
 npm install -g http-server
 
@@ -594,36 +408,6 @@ npm install -g http-server
 git clone https://github.com/jchwenger/dotfiles
 # ./dotfiles/install/install.sh
 
-# video codecs, fonts...
-# ----------------------
-# https://tor.stackexchange.com/a/19274
-sudo apt update
-sudo apt install \
-  libdvdnav4 \
-  libdvdread4 \
-  gstreamer1.0-plugins-bad \
-  gstreamer1.0-plugins-ugly \
-  libdvd-pkg
-sudo dpkg-reconfigure libdvd-pkg
-sudo apt install ubuntu-restricted-extras
-
-# ctags
-# -----
-sudo snap install universal-ctags
-
-# Zotero
-# ------
-# https://askubuntu.com/a/1160369
-wget -qO- https://github.com/retorquere/zotero-deb/releases/download/apt-get/install.sh | sudo bash
-sudo apt update
-sudo apt install zotero
-# add symlink so it appears in the Ubuntu GUI
-ln -s /usr/share/applications/zotero.desktop zotero.desktop
-# also add Zotero Connector for Firefox from the above download page
-
-# https://github.com/retorquere/zotero-deb/issues/52#issuecomment-1013824798
-# apt error solved by running this:
-wget -qO- https://apt.retorque.re/file/zotero-apt/install.sh | sudo bash
 
 # rclone
 # ------
@@ -633,21 +417,11 @@ curl https://rclone.org/install.sh | sudo zsh
 # if still a bug with access rights for ~/.config/rclone
 # sudo chown -R $USER $HOME/.config/rclone
 
-# ripgrep
-# -------
-# https://github.com/BurntSushi/ripgrep
-wget https://github.com/BurntSushi/ripgrep/releases/download/12.0.1/ripgrep_12.0.1_amd64.deb
-sudo dpkg -i ripgrep_12.0.1_amd64.deb
-
-# jq (JSON cli-processor)
-# -----------------------
-# https://stedolan.github.io/jq/
-sudo apt-get install jq
-
 # Rust
 # ----
 # https://www.rust-lang.org/tools/install
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup component add rust-src rustfmt-preview rust-analysis
 
 # Teleconsole
 # -----------
@@ -695,24 +469,6 @@ sudo apt update && sudo apt install android-sdk
 # ----------
 # download, extract & add to the path manually
 # https://developer.android.com/studio#command-tools
-
-# just in case: change java version (here e.g. add java 8)
-# --------------------------------------------------------
-sudo apt-get install openjdk-8-jre
-sudo update-alternatives --config java
-
-# kvm
-# ---
-# check & enable virtualisation
-# https://developer.android.com/studio/run/emulator-acceleration#vm-linux
-sudo apt-get update
-sudo apt-get install \
-  cpu-checker \
-  qemu \
-  qemu-kvm \
-  libvirt-bin  \
-  bridge-utils  \
-  virt-manager
 
 # to use:
 # sudo service libvirtd start
@@ -780,17 +536,6 @@ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt update && sudo apt install --no-install-recommends yarn
 
-# reboot issues
-# -------------
-# apport?
-# https://ubuntuforums.org/showthread.php?t=1745793&page=2&p=10984235#post10984235
-
-# debug shell on reboot
-# https://askubuntu.com/q/808435/1092704
-# sudo systemctl enable debug-shell
-# sudo halt, then do:
-# systemctl list-jobs
-
 # mongodb
 # -------
 # https://www.mongodb.com/
@@ -828,52 +573,6 @@ rm nordvpn-release_1.0.0_all.deb
 # https://www.npmjs.com/package/js-beautify
 
 npm -g install js-beautify
-
-# caps & other locks indicator
-# ----------------------------
-# https://www.howtogeek.com/274587/how-to-get-a-notification-when-caps-lock-or-num-lock-is-enabled-in-ubuntu/
-sudo add-apt-repository ppa:tsbarnes/indicator-keylock
-sudo apt-get update
-sudo apt install indicator-keylock
-
-# bluetooth
-# ---------
-# https://askubuntu.com/questions/1051640/bluetooth-bluez-and-blueman-applet-xubuntu-18-04
-gsettings set org.blueman.plugins.powermanager auto-power-on false
-
-# safari (thru wine & playonlinux)
-# ------
-# after some hell, just used the software manager
-
-# remove apt-key, apt-ad-repository
-# ---------------------------------
-# https://askubuntu.com/questions/107177/how-can-i-remove-gpg-key-that-i-added-using-apt-key-add
-# sudo apt-key list
-# the last two groups of the public key together form the id, ex:
-
-# /etc/apt/trusted.gpg.d/wireshark-dev_ubuntu_stable.gpg
-# ------------------------------------------------------
-# pub   rsa4096 2014-12-12 [SC]
-#       A2E4 02B8 5A4B 70CD 78D8  A3D9 D875 5513 14EC A0F0
-# uid           [ unknown] Launchpad PPA for Wireshark Developers
-
-# -->
-# sudo apt-key del 14ECA0F0
-
-# https://itsfoss.com/how-to-remove-or-delete-ppas-quick-tip/
-
-# sudo add-apt-repository --remove ppa:PPA_Name/ppa
-
-# sudo ls /etc/apt/sources.list.d
-# sudo rm -i /etc/apt/sources.list.d/PPA_Name.list
-
-# purge:
-# sudo apt-get install ppa-purge
-# sudo ppa-purge ppa-url
-
-# aria2 download utility
-# https://aria2.github.io/
-sudo apt update && sudo apt install aria2
 
 # httrack website copier
 # http://www.httrack.com/
@@ -937,11 +636,6 @@ cargo install hck
 # https://www.kokkonen.net/tjko/src/man/jpegoptim.txt
 # https://github.com/tjko/jpegoptim
 sudo apt-get install jpegoptim
-
-# yt-dlp (formerly youtube-dl)
-# ----------
-# https://github.com/yt-dlp/yt-dlp
-python3 -m pip install -U yt-dlp
 
 # screenkey
 # ---------
@@ -1134,11 +828,6 @@ sudo apt install \
 # chmod u+x ...AppImage
 # ./..AppImage
 
-# ubuntu release upgrade
-# ----------------------
-# see also: https://askubuntu.com/a/1100915
-sudo apt install ubuntu-release-upgrader-core
-
 # xdotools
 # --------
 # https://askubuntu.com/a/931695
@@ -1197,22 +886,70 @@ hp-setup $PRINTER_IP
 # --------
 # https://brew.sh/
 
+# basics
+# ------
+
+# update default bash from MacOs version
+brew install \
+  bash \
+  pkg-config \
+  go
+
+# python / miniforge (+ other deps)
+# ------------------
+brew install python
+brew install miniforge
+
+brew install \
+  pyenv \
+  black \
+  cairo \
+  ctags \
+  cmake \
+
 # utilities
 # ---------
-brew \
-  install \
-  htop \
+# git
+brew install \
+  git \
+  git-lfs \
+  git-filter-repo
+
+# terminal
+brew install \
   neovim \
+  htop \
   tmux \
   rsync \
   gh \
   fd \
   ripgrep \
   tree \
-  awk \
-  git
+  bat \
+  rename \
+  jq \
+  entr \
+  aria2 \
+  awk
 
-# Python / miniforge
-# ------------------
-brew install python
-brew install miniforge
+# media & documents
+
+# https://pandoc.org/org
+# https://htop.dev/
+
+brew install \
+  imagemagick \
+  ffmpeg \
+  pandoc \
+  yt-dlp \
+  shntool
+
+# https://github.com/yt-dlp/yt-dlp
+
+# gui sofware
+brew install --cask \
+  mactex \
+  calibre \
+  lyx \
+  inkscape \
+  scribus
