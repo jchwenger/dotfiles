@@ -765,13 +765,15 @@
   cabbrev helv vert help
 
   " " Text editing in .txt and .md
-  " augroup text_edition
-  "   autocmd!
+  augroup text_abbrev
+    autocmd!
   "   " open a multiline code block with ``
   "   autocmd FileType text,markdown,tex iabbrev <buffer> i I
   "   " i to I
   "   autocmd FileType text,markdown iabbrev <buffer> `` ``````O
-  " augroup END
+    " « to «<nbsp>[cursor]<nbsp>»
+    iabbrev « «  »<LEFT><LEFT><C-R>=Eatchar('\s')<CR>
+  augroup END
 
   " Python
   augroup py_abbrev
