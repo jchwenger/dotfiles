@@ -1188,3 +1188,19 @@ sudo mv geckodriver /usr/bin
 # https://www.cyberciti.biz/faq/how-to-install-networked-hp-printer-and-scanner-on-ubuntu-linux/
 sudo apt install hplip hplip-gui
 hp-setup $PRINTER_IP
+
+# pyenv
+# -----
+# https://github.com/pyenv/pyenv
+curl https://pyenv.run | bash
+
+# dependencies
+sudo apt update
+sudo apt install build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev curl \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+# add this to zshrc
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"

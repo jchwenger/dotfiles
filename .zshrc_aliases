@@ -303,3 +303,8 @@ export TF_XLA_FLAGS="--tf_xla_enable_xla_devices"
 
 # go
 export PATH=$PATH:/usr/local/go/bin
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
