@@ -18,8 +18,8 @@ sudo snap install hub --classic
 cd $HOME
 git clone https://github.com/newren/git-filter-repo
 
-git config --global diff.tool gvimdiff
-git config --global merge.tool gvimdiff
+git config --global diff.tool nvimdiff
+git config --global merge.tool nvimdiff
 git config --global --add difftool.prompt false
 
 # pandoc lua filters (for docx pagebreaks)
