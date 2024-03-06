@@ -45,7 +45,7 @@ lac="$dlit/deep/lacanage"
 ina="$dlit/deep/inanimaux"
 
 dech="$dlit/constrained/déchet"
-sqw="$dlit/constrained/squares-writing"
+sqw="$dlit/constrained/squares.writing"
 lun="$dlit/constrained/pas-peu-lunaire"
 cha="$dlit/constrained/chains.writing"
 swr="$dlit/constrained/subwords.writing"
