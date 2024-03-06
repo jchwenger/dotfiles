@@ -930,7 +930,10 @@ brew install \
   jq \
   entr \
   aria2 \
-  awk
+  awk \
+  wget \
+  curl \
+  gnu-tar
 
 # media & documents
 
