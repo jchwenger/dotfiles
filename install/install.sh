@@ -110,8 +110,11 @@ sudo apt install \
 # https://github.com/pandoc/lua-filters
 PANDOC_DIR=/home/jcw/.local/share/pandoc
 RELEASE_URL=https://github.com/pandoc/lua-filters/releases/latest
-curl -LSs $RELEASE_URL/download/lua-filters.tar.gz | \
-    tar --strip-components=1 --one-top-level=$PANDOC_DIR -zvxf -v
+mkdir -p $PANDOC_DIR; cd $PANDOC_DIR
+wget $RELEASE_URL/download/lua-filters.tar.gz
+tar --strip-components=1 -zvxf lua-filters.tar.gz
+rm lua-filters.tar.gz
+cd -
 
 # vim
 # ---
