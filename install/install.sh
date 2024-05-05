@@ -936,7 +936,8 @@ brew install \
   awk \
   wget \
   curl \
-  gnu-tar
+  gnu-tar \
+  djvu2pdf
 
 # media & documents
 
@@ -959,3 +960,7 @@ brew install --cask \
   lyx \
   inkscape \
   scribus
+
+# qr codes
+# https://formulae.brew.sh/formula/qrencode
+brew install qrencode
