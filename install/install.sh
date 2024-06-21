@@ -937,7 +937,8 @@ brew install \
   wget \
   curl \
   gnu-tar \
-  djvu2pdf
+  djvu2pdf \
+  xz
 
 # media & documents
 
