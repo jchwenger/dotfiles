@@ -1,3 +1,7 @@
+#!/bin/sh -efu
+
+# modified from this: https://stackoverflow.com/a/53553938
+
 input="$1"
 
 # Extract the file title and chapter information
