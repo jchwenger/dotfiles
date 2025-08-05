@@ -21,11 +21,14 @@ git update-index --assume-unchanged ~/dotfiles/.zshrc_paths
 cd ~
 
 # symlinking oh-my-zsh
-ln -s ~/dotfiles/oh-my-zsh/lib  ~/.oh-my-zsh/custom/lib
-cd ~/.oh-my-zsh/custom/plugins
+for i in ~/dotfiles/oh-my-zsh/lib/*.zsh
+do
+  ln -s "$i"  ~/.oh-my-zsh/custom/
+done
+
 for d in  ~/dotfiles/oh-my-zsh/plugins/*
 do
-  ln -s $d
+  ln -s $d ~/.oh-my-zsh/custom/plugins/
 done
 cd ~
 
