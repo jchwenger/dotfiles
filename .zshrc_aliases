@@ -112,8 +112,9 @@ alias -g XCL='| pbcopy'
 # conda activate envs
 alias cab='conda activate base'
 alias cag='conda activate gold'
-alias dmlap='conda activate dmlap'
-alias dmlab='conda activate dmlap.hug'
+alias cg='conda activate g'
+alias dmlcp='conda activate dmlap'
+alias cac='conda activate dmlap.hug'
 alias cad='conda deactivate'
 
 # aria helper
