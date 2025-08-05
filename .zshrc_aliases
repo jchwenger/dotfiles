@@ -25,6 +25,10 @@ alias bfg='java -jar ~/bfg-repo-cleaner/bfg-1.13.0.jar'
 alias jn='jupyter notebook'
 alias jl='jupyter lab'
 
+alias ujl='uv run jupyter lab'
+alias up='uv run ipython'
+alias uxp='uvx ipython'
+
 alias nau="nautilus . & disown"
 alias ff="firefox"
 
