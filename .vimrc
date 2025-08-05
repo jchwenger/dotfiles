@@ -1141,6 +1141,7 @@
     Plug 'inside/vim-grep-operator'
     Plug 'vim-python/python-syntax', {'for': 'python'}
     Plug 'rust-lang/rust.vim', {'for': 'rust'}
+    Plug 'phelipetls/vim-hugo', { 'for': 'gohtmltmpl'}
     call plug#end()
 " }}}
 
