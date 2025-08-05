@@ -732,7 +732,7 @@
   " Python ~> use Black for cleaning things up
   augroup py_shortcuts
     autocmd!
-    autocmd FileType python silent nnoremap <buffer> <localleader>rr :w<CR>:!black %:p<CR>
+    autocmd FileType python silent nnoremap <buffer> <localleader>rr :w<CR>:!ruff format %:p<CR>
     autocmd FileType python silent nnoremap <buffer> <leader>rr :w<CR>:!python %:p<CR>
   augroup END
 
