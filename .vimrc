@@ -27,8 +27,8 @@
   " completion
   set omnifunc=syntaxcomplete#Complete
 
-  " set paste
-  set pastetoggle=<F2>
+  " paste mode
+  nnoremap <silent> <F2> :set paste!<CR>
 
   set path+=**
   set wildmenu
@@ -92,6 +92,9 @@
     let &t_TE = ""
   endif
 
+  " space before fold markers
+  set foldmarker=\ {{{,\ }}}
+
 " }}}
 
 " Netrw: {{{
@@ -100,11 +103,13 @@
   " See: http://vimcasts.org/blog/2013/01/oil-and-vinegar-split-windows-and-project-drawer/
   " Also Tim Pope's Vim Vinegar: https://github.com/tpope/vim-vinegar
   let g:netrw_banner=0
-  let g:netrw_liststyle=3
+  let g:netrw_liststyle=0
   let g:netrw_browse_split=0
   " see helpt netrw-p
   let g:netrw_preview=1
-  let g:netrw_winsize=30
+  let g:netrw_winsize=50
+  " https://vi.stackexchange.com/a/5585
+  let g:netrw_sizestyle= "h"
 
   " Hide dot files, toggle with 'gh'
   let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
@@ -155,7 +160,6 @@
   nnoremap <leader>ccc :!ctags --exclude=".venv" --python-kinds=-i -R .<CR>
   nnoremap <leader>ccp :!ctags -R --python-kinds=-i .<CR>
 "}}}
-
 
 " Settings by file types {{{
   augroup silent FileTypeSettings
@@ -229,7 +233,7 @@
                           " the figure labels. Very useful! (See Vim LaTeX below)
 
     " Web &c
-    autocmd FileType ruby,javascript,html,htmldjango,css,scss,xml,json setlocal
+    autocmd FileType ruby,javascript,html,htmldjango,gohtmltmpl,css,scss,xml,json setlocal
           \ tabstop=2
           \ shiftwidth=2
           \ softtabstop=2
@@ -238,7 +242,6 @@
           \ nowrap |
           \ retab
           " \ iskeyword+=- |
-
 
     " Java, C, C++, Arduino
     autocmd FileType c,cpp,java,arduino setlocal
@@ -412,8 +415,8 @@
   vnoremap <localleader>t. :tabedit .<CR>
 
   " Make current buffer full-screen (in new tab)
-  nnoremap <C-w>T :tabedit %<CR>
-  vnoremap <C-w>T :tabedit %<CR>
+  nnoremap <C-w>T :tabedit %<CR>
+  vnoremap <C-w>T :tabedit %<CR>
 
   " Cycle through tabs using tab, like standard editors
   " nnoremap <tab> gt
@@ -438,20 +441,20 @@
 
   " Cleaning: {{{
   " Auto indent whole file
-  nnoremap <localleader>== gg=G
+  nnoremap <localleader>== gg=G
 
   " Removing empty lines (or lines with only space)
-  nnoremap <localleader>;e :g/^[  \t]*$/d_<CR>:nohlsearch<CR>
-  vnoremap <localleader>;e :g/^[  \t]*$/d_<CR>:nohlsearch<CR>
+  nnoremap <localleader>;e :g/^[  \t]*$/d_<CR>:nohlsearch<CR>
+  vnoremap <localleader>;e :g/^[  \t]*$/d_<CR>:nohlsearch<CR>
 
   " Merging consecutive empty/space-only lines
   " (taken from :help collapse)
-  nnoremap <localleader>'e :g/^[  \t]*$/.,/[^  <Tab>]/-j<CR>:nohlsearch<CR>
-  vnoremap <localleader>'e :g/^[  \t]*$/.,/[^  <Tab>]/-j<CR>:nohlsearch<CR>
+  nnoremap <localleader>'e :g/^[  \t]*$/.,/[^  <Tab>]/-j<CR>:nohlsearch<CR>
+  vnoremap <localleader>'e :g/^[  \t]*$/.,/[^  <Tab>]/-j<CR>:nohlsearch<CR>
 
   " Remove trailing whitespace (space, unbreakable space, tab)
-  nnoremap <leader>rts :%s/[  \t]\+$//e<CR>:nohlsearch<CR>
-  vnoremap <leader>rts :%s/[  \t]\+$//e<CR>:nohlsearch<CR>
+  nnoremap <leader>rts :%s/[  \t]\+$//e<CR>:nohlsearch<CR>
+  vnoremap <leader>rts :s/[  \t]\+$//e<CR>:nohlsearch<CR>
 
   " Add underlining to a line with <localleader>--
   " And for one starting with a comment <localleader>-#
@@ -676,6 +679,7 @@
   " }}}
 
   " Goyo: toggle with <leader>yy
+  let g:goyo_width = "80"
   nnoremap <leader>yy :Goyo<CR>
   vnoremap <leader>yy :Goyo<CR>
 
@@ -755,15 +759,15 @@
   " Specify <buffer> when unabbreviating!
   " e.g.: :una <buffer> i
 
+  " Open help in new tab
+  cabbrev helt tab help
+  cabbrev helv vert help
+
   " remove space after abbrev (from :help abbreviations)
   func Eatchar(pat)
      let c = nr2char(getchar(0))
      return (c =~ a:pat) ? '' : c
   endfunc
-
-  " Open help in new tab
-  cabbrev helt tab help
-  cabbrev helv vert help
 
   " " Text editing in .txt and .md
   augroup text_abbrev
@@ -773,7 +777,7 @@
   "   " i to I
   "   autocmd FileType text,markdown iabbrev <buffer> `` ``````O
     " « to «<nbsp>[cursor]<nbsp>»
-    iabbrev « «  »<LEFT><LEFT><C-R>=Eatchar('\s')<CR>
+    inoremap « «  »<Left><Left>
   augroup END
 
   " Python
@@ -1109,19 +1113,15 @@
     Plug 'tpope/vim-abolish'
     Plug 'tpope/vim-eunuch'
     Plug 'machakann/vim-sandwich'
-    if has('nvim')
-      " Plug 'overcache/NeoSolarized'
-      Plug 'junegunn/seoul256.vim'
-    else
-      Plug 'altercation/vim-colors-solarized'
-    endif
+    Plug 'junegunn/seoul256.vim'
+    Plug 'altercation/vim-colors-solarized'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
     Plug 'vim-scripts/visualrepeat'
     Plug 'svermeulen/vim-cutlass'
     Plug 'svermeulen/vim-yoink'
     Plug 'svermeulen/vim-subversive'
     Plug 'junegunn/goyo.vim'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
     Plug 'machakann/vim-highlightedyank'
     Plug 'prettier/vim-prettier', {
           \ 'do': 'npm -g install',
@@ -1134,7 +1134,7 @@
     Plug 'MaxMEllon/vim-jsx-pretty', {'for': 'javascript'}
     " Plug 'psf/black', {'for':'python'} " does not work as current Vim is compiled with Python < 3.6
     Plug 'tomlion/vim-solidity', {'for': 'solidity'}
-    Plug 'junegunn/fzf', {'dir':'~/.fzf', 'do':'./install --all'}
+    Plug 'junegunn/fzf', {'dir':'~/.fzf', 'do': { -> fzf#install() } }
     Plug 'junegunn/vim-easy-align'
     Plug 'SirVer/ultisnips', {'for': ['markdown', 'javascript']}
     Plug 'nelstrom/vim-visual-star-search'
@@ -1144,6 +1144,9 @@
     call plug#end()
 " }}}
 
+" FZF {{{
+set rtp+=/opt/homebrew/opt/fzf
+" }}}
 
 " Vim-sandwich (surround) {{{
   runtime macros/sandwich/keymap/surround.vim
@@ -1156,8 +1159,7 @@
 " Solarized, airline & colouring {{{
 
   if has('nvim')
-    " set termguicolors
-    " colorscheme NeoSolarized
+    set termguicolors
     colorscheme seoul256
   elseif has('gui_running')
     " syntax enable
@@ -1169,14 +1171,12 @@
     set guioptions-=T
   else
     " syntax enable
-    colorscheme solarized
-    " Unclear if needed now, to be researched
     " set t_Co=16
     let g:solarized_termcolors=256
-    set background=dark
+    colorscheme solarized
   endif
 
-  " Airline: theme
+  " Airline: theme {{{
   if has("nvim")
     let g:airline_theme='seoul256'
   else
@@ -1193,6 +1193,31 @@
     let g:airline_symbols = {}
   endif
 
+  " unicode symbols
+  let g:airline_left_sep = '»'
+  let g:airline_left_sep = '▶'
+  let g:airline_right_sep = '«'
+  let g:airline_right_sep = '◀'
+  let g:airline_symbols.linenr = '␊'
+  let g:airline_symbols.linenr = '␤'
+  let g:airline_symbols.linenr = '¶'
+  let g:airline_symbols.branch = '⎇'
+  let g:airline_symbols.paste = 'ρ'
+  let g:airline_symbols.paste = 'Þ'
+  let g:airline_symbols.paste = '∥'
+  let g:airline_symbols.whitespace = 'Ξ'
+
+  " airline symbols
+  let g:airline_left_sep = ''
+  let g:airline_left_alt_sep = ''
+  let g:airline_right_sep = ''
+  let g:airline_right_alt_sep = ''
+  let g:airline_symbols.branch = ''
+  let g:airline_symbols.readonly = ''
+  let g:airline_symbols.linenr = ''
+    
+  " }}}
+
   " Toggle background colour with <leader>bb {{{
   nnoremap <leader>bb :call ToggleBckgrnd()<CR>
 
@@ -1205,7 +1230,8 @@
       let g:airline_solarized_bg="light"
     endif
   endfunction
-  "}}}
+  " }}}
+
 " }}}
 
 " Utils: beautifiers, minifiers {{{
