@@ -224,6 +224,10 @@ alias pavu='pavucontrol'
 
 alias echopath="printf '%s\n' \"$PATH\" | tr ':' '\n'"
 
+# default options for `less` (https://superuser.com/a/174303)
+# -i: lowercase search except if an uppercase letter in the search (https://serverfault.com/questions/11736/gnu-less-how-can-i-search-while-ignoring-case-sensitivity-without-using-less-i)
+export LESS="-R -i"
+
 # Disable CTRL-S and CTRL-Q
 # [[ $- =~ i ]] && stty -ixoff -ixon
 
