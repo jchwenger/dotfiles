@@ -33,22 +33,6 @@ tar --strip-components=1 -zvxf lua-filters.tar.gz
 rm lua-filters.tar.gz
 cd -
 
-# vim
-# ---
-# (from source <3)
-# https://github.com/ycm-core/YouCompleteMe/wiki/Building-Vim-from-source
-# https://askubuntu.com/a/132736
-# software-properties: https://askubuntu.com/a/857433
-sudo apt remove \
-  vim \
-  vim-runtime \
-  vim-tiny \
-  vim-common \
-  vim-gui-common \
-  vim-gnome \
-  vim-gtk3 \
-  vim-nox
-
 cd $HOME
 git clone https://github.com/vim/vim
 sudo apt-get build-dep vim-gnome -y
@@ -326,7 +310,7 @@ sudo fc-cache -f -v
 # google cloud
 # ------------
 # https://formulae.brew.sh/cask/google-cloud-sdk
-brew install google-cloud-sdk
+brew install --cask google-cloud-sdk
 
 # aws cli
 # -------
@@ -461,8 +445,8 @@ update-mime-database ~/.local/share/mime
 
 # android sdk
 # -----------
-# https://stackoverflow.com/a/34627928
-sudo apt update && sudo apt install android-sdk
+# https://stackoverflow.com/questions/31374085/installing-adb-on-macos
+brew install android-platform-tools
 
 # to backup the current state of a device:
 # https://stackoverflow.com/a/42638750/9638108
@@ -502,25 +486,14 @@ sudo apt update && sudo apt install android-sdk
 
 # Ruby
 # ----
-# rvm manager: http://rvm.io/
-# gpg not gpg2 for ubuntu 18, cf. http://manpages.ubuntu.com/manpages/bionic/man1/gpg2.1.html
-gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-curl -sSL https://get.rvm.io | bash -s stable
-
-# Gems
-# ----
-# https://rubygems.org/pages/download
-sudo gem update --system
-
-# # if 'Nothing to update' appears, do this
-# gem install rubygems-update  # again, might need to be admin/root
-# update_rubygems              # ... here too
+# https://jekyllrb.com/docs/installation/macos/
+brew install chruby ruby-install xz
+ruby-install ruby 3.1.3
 
 # Jekyll
 # ------
-# https://jekyllrb.com
-sudo apt-get install ruby ruby-dev-full build-essential zlib1g-dev
-gem install jekyll bundler
+# https://jekyllrb.com/docs/installation/macos/
+gem install jekyll
 
 # Gatsby
 # ------
@@ -529,8 +502,8 @@ npm install -g gatsby-cli
 
 # Hugo
 # ----
-# https://gohugo.io/installation/linux/
-sudo snap install hugo
+# https://gohugo.io/installation/macos/#package-managers
+brew install hugo
 
 # Yarn
 # ----
@@ -710,10 +683,6 @@ sudo apt-get install conky
 # https://github.com/cernekee/ocproxy
 sudo apt install ocproxy
 
-# ffmpeg
-# ------
-sudo apt remove --purge ffmpeg
-sudo snap install ffmpeg
 # update lib
 # https://askubuntu.com/a/1340076
 sudo apt update
@@ -809,21 +778,10 @@ sudo apt install inkscape
 # https://manpages.ubuntu.com/manpages/focal/man1/rsvg-convert.1.html
 sudo apt-get install librsvg2-bin
 
-# Fn keys for ROG
-# ---------------
-# https://github.com/flukejones/rog-core
-# https://github.com/flukejones/rog-core/issues/34
-# clone | make | sudo make install
-# requirements
-sudo apt install \
-  libusb-1.0-0-dev \
-  libdbus-1-dev \
-  llvm \
-  libclang-dev \
-  clang-9 \
-  libclang-cpp9 \
-  libclang-common-9-dev \
-  libclang1-9
+# clang
+# -----
+# https://formulae.brew.sh/formula/llvm
+brew install llvm
 
 # qbittorrent
 # -----------
@@ -847,32 +805,13 @@ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz
 # ---------------------------------------------------------
 
 # chromedriver
-# https://skolo.online/documents/webscrapping/#step-2-install-chromedriver
-# https://sites.google.com/chromium.org/driver/downloads/version-selection?authuser=0
-cd ~
-chromeV=`google-chrome-stable --version | cut -d ' ' -f3 | cut -d '.' -f1-3`
-echo "chrome version is $chromeV"
-driverV=`curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$chromeV`
-echo "chrome driver version is $driverV"
-wget https://chromedriver.storage.googleapis.com/$driverV/chromedriver_linux64.zip
-unzip -d chromedriver chromedriver_linux64.zip
-rm chromedriver_linux64.zip
-chmod +x chromedriver/chromedriver
-sudo chown root:root chromedriver/chromedriver
-sudo mv chromedriver/chromedriver /usr/bin
-rm -rf chromedriver
+# https://formulae.brew.sh/cask/chromedriver
+# MacOS unquarantine required: https://stackoverflow.com/a/60374958
+brew install --cask chromedriver
 
 # geckodriver
-# (same procedure as chromedriver)
-# https://github.com/mozilla/geckodriver/releases
-# https://askubuntu.com/questions/870530/how-to-install-geckodriver-in-ubuntu
-cd ~
-wget https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux64.tar.gz
-tar -xvzf geckodriver-v0.33.0-linux64.tar.gz
-rm geckodriver-v0.33.0-linux64.tar.gz
-chmod +x geckodriver
-sudo chown root:root geckodriver
-sudo mv geckodriver /usr/bin
+# https://formulae.brew.sh/formula/geckodriver#default
+brew install geckodriver
 
 # hp driver
 # ---------
@@ -938,7 +877,8 @@ brew install \
   curl \
   gnu-tar \
   djvu2pdf \
-  xz
+  xz \
+  pdfgrep
 
 # media & documents
 
@@ -947,12 +887,20 @@ brew install \
 
 brew install \
   imagemagick \
-  ffmpeg \
+  gifsicle \
   pandoc \
   yt-dlp \
-  shntool
+  shntool \
+  librsvg
 
 # https://github.com/yt-dlp/yt-dlp
+# https://formulae.brew.sh/formula/librsvg
+# https://formulae.brew.sh/formula/shntool#default
+
+# https://trac.ffmpeg.org/wiki/CompilationGuide/macOS#Additionaloptions
+
+brew tap homebrew-ffmpeg/ffmpeg
+brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-librsvg
 
 # gui sofware
 brew install --cask \
@@ -960,8 +908,35 @@ brew install --cask \
   calibre \
   lyx \
   inkscape \
-  scribus
+  scribus \
+  rar
 
 # qr codes
 # https://formulae.brew.sh/formula/qrencode
 brew install qrencode
+
+# Llama CPP
+# https://github.com/ggerganov/llama.cpp
+brew install llama.cpp
+
+# Ollama
+# https://ollama.com/
+brew install ollama
+
+# Screen Copy (Android screen on laptop)
+# https://github.com/Genymobile/scrcpy
+brew install scrcpy
+
+# gchmod/gchown
+# https://unix.stackexchange.com/a/613296
+brew install coreutils
+
+# python uv
+https://docs.astral.sh/uv/
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# zathura pdf
+brew tap homebrew-zathura/zathura
+brew install zathura
+brew install zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps
+zat=$(brew --prefix zathura)/lib/zathura ; mkdir -p $zat ; for n in cb djvu pdf-mupdf ps; do zat_pref=$(brew --prefix zathura-$n)/lib$n.dylib ;   [[ -f $zat_pref ]] && ln -s $zat_pref $zat ; done;
