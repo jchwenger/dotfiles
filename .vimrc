@@ -152,7 +152,8 @@
 " https://stackoverflow.com/a/33652614
 
 " set tags+=.tags;$HOME
-  nnoremap <leader>ccc :!ctags -R .<CR>
+  nnoremap <leader>ccc :!ctags --exclude=".venv" --python-kinds=-i -R .<CR>
+  nnoremap <leader>ccp :!ctags -R --python-kinds=-i .<CR>
 "}}}
 
 
