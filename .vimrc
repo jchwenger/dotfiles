@@ -1158,6 +1158,18 @@ set rtp+=/opt/homebrew/opt/fzf
 
 " Solarized, airline & colouring {{{
 
+  " https://github.com/junegunn/goyo.vim?tab=readme-ov-file#faq
+  function! s:custom_highlighting()
+    " https://stackoverflow.com/a/52480715
+    " https://stackoverflow.com/a/21579338
+    syntax match NonBreakingSpace / / " (CTRL+V x a 0)
+    highlight NonBreakingSpace ctermbg=darkgray guibg=darkgray
+    syntax match TrailingSpace /\(\s\| \)\+$/
+    highlight TrailingSpace ctermbg=darkred guibg=darkred
+  endfunction
+
+  autocmd! ColorScheme seoul256 call s:custom_highlighting()
+
   if has('nvim')
     set termguicolors
     colorscheme seoul256
