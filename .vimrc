@@ -1091,7 +1091,7 @@
 
 " Declare the list of plugins.
   call plug#begin('~/.vim/plugged')
-    Plug 'vim-latex/vim-latex', {'for': 'tex', 'do': ':!ln -s \"$HOME/.vim/plugged/vim-latex\" \"$HOME/.vim/vim-latex\"'}
+    Plug 'lervag/vimtex', {'for': 'tex' }
     Plug 'kana/vim-textobj-user'
     Plug 'kana/vim-textobj-entire'
     Plug 'kana/vim-textobj-function', {'for': ['vim', 'c', 'java']}
@@ -1294,17 +1294,36 @@ set rtp+=/opt/homebrew/opt/fzf
 " }}}
 
 
-" Vim LaTeX {{{
+" VimTeX {{{
 
-  " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
-  " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
-  " The following changes the default filetype back to 'tex':
-  let g:tex_flavor = 'latex'
-  let g:Tex_DefaultTargetFormat = 'pdf'
-  let g:Tex_MultipleCompileFormats = 'pdf, au'
-  let g:Tex_ViewRule_pdf = 'open -a Preview'
-  " let g:Tex_CompileRule_pdf='mkdir o; latex --interaction=nonstopmode --output-directory=o $*'
-  let g:Tex_CompileRule_pdf='mkdir o; xelatex --interaction=nonstopmode --output-directory=o $*; mv o/*.pdf .'
+  let g:vimtex_view_method = 'zathura_simple'
+  let g:vimtex_view_zathura_use_synctex = 0
+  let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+  let g:vimtex_compiler_latexmk = {
+      \ 'aux_dir' : 'o',
+      \ 'out_dir' : '',
+      \ 'callback' : 1,
+      \ 'continuous' : 1,
+      \ 'executable' : 'latexmk',
+      \ 'hooks' : [],
+      \ 'options' : [
+      \   '-verbose',
+      \   '-file-line-error',
+      \   '-synctex=1',
+      \   '-interaction=nonstopmode',
+      \ ],
+      \}
+
+  " " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+  " " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+  " " The following changes the default filetype back to 'tex':
+  " let g:tex_flavor = 'latex'
+  " let g:Tex_DefaultTargetFormat = 'pdf'
+  " let g:Tex_MultipleCompileFormats = 'pdf, au'
+  " let g:Tex_ViewRule_pdf = 'open -a Preview'
+  " " let g:Tex_CompileRule_pdf='mkdir o; latex --interaction=nonstopmode --output-directory=o $*'
+  " let g:Tex_CompileRule_pdf='mkdir o; xelatex --interaction=nonstopmode --output-directory=o $*; mv o/*.pdf .'
+
 " }}}
 
 
