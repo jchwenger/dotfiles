@@ -1,14 +1,16 @@
 fname="$1"
+ext="${fname##*.}"
+
 # echo "${@:2}"
 total=""
 for f in ${@:2}
 do
-  # echo "$f"
+# echo "$f"
   if [[ $f =~ ${@: -1} ]]
   then
-    total="$total$(cat $f | sed 's/^\*\*\*$/☙/')"
+    total="$total\n$(cat $f | sed 's/^\*\*\*$/☙/')"
   else
-    total="$total$(cat $f | sed 's/^\*\*\*$/☙/')\n\n\\pagebreak\n\n"
+    total="$total\n$(cat $f | sed 's/^\*\*\*$/☙/')\n\n\\pagebreak\n\n"
   fi
 done
 
