@@ -22,7 +22,7 @@ plugins_str="${plugins_str}zstyle \':omz:plugins:nvm\' lazy yes"
 vim ~/.zshrc "${plugins_str} :wq\""
 
 # sourcing
-vim ~/.zshrc '+:execute "norm /^sourceosource ~/.zshrc_src:wq"'
+vim ~/.zshrc '+:execute "norm /^sourceosource ~/.src_zshrc:wq"'
 
 # fix for current repo
 cd ~/dotfiles
