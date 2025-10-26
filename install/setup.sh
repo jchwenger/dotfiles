@@ -9,10 +9,19 @@ ln -fs  ~/dotfiles/.vimrc ~/.vimrc
 # extended vim mode
 # git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
 
-# rvm lazy
-git clone https://github.com/FrederickGeek8/zsh-rvm-lazy ~/.oh-my-zsh/custom/plugins/zsh-rvm-lazy
+# plugins
+vim ~/.zshrc '+:execute ":silent! %s/plugins=(git)/plugins=(git gh vi-mode fzf gcloud docker docker-compose aws nvm)/e | wq"'
 
-vim ~/.zshrc '+:execute ":silent! %s/plugins=(git)/export NVM_LAZY=1\rplugins=(git vi-mode fzf gcloud docker docker-compose gh fd aws nvm zsh-rvm-lazy)/e | wq"'
+# lazy mode
+plugins_str='+:execute "norm /plugins=(gito'
+plugins_str="${plugins_str}zstyle \':omz:plugins:gcloud\' lazy yes"
+plugins_str="${plugins_str}zstyle \':omz:plugins:docker\' lazy yes"
+plugins_str="${plugins_str}zstyle \':omz:plugins:docker-compose\' lazy yes"
+plugins_str="${plugins_str}zstyle \':omz:plugins:aws\' lazy yes"
+plugins_str="${plugins_str}zstyle \':omz:plugins:nvm\' lazy yes"
+vim ~/.zshrc "${plugins_str} :wq\""
+
+# sourcing
 vim ~/.zshrc '+:execute "norm /^sourceosource ~/.zshrc_src:wq"'
 
 # fix for current repo
