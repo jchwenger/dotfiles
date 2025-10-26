@@ -637,6 +637,11 @@
   nmap <localleader>sv <plug>(SubversiveSubvertRange)
   xmap <localleader>sv <plug>(SubversiveSubvertRange)
   nmap <localleader>ssv <plug>(SubversiveSubvertWordRange)
+
+  " Replace visual mode paste
+  xmap s <plug>(SubversiveSubstitute)
+  xmap p <plug>(SubversiveSubstitute)
+  xmap P <plug>(SubversiveSubstitute)
   " }}}
 
   " Fugitive: a git wrapper {{{
