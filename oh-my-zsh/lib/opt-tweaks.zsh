@@ -1,13 +1,13 @@
 # see .oh-my-zsh/lib/completion.sh
 
-setopt menu_complete   # do not autoselect the first completion entry
-unsetopt auto_menu
+setopt menu_complete   # autoselect the first completion entry
+# unsetopt auto_menu   #  Display the completion menu after two use of the TAB key
 
 # https://unix.stackexchange.com/a/273863
 setopt bang_hist                 # Treat the '!' character specially during expansion.
-setopt extended_history          # Write the history file in the ":start:elapsed;command" format.
+setopt extendedhistory           # Write the history file in the ":start:elapsed;command" format.
 setopt inc_append_history        # Write to the history file immediately, not when the shell exits.
-# setopt share_history             # Share history between all sessions.
+setopt no_share_history          # Share history between all sessions.
 setopt hist_expire_dups_first    # Expire duplicate entries first when trimming history.
 setopt hist_ignore_dups          # Don't record an entry that was just recorded again.
 setopt hist_ignore_all_dups      # Delete old recorded entry if new entry is a duplicate.
