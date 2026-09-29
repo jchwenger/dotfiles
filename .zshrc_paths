@@ -1,3 +1,5 @@
+# vim: set filetype=zsh
+
 # using variables as path shortcuts
 
 d="$HOME/Desktop"
@@ -36,6 +38,8 @@ data="$docs/data"
 pr="$docs/projects"
 ca="$docs/comparts"
 
+ali="$docs/alife"
+
 p5="$ca/p5.js"
 ml5="$ca/ml5-next-gen"
 
@@ -48,9 +52,6 @@ br="$dl/llms/gpt/bridges"
 mg="$dl/llms/karpathy/minGPT"
 ng="$dl/llms/karpathy/nanoGPT"
 
-lac="$dlit/deep/lacanage"
-ina="$dlit/deep/inanimaux"
-
 dech="$dlit/constrained/déchet"
 sqw="$dlit/constrained/squares.writing"
 lun="$dlit/constrained/pas-peu-lunaire"
@@ -59,10 +60,14 @@ swr="$dlit/constrained/subwords.writing"
 wwr="$dlit/constrained/werewords.writing"
 law="$dlit/constrained/laces.writing"
 cuw="$dlit/constrained/cubes.writing"
+sew="$dlit/constrained/sestinas.writing"
 
+lac="$dlit/deep/lacanage"
+ina="$dlit/deep/inanimaux"
 al="$dlit/deep/alors-seulement-le-rêve"
 art="$dlit/deep/art-in-the-guise-of-an-adult"
 veg="$dlit/deep/vegans"
+brw="$dlit/deep/braids.writing"
 
 ap="$dlit/shallow/art-projects"
 
@@ -75,13 +80,14 @@ ww="$pr/werewords.generator"
 la="$pr/laces.generator"
 pho="$pr/phonology-tools"
 it="$pr/it"
-om="$pr/omnines"
+ses="$pr/sestinas.generator"
 pho="$pr/phonology-tools"
 pch="$pr/chains"
 gon="$pr/gonograph"
 cai="$pr/cairo.writer"
 cub="$pr/cubes"
 sbw="$pr/subwords"
+ed="$pr/editors"
 
 ho="$data/wordhoard"
 
@@ -95,9 +101,14 @@ voc="$docs/vocabulary"
 
 tea="$docs/teaching"
 
-gai="$dr/AI"
-ai="$tea/AI"
+ai="$tea/DLWP"
+dai="$dr/DLWP"
 
-dmlc="$tea/DMLCP"
-dm="$dmlc/DMLCP"
-dml="$dmlc/DMLCP-2024"
+dml="$tea/DMLCP"
+dm="$dml/DMLCP"
+
+pm="$tea/PoMa/poetic.machines"
+
+cn="$ca/canvas/py5canvas"
+
+
