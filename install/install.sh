@@ -22,6 +22,21 @@ git config --global diff.tool nvimdiff
 git config --global merge.tool nvimdiff
 git config --global --add difftool.prompt false
 
+# https://claude.ai/share/02804a1b-f9d6-4690-8173-f55330065392
+git config --global diff.docx.textconv "pandoc --from=docx --to=markdown --wrap=none"
+git config --global diff.odt.textconv  "pandoc --from=odt --to=markdown --wrap=none"
+
+# Cache conversions so repeated diffs/logs stay fast
+git config --global diff.docx.cachetextconv true
+git config --global diff.odt.cachetextconv true
+
+echo '*.docx diff=docx' >> ~/.config/git/attributes
+echo '*.odt  diff=odt' >> ~/.config/git/attributes
+echo '*.doc  diff=doc' >> ~/.config/git/attributes
+
+git config --global diff.wordDiff true
+
+
 # pandoc lua filters (for docx pagebreaks)
 # ----------------------------------------
 # https://github.com/pandoc/lua-filters
