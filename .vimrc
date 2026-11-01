@@ -821,7 +821,7 @@ EOF
     autocmd FileType cpp silent nnoremap <buffer> <localleader>ff :!make && make RunRelease<CR>
   augroup END
 
-  " Python ~> use Black for cleaning things up
+  " Python ~> use ruff for cleaning things up
   augroup py_shortcuts
     autocmd!
     autocmd FileType python silent nnoremap <buffer> <localleader>rr :w<CR>:!ruff format %:p<CR>
