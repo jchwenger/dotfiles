@@ -383,7 +383,7 @@ sudo apt update
 sudo add-apt-repository ppa:lyx-devel/release
 sudo apt install \
   texlive-full \
-  lyx
+  # lyx
 
 # tor
 # ---
@@ -822,7 +822,7 @@ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz
 # chromedriver
 # https://formulae.brew.sh/cask/chromedriver
 # MacOS unquarantine required: https://stackoverflow.com/a/60374958
-brew install --cask chromedriver
+# brew install --cask chromedriver
 
 # geckodriver
 # https://formulae.brew.sh/formula/geckodriver#default
@@ -893,7 +893,8 @@ brew install \
   gnu-tar \
   djvu2pdf \
   xz \
-  pdfgrep
+  pdfgrep \
+  7za \
 
 # media & documents
 
@@ -950,8 +951,20 @@ brew install coreutils
 https://docs.astral.sh/uv/
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# zathura pdf
-brew tap homebrew-zathura/zathura
-brew install zathura
-brew install zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps
-zat=$(brew --prefix zathura)/lib/zathura ; mkdir -p $zat ; for n in cb djvu pdf-mupdf ps; do zat_pref=$(brew --prefix zathura-$n)/lib$n.dylib ;   [[ -f $zat_pref ]] && ln -s $zat_pref $zat ; done;
+# skim
+brew install --cask skim
+
+# # c++ things
+# brew install \
+#   llvm \
+#   lld \
+#   libomp
+
+# https://mpv.io/
+brew install mpv
+
+# pango: https://www.gtk.org/docs/architecture/pango
+# https://formulae.brew.sh/formula/pango
+# https://formulae.brew.sh/formula/gobject-introspection
+# https://formulae.brew.sh/formula/pygobject3
+brew install pango gobject-introspection pygobject3
