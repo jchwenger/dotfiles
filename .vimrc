@@ -288,7 +288,9 @@
   " Press Alt+e/Alt+E for ge/gE (scroll backward to end of words)
   " (opposite of b/B, scroll backward to beginning of words)
   nnoremap <M-e> ge
+  vnoremap <M-e> ge
   nnoremap <M-E> gE
+  vnoremap <M-E> gE
 
   " Navigation to next punctuation using
   " Alt+) / Alt+(
@@ -351,12 +353,13 @@
     vnoremap ¬ <C-W><
     tnoremap ¬ <C-W><
   elseif has('nvim')
-    nnoremap ≥ <C-W>>
-    vnoremap ≥ <C-W>>
-    tnoremap ≥ <C-W>>
-    nnoremap ≤ <C-W><
-    vnoremap ≤ <C-W><
-    tnoremap ≤ <C-W><
+    " annoying, can't map with either ctrl or alt
+    nnoremap <RIGHT> <C-W>>
+    vnoremap <RIGHT> <C-W>>
+    tnoremap <RIGHT> <C-W>>
+    nnoremap <LEFT> <C-W><
+    vnoremap <LEFT> <C-W><
+    tnoremap <LEFT> <C-W><
   else
     nnoremap > <C-W>>
     vnoremap > <C-W>>
@@ -372,8 +375,8 @@
     nnoremap ½ <C-W>-
     nnoremap ­ <C-W>+
   elseif has('nvim')
-    nnoremap – <C-W>-
-    nnoremap ≠ <C-W>+
+    nnoremap <DOWN> <C-W>-
+    nnoremap <UP> <C-W>+
   else
     nnoremap = <C-W>-
     nnoremap - <C-W>+
