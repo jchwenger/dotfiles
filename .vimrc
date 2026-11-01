@@ -1254,6 +1254,23 @@ EOF
   " }}}
 
 
+" " {{{
+" " llama-cpp (https://github.com/ggml-org/llama.vim)
+  let g:llama_config = get(g:, 'llama_config', {})
+  let g:llama_config.auto_fim = v:false
+  let g:llama_config.enable_at_startup = v:false
+  let g:llama_config.n_cmpl = 4
+  let g:llama_config.model_fim = 'ggml-org/Qwen2.5-Coder-0.5B-Q8_0-GGUF:Q8_0'
+  let g:llama_config.model_inst = 'ggml-org/gemma-4-E4B-it-GGUF'
+  let g:llama_config.model_compl = 'ggml-org/gemma-3-1b-pt-GGUF:BF16'
+  " let g:llama_config.t_max_prompt_ms = 10000
+
+  " shortcuts
+  nnoremap <silent> <leader>lll :LlamaToggle<CR>
+  nnoremap <silent> <leader>llf :LlamaToggleFIMCompletion<CR>
+
+" " }}}
+
 " Declare the list of plugins.
   call plug#begin('~/.vim/plugged')
     Plug 'lervag/vimtex', {'for': 'tex' }
@@ -1307,6 +1324,7 @@ EOF
     Plug 'vim-python/python-syntax', {'for': 'python'}
     Plug 'rust-lang/rust.vim', {'for': 'rust'}
     Plug 'phelipetls/vim-hugo', { 'for': 'gohtmltmpl'}
+    Plug 'ggml-org/llama.vim'
     call plug#end()
 " }}}
 
