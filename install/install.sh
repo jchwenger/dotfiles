@@ -990,3 +990,7 @@ brew install openjdk@17
 
 # opencode
 curl -fsSL https://opencode.ai/install | bash
+
+# google colab cli
+# https://github.com/googlecolab/google-colab-cli
+uv tool install google-colab-cli
