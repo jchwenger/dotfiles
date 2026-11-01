@@ -342,30 +342,6 @@ export TF_XLA_FLAGS="--tf_xla_enable_xla_devices"
 # go
 export PATH=$PATH:/usr/local/go/bin
 
-# pyenv
-# https://github.com/pyenv/pyenv#set-up-your-shell-environment-for-pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-# ruby
-# https://github.com/postmodern/chruby/issues/131#issuecomment-1164910902
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.1.3
-
-# vscode
-# https://stackoverflow.com/q/30065227
-code () {
-  if [[ $# = 0 ]]
-  then
-    open -a "Visual Studio Code"
-  else
-    [[ $1 = /* ]] && F="$1" || F="$PWD/${1#./}"
-    open -a "Visual Studio Code" --args "$F"
-  fi
-}
-
 # clang (homebrew llvm)
 # ---------------------
 # use homebrew installed llvm clang instead of system provided clang
