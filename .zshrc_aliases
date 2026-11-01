@@ -365,3 +365,6 @@ export HF_TOKEN=`cat $docs/docs/hf_t.txt`
 # export ANTHROPIC_DEFAULT_SONNET_MODEL="zai-org/GLM-5.2"
 # export ANTHROPIC_DEFAULT_HAIKU_MODEL="zai-org/GLM-5.2"
 # export CLAUDE_CODE_SUBAGENT_MODEL="zai-org/GLM-5.2"
+
+# PostgreSQL
+export PATH="$(brew --prefix libpq)/bin:$PATH"
