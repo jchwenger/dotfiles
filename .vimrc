@@ -1300,6 +1300,7 @@ EOF
     if has('nvim')
       Plug 'nvim-lualine/lualine.nvim'
       Plug 'nvim-tree/nvim-web-devicons'
+      Plug 'lewis6991/gitsigns.nvim'
     else
       Plug 'vim-airline/vim-airline'
       Plug 'vim-airline/vim-airline-themes'
