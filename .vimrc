@@ -1332,6 +1332,7 @@ EOF
     Plug 'phelipetls/vim-hugo', { 'for': 'gohtmltmpl'}
     Plug 'ggml-org/llama.vim'
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
+    Plug 'AndrewRadev/linediff.vim'
     call plug#end()
 " }}}
 
