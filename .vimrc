@@ -165,96 +165,73 @@
 "}}}
 
 " Settings by file types {{{
-  augroup silent FileTypeSettings
+
+  " " for gohtmltmpl syntax highlighting below
+  " " https://tech.serhatteker.com/post/2022-06/nvim-syntax-highlight-hugo-html/
+  " function DetectGoHtmlTmpl()
+  "   " echom "detected gohtmltmpl"
+  "   if expand('%:e') == "html" && search("{{") != 0
+  "     " echom "setting filetype gohtmltmpl"
+  "     setfiletype gohtmltmpl
+  "     " somehow the syntax is lost...
+  "     runtime! syntax/html.vim
+  "     " https://github.com/tpope/vim-commentary?tab=readme-ov-file#faq
+  "     setlocal commentstring={{/*\ %s\ */}}
+  "   endif
+  " endfunction
+
+  function! s:SetIndentation(width, expandtab) abort
+    let &l:tabstop = a:width
+    let &l:softtabstop = a:width
+    let &l:shiftwidth = a:width
+    let &l:expandtab = a:expandtab
+  endfunction
+
+  function! s:ApplyFileTypeSettings() abort
+    if index(['vim', 'zsh', 'sh'], &l:filetype) >= 0
+      call s:SetIndentation(2, v:true)
+      setlocal autoindent nowrap
+      retab
+
+    elseif &l:filetype ==# 'python'
+      call s:SetIndentation(4, v:true)
+      setlocal autoindent nowrap textwidth=79 fileformat=unix
+      retab
+
+    elseif &l:filetype ==# 'markdown'
+      call s:SetIndentation(2, v:true)
+      setlocal wrap nolist linebreak textwidth=79
+      retab
+
+    elseif &l:filetype ==# 'text'
+      call s:SetIndentation(2, v:false)
+      setlocal wrap nolist linebreak
+
+    elseif &l:filetype ==# 'tex'
+      call s:SetIndentation(2, v:true)
+      setlocal wrap
+      retab
+
+    elseif index(['ruby', 'javascript', 'html', 'htmldjango', 'gohtmltmpl',
+          \ 'css', 'scss', 'xml', 'json'], &l:filetype) >= 0
+      call s:SetIndentation(2, v:true)
+      setlocal autoindent nowrap
+      retab
+
+    elseif index(['c', 'cpp', 'java', 'arduino'], &l:filetype) >= 0
+      call s:SetIndentation(4, v:false)
+      setlocal autoindent nowrap commentstring=//%s
+    endif
+  endfunction
+
+  augroup FileTypeSettings
 
     autocmd!
 
-    " Vim
-    autocmd FileType vim,zsh,sh setlocal
-          \ tabstop=2
-          \ softtabstop=2
-          \ shiftwidth=2
-          \ autoindent
-          \ nowrap
-          \ expandtab |
-          \ retab
-
-    " Python
-    autocmd FileType python setlocal
-          \ tabstop=4
-          \ softtabstop=4
-          \ shiftwidth=4
-          \ expandtab
-          \ autoindent
-          \ nowrap
-          \ textwidth=79
-          \ fileformat=unix |
-          \ retab
-
-    " Markdown
-    autocmd FileType markdown setlocal
-          \ tabstop=2
-          \ shiftwidth=2
-          \ softtabstop=2
-          \ wrap
-          \ nolist
-          \ linebreak
-          \ expandtab |
-          \ retab
-
-    " Text
-    autocmd FileType text setlocal
-          \ tabstop=2
-          \ shiftwidth=2
-          \ softtabstop=2
-          \ wrap
-          \ nolist
-          \ linebreak
-          " \ expandtab |
-          " \ retab
-          " \ textwidth=79
-          " \ showbreak= 
-                              " nolist required for
-                              " linebreak (don't break words)
-                              " first char of visual lines set
-                              " as an nonbreakable space (not
-                              " displayed here but typed:
-                              " <c-v> u 202f)
-
-    " LaTex
-    autocmd FileType tex setlocal
-          \ tabstop=2
-          \ softtabstop=2
-          \ shiftwidth=2
-          \ expandtab
-          \ wrap |
-          \ retab
-          " \ textwidth=79
-          " \ iskeyword+=:  " TIP: if you write your \label's as \label{fig:something},
-                          " then if you type in \ref{fig: and press <C-n>
-                          " you will automatically cycle through all
-                          " the figure labels. Very useful! (See Vim LaTeX below)
-
-    " Web &c
-    autocmd FileType ruby,javascript,html,htmldjango,gohtmltmpl,css,scss,xml,json setlocal
-          \ tabstop=2
-          \ shiftwidth=2
-          \ softtabstop=2
-          \ expandtab
-          \ autoindent
-          \ nowrap |
-          \ retab
-          " \ iskeyword+=- |
-
-    " Java, C, C++, Arduino
-    autocmd FileType c,cpp,java,arduino setlocal
-          \ tabstop=4
-          \ softtabstop=4
-          \ shiftwidth=4
-          \ noexpandtab
-          \ autoindent
-          \ nowrap
-          \ commentstring=//%s
+    autocmd FileType * call <SID>ApplyFileTypeSettings()
+    " FileType may run before this vimrc has finished loading for the initial,
+    " newly-created buffer.  Apply the same settings again once startup ends.
+    autocmd VimEnter * call <SID>ApplyFileTypeSettings()
 
     " Jupyter notebooks
     " https://vi.stackexchange.com/a/23168
