@@ -355,3 +355,13 @@ export PYTHONBREAKPOINT="ipdb.set_trace"
 
 export ANTHROPIC_API_KEY=`cat $docs/docs/an.txt`
 export CLAUDE_CODE_TMUX_TRUECOLOR=1
+
+# claude code with HF
+export HF_TOKEN=`cat $docs/docs/hf_t.txt`
+# export ANTHROPIC_BASE_URL="https://router.huggingface.co"
+# export ANTHROPIC_AUTH_TOKEN="${HF_TOKEN}"
+# export ANTHROPIC_API_KEY="${HF_TOKEN}"
+# export ANTHROPIC_DEFAULT_OPUS_MODEL="zai-org/GLM-5.2"
+# export ANTHROPIC_DEFAULT_SONNET_MODEL="zai-org/GLM-5.2"
+# export ANTHROPIC_DEFAULT_HAIKU_MODEL="zai-org/GLM-5.2"
+# export CLAUDE_CODE_SUBAGENT_MODEL="zai-org/GLM-5.2"
