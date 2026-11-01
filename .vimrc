@@ -1548,9 +1548,33 @@ EOF
 
 " VimTeX {{{
 
-  let g:vimtex_view_method = 'zathura_simple'
+  let g:vimtex_view_method = 'skim'
   let g:vimtex_view_zathura_use_synctex = 0
   let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+
+  " latexmk treats SyncTeX files as final output, so move them to the aux dir
+  " after each successful compilation while leaving the PDF beside the source.
+  function! s:VimtexMoveSyncTeXToAux() abort
+    if !exists('b:vimtex.compiler.file_info') | return | endif
+
+    let l:info = b:vimtex.compiler.file_info
+    let l:root = fnamemodify(l:info.root, ':p')
+    let l:aux_dir = l:root . 'o'
+    call mkdir(l:aux_dir, 'p')
+
+    for l:extension in ['.synctex', '.synctex.gz']
+      let l:source = l:root . l:info.jobname . l:extension
+      if filereadable(l:source)
+        call rename(l:source, l:aux_dir . '/' . fnamemodify(l:source, ':t'))
+      endif
+    endfor
+  endfunction
+
+  augroup VimtexAuxDirectory
+    autocmd!
+    autocmd User VimtexEventCompileSuccess call <SID>VimtexMoveSyncTeXToAux()
+  augroup END
+
   let g:vimtex_compiler_latexmk = {
       \ 'aux_dir' : 'o',
       \ 'out_dir' : '',
@@ -1566,15 +1590,14 @@ EOF
       \ ],
       \}
 
+  let g:vimtex_compiler_latexmk_engines = {
+      \ '_' : '-xelatex',
+      \}
+
   " " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
   " " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
   " " The following changes the default filetype back to 'tex':
-  " let g:tex_flavor = 'latex'
-  " let g:Tex_DefaultTargetFormat = 'pdf'
-  " let g:Tex_MultipleCompileFormats = 'pdf, au'
-  " let g:Tex_ViewRule_pdf = 'open -a Preview'
-  " " let g:Tex_CompileRule_pdf='mkdir o; latex --interaction=nonstopmode --output-directory=o $*'
-  " let g:Tex_CompileRule_pdf='mkdir o; xelatex --interaction=nonstopmode --output-directory=o $*; mv o/*.pdf .'
+  let g:tex_flavor = 'latex'
 
 " }}}
 
