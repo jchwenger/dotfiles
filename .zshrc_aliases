@@ -352,3 +352,6 @@ export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
 # https://kortina.nyc/notes/use-ipdb-as-the-default-python-debugger-with-breakpoint-and-pythonbreakpoint/
 # requires pip install ipdb
 export PYTHONBREAKPOINT="ipdb.set_trace"
+
+export ANTHROPIC_API_KEY=`cat $docs/docs/an.txt`
+export CLAUDE_CODE_TMUX_TRUECOLOR=1
