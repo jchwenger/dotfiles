@@ -974,3 +974,16 @@ curl -fsSL https://chatgpt.com/codex/install.sh | sh
 
 # claude code
 curl -fsSL https://claude.ai/install.sh | bash
+
+# PostgreSQL
+brew install libpq
+
+# Elasticsearch
+# https://stackoverflow.com/questions/37876010/how-to-install-elasticsearch-as-a-service-using-brew
+brew tap elastic/tap
+brew install elastic/tap/elasticsearch-full
+brew services start elastic/tap/elasticsearch-full
+
+# openjdk
+# https://stackoverflow.com/questions/74547190/popup-error-openjdk-11-0-2-is-damaged-and-cant-be-opened-on-mac-os-ventura
+brew install openjdk@17
