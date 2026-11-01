@@ -968,3 +968,9 @@ brew install mpv
 # https://formulae.brew.sh/formula/gobject-introspection
 # https://formulae.brew.sh/formula/pygobject3
 brew install pango gobject-introspection pygobject3
+
+# codex
+curl -fsSL https://chatgpt.com/codex/install.sh | sh
+
+# claude code
+curl -fsSL https://claude.ai/install.sh | bash
