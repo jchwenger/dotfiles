@@ -730,10 +730,50 @@
 
   " }}}
 
-  " Goyo: toggle with <leader>yy
+  " Goyo: toggle with <leader>yy {{{
   let g:goyo_width = "80"
   nnoremap <leader>yy :Goyo<CR>
   vnoremap <leader>yy :Goyo<CR>
+
+  " https://github.com/junegunn/goyo.vim/blob/master/README.md
+  function! s:goyo_enter()
+    " if executable('tmux') && strlen($TMUX)
+    "   silent !tmux set status off
+    "   silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+    " endif
+    set noshowmode
+    set noshowcmd
+    " add scroll offset from the top...
+    " set scrolloff=999
+    if has("nvim")
+      lua << EOF
+require('lualine').hide()
+EOF
+    endif
+
+  endfunction
+
+  function! s:goyo_leave()
+    " if executable('tmux') && strlen($TMUX)
+    "   silent !tmux set status on
+    "   silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+    " endif
+    set showmode
+    set showcmd
+    " add scroll offset from the top...
+    " set scrolloff=5
+    if has("nvim")
+      lua << EOF
+require('lualine').hide({unhide=true})
+EOF
+    endif
+
+  endfunction
+
+  autocmd! User GoyoEnter nested call <SID>goyo_enter()
+  autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+  " }}}
 
   " YouCompleteMe: disable preview window after completion
   let g:ycm_autoclose_preview_window_after_insertion = 1
