@@ -10,7 +10,6 @@ export LC_ALL=en_GB.UTF-8
 
 # Processing command added in .profile # my own aliases
 
-alias prc=processing
 alias prj=processing-java
 prw() {
   processing-java --sketch="$(pwd)" --run;
