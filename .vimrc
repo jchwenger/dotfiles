@@ -55,6 +55,9 @@
   " matchit
   " packadd! matchit
 
+  " word-level diffs
+  set diffopt+=inline:word
+
   " Preserve clipboard when quitting Vim {{{
 
   " https://stackoverflow.com/a/45553311
