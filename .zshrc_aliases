@@ -349,12 +349,6 @@ export PATH=$PATH:/usr/local/go/bin
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
 
-# clang (homebrew llvm)
-# ---------------------
-# use homebrew installed llvm clang instead of system provided clang
-# https://www.reddit.com/r/cpp_questions/comments/1c4xiu2/comment/kzqnlf5/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-export CC="/opt/homebrew/opt/llvm/bin/clang"
-export CXX="$CC++"
-export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/llvm/lib"
-export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/llvm/include"
+# https://kortina.nyc/notes/use-ipdb-as-the-default-python-debugger-with-breakpoint-and-pythonbreakpoint/
+# requires pip install ipdb
+export PYTHONBREAKPOINT="ipdb.set_trace"
