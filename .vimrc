@@ -1331,6 +1331,7 @@ EOF
     Plug 'rust-lang/rust.vim', {'for': 'rust'}
     Plug 'phelipetls/vim-hugo', { 'for': 'gohtmltmpl'}
     Plug 'ggml-org/llama.vim'
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
     call plug#end()
 " }}}
 
@@ -1619,3 +1620,7 @@ EOF
   command! SmallerFont call SmallerFont()
   " }}}
 " }}}
+
+ " Markdown Preview {{{
+ nmap <leader>md <Plug>MarkdownPreviewToggle
+ " }}}
