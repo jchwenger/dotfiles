@@ -1,6 +1,6 @@
 # see .oh-my-zsh/lib/completion.sh
 
-setopt menu_complete   # autoselect the first completion entry
+# setopt menu_complete   # autoselect the first completion entry
 # unsetopt auto_menu   #  Display the completion menu after two use of the TAB key
 
 # https://unix.stackexchange.com/a/273863
