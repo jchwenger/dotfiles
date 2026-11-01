@@ -122,6 +122,7 @@ alias cdl='conda activate dlwp'
 alias cdm='conda activate dmlcp'
 alias cpm='conda activate poetic.machines'
 
+alias trd="tree -d"
 
 # aria helper
 # https://unix.stackexchange.com/a/134286
