@@ -1297,8 +1297,13 @@ EOF
     Plug 'machakann/vim-sandwich'
     Plug 'junegunn/seoul256.vim'
     Plug 'altercation/vim-colors-solarized'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    if has('nvim')
+      Plug 'nvim-lualine/lualine.nvim'
+      Plug 'nvim-tree/nvim-web-devicons'
+    else
+      Plug 'vim-airline/vim-airline'
+      Plug 'vim-airline/vim-airline-themes'
+    endif
     Plug 'vim-scripts/visualrepeat'
     Plug 'svermeulen/vim-cutlass'
     Plug 'svermeulen/vim-yoink'
@@ -1355,8 +1360,15 @@ set rtp+=/opt/homebrew/opt/fzf
   autocmd! ColorScheme seoul256 call s:custom_highlighting()
 
   if has('nvim')
-    set termguicolors
     colorscheme seoul256
+
+    " https://chatgpt.com/share/6a479550-9944-83ed-bae2-bb9a936ed93e
+    augroup PreserveBackgroundOnResume
+      autocmd!
+      autocmd VimSuspend * let g:last_background = &background
+      autocmd VimResume * execute 'set background=' . get(g:, 'last_background', &background)
+    augroup END
+
   elseif has('gui_running')
     " syntax enable
     colorscheme solarized
@@ -1372,46 +1384,77 @@ set rtp+=/opt/homebrew/opt/fzf
     colorscheme solarized
   endif
 
-  " Airline: theme {{{
+  " Statusline: config/theme {{{
+
   if has("nvim")
-    let g:airline_theme='seoul256'
+    lua << EOF
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'auto',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {
+      statusline = {},
+      winbar = {},
+    },
+    ignore_focus = {},
+    always_divide_middle = true,
+    always_show_tabline = true,
+    globalstatus = false,
+    refresh = {
+      statusline = 1000,
+      tabline = 1000,
+      winbar = 1000,
+      refresh_time = 16, -- ~60fps
+      events = {
+        'WinEnter',
+        'BufEnter',
+        'BufWritePost',
+        'SessionLoadPost',
+        'FileChangedShellPost',
+        'VimResized',
+        'Filetype',
+        'CursorMoved',
+        'CursorMovedI',
+        'ModeChanged',
+      },
+    }
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  winbar = {},
+  inactive_winbar = {},
+  extensions = {}
+}
+EOF
   else
     let g:airline_theme='solarized'
-  endif
-  let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-  let g:airline_powerline_fonts = 1
-  let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#branch#enabled = 1
-  let g:airline#extensions#whitespace#skip_indent_check_ft =
-        \  {'text': ['trailing'], 'markdown': ['trailing']}
 
-  if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
+    " airline config 
+    let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+    let g:airline_powerline_fonts = 1
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#branch#enabled = 1
+    let g:airline#extensions#whitespace#skip_indent_check_ft =
+          \  {'text': ['trailing'], 'markdown': ['trailing']}
   endif
 
-  " unicode symbols
-  let g:airline_left_sep = '»'
-  let g:airline_left_sep = '▶'
-  let g:airline_right_sep = '«'
-  let g:airline_right_sep = '◀'
-  let g:airline_symbols.linenr = '␊'
-  let g:airline_symbols.linenr = '␤'
-  let g:airline_symbols.linenr = '¶'
-  let g:airline_symbols.branch = '⎇'
-  let g:airline_symbols.paste = 'ρ'
-  let g:airline_symbols.paste = 'Þ'
-  let g:airline_symbols.paste = '∥'
-  let g:airline_symbols.whitespace = 'Ξ'
-
-  " airline symbols
-  let g:airline_left_sep = ''
-  let g:airline_left_alt_sep = ''
-  let g:airline_right_sep = ''
-  let g:airline_right_alt_sep = ''
-  let g:airline_symbols.branch = ''
-  let g:airline_symbols.readonly = ''
-  let g:airline_symbols.linenr = ''
-    
   " }}}
 
   " Toggle background colour with <leader>bb {{{
@@ -1420,10 +1463,20 @@ set rtp+=/opt/homebrew/opt/fzf
   function! ToggleBckgrnd()
     if &background ==# "dark"
       set background=light
-      let g:airline_solarized_bg="dark"
+      " highlight MatchParen cterm=bold ctermfg=GRAY ctermbg=234  gui=bold guibg=GRAY
+      if has("nvim")
+        lua require('lualine').setup { options = { theme = 'solarized_light' } }
+      endif
     else
       set background=dark
-      let g:airline_solarized_bg="light"
+      " better paren for dark mode
+      " highlight MatchParen cterm=bold ctermfg=WHITE ctermbg=234  gui=bold guibg=WHITE
+      if has("nvim")
+        lua require('lualine').setup { options = { theme = 'solarized_dark' } }
+      endif
+    endif
+    if exists(':AirlineRefresh')
+      AirlineRefresh
     endif
   endfunction
   " }}}
