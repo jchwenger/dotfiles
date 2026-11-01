@@ -30,15 +30,13 @@ alias bfg='java -jar ~/bfg-repo-cleaner/bfg-1.13.0.jar'
 alias jn='jupyter notebook'
 alias jl='jupyter lab'
 
+alias p='ipython'
+alias py='python'
 alias ujl='uv run jupyter lab'
 alias up='uv run ipython'
 alias uxp='uvx ipython'
-
-alias nau="nautilus . & disown"
-alias ff="firefox"
-
-alias xr='xreader'
-alias xv='xviewer'
+alias uxj='uvx jupyter lab'
+alias pup='pip install --upgrade pip'
 
 alias libreoffice="/Applications/LibreOffice.app/Contents/MacOS/soffice"
 
@@ -56,8 +54,6 @@ alias duss="du -sh * .* | sort -h"
 
 # Free space, without header, human readable, (4th column descending)
 alias dfs="df -h | tail -n +2 | sort -hk 4"
-
-alias p="ipython"
 
 alias v="vim ."
 alias vo="vim -O"
