@@ -987,3 +987,6 @@ brew services start elastic/tap/elasticsearch-full
 # openjdk
 # https://stackoverflow.com/questions/74547190/popup-error-openjdk-11-0-2-is-damaged-and-cant-be-opened-on-mac-os-ventura
 brew install openjdk@17
+
+# opencode
+curl -fsSL https://opencode.ai/install | bash
