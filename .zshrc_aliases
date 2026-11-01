@@ -342,6 +342,13 @@ export TF_XLA_FLAGS="--tf_xla_enable_xla_devices"
 # go
 export PATH=$PATH:/usr/local/go/bin
 
+
+# homebrew python
+# ----------------
+# https://stackoverflow.com/a/70683186
+eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
+
 # clang (homebrew llvm)
 # ---------------------
 # use homebrew installed llvm clang instead of system provided clang
