@@ -368,3 +368,6 @@ export HF_TOKEN=`cat $docs/docs/hf_t.txt`
 
 # PostgreSQL
 export PATH="$(brew --prefix libpq)/bin:$PATH"
+
+# Java
+export ES_JAVA_HOME="$(brew --prefix openjdk@17)/libexec/openjdk.jdk/Contents/Home"
