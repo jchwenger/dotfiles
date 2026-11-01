@@ -664,6 +664,70 @@
   nnoremap <localleader>0gc <C-w>l<C-w>j<C-w>q<C-w>q
   " open one line log
   cabbrev glo Git log --oneline
+
+  " For writing
+  " https://chatgpt.com/share/69e6ad7d-e3e8-83eb-8f0f-e85e20ab9865
+  function! GitCommitSrc()
+    let l:base = substitute(fnamemodify(expand('%'), ':.'), '^src/', '', '')->fnamemodify(':r')
+
+    " add file
+    execute 'Git add src/'  . l:base . '.txt'
+
+    " prefill command-line with commit, cursor before closing quote
+    call feedkeys(':' . 'Git commit -m "' . l:base . ' |"' . repeat("\<Left>", 1), 'n')
+
+  endfunction
+
+  function! GitCommitSrcPicsTxt()
+    let l:base = substitute(fnamemodify(expand('%'), ':.'), '^src/', '', '')->fnamemodify(':r')
+
+    " add files
+    " (globs for svg & txt as e.g. in squares there's .h.svg/.v.svg/.h.txt/.v.txt)
+    let l:files = []
+    call extend(l:files, glob('pics/' . l:base . '.*svg', 0, 1))
+    call extend(l:files, glob('txt/'  . l:base . '.*txt', 0, 1))
+    call add(l:files, 'src/' . l:base . '.txt')
+    execute 'Git add ' . join(map(l:files, 'fnameescape(v:val)'), ' ')
+
+    " prefill command-line with commit, cursor before closing quote
+    call feedkeys(':' . 'Git commit -m "' . l:base . ' |"' . repeat("\<Left>", 1), 'n')
+  endfunction
+
+  function! GitCommitSrcDraft()
+    let l:base = substitute(fnamemodify(expand('%'), ':.'), '^src/', '', '')
+    let l:base = substitute(l:base, 'drafts/', '', '')->fnamemodify(':r')
+
+    " add file
+    execute 'Git add src/' . substitute(fnamemodify(expand('%'), ':.'), '^src/', '', '')
+
+    " prefill command-line with commit, cursor before closing quote
+    call feedkeys(':' . 'Git commit -m "' . l:base . ' | draft"' . repeat("\<Left>", 1), 'n')
+  endfunction
+
+  function! GitCommitIndexEnFr()
+    execute 'Git add content/en/_index.md'
+    execute 'Git add content/fr/_index.md'
+
+    " prefill command-line with commit, cursor before closing quote
+    call feedkeys(':' . 'Git commit -m "content/[en,fr]/_index | "' . repeat("\<Left>", 1), 'n')
+  endfunction
+
+  function! GitCommitSrcPicsTxtHtmlDoc()
+    let l:base = substitute(fnamemodify(expand('%'), ':.'), '^src/', '', '')->fnamemodify(':r')
+
+    " add files (globs for svg & html)
+    let l:files = []
+    call extend(l:files, glob('pics/' . l:base . '.svg', 0, 1))
+    call extend(l:files, glob('html/'  . l:base . '.html', 0, 1))
+    call extend(l:files, glob('txt/'  . l:base . '.txt', 0, 1))
+    call extend(l:files, ['doc/braids.odt'])
+    call add(l:files, 'src/' . l:base . '.txt')
+    execute 'Git add ' . join(map(l:files, 'fnameescape(v:val)'), ' ')
+
+    " prefill command-line with commit, cursor before closing quote
+    call feedkeys(':' . 'Git commit -m "' . l:base . ' |"' . repeat("\<Left>", 1), 'n')
+  endfunction
+
   " }}}
 
   " Goyo: toggle with <leader>yy
