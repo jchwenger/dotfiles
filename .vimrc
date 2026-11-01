@@ -1052,6 +1052,79 @@ EOF
 
   command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
 
+  " reverse words
+  " first: https://chatgpt.com/share/6a3e7083-130c-83ed-ab78-ac08d941d42f,
+  " then claude agent
+  function! s:Rev(s)
+      return join(reverse(split(a:s, '\zs')), '')
+  endfunction
+
+  function! ReverseLetters(type)
+      " Normal mode: reverse the current line in-place.
+      if a:type ==# 'line'
+          let l:n = line('.')
+          call setline(l:n, s:Rev(getline(l:n)))
+          return
+      endif
+
+      let l:sl  = line("'<")
+      let l:el  = line("'>")
+      let l:sc0 = col("'<") - 1   " 0-based inclusive start col
+      let l:ec0 = col("'>") - 1   " 0-based inclusive end col
+
+      if a:type ==# 'V'
+          " Line-wise visual: reverse each line independently.
+          for l:n in range(l:sl, l:el)
+              call setline(l:n, s:Rev(getline(l:n)))
+          endfor
+
+      elseif a:type ==# 'v'
+          " Char-wise visual: reverse entire selection as one string.
+          let l:lines = getline(l:sl, l:el)
+          if l:sl ==# l:el
+              let l:line   = l:lines[0]
+              let l:before = l:sc0 > 0 ? l:line[:l:sc0-1] : ''
+              call setline(l:sl, l:before . s:Rev(l:line[l:sc0:l:ec0]) . l:line[l:ec0+1:])
+          else
+              " Collect the selected portions from each line.
+              let l:segs = [l:lines[0][l:sc0:]]
+              for l:i in range(1, len(l:lines) - 2)
+                  call add(l:segs, l:lines[l:i])
+              endfor
+              call add(l:segs, l:lines[-1][:l:ec0])
+
+              let l:lens = map(copy(l:segs), 'len(v:val)')
+              let l:rev  = split(s:Rev(join(l:segs, '')), '\zs')
+              let l:pos  = 0
+
+              let l:head = l:sc0 > 0 ? l:lines[0][:l:sc0-1] : ''
+              call setline(l:sl, l:head . join(l:rev[l:pos : l:pos + l:lens[0] - 1], ''))
+              let l:pos += l:lens[0]
+
+              for l:i in range(1, len(l:lines) - 2)
+                  call setline(l:sl + l:i, join(l:rev[l:pos : l:pos + l:lens[l:i] - 1], ''))
+                  let l:pos += l:lens[l:i]
+              endfor
+
+              call setline(l:el, join(l:rev[l:pos : l:pos + l:lens[-1] - 1], '') . l:lines[-1][l:ec0+1:])
+          endif
+
+      elseif a:type ==# "\<C-v>"
+          " Block-wise visual: reverse each line's block independently.
+          for l:n in range(l:sl, l:el)
+              let l:line = getline(l:n)
+              let l:len  = len(l:line)
+              if l:sc0 >= l:len | continue | endif
+              let l:ec   = min([l:ec0, l:len - 1])
+              let l:before = l:sc0 > 0 ? l:line[:l:sc0-1] : ''
+              call setline(l:n, l:before . s:Rev(l:line[l:sc0:l:ec]) . l:line[l:ec+1:])
+          endfor
+      endif
+  endfunction
+
+  nnoremap <silent> <leader>re :call ReverseLetters('line')<CR>
+  xnoremap <silent> <leader>re :<C-u>call ReverseLetters(visualmode())<CR>
+
 " }}}
 
 
