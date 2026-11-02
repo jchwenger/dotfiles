@@ -916,7 +916,7 @@ brew install \
 # https://trac.ffmpeg.org/wiki/CompilationGuide/macOS#Additionaloptions
 
 brew tap homebrew-ffmpeg/ffmpeg
-brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-librsvg
+brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-librsvg --with-webp
 
 # gui sofware
 brew install --cask \
