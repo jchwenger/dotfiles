@@ -11,6 +11,6 @@ if [ -f $SCRIPTPATH/.zshrc_paths ]; then
     source $SCRIPTPATH/.zshrc_paths;
 fi
 
-if [ -f $SCRIPTPATH/.zshrc_aliases ]; then
-    source $SCRIPTPATH/.zshrc_aliases;
+if [ -f $SCRIPTPATH/.zshrc ]; then
+    source $SCRIPTPATH/.zshrc;
 fi
