@@ -65,4 +65,33 @@ ln -s ~/dotfiles/.tmux.conf ~/.config/tmux/tmux.conf
 # https://github.com/tmux-plugins/tpm
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 
+# git
+# ---
+# https://unix.stackexchange.com/questions/33617/how-can-i-update-to-a-newer-version-of-git-using-apt-get
+git config --global user.name "jchwenger"
+git config --global user.email "34098722+jchwenger@users.noreply.github.com"
+sudo snap install hub --classic
+
+git config --global diff.tool nvimdiff
+git config --global merge.tool nvimdiff
+git config --global --add difftool.prompt false
+
+# https://claude.ai/share/02804a1b-f9d6-4690-8173-f55330065392
+git config --global diff.docx.textconv "pandoc --from=docx --to=markdown --wrap=none"
+git config --global diff.odt.textconv  "pandoc --from=odt --to=markdown --wrap=none"
+
+# Cache conversions so repeated diffs/logs stay fast
+git config --global diff.docx.cachetextconv true
+git config --global diff.odt.cachetextconv true
+
+mkdir -p ~/.config/git
+touch ~/.config/git/attributes
+echo '*.docx diff=docx' >> ~/.config/git/attributes
+echo '*.odt  diff=odt' >> ~/.config/git/attributes
+echo '*.doc  diff=doc' >> ~/.config/git/attributes
+
+git config --global diff.wordDiff true
+
+
+# -----------------------
 source ~/.zshrc
