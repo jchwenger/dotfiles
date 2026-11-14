@@ -464,6 +464,7 @@ brew install \
   xz \
   pdfgrep \
   7za \
+  gnu-sed \
 
 # media & documents
 
