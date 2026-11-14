@@ -67,8 +67,8 @@ alias nim="nvim"
 
 alias vc="vim ~/.vimrc"
 alias vz="vim ~/.zshrc"
-alias va="vim $HOME/dotfiles/.zshrc_aliases"
-alias vt="vim ~/.tmux.conf"
+alias va="vim $HOME/dotfiles/.zshrc"
+alias vt="vim ~/.config/tmux/tmux.conf"
 alias vp="vim $HOME/dotfiles/.zshrc_paths"
 alias vdt="vim $HOME/dotfiles"
 alias vst="vim $HOME/dotfiles/install/install.sh"
@@ -118,7 +118,7 @@ alias -g XCL='| pbcopy'
 alias cad='conda deactivate'
 alias cab='conda activate base'
 alias cao='conda activate torch'
-alias cdl='conda activate dlwp'
+alias cdl='conda activate deep.learning'
 alias cdm='conda activate dmlcp'
 alias cpm='conda activate poetic.machines'
 
