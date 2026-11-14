@@ -1,8 +1,15 @@
 #!/usr/bin/zsh
 
 # symlinking
-ln -fs  ~/dotfiles/.zshrc_src ~/.src_zshrc
 ln -fs  ~/dotfiles/.vimrc ~/.vimrc
+
+# neovim
+# https://github.com/neovim/neovim/wiki/Installing-Neovim
+mkdir ~/.config/nvim
+touch ~/.config/nvim/init.vim
+echo 'set runtimepath^=~/.vim runtimepath+=~/.vim/after' >> ~/.config/nvim/init.vim
+echo 'let &packpath = &runtimepath' >> ~/.config/nvim/init.vim
+echo 'source ~/.vimrc' >> ~/.config/nvim/init.vim
 
 # fixes for oh-my-zsh
 
@@ -10,19 +17,19 @@ ln -fs  ~/dotfiles/.vimrc ~/.vimrc
 # git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
 
 # plugins
-vim ~/.zshrc '+:execute ":silent! %s/plugins=(git)/plugins=(git gh vi-mode fzf gcloud docker docker-compose aws nvm)/e | wq"'
+vim -Es '+%s/plugins=(git)/plugins=(git gh vi-mode fzf gcloud docker docker-compose aws nvm)/e' '+x' ~/.zshrc 
 
 # lazy mode
-plugins_str='+:execute "norm /plugins=(gito'
-plugins_str="${plugins_str}zstyle \':omz:plugins:gcloud\' lazy yes"
-plugins_str="${plugins_str}zstyle \':omz:plugins:docker\' lazy yes"
-plugins_str="${plugins_str}zstyle \':omz:plugins:docker-compose\' lazy yes"
-plugins_str="${plugins_str}zstyle \':omz:plugins:aws\' lazy yes"
-plugins_str="${plugins_str}zstyle \':omz:plugins:nvm\' lazy yes"
-vim ~/.zshrc "${plugins_str} :wq\""
+vim -Es "+g/^plugins=/norm ozstyle ':omz:plugins:gcloud' lazy yes" '+x' ~/.zshrc
+vim -Es "+g/^plugins=/norm ozstyle ':omz:plugins:docker' lazy yes" '+x' ~/.zshrc
+vim -Es "+g/^plugins=/norm ozstyle ':omz:plugins:docker-compose' lazy yes" '+x' ~/.zshrc
+vim -Es "+g/^plugins=/norm ozstyle ':omz:plugins:aws' lazy yes" '+x' ~/.zshrc
+vim -Es "+g/^plugins=/norm ozstyle ':omz:plugins:nvm' lazy yes" '+x' ~/.zshrc
+# adding a newline before all those above
+vim -Es "+g/^plugins=/norm o" '+x' ~/.zshrc
 
 # sourcing
-vim ~/.zshrc '+:execute "norm /^sourceosource ~/.src_zshrc:wq"'
+vim -u None -i None -Es '+g/^source/norm osource ~/dotfiles/.zshrc_src' '+x' ~/.zshrc
 
 # fix for current repo
 cd ~/dotfiles
