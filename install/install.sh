@@ -13,10 +13,6 @@ SCRIPTPATH=$(dirname $SCRIPT)
 git config --global user.name "jchwenger"
 git config --global user.email "34098722+jchwenger@users.noreply.github.com"
 sudo snap install hub --classic
-# filter-repo
-# https://github.com/newren/git-filter-repo/
-cd $HOME
-git clone https://github.com/newren/git-filter-repo
 
 git config --global diff.tool nvimdiff
 git config --global merge.tool nvimdiff
@@ -97,204 +93,20 @@ ipython profile create
 # 'print("Warning: disable autoreload in ipython_config.py to improve performance.")'
 
 
-# pytorch
-# -------
-# https://github.com/pytorch/pytorch
-# https://github.com/pytorch/text
-conda install pytorch torchvision torchtext -c pytorch
-
-# tensorflow
-# ----------
-# for tensorflow see separate files
-
-# tensorflow js & jupyter
-# -----------------------
-# npm i @tensorflow/tfjs # https://www.npmjs.com/package/ijavascript#installation
-# the former produces a warning about acceleration, solved by this one:
-npm i @tensorflow/tfjs-node # https://github.com/tensorflow/tfjs/tree/master/tfjs-node
-npm i -g ijavascript # the jupyter node kernel
-ijsinstall
-
-# jax & trax
-# ---
-# https://github.com/google/jax
-pip install --upgrade jax jaxlib==0.1.55+cuda110 -f https://storage.googleapis.com/jax-releases/jax_releases.html
-
-# TODO: test the automated version
-# pip install --upgrade https://storage.googleapis.com/jax-releases/`nvidia-smi | sed -En "s/.* CUDA Version: ([0-9]*)\.([0-9]*).*/cuda\1\2/p"`/jaxlib-0.1.45-`python3 -V | sed -En "s/Python ([0-9]*)\.([0-9]*).*/cp\1\2/p"`-none-linux_x86_64.whl jax
-
-# TODO: build from source
-# https://jax.readthedocs.io/en/latest/developer.html#building-from-source
-
-mkdir $HOME/dl
-git clone https://github.com/google/jax $HOME/dl/jax
-git clone https://github.com/google/trax $HOME/dl/trax
-
-# other dl things
-git clone https://github.com/huggingface/transformers.git $HOME/dl/transformers
-cd $HOME/dl/transformers
-pip install .
-
-# NLP
-# ----
-# https://www.nltk.org/
-# https://spacy.io/
-# https://radimrehurek.com/gensim/
-# https://github.com/Helsinki-NLP/OpusTools
-# https://github.com/LuminosoInsight/python-ftfy
-pip install --upgrade \
-  nltk \
-  spacy \
-  gensim \
-  opustools \
-  ftfy
-
-# Updating GCC (8 & 7 together)
-# -----------------------------
-# https://stackoverflow.com/a/65284832
-# https://askubuntu.com/a/1028656
-sudo apt-get install g++-8
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 700 --slave /usr/bin/g++ g++ /usr/bin/g++-7
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
-
-# MOA NLP
-# -------
-mkdir $HOME/dl/encoding
-cd $HOME/dl/encoding
-
-# https://github.com/rsennrich/subword-nmt
-git clone https://github.com/rsennrich/subword-nmt
-
-# https://github.com/glample/fastBPE
-git clone https://github.com/glample/fastBPE
-cd fastBPE
-g++ -std=c++11 -pthread -O3 fastBPE/main.cc -IfastBPE -o fast
-cd ..
-
-# https://github.com/google/sentencepiece
-pip install sentencepiece
-git clone https://github.com/google/sentencepiece
-cd sentencepiece
-
-# install from source
-sudo apt-get install \
-  build-essential \
-  pkg-config \
-  libgoogle-perftools-dev
-
-mkdir build
-cd build
-cmake ..
-make -j $(nproc)
-sudo make install
-sudo ldconfig -v
-cd $HOME
-
-# python web &c
-# -------------
-# starlette          https://www.starlette.io/
-# uvicorn            https://www.uvicorn.org/
-# aiofiles           https://pypi.org/project/aiofiles/
-# Jinja2             https://jinja.palletsprojects.com/en/2.11.x/
-# ujson              https://pypi.org/project/ujson/
-# requests           https://pypi.org/project/requests/
-# tqdm               https://github.com/tqdm/tqdm
-# fire (cli)         https://github.com/google/python-fire
-# toposort           https://pypi.org/project/toposort/
-# black (formatting) https://pypi.org/project/black/
-# flask              https://flask.palletsprojects.com/en/1.1.x/
-# websocket-client   https://github.com/websocket-client/websocket-client
-# python-socketio    https://python-socketio.readthedocs.io/en/latest/
-
-pip install \
-  starlette \
-  uvicorn \
-  aiofiles \
-  Jinja2 \
-  ujson \
-  requests
-
-conda install -c anaconda \
-  flask \
-  -y
-
-conda install -c conda-forge \
-  flask-socketio \
-  websocket-client \
-  python-socketio \
-  tqdm \
-  fire \
-  toposort \
-  -y
-
-# pdf to text utility
-# -------------------
-# https://github.com/euske/pdfminer
-conda install -c conda-forge pdfminer -y
-
-# openFrameworks
-# --------------
-# get db of compiling flags in c/c++
-# usage: compiledb make
-# -> generates a json file that YouCompleteMe (Vim) can read
-# in future, test this: https://github.com/rdnetto/YCM-Generator
-pip install compiledb
-# config for vim & YouCompleteMe there:
-# https://gist.github.com/daragao/70ed63ee8992c401a9dd#file-gistfile1-pytb
-# (copy to ~/.vim/.ycm_extra_conf_openframeworks.py", then update .vimrc to contain:
-# let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf_openframeworks.py"
-
-# Processing
-# ----------
-# https://processing.org
-cd ~
-wget https://github.com/processing/processing4/releases/download/processing-1282-4.0b7/processing-4.0b7-linux-x64.tgz
-tar xvzf processing-4.0b7-linux-x64.tgz
-rm processing-4.0b7-linux-x64.tgz
-cd processing-4.0b7
-./install.sh
-
-# fix slow boot
-# -------------
-# # https://askubuntu.com/questions/1030867/how-to-diagnose-fix-very-slow-boot-on-ubuntu-18-04
-# # modify /etc/default/grub and add
-# GRUB_CMDLINE_LINUX_DEFAULT="quiet splash noresume"
-# # alternatively: https://ubuntuforums.org/showthread.php?t=2420199
-# GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nouveau.modeset=0 tpm_tis.interrupts=0 acpi_osi=Linux i915.preliminary_hw_support=1 idle=nomwait"
-# # then:
-# sudo update-grub
-
-# set-up Fn keys
-# --------------
-# (DO NOT SET OPTION "aspi_osi=" to the grub, computer won't boot after that.)
-# https://askubuntu.com/a/1075383
-# # open and change file
-# sudo vim /etc/default/grub
-# GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_backlight=vendor"
-# sudo update-grub && reboot
-# # after that:
-# ls -1 /sys/class/backlight/
-# # should give you amdgpu_bl0
-# # set with
-# sudo modprobe amdgpu_bl0
-
 # fzf
 # ---
 # https://github.com/junegunn/fzf
-git clone --depth 1 https://github.com/junegunn/fzf ~/.fzf
-~/.fzf/install
+brew install fzf
 
 # bat
 # ---
 # https://github.com/sharkdp/bat
-wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat-v0.12.1-x86_64-unknown-linux-gnu.tar.gz
-tar -xvzf bat-v0.12.1-x86_64-unknown-linux-gnu.tar.gz
-rm bat-v0.12.1-x86_64-unknown-linux-gnu.tar.gz
+brew install bat
 
-# ranger
-# ------
-# https://github.com/ranger/ranger
-git clone https://github.com/ranger/ranger
+# # ranger
+# # ------
+# # https://github.com/ranger/ranger
+# git clone https://github.com/ranger/ranger
 
 # powerline
 # ---------
@@ -308,12 +120,6 @@ python3 -m pip install powerline-status
 # ./install.sh
 # cd ~
 
-# fonts
-# -----
-sudo apt install ttf-mscorefonts-installer
-sudo apt install -y fonts-inconsolata
-sudo fc-cache -f -v
-
 # google cloud
 # ------------
 # https://formulae.brew.sh/cask/google-cloud-sdk
@@ -326,56 +132,8 @@ brew install awscli
 
 # docker
 # ------
-# https://docs.docker.com/install/linux/docker-ce/ubuntu/
-
-sudo apt-get update
-sudo apt-get install \
-  apt-transport-https \
-  ca-certificates \
-  curl \
-  gnupg-agent \
-  software-properties-common
-  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-  echo "----------------------"
-  echo "Verify that you now have the key with the fingerprint"
-  echo "9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88"
-  sudo apt-key fingerprint 0EBFCD88
-  echo "----------------------"
-  sudo add-apt-repository \
-    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-    $(lsb_release -cs) \
-    stable"
-      sudo apt-get update
-      sudo apt-get install \
-        docker-ce \
-        docker-ce-cli \
-        containerd.io
-              # grant permissions
-              sudo usermod -a -G docker $USER
-
-# nvidia-docker
-# -------------
-# Add the package repositories
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
-# this command can also be reapplied when getting errors on sudo apt-get update
-curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
-curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-
-sudo apt-get update
-# sudo apt-get install -y nvidia-container-toolkit
-rudo apt-get install -y nvidia-docker2
-sudo systemctl restart docker
-
-# latex, lyx (latex live editor)
-# -----
-# https://dzone.com/articles/installing-latex-ubuntu
-# https://wiki.lyx.org/LyX/LyXOnUbuntu
-
-sudo apt update
-sudo add-apt-repository ppa:lyx-devel/release
-sudo apt install \
-  texlive-full \
-  # lyx
+# https://formulae.brew.sh/formula/docker
+brew install docker
 
 # tor
 # ---
@@ -459,38 +217,6 @@ brew install android-platform-tools
 # https://stackoverflow.com/a/42638750/9638108
 # adb backup -apk -shared -all -f "$(date +'%Y-%m-%d')-backup.adb"
 
-# sdkmanager
-# ----------
-# download, extract & add to the path manually
-# https://developer.android.com/studio#command-tools
-
-# to use:
-# sudo service libvirtd start
-# sudo update-rc.d libvirtd enable
-# service libvirtd status
-# virsh net-list
-
-# to restart
-# virsh net-start default
-
-# to stop & remove
-# https://docs.openstack.org/ocata/networking-guide/misc-libvirt.html
-# virsh net-destroy default
-# virsh net-autostart --network default --disable
-# virsh net-undefine default
-# https://www.thegeekdiary.com/centos-rhel-67-how-to-disable-or-delete-virbr0-interface/
-# update-rc.d libvirtd remove
-# sudo systemctl disable libvirt-guests
-# sudo systemctl stop libvirtd
-# sudo systemctl disable libvirtd
-
-# to remove, same as install, except with `remove --purge`
-# other bridge links:
-# https://unix.stackexchange.com/questions/62751/cannot-delete-bridge-bridge-br0-is-still-up-cant-delete-it
-# https://askubuntu.com/questions/246343/what-is-the-virbr0-interface-used-for
-# also:
-# https://askubuntu.com/a/978498/1092704
-
 # Ruby
 # ----
 # https://jekyllrb.com/docs/installation/macos/
@@ -535,11 +261,6 @@ sudo systemctl enable mongod
 # ------
 # https://devcenter.heroku.com/articles/heroku-cli
 sudo snap install --classic heroku
-
-# forticlient vpn
-# ---------------
-# https://www.forticlient.com/downloads
-# https://www.fortinet.com/support/product-downloads
 
 # nordvpn
 # -------
@@ -690,55 +411,6 @@ sudo apt-get install conky
 # https://github.com/cernekee/ocproxy
 sudo apt install ocproxy
 
-# update lib
-# https://askubuntu.com/a/1340076
-sudo apt update
-sudo apt install libdrm-common
-
-# # thermald
-# # --------
-# # https://github.com/intel/thermal_daemon
-# # dependencies
-# sudo apt-get install autoconf
-# sudo apt-get install autoconf-archive
-# sudo apt-get install g++
-# sudo apt-get install libglib2.0-dev
-# sudo apt-get install libdbus-1-dev
-# sudo apt-get install libdbus-glib-1-dev
-# sudo apt-get install libxml2-dev
-# sudo apt-get install gtk-doc-tools
-# sudo apt-get install libupower-glib-dev
-# sudo apt-get install liblzma-dev
-# sudo apt-get install libevdev-dev
-# cd ~
-# git clone https://github.com/intel/thermal_daemon
-# cd thermal_daemon
-# ./autogen.sh prefix=/
-# make
-# sudo make install
-
-# cpufrequtils
-# ------------
-# https://askubuntu.com/a/936488
-sudo apt-get install cpufrequtils
-# https://askubuntu.com/a/1049313
-sudo systemctl disable ondemand
-# create file
-# sudo vim /etc/default/cpufrequtils
-# GOVERNOR="performance" or
-# GOVERNOR="powersave"
-
-# entr (any action if file changes)
-# ---------------------------------
-# https://github.com/eradman/entr
-# https://eradman.com/entrproject/
-cd
-git clone https://github.com/eradman/entr
-cd entr
-./configure
-make test
-sudo make install
-
 # libtorrent (for deluge)
 # -----------------------
 sudo apt update
@@ -748,14 +420,6 @@ sudo apt install python-libtorrent
 # ---------------------------------
 sudo apt install libcairo2-dev pkg-config
 conda install pycairo
-
-# keyman IPA keyboard
-# -------------------
-# https://help.keyman.com/products/linux/current-version/common/
-sudo add-apt-repository ppa:keymanapp/keyman
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install keyman onboard-keyman
 
 # cue/flac splitting
 # ------------------
@@ -847,7 +511,6 @@ brew install \
 # python / miniforge (+ other deps)
 # ------------------
 brew install python
-brew install miniforge
 
 brew install \
   pyenv \
@@ -967,18 +630,18 @@ curl -fsSL https://chatgpt.com/codex/install.sh | sh
 # claude code
 curl -fsSL https://claude.ai/install.sh | bash
 
-# PostgreSQL
-brew install libpq
+# # PostgreSQL
+# brew install libpq
 
-# Elasticsearch
-# https://stackoverflow.com/questions/37876010/how-to-install-elasticsearch-as-a-service-using-brew
-brew tap elastic/tap
-brew install elastic/tap/elasticsearch-full
-brew services start elastic/tap/elasticsearch-full
+# # Elasticsearch
+# # https://stackoverflow.com/questions/37876010/how-to-install-elasticsearch-as-a-service-using-brew
+# brew tap elastic/tap
+# brew install elastic/tap/elasticsearch-full
+# brew services start elastic/tap/elasticsearch-full
 
-# openjdk
-# https://stackoverflow.com/questions/74547190/popup-error-openjdk-11-0-2-is-damaged-and-cant-be-opened-on-mac-os-ventura
-brew install openjdk@17
+# # openjdk
+# # https://stackoverflow.com/questions/74547190/popup-error-openjdk-11-0-2-is-damaged-and-cant-be-opened-on-mac-os-ventura
+# brew install openjdk@17
 
 # opencode
 curl -fsSL https://opencode.ai/install | bash
