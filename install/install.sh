@@ -80,16 +80,6 @@ echo "----------------------------"
   sudo update-alternatives --install /usr/bin/vi vi /usr/local/bin/vim 1
   sudo update-alternatives --set vi /usr/local/bin/vim
 
-# neovim setup
-# (links to .vimrc)
-# ------------
-# https://github.com/neovim/neovim/wiki/Installing-Neovim
-sudo snap install --beta nvim --classic
-mkdir $HOME/.config/nvim
-echo "set runtimepath^=~/.vim runtimepath+=~/.vim/after" >> $HOME/.config/nvim/init.vim
-echo "let &packpath = &runtimepath" >> $HOME/.config/nvim/init.vim
-echo "source $HOME/.vimrc" >> $HOME/.config/nvim/init.vim
-
 # zsh and oh-my-zsh
 # -----------------
 ./$SCRIPTPATH/zsh.sh
