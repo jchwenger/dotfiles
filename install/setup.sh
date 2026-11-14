@@ -4,6 +4,10 @@
 # (zsh is the default shell on MacOS)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# homebrew
+# https://brew.sh/
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 # symlinking
 ln -fs  ~/dotfiles/.vimrc ~/.vimrc
 
