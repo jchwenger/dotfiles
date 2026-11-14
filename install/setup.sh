@@ -44,7 +44,7 @@ cd ~/dotfiles
 git update-index --assume-unchanged ~/dotfiles/.zshrc_paths
 cd ~
 
-# symlinking oh-my-zsh
+# symlinking oh-my-zsh config
 for i in ~/dotfiles/oh-my-zsh/lib/*.zsh
 do
   ln -s "$i"  ~/.oh-my-zsh/custom/
@@ -56,8 +56,13 @@ do
 done
 cd ~
 
-
 # symlinking tmux
-ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+mkdir -p ~/.config/tmux
+touch ~/.config/tmux/tmux.conf
+ln -s ~/dotfiles/.tmux.conf ~/.config/tmux/tmux.conf
+
+# tmux tpm
+# https://github.com/tmux-plugins/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 
 source ~/.zshrc
