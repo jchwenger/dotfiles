@@ -30,6 +30,8 @@ git config --global diff.odt.textconv  "pandoc --from=odt --to=markdown --wrap=n
 git config --global diff.docx.cachetextconv true
 git config --global diff.odt.cachetextconv true
 
+mkdir -p ~/.config/git
+touch ~/.config/git/attributes
 echo '*.docx diff=docx' >> ~/.config/git/attributes
 echo '*.odt  diff=odt' >> ~/.config/git/attributes
 echo '*.doc  diff=doc' >> ~/.config/git/attributes
