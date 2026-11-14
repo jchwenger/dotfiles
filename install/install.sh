@@ -108,18 +108,6 @@ brew install bat
 # # https://github.com/ranger/ranger
 # git clone https://github.com/ranger/ranger
 
-# powerline
-# ---------
-python3 -m pip install powerline-status
-
-# solarized
-# ---------
-# sudo apt install dconf-cli -y
-# git clone https://github.com/aruhier/gnome-terminal-colors-solarized.git
-# cd gnome-terminal-colors-solarized
-# ./install.sh
-# cd ~
-
 # google cloud
 # ------------
 # https://formulae.brew.sh/cask/google-cloud-sdk
@@ -135,17 +123,6 @@ brew install awscli
 # https://formulae.brew.sh/formula/docker
 brew install docker
 
-# tor
-# ---
-# https://www.torproject.org/download/
-# check for latest version
-echo "---------------------------------------------------------------"
-echo "installing tor, please check that the version is the latest one"
-echo "by visiting the website: https://www.torproject.org/download/"
-wget https://www.torproject.org/dist/torbrowser/9.0.6/tor-browser-linux64-9.0.6_en-US.tar.xz
-tor -xf tor-browser-linux64-9.0.6_en-US.tar.xz
-rm tor-browser-linux64-9.0.6_en-US.tar.xz
-
 # node / nvm
 # ----------
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | zsh
@@ -154,12 +131,6 @@ nvm install --lts
 nvm use --lts
 
 npm install -g http-server
-
-# dotfiles
-# --------
-git clone https://github.com/jchwenger/dotfiles
-# ./dotfiles/install/install.sh
-
 
 # rclone
 # ------
@@ -174,17 +145,6 @@ curl https://rclone.org/install.sh | sudo zsh
 # https://www.rust-lang.org/tools/install
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup component add rust-src rustfmt-preview rust-analysis
-
-# Teleconsole
-# -----------
-# https://github.com/gravitational/teleconsole
-curl https://www.teleconsole.com/get.sh | sh
-
-# ssh server
-# ----------
-# https://unix.stackexchange.com/a/520346
-sudo apt-get install openssh-server -y
-sudo systemctl start ssh
 
 # markdown-viewer
 # --------------------------
@@ -245,37 +205,9 @@ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt update && sudo apt install --no-install-recommends yarn
 
-# mongodb
-# -------
-# https://www.mongodb.com/
-wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
-# in case of an error, do this:
-# sudo apt-get install gnupg
-echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
-sudo apt-get update
-sudo apt-get install -y mongodb-org
-sudo systemctl start mongod
-sudo systemctl enable mongod
-
-# heroku
-# ------
-# https://devcenter.heroku.com/articles/heroku-cli
-sudo snap install --classic heroku
-
-# nordvpn
-# -------
-# https://nordvpn.com/download/linux/
-cd ~
-wget https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
-sudo apt-get update
-sudo apt-get install nordvpn-release_1.0.0_all.deb
-sudo apt-get install nordvpn
-rm nordvpn-release_1.0.0_all.deb
-
 # js-beautify
 # -----------
 # https://www.npmjs.com/package/js-beautify
-
 npm -g install js-beautify
 
 # httrack website copier
@@ -310,13 +242,6 @@ sudo apt install webp
 # openconnect
 # ----------
 sudo add-apt-repository ppa:phusen/openconnect
-
-# peek (gif from screen)
-# ----------------------
-# https://askubuntu.com/a/833995
-sudo add-apt-repository ppa:peek-developers/stable
-sudo apt update
-sudo apt install peek
 
 # runiq (fast deduplication, in Rust)
 # -------------------------
@@ -382,17 +307,6 @@ sudo mkdir /var/redis/6379
 # ---
 sudo update-rc.d redis_6379 defaults
 sudo /etc/init.d/redis_6379 start
-
-# Gnome Sushi
--------------
-# MacOS-style preview for Nautilus
-# apt install thru the website:
-# https://help.ubuntu.com/stable/ubuntu-help/files-preview.html.en
-# https://gitlab.gnome.org/GNOME/sushi
-# then for LibreOffice compatibility
-# https://manpages.ubuntu.com/manpages/bionic/man1/doc2odt.1.html
-sudo apt update
-sudo apt install unoconv
 
 # libreoffice
 # -----------
