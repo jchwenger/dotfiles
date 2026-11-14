@@ -1,5 +1,9 @@
 #!/usr/bin/zsh
 
+# oh my zsh
+# (zsh is the default shell on MacOS)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # symlinking
 ln -fs  ~/dotfiles/.vimrc ~/.vimrc
 
