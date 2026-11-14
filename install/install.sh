@@ -125,7 +125,7 @@ brew install docker
 
 # node / nvm
 # ----------
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | zsh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.41.0/install.sh | bash
 source ~/.zshrc
 nvm install --lts
 nvm use --lts
