@@ -280,13 +280,6 @@ sudo mkdir /var/redis/6379
 sudo update-rc.d redis_6379 defaults
 sudo /etc/init.d/redis_6379 start
 
-# libreoffice
-# -----------
-# https://blog.programster.org/ubuntu-18-04-install-libreoffice-from-ppa
-sudo add-apt-repository ppa:libreoffice/ppa -y \
-  && sudo apt update \
-  && sudo apt install libreoffice -y
-
 # conky
 # -----
 sudo apt-get install conky
