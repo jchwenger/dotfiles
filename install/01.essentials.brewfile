@@ -1,6 +1,7 @@
 # vim: syntax=ruby ft=ruby
 
 brew "neovim"
+cask "ghostty" # https://ghostty.org
 
 brew "python"
 brew "go"
@@ -66,6 +67,8 @@ cask "skim" # pdf reader, https://skim-app.sourceforge.io/
 
 # music & video
 
+cask "vlc" # https://www.videolan.org
+
 # https://trac.ffmpeg.org/wiki/CompilationGuide/macOS#Additionaloptions
 tap "homebrew-ffmpeg/ffmpeg"
 brew "homebrew-ffmpeg/ffmpeg/ffmpeg", args: ["with-librsvg", "with-webp"], trusted: true
@@ -76,6 +79,11 @@ brew "shntool" # https://formulae.brew.sh/formula/shntool#default
 
 # usage:
 # cuebreakpoints file.cue | shnsplit -o flac file.flac
+
+cask "firefox" # https://www.firefox.com
+cask "google-chrome"
+cask "libreoffice" # https://www.libreoffice.org
+cask "tor-browser" # https://download.torproject.org
 
 # llms
 
