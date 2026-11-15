@@ -1,88 +1,88 @@
-brew neovim
+brew "neovim"
 
-brew python
-brew go
-brew ctags
-brew cmake # c++
+brew "python"
+brew "go"
+brew "ctags"
+brew "cmake" # c++
 
 # git
 
-brew git
-brew git-lfs
-brew git-filter-repo
-brew gh
+brew "git"
+brew "git-lfs"
+brew "git-filter-repo"
+brew "gh"
 
 # terminal
 
-brew bash # update default bash from MacOs version
-brew pkg-config
-brew coreutils # gchmod/gchown, https://unix.stackexchange.com/a/613296
-brew awk
-brew wget
-brew curl
-brew htop # https://htop.dev/
-brew tree
-brew tmux
-brew rsync
-brew fd
-brew ripgrep
-brew rename
-brew jq
-brew entr
-brew gnu-sed
-brew gnu-tar
-brew djvu2pdf
-brew pdfgrep
-brew fzf # https://github.com/junegunn/fzf
-brew bat # https://github.com/sharkdp/bat
+brew "bash" # update default bash from MacOs version
+brew "pkg-config"
+brew "coreutils" # gchmod/gchown, https://unix.stackexchange.com/a/613296
+brew "awk"
+brew "wget"
+brew "curl"
+brew "htop" # https://htop.dev/
+brew "tree"
+brew "tmux"
+brew "rsync"
+brew "fd"
+brew "ripgrep"
+brew "rename"
+brew "jq"
+brew "entr"
+brew "gnu-sed"
+brew "gnu-tar"
+brew "djvu2pdf"
+brew "pdfgrep"
+brew "fzf" # https://github.com/junegunn/fzf
+brew "bat" # https://github.com/sharkdp/bat
 
 # web
 
-brew hugo # https://gohugo.io/installation/macos/#package-managers
+brew "hugo" # https://gohugo.io/installation/macos/#package-managers
 
 # images & documents
 
-brew webp # https://formulae.brew.sh/formula/webp
-brew gifsicle
-brew qrencode # qr codes https://formulae.brew.sh/formula/qrencode
+brew "webp" # https://formulae.brew.sh/formula/webp
+brew "gifsicle"
+brew "qrencode" # qr codes https://formulae.brew.sh/formula/qrencode
 
-brew imagemagick
-brew pandoc # https://pandoc.org/org
-brew librsvg # https://formulae.brew.sh/formula/librsvg
+brew "imagemagick"
+brew "pandoc" # https://pandoc.org/org
+brew "librsvg" # https://formulae.brew.sh/formula/librsvg
 
-brew cairo # https://www.cairographics.org/
-brew pango # https://formulae.brew.sh/formula/pango (https://www.gtk.org/docs/architecture/pango)
-brew gobject-introspection # https://formulae.brew.sh/formula/gobject-introspection
-brew pygobject3 # https://formulae.brew.sh/formula/pygobject3
+brew "cairo" # https://www.cairographics.org/
+brew "pango" # https://formulae.brew.sh/formula/pango (https://www.gtk.org/docs/architecture/pango)
+brew "gobject-introspection" # https://formulae.brew.sh/formula/gobject-introspection
+brew "pygobject3" # https://formulae.brew.sh/formula/pygobject3
 
-cask mactex
-cask calibre
-cask inkscape
-cask scribus
+cask "mactex"
+cask "calibre"
+cask "inkscape"
+cask "scribus"
 
-cask skim # pdf reader, https://skim-app.sourceforge.io/
+cask "skim" # pdf reader, https://skim-app.sourceforge.io/
 
 # music & video
 
 # https://trac.ffmpeg.org/wiki/CompilationGuide/macOS#Additionaloptions
-brew tap homebrew-ffmpeg/ffmpeg
-brew homebrew-ffmpeg/ffmpeg/ffmpeg --with-librsvg --with-webp
+tap "homebrew-ffmpeg/ffmpeg"
+brew "homebrew-ffmpeg/ffmpeg/ffmpeg", args: ["with-librsvg", "with-webp"]
 
-brew flac # https://formulae.brew.sh/formula/flac#default
-brew cuetools # https://formulae.brew.sh/formula/cuetools
-brew shntool # https://formulae.brew.sh/formula/shntool#default
+brew "flac" # https://formulae.brew.sh/formula/flac#default
+brew "cuetools" # https://formulae.brew.sh/formula/cuetools
+brew "shntool" # https://formulae.brew.sh/formula/shntool#default
 
 # usage:
 # cuebreakpoints file.cue | shnsplit -o flac file.flac
 
 # llms
 
-brew llama.cpp # Llama CPP https://github.com/ggerganov/llama.cpp
-brew ollama # Ollama https://ollama.com/
+brew "llama.cpp" # Llama CPP https://github.com/ggerganov/llama.cpp
+brew "ollama" # Ollama https://ollama.com/
 
 # android
-brew android-platform-tools # https://formulae.brew.sh/cask/android-platform-tools
-brew scrcpy # Screen Copy (Android screen) https://github.com/Genymobile/scrcpy
+brew "android-platform-tools" # https://formulae.brew.sh/cask/android-platform-tools
+brew "scrcpy" # Screen Copy (Android screen) https://github.com/Genymobile/scrcpy
 
 # to backup the current state of a device:
 # https://stackoverflow.com/a/42638750/9638108
@@ -90,5 +90,5 @@ brew scrcpy # Screen Copy (Android screen) https://github.com/Genymobile/scrcpy
 
 # download
 
-brew aria2 # https://aria2.github.io/
-brew yt-dlp # https://github.com/yt-dlp/yt-dlp
+brew "aria2" # https://aria2.github.io/
+brew "yt-dlp" # https://github.com/yt-dlp/yt-dlp
