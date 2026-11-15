@@ -1,3 +1,5 @@
+# vim: syntax=ruby ft=ruby
+
 brew "neovim"
 
 brew "python"
@@ -66,7 +68,7 @@ cask "skim" # pdf reader, https://skim-app.sourceforge.io/
 
 # https://trac.ffmpeg.org/wiki/CompilationGuide/macOS#Additionaloptions
 tap "homebrew-ffmpeg/ffmpeg"
-brew "homebrew-ffmpeg/ffmpeg/ffmpeg", args: ["with-librsvg", "with-webp"]
+brew "homebrew-ffmpeg/ffmpeg/ffmpeg", args: ["with-librsvg", "with-webp"], trusted: true
 
 brew "flac" # https://formulae.brew.sh/formula/flac#default
 brew "cuetools" # https://formulae.brew.sh/formula/cuetools
@@ -81,7 +83,7 @@ brew "llama.cpp" # Llama CPP https://github.com/ggerganov/llama.cpp
 brew "ollama" # Ollama https://ollama.com/
 
 # android
-brew "android-platform-tools" # https://formulae.brew.sh/cask/android-platform-tools
+cask "android-platform-tools" # https://formulae.brew.sh/cask/android-platform-tools
 brew "scrcpy" # Screen Copy (Android screen) https://github.com/Genymobile/scrcpy
 
 # to backup the current state of a device:

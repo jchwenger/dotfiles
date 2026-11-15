@@ -1,3 +1,5 @@
+# vim: syntax=ruby ft=ruby
+
 # compiler (Low Level Virtual Machine)
 brew llvm # https://formulae.brew.sh/formula/llvm
 
