@@ -7,8 +7,8 @@ SCRIPT=$(readlink -f $0)
 SCRIPTPATH=$(dirname $SCRIPT)
 # echo "from src: $SCRIPTPATH"
 
-brew bundle --file="~/dotfiles/install/01.essentials.brewfile"
-# brew bundle --file="~/dotfiles/install/02.other.brewfile"
+brew bundle --file="~/dotfiles/install/01.essentials.brewfile" --verbose
+# brew bundle --file="~/dotfiles/install/02.other.brewfile" --verbose
 
 # pandoc lua filters (for docx pagebreaks)
 # ----------------------------------------
