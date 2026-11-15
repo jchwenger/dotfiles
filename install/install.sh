@@ -13,7 +13,7 @@ brew bundle --file="~/dotfiles/install/01.essentials.brewfile" --verbose
 # pandoc lua filters (for docx pagebreaks)
 # ----------------------------------------
 # https://github.com/pandoc/lua-filters
-PANDOC_DIR=/home/jcw/.local/share/pandoc
+PANDOC_DIR=/Users/jcw/.local/share/pandoc
 RELEASE_URL=https://github.com/pandoc/lua-filters/releases/latest
 mkdir -p $PANDOC_DIR; cd $PANDOC_DIR
 wget $RELEASE_URL/download/lua-filters.tar.gz
