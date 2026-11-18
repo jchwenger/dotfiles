@@ -94,6 +94,7 @@ cask "telegram"
 
 brew "llama.cpp" # Llama CPP https://github.com/ggerganov/llama.cpp
 brew "ollama" # Ollama https://ollama.com/
+brew "hf" # https://huggingface.co/docs/huggingface_hub/guides/cli
 
 # android
 cask "android-platform-tools" # https://formulae.brew.sh/cask/android-platform-tools
