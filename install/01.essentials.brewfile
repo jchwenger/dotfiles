@@ -86,6 +86,8 @@ cask "brave-browser" # https://brave.com/
 cask "libreoffice" # https://www.libreoffice.org
 cask "tor-browser" # https://download.torproject.org
 
+cask "signal"
+
 # llms
 
 brew "llama.cpp" # Llama CPP https://github.com/ggerganov/llama.cpp
