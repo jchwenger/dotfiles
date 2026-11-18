@@ -87,6 +87,7 @@ cask "libreoffice" # https://www.libreoffice.org
 cask "tor-browser" # https://download.torproject.org
 
 cask "signal"
+cask "telegram"
 
 # llms
 
