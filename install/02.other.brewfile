@@ -1,56 +1,56 @@
 # vim: syntax=ruby ft=ruby
 
 # compiler (Low Level Virtual Machine)
-brew llvm # https://formulae.brew.sh/formula/llvm
+brew "llvm" # https://formulae.brew.sh/formula/llvm
 
 # compression
 
-brew xz
-brew 7za
-brew pigz # https://formulae.brew.sh/formula/pigz (https://zlib.net/pigz/)
+brew "xz"
+brew "7za"
+brew "pigz" # https://formulae.brew.sh/formula/pigz (https://zlib.net/pigz/)
 
 # services
 
-cask google-cloud-sdk # https://formulae.brew.sh/cask/google-cloud-sdk
-brew awscli # https://formulae.brew.sh/formula/awscli
-brew docker # https://formulae.brew.sh/formula/docker
+cask "google-cloud-sdk" # https://formulae.brew.sh/cask/google-cloud-sdk
+brew "awscli" # https://formulae.brew.sh/formula/awscli
+brew "docker" # https://formulae.brew.sh/formula/docker
 
 # documents
 
-# cask lyx # (latex editor) https://www.lyx.org/
+# cask "lyx" # (latex editor) https://www.lyx.org/
 
 # web
 
-# brew httrack # https://www.httrack.com/
+# brew "httrack" # https://www.httrack.com/
 
-# reuired for jekyll!
+# required for jekyll!
 # note: requires xz
-# brew chruby # https://jekyllrb.com/docs/installation/macos/
-# brew ruby-install xz
+# brew "chruby" # https://jekyllrb.com/docs/installation/macos/
+# brew "ruby-install"
 # ruby-install ruby 3.4.1
 
 # chromedriver
 # https://formulae.brew.sh/cask/chromedriver
 # MacOS unquarantine required: https://stackoverflow.com/a/60374958
-# brew install --cask chromedriver
+# cask "chromedriver"
 
 # geckodriver
 # https://formulae.brew.sh/formula/geckodriver#default
-# brew install geckodriver
+# brew "geckodriver"
 
 # # c++ things
-# brew lld
-# brew libomp
+# brew "lld"
+# brew "libomp"
 
 # # PostgreSQL
-# brew libpq
+# brew "libpq"
 
 # # Elasticsearch
 # # https://stackoverflow.com/questions/37876010/how-to-install-elasticsearch-as-a-service-using-brew
-# brew tap elastic/tap
-# brew elastic/tap/elasticsearch-full
-# brew services start elastic/tap/elasticsearch-full
+# tap "elastic/tap"
+# brew "elastic/tap/elasticsearch-full"
+# then brew services start elastic/tap/elasticsearch-full
 
 # # openjdk
 # # https://stackoverflow.com/questions/74547190/popup-error-openjdk-11-0-2-is-damaged-and-cant-be-opened-on-mac-os-ventura
-# brew openjdk@17
+# brew "openjdk@17"
