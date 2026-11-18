@@ -68,6 +68,7 @@ cask "skim" # pdf reader, https://skim-app.sourceforge.io/
 # music & video
 
 cask "vlc" # https://www.videolan.org
+cask "obs" # https://obsproject.com/kb/mac-installation
 
 # https://trac.ffmpeg.org/wiki/CompilationGuide/macOS#Additionaloptions
 tap "homebrew-ffmpeg/ffmpeg"
