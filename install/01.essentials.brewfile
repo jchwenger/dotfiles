@@ -82,6 +82,7 @@ brew "shntool" # https://formulae.brew.sh/formula/shntool#default
 
 cask "firefox" # https://www.firefox.com
 cask "google-chrome"
+cask "brave-browser" # https://brave.com/
 cask "libreoffice" # https://www.libreoffice.org
 cask "tor-browser" # https://download.torproject.org
 
